@@ -14,7 +14,7 @@ import com.meet.together.user.service.UserService;
 public class UserController {
 	@Autowired
 	UserService us;
-
+ 
 	@RequestMapping(value = "/user/signup", method = RequestMethod.POST)
 	public List<UserInfo> siginUser(UserInfo ui) {
 		return us.siginUser(ui);
