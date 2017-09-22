@@ -9,6 +9,13 @@ public class UserInfo
 	private int userPhone;
 	private String userGender;
 	private String userCountry;
+	private String userName;
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	public int getUserNum() {
 		return userNum;
 	}
@@ -55,7 +62,7 @@ public class UserInfo
 	public String toString() {
 		return "UserInfo [userNum=" + userNum + ", userId=" + userId + ", userPwd=" + userPwd + ", userEmail="
 				+ userEmail + ", userPhone=" + userPhone + ", userGender=" + userGender + ", userCountry=" + userCountry
-				+ "]";
+				+ ", userName=" + userName + "]";
 	}
 	
 }
