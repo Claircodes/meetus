@@ -18,7 +18,7 @@ public class UserInfo
 	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(String userId) { 
 		this.userId = userId;
 	}
 	public String getUserPwd() {
