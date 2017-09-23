@@ -1,7 +1,5 @@
 package com.meet.together.user.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +12,8 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 
 	@Override
-	public List<UserInfo> siginUser(UserInfo ui) {
+	//회원가입 userinfo형식으로 받고 int로 반환
+	public int siginUser(UserInfo ui) {
 		return userDao.signupUser(ui);
 	}
 

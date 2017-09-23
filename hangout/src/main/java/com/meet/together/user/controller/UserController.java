@@ -17,6 +17,9 @@ public class UserController {
   
 	@RequestMapping(value = "/user/signup", method = RequestMethod.POST)
 	public List<UserInfo> siginUser(UserInfo ui) {
-		return us.siginUser(ui);
+		//int result ÀÌ°Ç insert °¹¼ö
+		int result = us.siginUser(ui);
+		System.out.println(result);
+		return null;
 	}
 }

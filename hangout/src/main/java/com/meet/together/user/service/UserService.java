@@ -5,5 +5,5 @@ import java.util.List;
 import com.meet.together.user.dto.UserInfo;
 
 public interface UserService {
-	public List<UserInfo> siginUser(UserInfo ui);
+	public int siginUser(UserInfo ui);
 }
