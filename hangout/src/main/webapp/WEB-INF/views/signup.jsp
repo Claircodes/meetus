@@ -72,7 +72,7 @@
                      <div class="cols-sm-10">
                         <div class="input-group">
                            <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                           <input type="password" class="form-control" name="userPhone" id="userPhone"  placeholder="연락처를 적어주세요."/>
+                           <input type="text" class="form-control" name="userPhone" id="userPhone"  placeholder="연락처를 적어주세요."/>
                         </div>
                      </div>
                   </div>
