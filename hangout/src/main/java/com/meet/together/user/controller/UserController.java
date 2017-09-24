@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.meet.together.user.dto.UserInfo;
 import com.meet.together.user.service.UserService;
@@ -22,7 +24,7 @@ public class UserController {
 	
 	
 	@RequestMapping(value = "/signup/insert", method = RequestMethod.POST)
-	public List<UserInfo> siginUser(UserInfo ui) {
+	public @ResponseBody List<UserInfo> siginUser(@RequestBody UserInfo ui) {
     
 		int result = us.siginUser(ui);
 		System.out.println(result);

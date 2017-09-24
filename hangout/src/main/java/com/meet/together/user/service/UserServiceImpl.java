@@ -12,7 +12,6 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 
 	@Override
-	//회원가입 userinfo형식으로 받고 int로 반환
 	public int siginUser(UserInfo ui) {
 		return userDao.signupUser(ui);
 	}
