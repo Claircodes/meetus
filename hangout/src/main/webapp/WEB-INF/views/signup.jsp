@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -71,7 +72,7 @@
                      <div class="cols-sm-10">
                         <div class="input-group">
                            <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                           <input type="password" class="form-control" name="userPhone" id="userPhone"  placeholder="연락처를 적어주세요."/>
+                           <input type="text" class="form-control" name="userPhone" id="userPhone"  placeholder="연락처를 적어주세요."/>
                         </div>
                      </div>
                   </div>

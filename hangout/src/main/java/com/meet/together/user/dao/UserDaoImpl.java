@@ -12,9 +12,10 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
 
 	@Override
 	public int signupUser(UserInfo ui) {
+<<<<<<< HEAD
 		return this.getSqlSession().insert("user.USER_SIGIN", ui);
+=======
+		return this.getSqlSession().insert("user.USER_SIGNUP", ui);
+>>>>>>> branch 'master' of https://github.com/Claircodes/meetus.git
 	}
-
-
-
 }
