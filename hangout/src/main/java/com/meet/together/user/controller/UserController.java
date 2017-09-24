@@ -23,6 +23,12 @@ public class UserController {
 	}
 	
 	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginsite(UserInfo ui) {
+		return "user/login";
+	}
+	
+	
 	@RequestMapping(value = "/signup/insert", method = RequestMethod.POST)
 	public @ResponseBody List<UserInfo> siginUser(@RequestBody UserInfo ui) {
     
