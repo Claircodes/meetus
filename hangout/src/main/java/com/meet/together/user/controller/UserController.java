@@ -15,9 +15,15 @@ public class UserController {
 	@Autowired
 	UserService us;
   
-	@RequestMapping(value = "/user/signup", method = RequestMethod.POST)
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public String sigupsite(UserInfo ui) {
+		return "signup";
+	}
+	
+	
+	@RequestMapping(value = "/signup/insert", method = RequestMethod.POST)
 	public List<UserInfo> siginUser(UserInfo ui) {
-		//int result ÀÌ°Ç insert °¹¼ö
+    
 		int result = us.siginUser(ui);
 		System.out.println(result);
 		return null;
