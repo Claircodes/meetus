@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
 <mapper namespace="user">
-	<insert id="USER_SIGIN" parameterType="user">
+	<insert id="USER_SIGNUP" parameterType="user">
 		insert into user_info
 		(user_id, user_pwd, user_name,user_email, user_phone, user_gender, user_country)
 		values
