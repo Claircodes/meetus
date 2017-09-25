@@ -101,6 +101,8 @@
 							</div>
 						</div>
 					</div>
+					
+								
 
 					<div class="form-group">
 						<label for="confirm" class="cols-sm-2 control-label">Where
@@ -111,7 +113,7 @@
 									class="fa  fa-map-marker fa" aria-hidden="true"></i></span>
 									
 	
-<select class="selectpicker" data-style="btn-danger">
+<select class="selectpicker" data-style="btn-danger" id="userCountry">
   <optgroup label="Asia">
     <option>Korea</option>
     <option>Japan</option>
@@ -141,6 +143,7 @@
 </body>
 
 <script>
+
 	$("#signupbtn").click(function() {
 
 		var au = new AjaxUtil("signup/insert");
@@ -163,7 +166,7 @@
 			alert(result.error);
 			return;
 		}
-		alert("성공데스");
+		alert(result.userId+"님 가입되셨습니다.")
 	}
 </script>
 </html>
