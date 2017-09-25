@@ -12,7 +12,7 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 
 	@Override
-	public int siginUser(UserInfo ui) {
+	public int signinUser(UserInfo ui) {
 		return userDao.signupUser(ui);
 	}
 

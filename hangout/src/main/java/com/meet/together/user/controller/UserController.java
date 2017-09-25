@@ -32,7 +32,7 @@ public class UserController {
 	@RequestMapping(value = "/signup/insert", method = RequestMethod.POST)
 	public @ResponseBody List<UserInfo> siginUser(@RequestBody UserInfo ui) {
     
-		int result = us.siginUser(ui);
+		int result = us.signinUser(ui);
 		System.out.println(result);
 		return null;
 	}

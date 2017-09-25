@@ -111,15 +111,22 @@
 							<div class="input-group">
 								<span class="input-group-addon"> <i
 									class="fa  fa-map-marker fa" aria-hidden="true"></i></span>
-								<div class="dropdown">
-									<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"aria-expanded="true">
-										국적선택									
-									<span class="caret"></span>
-									</button>
-									<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-										<li>ㄴㅇ</li>
-									</ul>
-								</div>
+									
+	
+<select class="selectpicker" data-style="btn-danger">
+  <optgroup label="Asia">
+    <option>Korea</option>
+    <option>Japan</option>
+    <option>China</option>
+  </optgroup>
+  <optgroup label="Europe">
+    <option>England</option>
+    <option>Germany</option>
+    <option>France</option>
+  </optgroup>
+</select>
+
+
 							</div>
 						</div>
 						<div class="form-group ">
