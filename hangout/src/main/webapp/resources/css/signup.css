@@ -70,3 +70,11 @@ input::-webkit-input-placeholder {
 	font-size: 11px;
 	text-align: center;
 }
+
+.btn-login{background: #e9ecef; color:#fff; font-weight:1500;}
+
+#radioBtn .notActive{
+    color: #3276b1;
+    background-color: #fff;
+    
+}

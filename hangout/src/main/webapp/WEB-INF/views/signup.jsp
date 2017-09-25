@@ -95,12 +95,16 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"> <i
-									class="fa fa-users fa" aria-hidden="true"></i></span> <input
-									type="text" class="form-control" name="userGender"
-									id="userGender" placeholder="성별을 선택하세요." />
+									class="fa fa-users fa" aria-hidden="true"></i></span>
+								<div id="radioBtn" class="form-control"  >
+    					<a class="btn btn-login btn-sm active" data-toggle="happy" data-title="Y">남/Male</a>
+    					<a class="btn btn-login btn-sm notActive" data-toggle="happy" data-title="N">여/Female</a>
+    				   	</div>  				
 							</div>
 						</div>
 					</div>
+					
+					
 					
 								
 
@@ -129,6 +133,7 @@
 
 							</div>
 						</div>
+						<br></br>
 						<div class="form-group ">
 							<button type="button" id="signupbtn"
 								class="btn btn-primary btn-lg btn-block login-button">Register</button>
@@ -141,6 +146,15 @@
 </body>
 
 <script>
+$('#radioBtn a').on('click', function(){
+    var sel = $(this).data('title');
+    var tog = $(this).data('toggle');
+    $('#'+tog).prop('value', sel);
+    
+    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+})
+
 
 	$("#signupbtn").click(function() {
 
