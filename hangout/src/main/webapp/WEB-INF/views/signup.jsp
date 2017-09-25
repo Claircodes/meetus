@@ -8,7 +8,7 @@
 <head>
 
 
-<title>Admin</title>
+<title>HangOut</title>
 </head>
 <body>
 	<div class="container">
@@ -19,13 +19,11 @@
 					<img src="/resources/images/koreanHanbok.jpg">
 					<hr />
 				</div>
-
 			</div>
 			<div class="main-login main-center">
 				<form class="form-horizontal" method="post" action="#">
 					<h1 class="title">SING UP</h1>
-					<br></br>
-					<div class="form-group">
+						<div class="form-group">
 						<label for="password" class="cols-sm-2 control-label">Create
 							New ID</label>
 						<div class="cols-sm-10">
