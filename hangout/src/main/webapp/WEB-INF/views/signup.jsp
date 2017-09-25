@@ -110,21 +110,21 @@
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"> <i
-									class="fa  fa-map-marker fa" aria-hidden="true"></i></span>
+									class="fa  fa-map-marker fa" aria-hidden="true"></i></span> 
 									
-	
-<select class="selectpicker" data-style="btn-danger" id="userCountry">
-  <optgroup label="Asia">
-    <option>Korea</option>
-    <option>Japan</option>
-    <option>China</option>
-  </optgroup>
-  <optgroup label="Europe">
-    <option>England</option>
-    <option>Germany</option>
-    <option>France</option>
-  </optgroup>
-</select>
+									
+									<select class="selectpicker" data-style="btn-danger" id="userCountry">
+									<optgroup label="Asia">
+										<option>Korea</option>
+										<option>Japan</option>
+										<option>China</option>
+									</optgroup>
+									<optgroup label="Europe">
+										<option>England</option>
+										<option>Germany</option>
+										<option>France</option>
+									</optgroup>
+								</select>
 
 
 							</div>
