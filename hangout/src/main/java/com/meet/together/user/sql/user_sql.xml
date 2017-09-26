@@ -8,6 +8,18 @@
 		values
 		(#{userId}, #{userPwd}, #{userName}, #{userEmail}, #{userPhone}, #{userGender}, #{userCountry})
 	</insert>
+	
+	<select id="USER_LOGIN" parameterType="user">
+		select user_num, user_id, user_pwd, user_name, user_email, user_phone, user_gender, user_country
+		from user_info
+		where 1=1
+		<if test="userId != null and userId=''">
+			and user_id = #{userId}
+		</if>
+		<if test="userNum != 0">
+			and user_num = #{userNum}
+		</if>
+	</select>
 </mapper>
 
 

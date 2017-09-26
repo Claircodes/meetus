@@ -15,13 +15,14 @@
 			<form class="login-form">
 				<div class="form-group">
 					<label for="exampleInputEmail1" class="text-uppercase">아이디
-						ID</label> <input type="text" class="form-control" placeholder="">
+						ID</label> <input type="text" id="userId" name="userId"
+						class="form-control" placeholder="">
 
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword1" class="text-uppercase">비밀번호
-						Password</label> <input type="password" class="form-control"
-						placeholder="">
+						Password</label> <input type="password" class="form-control" id="userPwd"
+						name="userPwd" placeholder="">
 				</div>
 
 
@@ -29,7 +30,7 @@
 					<label class="form-check-label"> <input type="checkbox"
 						class="form-check-input"> <small>Remember Me</small>
 					</label> <br>
-					<button type="submit" class="btn btn-login float-right">로그인</button>
+					<button id="login" type="button" class="btn btn-login float-right">로그인</button>
 				</div>
 
 			</form>
@@ -75,4 +76,21 @@
 		</div>
 	</div>
 </section>
+<script>
+	$("#login").click(function() {
+		var param = {};
+		param["userId"] = $("#userId").val();
+		param["userPwd}"] = $("#userPwd").val();
+		var au = new AjaxUtil("login");
+		au.param = JSON.stringify(param);
+		au.setCallbackSuccess(callbackSql);
+		au.send();
+	})
+	
+	function callbackSql(result)
+	{
+		alert(result.msg);
+		location(result.url);
+	}
+</script>
 </html>

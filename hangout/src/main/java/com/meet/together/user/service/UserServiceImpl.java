@@ -16,4 +16,14 @@ public class UserServiceImpl implements UserService {
 		return userDao.signupUser(ui);
 	}
 
+	@Override
+	public UserInfo login(UserInfo ui) {
+		UserInfo rUser = userDao.login(ui);
+		if(rUser != null && rUser.getUserPwd().equals(ui.getUserPwd()))
+		{
+			return rUser;
+		}
+		return null;
+	}
+
 }

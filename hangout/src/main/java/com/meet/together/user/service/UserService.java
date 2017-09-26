@@ -6,4 +6,6 @@ import com.meet.together.user.dto.UserInfo;
 
 public interface UserService {
 	public int signinUser(UserInfo ui);
+	
+	public UserInfo login(UserInfo ui);
 }

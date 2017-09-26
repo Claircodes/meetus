@@ -2,6 +2,7 @@ package com.meet.together.user.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +25,22 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginsite(UserInfo ui) {
 		return "user/login";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public @ResponseBody ModelMap login(@RequestBody UserInfo ui, ModelMap hm) {
+		UserInfo rUser = us.login(ui);
+		if(rUser != null)
+		{
+			hm.put("msg", "로그인성공");
+			hm.put("url", "main");
+		}
+		else
+		{
+			hm.put("msg", "로그인 실패");
+			hm.put("url", "login");
+		}
+		return hm;
 	}
 	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)

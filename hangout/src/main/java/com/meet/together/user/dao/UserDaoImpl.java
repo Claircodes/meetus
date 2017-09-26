@@ -14,4 +14,10 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
 	public int signupUser(UserInfo ui) {
 		return this.getSqlSession().insert("user.USER_SIGNUP", ui);
 	}
+
+	@Override
+	public UserInfo login(UserInfo ui) 
+	{
+		return this.getSqlSession().selectOne("user.USER_LOGIN", ui);
+	}
 }
