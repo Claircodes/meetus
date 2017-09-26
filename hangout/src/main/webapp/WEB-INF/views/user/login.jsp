@@ -53,7 +53,7 @@
 						<div class="carousel-caption d-none d-md-block">
 							<div class="banner-text">
 								<h2>HANG OUT</h2>
-								<p>새로운 친구를 만들어 보세요.</p>
+								<p>새로운 친구를 만들어 보세요.</p> 
 								<p>새로운 경험이 당신을 기다리고 있습니다.</p>
 							</div>
 						</div>
