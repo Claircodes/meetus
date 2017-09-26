@@ -80,7 +80,7 @@
 	$("#login").click(function() {
 		var param = {};
 		param["userId"] = $("#userId").val();
-		param["userPwd}"] = $("#userPwd").val();
+		param["userPwd"] = $("#userPwd").val();
 		var au = new AjaxUtil("login");
 		au.param = JSON.stringify(param);
 		au.setCallbackSuccess(callbackSql);
@@ -90,7 +90,7 @@
 	function callbackSql(result)
 	{
 		alert(result.msg);
-		location(result.url);
+		location.href = result.url;
 	}
 </script>
 </html>

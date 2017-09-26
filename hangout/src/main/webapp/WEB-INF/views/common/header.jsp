@@ -6,29 +6,6 @@
 <html>
 <head>
 
- <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="${rootPath}/main">HANG OUT</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="${rootPath}/signup">회원가입</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그인</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
 <script src="/resources/js/jquery.min.js"></script>
 <script src="/resources/js/jquery-ui-1.9.2.custom.js"></script>
@@ -40,7 +17,8 @@
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/bootstrap.css">
 
-
+<!-- Website CSS style -->
+<link rel="stylesheet" type="text/css" href="/resources/css/signup.css">
 
 <!-- Website Font style -->
 <link rel="stylesheet"
