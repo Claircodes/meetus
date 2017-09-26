@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="/WEB-INF/views/common/header.jsp"%>
 <%@ page session="false" %>
 <!DOCTYPE html>
 
 <html >
 
-<link rel="stylesheet" type="text/css" href="<%=rootPath %>/resources/css/stylish-portfolio.css">
-<script src="<%=rootPath %>/resources/js/stylish-portfolio.js"></script>
+<link rel="stylesheet" type="text/css" href="/resources/css/stylish-portfolio.css">
+<script src="/resources/js/stylish-portfolio.js"></script>
 
   <head>
 
@@ -20,14 +19,14 @@
     <title>Stylish Portfolio - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<%=rootPath %>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<%=rootPath %>/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom CSS -->
-    <link href="<%=rootPath %>/resources/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
 
   </head>
 
@@ -35,7 +34,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="${rootPath}">HANG OUT</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">HANG OUT</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -43,10 +42,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="${rootPath}/signup">회원가입</a>
+              <a class="nav-link js-scroll-trigger" href="#about">회원가입</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그인</a>
+              <a class="nav-link js-scroll-trigger" href="#download">로그인</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -55,7 +54,7 @@
         </div>
       </div>
     </nav>
-    
+
     <!-- Header -->
     <header class="header" id="top">
       <div class="text-vertical-center">
