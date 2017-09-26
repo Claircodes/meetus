@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Template</title>
+    <title>HANG OUT</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -131,9 +131,9 @@
                   </h4>
                      </div>
               </div>
-            
-            
+                               
             </div>
+             <a href="#" class="btn btn-dark">View More HANGOUT</a>
             <!-- /.row (nested) -->
           </div>
           <!-- /.col-lg-10 -->
@@ -146,7 +146,7 @@
     <!-- Callout -->
     <aside class="callout">
       <div class="text-vertical-center">
-        <h1>Vertically Centered Text</h1>
+        <h1>	HANG OUT</h1>
       </div>
     </aside>
 
@@ -155,40 +155,75 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-10 mx-auto text-center">
-            <h2>Our Work</h2>
+            <h2>카테고리별 모임 찾기</h2>
             <hr class="small">
             <div class="row">
               <div class="col-md-6">
                 <div class="portfolio-item">
                   <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/portfolio-1.jpg">
+                    <img class="img-portfolio img-fluid" src="/resources/images/pet.png">
                   </a>
+                   <h4>
+                    <strong>PET</strong>
+                  </h4>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="portfolio-item">
                   <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/portfolio-2.jpg">
+                    <img class="img-portfolio img-fluid" src="/resources/images/music.png">
                   </a>
+                   <h4>
+                    <strong>MUSIC</strong>
+                  </h4>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="portfolio-item">
                   <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/portfolio-3.jpg">
+                    <img class="img-portfolio img-fluid" src="/resources/images/language.png">
                   </a>
+                   <h4>
+                    <strong>LANGUAGE</strong>
+                  </h4>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="portfolio-item">
                   <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/portfolio-4.jpg">
+                    <img class="img-portfolio img-fluid" src="/resources/images/drink.png">
                   </a>
+                   <h4>
+                    <strong>DRINK</strong>
+                  </h4>
                 </div>
               </div>
+              
+              <div class="col-md-6">
+                <div class="portfolio-item">
+                  <a href="#">
+                    <img class="img-portfolio img-fluid" src="/resources/images/book.png">
+                  </a>
+                   <h4>
+                    <strong>BOOK</strong>
+                  </h4>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="portfolio-item">
+                  <a href="#">
+                    <img class="img-portfolio img-fluid" src="/resources/images/food.png">
+                  </a>
+                   <h4>
+                    <strong>FOOD</strong>
+                  </h4>
+                </div>
+              </div>
+              
             </div>
             <!-- /.row (nested) -->
-            <a href="#" class="btn btn-dark">View More Items</a>
+            <a href="#" class="btn btn-dark">View More HANGOUT</a>
           </div>
           <!-- /.col-lg-10 -->
         </div>
@@ -206,14 +241,14 @@
       </div>
     </aside>
 
-    <!-- Map -->
+    <!-- Map 
     <section id="contact" class="map">
       <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
       <br/>
       <small>
         <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
       </small>
-    </section>
+    </section>-->
 
     <!-- Footer -->
     <footer>
@@ -221,18 +256,18 @@
         <div class="row">
           <div class="col-lg-10 mx-auto text-center">
             <h4>
-              <strong>Start Bootstrap</strong>
+              <strong>HANG OUT</strong>
               
             </h4>
-            <p>3481 Melrose Place
-              <br>Beverly Hills, CA 90210</p>
+            <p>Hyung-Je-Building
+              <br>826 Gangnam Street</p>
             <ul class="list-unstyled">
               <li>
                 <i class="fa fa-phone fa-fw"></i>
-                (123) 456-7890</li>
+                (02) 752-9990</li>
               <li>
                 <i class="fa fa-envelope-o fa-fw"></i>
-                <a href="mailto:name@example.com">name@example.com</a>
+                <a href="mailto:hangout@gmail.com">hangout@gmail.com</a>
               </li>
             </ul>
             <br>
@@ -249,12 +284,12 @@
               </li>
               <li class="list-inline-item">
                 <a href="#">
-                  <i class="fa fa-dribbble fa-fw fa-3x"></i>
+                  <i class="fa fa-commenting-o fa-fw fa-3x"></i>
                 </a>
               </li>
             </ul>
             <hr class="small">
-            <p class="text-muted">Copyright &copy; Your Website 2017</p>
+            <p class="text-muted">Copyright &copy; Hang Out 2017</p>
           </div>
         </div>
       </div>

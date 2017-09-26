@@ -217,6 +217,10 @@ hr.small {
 
 .img-portfolio {
     margin: 0 auto;
+   
+}
+.col-md-6 .img-portfolio{
+	 width:100px;
 }
 
 .img-portfolio:hover {
