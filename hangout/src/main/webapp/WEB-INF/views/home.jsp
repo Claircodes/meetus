@@ -32,40 +32,34 @@
 
   <body>
     <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
-      <i class="fa fa-bars"></i>
-    </a>
-    <nav id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
-          <i class="fa fa-times"></i>
-        </a>
-        <li class="sidebar-brand">
-          <a class="js-scroll-trigger" href="#top">HANG OUT</a>
-        </li>
-        <li>
-          <a class="js-scroll-trigger" href="#top">Home</a>
-        </li>
-        <li>
-          <a class="js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li>
-          <a class="js-scroll-trigger" href="#services">Services</a>
-        </li>
-        <li>
-          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-        </li>
-        <li>
-          <a class="js-scroll-trigger" href="#contact" onclick=$( "#menu-close").click();>Contact</a>
-        </li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">HANG OUT</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">회원가입</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#download">로그인</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
     <!-- Header -->
     <header class="header" id="top">
       <div class="text-vertical-center">
-        <h1>HANG OUT</h1>
-        <h3>한국에서 한국인듯 한국 아닌듯</h3>
+        <h1>wanna hang out?</h1>
+        <h3>우리 같이 한번 놀아볼까?</h3>
         <br>
         
         <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger">모임 알아보기</a>
