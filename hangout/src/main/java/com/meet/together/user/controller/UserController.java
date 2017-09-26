@@ -26,6 +26,11 @@ public class UserController {
 		return "user/login";
 	}
 	
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String mainsite(UserInfo ui) {
+		return "main";
+	}
+	
 	
 	@RequestMapping(value = "/signup/insert", method = RequestMethod.POST)
 	public @ResponseBody UserInfo siginUser(@RequestBody UserInfo ui) {
