@@ -23,7 +23,7 @@
 			</div>
 			<div class="main-login main-center">
 				<form class="form-horizontal" method="post" action="#">
-					<h1 class="title">SING UP</h1>
+					<h1 class="title">SIGN UP</h1>
 						<div class="form-group">
 						<label for="password" class="cols-sm-2 control-label">Create
 							New ID</label>

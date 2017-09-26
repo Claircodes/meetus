@@ -18,7 +18,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String sigupsite(UserInfo ui) {
-		return "signup";
+		return "user/signup";
 	}
 	
 	
