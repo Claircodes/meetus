@@ -6,7 +6,8 @@
 <html>
 
 <head>
-
+<!-- Website CSS style -->
+<link rel="stylesheet" type="text/css" href="/resources/css/signup.css">
 
 <title>HangOut</title>
 </head>
