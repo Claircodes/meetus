@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<link rel="stylesheet" type="text/css" href="/resources/css/signin.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/login.css">
 
 <section class="login-block">
     <div class="container">
@@ -29,7 +29,8 @@
       <input type="checkbox" class="form-check-input">
       <small>Remember Me</small>
     </label>
-    <button type="submit" class="btn btn-login float-right">Submit</button>
+       <br>
+      <button type="submit" class="btn btn-login float-right">로그인</button>
   </div>
   
 </form>
