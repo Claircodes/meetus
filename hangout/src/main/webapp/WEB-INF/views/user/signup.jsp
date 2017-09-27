@@ -98,8 +98,8 @@
 								<span class="input-group-addon"> <i
 									class="fa fa-users fa" aria-hidden="true"></i></span>
 								<div id="radioBtn" class="form-control"  >
-    					<a class="btn btn-login btn-sm active" data-toggle="happy" data-title="Y">남/Male</a>
-    					<a class="btn btn-login btn-sm notActive" data-toggle="happy" data-title="N">여/Female</a>
+    					<a id="userGender"  class="btn btn-login btn-sm active" data-toggle="happy" data-title="Y">남/Male</a>
+    					<a id="userGender" class="btn btn-login btn-sm notActive" data-toggle="happy" data-title="N">여/Female</a>
     				   	</div>  				
 							</div>
 						</div>
@@ -150,36 +150,22 @@
 $('#radioBtn a').on('click', function(){
     var sel = $(this).data('title');
     var tog = $(this).data('toggle');
-    $('#'+tog).prop('value', sel);
+    $('#'+tog).val(sel);
+    if(sel=="Y"){
+     $("#userGender").val("남자");
+    }else{
+     $("#userGender").val("여자");
+    }
     
     $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
     $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
 })
 
 
-	$("#signupbtn").click(function() {
-
-		var au = new AjaxUtil("signup/insert");
-		var param = {};
-		param["userId"] = $("#userId").val();
-		param["userPwd"] = $("#userPwd").val();
-		param["userName"] = $("#userName").val();
-		param["userEmail"] = $("#userEmail").val();
-		param["userPhone"] = $("#userPhone").val();
-		param["userGender"] = $("#userGender").val();
-		param["userCountry"] = $("#userCountry").val();
-		au.param = JSON.stringify(param);
-		au.setCallbackSuccess(callbackSql);
-		au.send();
-		return;
-
-	})
-	function callbackSql(result) {
-		if (result.error) {
-			alert(result.error);
-			return;
-		}
-		alert(result.userId+"님 가입되셨습니다.")
-	}
+   $("#signupbtn").click(function() {
+      var paramIds = "userId,userPwd,userName,userEmail,userPhone,userGender,userCountry";
+      var au = new AjaxUtil("signup/insert",paramIds);
+      au.send();
+   });
 </script>
 </html>

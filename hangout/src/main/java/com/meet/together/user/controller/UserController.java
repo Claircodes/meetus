@@ -1,5 +1,7 @@
 package com.meet.together.user.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,27 +29,31 @@ public class UserController {
 		return "user/login";
 	}
 	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String listsite(UserInfo ui) {
+		return "hangout/list";
+	}
+	
+	//정규 css 테스트용
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String testsite(UserInfo ui) {
 		return "test/index2";
 	}
 	
 	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public @ResponseBody ModelMap login(@RequestBody UserInfo ui, ModelMap hm) {
-		UserInfo rUser = us.login(ui);
-		if(rUser != null)
-		{
-			hm.put("msg", "로그인성공");
-			hm.put("url", "main");
-		}
-		else
-		{
-			hm.put("msg", "로그인 실패");
-			hm.put("url", "user/login");
-		}
-		return hm;
-	}
+	   @RequestMapping(value = "/user/login", method = RequestMethod.POST)
+	   public @ResponseBody ModelMap login(HttpSession hs, @RequestBody UserInfo user,ModelMap hm) {
+	      UserInfo rUser = us.login(user);
+	      if(rUser!=null){
+	         hs.setAttribute("user",rUser);
+	         hm.put("msg","로그인 성공하셨습니다.");
+	         hm.put("url", "main");
+	      }else{
+	               hm.put("msg", "아이디와 비밀번호를 확인해주세요.");
+	               hm.put("url", "user/login");
+	            }
+	      return hm;
+	   }
 	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String mainsite(UserInfo ui) {
@@ -55,12 +61,17 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value = "/signup/insert", method = RequestMethod.POST)
-	public @ResponseBody UserInfo siginUser(@RequestBody UserInfo ui) {
-    
-		int result = us.signinUser(ui);
-		System.out.println(result);
-		return ui;
-		
+	   @RequestMapping(value = "/signup/insert", method = RequestMethod.POST)
+	   public @ResponseBody ModelMap siginUser(@RequestBody UserInfo ui, ModelMap hm) {
+	    
+	      int result = us.signinUser(ui);
+	      if(result==1){
+	         hm.put("msg", "회원가입이 완료되었습니다.");
+	         hm.put("url","main");
+	      }else{
+	         hm.put("msg", "회원가입 실패, 정보를 확인하세요");
+	         hm.put("url","signup");
+	      }
+	      return hm;
+	   }
 	}
-}

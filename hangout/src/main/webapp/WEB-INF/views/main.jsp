@@ -111,7 +111,7 @@
               </div>
                                
             </div>
-             <a href="#" class="btn btn-dark">View More HANGOUT</a>
+             <a href="/list" class="btn btn-dark">View More HANGOUT</a>
             <!-- /.row (nested) -->
           </div>
           <!-- /.col-lg-10 -->

@@ -58,6 +58,14 @@
 	
 	
 <script >
+var JSException = function(msg){
+   alert(msg);
+   console.log(msg);
+}
+
+var pageMove = function(page){
+   location.href = "${rootPath}/" + page;
+}
 
 var AjaxUtil = function (url, params, type, dataType){
 	if(!url){
@@ -65,14 +73,12 @@ var AjaxUtil = function (url, params, type, dataType){
 		return null;
 	}
 	this.url = "${rootPath}/" + url;
-
 	var generateJSON = function(params){
 		if(!params) return "";
 		var paramArr = params.split(",");
 		var data = {};
 		for(var i=0,max=paramArr.length;i<max;i++){
 			var key = paramArr[i]
-
 			if($("#" + key).length>1){
 				throw new JSException("동일 ID값이 존재함.");
 			}else if($("#" + key).length==0){
