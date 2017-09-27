@@ -4,13 +4,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="/resources/css/list.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/hangoutList.css">
+
 <style>
 .box1 { background: orange }
 .inner1 { background: transparent }
 </style>
 <html>
-
+  <body>
 
 <br></br>
 
@@ -22,9 +23,49 @@
         <h2>	마음에 드는 모임을 찾아보세요!</h2>
       </div>
     </aside>
- 	<p></p>
- 	<br></br>
- 	<p></p>
+ 	<div id="search" class="call-to-action bg-primary text-white">
+      <div class="container">
+    <!-- banner -->
+     <div class="text-vertical-center">
+    <h3>Searach more HANG OUT</h3>
+    <div class="searchbar">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6">
+          <input type="text" class="form-control" placeholder="Search of Hangout's Title ">
+          <div class="row">
+            <div class="col-lg-6 col-sm-6">
+              <select class="form-control">
+                <option>Seoul</option>
+                <option>Busan</option>
+                <option>Daegu</option>
+              </select>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <select class="form-control">
+                <option>Category</option>
+                <option>$150,000 - $200,000</option>
+                <option>$200,000 - $250,000</option>
+                <option>$250,000 - $300,000</option>
+                <option>$300,000 - above</option>
+              </select>
+            </div>
+              <div class="col-lg-3 col-sm-4">
+              <button class="btn btn-success"  onclick="'">Find Now</button>
+              </div>
+          </div>
+          
+          
+        </div>
+        <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
+          <p>Join now and get updated with all the properties deals.</p>
+           <a href="#" class="btn btn-lg btn-dark" >모임 알아보기</a>
+                 </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 	</div>
+ 	
     <div class="row">
           <div class="col-md-6">
             <div class="well well-sm">
@@ -87,6 +128,7 @@
                     
     <br>
 </div>
-
+</body>
 </html>
+
 
