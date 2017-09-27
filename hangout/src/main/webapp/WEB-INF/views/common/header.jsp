@@ -1,3 +1,4 @@
+<%@page import="com.meet.together.user.dto.UserInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -40,15 +41,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="${rootPath}/signup">회원가입</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그인</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
+		<%
+			UserInfo user = new UserInfo();
+			if ((UserInfo) session.getAttribute("user") != null) {
+				user = (UserInfo) session.getAttribute("user");
+			}else{
+		%>
+			<li class="nav-item">
+			<a class="nav-link js-scroll-trigger" href="${rootPath}/signup">회원가입</a></li>
+			<li class="nav-item">
+			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그인</a></li><%} %>
+			<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact"><%=user.getUserId()%>님이 로그인하셨습니다.</a></li>
           </ul>
         </div>
       </div>
