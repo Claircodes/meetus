@@ -15,8 +15,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css"
-	href="/resources/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.css">
 
 
 
@@ -29,9 +28,9 @@
 	rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oxygen'
 	rel='stylesheet' type='text/css'>
-	
-	
-	 <!-- Navigation -->
+
+
+	 <!-- Navigation -->	
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="${rootPath}/main">HANG OUT</a>
@@ -42,16 +41,20 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
 		<%
-			UserInfo user = new UserInfo();
-			if ((UserInfo) session.getAttribute("user") != null) {
-				user = (UserInfo) session.getAttribute("user");
-			}else{
-		%>
+		UserInfo user=new UserInfo();
+		if((UserInfo)session.getAttribute("user")==null){
+
+		%>	
 			<li class="nav-item">
 			<a class="nav-link js-scroll-trigger" href="${rootPath}/signup">회원가입</a></li>
 			<li class="nav-item">
-			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그인</a></li><%} %>
-			<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact"><%=user.getUserId()%>님이 로그인하셨습니다.</a></li>
+			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그인</a></li>
+		<%	}else{			user=(UserInfo)session.getAttribute("user");
+		%>
+			<li class="nav-item">
+			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그아웃</a></li>
+			<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact"><%=user.getUserId()%>님이 로그인</a></li><%} %>
+			
           </ul>
         </div>
       </div>
