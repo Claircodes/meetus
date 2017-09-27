@@ -4,20 +4,20 @@
 <mapper namespace="user">
 	<insert id="USER_SIGNUP" parameterType="user">
 		insert into user_info
-		(user_id, user_pwd, user_name,user_email, user_phone, user_gender, user_country)
+		(userId, userPwd, userName, userEmail, userPhone, userGender, userCountry)
 		values
 		(#{userId}, #{userPwd}, #{userName}, #{userEmail}, #{userPhone}, #{userGender}, #{userCountry})
 	</insert>
 	
 	<select id="USER_LOGIN" parameterType="user" resultType="user">
-		select user_num, user_id, user_pwd, user_name, user_email, user_phone, user_gender, user_country
+		select usernum,userid, userpwd, username, useremail, userphone, usergender, usercountry
 		from user_info
 		where 1=1
 		<if test="userId != null and userId !=''">
-			and user_id = #{userId}
+			and userid = #{userId}
 		</if>
 		<if test="userNum != 0">
-			and user_num = #{userNum}
+			and usernum = #{userNum}
 		</if>
 	</select>
 </mapper>

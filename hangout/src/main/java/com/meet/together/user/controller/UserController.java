@@ -27,6 +27,12 @@ public class UserController {
 		return "user/login";
 	}
 	
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String testsite(UserInfo ui) {
+		return "test/index2";
+	}
+	
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public @ResponseBody ModelMap login(@RequestBody UserInfo ui, ModelMap hm) {
 		UserInfo rUser = us.login(ui);
@@ -38,7 +44,7 @@ public class UserController {
 		else
 		{
 			hm.put("msg", "로그인 실패");
-			hm.put("url", "login");
+			hm.put("url", "user/login");
 		}
 		return hm;
 	}
