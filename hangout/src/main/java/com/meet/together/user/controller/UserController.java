@@ -27,7 +27,13 @@ public class UserController {
 	public String loginsite(UserInfo ui) {
 		return "user/login";
 	}
-
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logoutsite(UserInfo ui,HttpSession hs) {
+		hs.invalidate();
+		return "main";
+	}
+	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String listsite(UserInfo ui) {
 		return "hangout/list";

@@ -28,7 +28,13 @@
 	rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oxygen'
 	rel='stylesheet' type='text/css'>
-
+		<%
+		UserInfo user=new UserInfo();
+		
+		if((UserInfo)session.getAttribute("user")!=null){		
+			user=(UserInfo)session.getAttribute("user");
+			}
+		%>	
 
 	 <!-- Navigation -->	
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -40,28 +46,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-		<%
-		UserInfo user=new UserInfo();
-		if((UserInfo)session.getAttribute("user")==null){
-
-		%>	
+			<%if((UserInfo)session.getAttribute("user")==null){ %>
 			<li class="nav-item">
 			<a class="nav-link js-scroll-trigger" href="${rootPath}/signup">회원가입</a></li>
 			<li class="nav-item">
 			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그인</a></li>
-		<%	}else{			user=(UserInfo)session.getAttribute("user");
-		%>
 			<li class="nav-item">
-			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그아웃</a></li>
-			<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact"><%=user.getUserId()%>님이 로그인</a></li><%} %>
+			<% }else{ %>
+			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">모임만들기</a></li>
+			<li class="nav-item">
+			<a class="nav-link js-scroll-trigger" href="${rootPath}/logout">로그아웃</a></li>
+			<li class="nav-item"><a class="nav-link js-scroll-trigger" ><%=user.getUserId()%></a></li><%} %>
 			
           </ul>
         </div>
       </div>
     </nav>
-	
-	
-	
 	
 <script >
 var JSException = function(msg){
@@ -72,6 +72,12 @@ var JSException = function(msg){
 var pageMove = function(page){
    location.href = "${rootPath}/" + page;
 }
+
+$("#logout").click(function(){
+	
+alert("d");
+
+})
 
 var AjaxUtil = function (url, params, type, dataType){
 	if(!url){
