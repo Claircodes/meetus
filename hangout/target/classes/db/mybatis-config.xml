@@ -10,9 +10,11 @@
 	
 	<typeAliases>
     	<typeAlias alias="user" type="com.meet.together.user.dto.UserInfo"/>
+    	<typeAlias alias="list" type="com.meet.together.user.dto.ListInfo"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="com/meet/together/user/sql/user_sql.xml" />
+		<mapper resource="com/meet/together/list/sql/list_sql.xml" />
 	</mappers>
 </configuration>
 
