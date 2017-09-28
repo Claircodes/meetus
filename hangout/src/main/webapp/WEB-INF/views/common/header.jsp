@@ -8,16 +8,14 @@
 <head>
 
 
-<script src="/resources/js/jquery.min.js"></script>
-<script src="/resources/js/jquery-ui-1.9.2.custom.js"></script>
-<script src="/resources/js/jquery.fileupload.js"></script>
-<script src="/resources/js/jquery.iframe-transport.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.css">
 
-
+<script src="/resources/assets/js/jquery.min.js"></script>
+<script src="/resources/assets/js/jquery-ui-1.9.2.custom.js"></script>
+<script src="/resources/assets/js/jquery.fileupload.js"></script>
+<script src="/resources/assets/js/jquery.iframe-transport.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
 
 <!-- Website Font style -->
 <link rel="stylesheet"

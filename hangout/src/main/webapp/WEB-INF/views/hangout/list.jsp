@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="/resources/css/hangoutList.css">
 
+
 <style>
 .box1 { background: orange }
 .inner1 { background: transparent }
@@ -16,6 +17,7 @@
 <br></br>
 
 <div class="container">
+      <div class="row">
     <!-- Callout -->
     <aside class="callout">
       <div class="text-vertical-center">
@@ -63,6 +65,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
  	</div>
  	
