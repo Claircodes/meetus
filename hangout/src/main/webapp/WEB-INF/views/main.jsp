@@ -4,7 +4,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 
-<html >
+<html > 
+
 <script src="/resources/js/jquery.min.js"></script>
 <script src="/resources/js/jquery-ui-1.9.2.custom.js"></script>
 <script src="/resources/js/jquery.fileupload.js"></script>
