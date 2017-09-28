@@ -11,7 +11,7 @@ public class ListDaoImpl extends SqlSessionDaoSupport implements ListDao
 	@Override
 	public int insertListInfo(ListInfo li) 
 	{
-		return this.getSqlSession().insert("list.INSERT_LIST", li);
+		return this.getSqlSession().insert("listInfo.INSERT_LIST", li);
 	}
 	
 }

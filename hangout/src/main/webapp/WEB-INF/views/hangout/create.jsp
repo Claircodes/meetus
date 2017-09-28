@@ -161,6 +161,20 @@
 		    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
 		    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
 		})
+		
+		(document).ready(function()
+		{
+			var param = {};
+			param["liCity"] = "서울";
+			param["liKategorie"] = "게임";
+			param["liTitle"] = "test";
+			param["liContent"] = "test";
+			param["liMeetTime"] = "11월20일";
+			param["creUser"] = "박용성";
+			var au = new AjaxUtil("insert/list");
+			au.param = JSON.stringify(param);
+			au.send();
+		})
 		</script>
     </body>
 </html>

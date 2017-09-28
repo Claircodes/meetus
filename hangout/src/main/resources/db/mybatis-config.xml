@@ -10,7 +10,7 @@
 	
 	<typeAliases>
     	<typeAlias alias="user" type="com.meet.together.user.dto.UserInfo"/>
-    	<typeAlias alias="list" type="com.meet.together.user.dto.ListInfo"/>
+    	<typeAlias alias="listInfo" type="com.meet.together.list.dto.ListInfo"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="com/meet/together/user/sql/user_sql.xml" />
