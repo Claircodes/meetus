@@ -3,6 +3,7 @@
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<% if(login == true) {%>
 <!DOCTYPE html>
     <head>
 
@@ -144,8 +145,12 @@
         <script src="resources/assets/js/jquery.backstretch.min.js"></script>
         <script src="resources/assets/js/retina-1.1.0.min.js"></script>
         <script src="resources/assets/js/scripts.js"></script>
-        
-
+       	<%} else {%>
+       		<script>
+       			alert("로그인을 해주세요");
+       			location.href = ${rootPath}"/login";
+       		</script>
+       	<%} %>
+		
     </body>
-
 </html>

@@ -28,7 +28,7 @@
 	rel='stylesheet' type='text/css'>
 		<%
 		UserInfo user=new UserInfo();
-		
+		boolean login = false;
 		if((UserInfo)session.getAttribute("user")!=null){		
 			user=(UserInfo)session.getAttribute("user");
 			}
@@ -50,7 +50,8 @@
 			<li class="nav-item">
 			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그인</a></li>
 			<li class="nav-item">
-			<% }else{ %>
+			<% }else{ 
+			login = true;%>
 			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">모임만들기</a></li>
 			<li class="nav-item">
 			<a class="nav-link js-scroll-trigger" href="${rootPath}/logout">로그아웃</a></li>
@@ -71,11 +72,6 @@ var pageMove = function(page){
    location.href = "${rootPath}/" + page;
 }
 
-$("#logout").click(function(){
-	
-alert("d");
-
-})
 
 var AjaxUtil = function (url, params, type, dataType){
 	if(!url){
