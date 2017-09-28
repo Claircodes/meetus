@@ -50,7 +50,7 @@ public class UserController {
 		return "test/index2";
 	}
 
-	@RequestMapping(value = "/user/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public @ResponseBody ModelMap login(HttpSession hs, @RequestBody UserInfo user, ModelMap hm) {
 		UserInfo rUser = us.login(user);
 		if (rUser != null) {
