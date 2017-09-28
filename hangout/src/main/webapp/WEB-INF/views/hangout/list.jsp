@@ -5,6 +5,7 @@
 
 <html>
     <head>
+    
 		<link rel="stylesheet" href="resources/assets/css/list.css">
             <!-- CSS -->
          <link rel="stylesheet" href="resources/assets/bootstrap/css/bootstrap.css">

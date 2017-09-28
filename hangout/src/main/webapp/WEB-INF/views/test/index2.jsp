@@ -70,6 +70,7 @@
     </div>
   </div>
 </div>
+
 	    <div class="col-lg-4 col-md-4 col-sm-6">
            <div class="thumbnail img-thumb-bg">
                <img  class="overlay" src="/resources/images/web-test.jpg">
