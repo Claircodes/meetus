@@ -47,8 +47,8 @@
                         		<fieldset>
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
-		                        			<h3>Step 1 / 3</h3>
-		                            		<p>Tell us who you are:</p>
+		                        			<h3>지역 선택</h3>
+		                            		<p>여행 갈 지역을 선택하세요 :)</p>
 		                        		</div>
 		                        		<div class="form-top-right">
 		                        			<i class="fa fa-user"></i>
@@ -56,17 +56,11 @@
 		                            </div>
 		                            <div class="form-bottom">
 				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-first-name">First name</label>
-				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-last-name">Last name</label>
-				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
-				                        	<textarea name="form-about-yourself" placeholder="About yourself..." 
-				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
+				                    		<div id="radioBtn" class="form-control"  >
+    					<a id="city"  class="btn btn-login btn-sm active" data-toggle="happy" data-title="서울">서울</a>
+    					<a id="city" class="btn btn-login btn-sm notActive" data-toggle="happy" data-title="인천">인천</a>
+    					<a id="city" class="btn btn-login btn-sm notActive" data-toggle="happy" data-title="인천">경기</a>
+    				   	</div>  				
 				                        </div>
 				                        <button type="button" class="btn btn-next">Next</button>
 				                    </div>
@@ -75,8 +69,8 @@
 			                    <fieldset>
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
-		                        			<h3>Step 2 / 3</h3>
-		                            		<p>Set up your account:</p>
+		                        			<h3>카테고리 선택</h3>
+		                            		<p>카테고리를 선택하세요 :)</p>
 		                        		</div>
 		                        		<div class="form-top-right">
 		                        			<i class="fa fa-key"></i>
@@ -85,16 +79,11 @@
 		                            <div class="form-bottom">
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
-				                        </div>
-				                        <div class="form-group">
-				                    		<label class="sr-only" for="form-password">Password</label>
-				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-repeat-password">Repeat password</label>
-				                        	<input type="password" name="form-repeat-password" placeholder="Repeat password..." 
-				                        				class="form-repeat-password form-control" id="form-repeat-password">
+				                        	<div name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+				                        	<select class="form-group">
+				                        		<option>여행</option>
+				                        		</select>
+				                        	</div>
 				                        </div>
 				                        <button type="button" class="btn btn-previous">Previous</button>
 				                        <button type="button" class="btn btn-next">Next</button>
@@ -104,8 +93,8 @@
 			                    <fieldset>
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
-		                        			<h3>Step 3 / 3</h3>
-		                            		<p>Social media profiles:</p>
+		                        			<h3>모임 생성</h3>
+		                            		<p>모임을 만드세요 :)</p>
 		                        		</div>
 		                        		<div class="form-top-right">
 		                        			<i class="fa fa-twitter"></i>
@@ -113,17 +102,22 @@
 		                            </div>
 		                            <div class="form-bottom">
 				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-facebook">Facebook</label>
+				                    		<label class="sr-only" for="form-facebook">City</label>
 				                        	<input type="text" name="form-facebook" placeholder="Facebook..." class="form-facebook form-control" id="form-facebook">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-twitter">Twitter</label>
+				                        	<label class="sr-only" for="form-twitter">Category</label>
 				                        	<input type="text" name="form-twitter" placeholder="Twitter..." class="form-twitter form-control" id="form-twitter">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-google-plus">Google plus</label>
+				                        	<label class="sr-only" for="form-google-plus">Title</label>
 				                        	<input type="text" name="form-google-plus" placeholder="Google plus..." class="form-google-plus form-control" id="form-google-plus">
 				                        </div>
+				                         <div class="form-group">
+				                        	<label class="sr-only" for="form-content">Content</label>
+				                        	<input type="text" name="form-content" placeholder="Content..." class="form-content form-control" id="form-content">
+				                        </div>
+				                        
 				                        <button type="button" class="btn btn-previous">Previous</button>
 				                        <button type="submit" class="btn">Sign me up!</button>
 				                    </div>
@@ -151,6 +145,22 @@
        			location.href = ${rootPath}"/login";
        		</script>
        	<%} %>
-		
+		<script>
+		$('#radioBtn a').on('click', function(){
+		    var sel = $(this).data('title');
+		    var tog = $(this).data('toggle');
+		    $('#'+tog).val(sel);
+		    if(sel=="서울"){
+		     $("#city").val("서울");
+		    }else if(sel=="인천"){
+		     $("#city").val("인천");
+		    }else{
+		    	$("#city").val("경기");
+		    }
+		    
+		    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+		    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+		})
+		</script>
     </body>
 </html>
