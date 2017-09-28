@@ -3,37 +3,53 @@
 	<%@ include file="/WEB-INF/views/common/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<!DOCTYPE html>
+<html>
     <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap Multi Step Registration Form Template</title>
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="resources/assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="resources/assets/font-awesome/css/font-awesome.min.css">
+    
+		<link rel="stylesheet" href="resources/assets/css/list.css">
+            <!-- CSS -->
+         <link rel="stylesheet" href="resources/assets/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" href="resources/assets/css/form-elements.css">
         <link rel="stylesheet" href="resources/assets/css/style.css">
-
-
     </head>
 
     <body>
+    
 
-        <!-- Top content -->
-        <div class="top-content">
-        	
-            <div class="inner-bg">
-            <div class="container">
-	<div class="row">
+ <aside class="callout text-white">
+      <div class="text-vertical-center">
+        <h1>	HANG OUT</h1>
+      </div>
+    </aside>  
+
+<div class="container">
+   <div style="background: #fff; background : rgba(0, 0, 0, 0.4);">
+	<div class="row2">
 	<div id="search" class="call-to-action bg-primary text-white">
-      <div class="container">
+
     <!-- banner -->
+    <div class="container">
      <div class="text-vertical-center">
-    <h3>Searach more HANG OUT</h3>
+    <h3>Search more HANG OUT</h3>
+    
+    <div class="container">
+	<div class="row2">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div id="imaginary_container"> 
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Search" >
+                </div>
+            </div>
+        </div>
+	</div>
+	<p></p>
+	 <a href="#" class="btn btn-lg btn-dark" >모임 알아보기</a>
+	 	<p></p>
+	 <br></br>
+</div>
+
+
+ <!-- create 태그 가져오기   
     <div class="searchbar">
       <div class="row">
         <div class="col-lg-6 col-sm-6">
@@ -41,18 +57,18 @@
           <div class="row">
             <div class="col-lg-6 col-sm-6">
               <select class="form-control">
-                <option>Seoul</option>
-                <option>Busan</option>
-                <option>Daegu</option>
+                <option>서울 Seoul</option>
+                <option>부산 Busan</option>
+                <option>대구 Daegu</option>
               </select>
             </div>
             <div class="col-lg-6 col-sm-6">
               <select class="form-control">
                 <option>Category</option>
-                <option>$150,000 - $200,000</option>
-                <option>$200,000 - $250,000</option>
-                <option>$250,000 - $300,000</option>
-                <option>$300,000 - above</option>
+                <option>교육</option>
+                <option>애완동물</option>
+                <option>음식</option>
+                <option>언어교환</option>
               </select>
             </div>
               <div class="col-lg-3 col-sm-4">
@@ -67,110 +83,143 @@
            <p></p>
                  </div>
       </div>
+      
+        -->
     </div>
   </div>
-</div>
 
-	    <div class="col-lg-4 col-md-4 col-sm-6">
+	    <div class="col-lg-4 col-md-4 col-sm-6 centered-text">
+           <div class="thumbnail img-thumb-bg centered-text">
+               <img  class="overlay" src="/resources/images/web-test.jpg">
+                 <div class="overlay"></div>
+               <div class="caption centered-text" >
+                    <div class="tag"><a href="#">upcoming event</a></div>
+                    <div class="title"><a href="#">여기에는 행사제목에 해당하는 DB값을 가져옵니다.</a></div>
+                   <div class="clearfix">
+                       <span class="meta-data">By <a href="">개최자</a>  on 29/06/2016(행사날짜)</span>
+                       <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
+                   </div>
+                   <div class="content">
+                       <p>박경훈 강사님과 그 외 17명의 학생들의 열정으로 이루어지는......</p>
+                   </div>
+               </div>
+           </div>
+        </div>
+         <div class="col-lg-4 col-md-4 col-sm-6 centered-text">
+           <div class="thumbnail img-thumb-bg centered-text">
+               <img  class="overlay" src="/resources/images/web-test.jpg">
+                 <div class="overlay"></div>
+               <div class="caption centered-text" >
+                    <div class="tag"><a href="#">upcoming event</a></div>
+                    <div class="title"><a href="#">여기에는 행사제목에 해당하는 DB값을 가져옵니다.</a></div>
+                   <div class="clearfix">
+                       <span class="meta-data">By <a href="">개최자</a>  on 29/06/2016(행사날짜)</span>
+                       <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
+                   </div>
+                   <div class="content">
+                       <p>박경훈 강사님과 그 외 17명의 학생들의 열정으로 이루어지는......</p>
+                   </div>
+               </div>
+           </div>
+        </div>
+       <div class="col-lg-4 col-md-4 col-sm-6 centered-text">
+           <div class="thumbnail img-thumb-bg centered-text">
+               <img  class="overlay" src="/resources/images/web-test.jpg">
+                 <div class="overlay"></div>
+               <div class="caption centered-text" >
+                    <div class="tag"><a href="#">upcoming event</a></div>
+                    <div class="title"><a href="#">여기에는 행사제목에 해당하는 DB값을 가져옵니다.</a></div>
+                   <div class="clearfix">
+                       <span class="meta-data">By <a href="">개최자</a>  on 29/06/2016(행사날짜)</span>
+                       <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
+                   </div>
+                   <div class="content">
+                       <p>박경훈 강사님과 그 외 17명의 학생들의 열정으로 이루어지는......</p>
+                   </div>
+               </div>
+           </div>
+        </div>
+		  <div class="col-lg-4 col-md-4 col-sm-6 centered-text">
+           <div class="thumbnail img-thumb-bg centered-text">
+               <img  class="overlay" src="/resources/images/web-test.jpg">
+                 <div class="overlay"></div>
+               <div class="caption centered-text" >
+                    <div class="tag"><a href="#">upcoming event</a></div>
+                    <div class="title"><a href="#">여기에는 행사제목에 해당하는 DB값을 가져옵니다.</a></div>
+                   <div class="clearfix">
+                       <span class="meta-data">By <a href="">개최자</a>  on 29/06/2016(행사날짜)</span>
+                       <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
+                   </div>
+                   <div class="content">
+                       <p>박경훈 강사님과 그 외 17명의 학생들의 열정으로 이루어지는......</p>
+                   </div>
+               </div>
+           </div>
+        </div>
+          <div class="col-lg-4 col-md-4 col-sm-6">
            <div class="thumbnail img-thumb-bg">
                <img  class="overlay" src="/resources/images/web-test.jpg">
                  <div class="overlay"></div>
-               <div class="caption">
-                    <div class="tag"><a href="#">HangOut 제목</a></div>
-                   <div class="title"><a href="#">장소와 카테고리</a></div>
+               <div class="caption" >
+                    <div class="tag"><a href="#">upcoming event</a></div>
+                    <div class="title"><a href="#">뿌까뿌까!!!!!.</a></div>
                    <div class="clearfix">
-                       <span class="meta-data">By <a href="">Admin</a>on 29/06/2016</span>
+                       <span class="meta-data">By <a href="">개최자</a>  on 29/06/2016(행사날짜)</span>
                        <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
                    </div>
                    <div class="content">
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nulla porro qui quo expedita voluptas ab iure dolore.</p>
+                       <p>박경훈 강사님과 그 외 17명의 학생들의 열정으로 이루어지는......</p>
                    </div>
                </div>
            </div>
         </div>
-        
-        
-        <div class="col-lg-4 col-md-4 col-sm-6">
+               <div class="col-lg-4 col-md-4 col-sm-6">
            <div class="thumbnail img-thumb-bg">
-                 	 <img  class="overlay" src="/resources/images/web-test.jpg">
+               <img  class="overlay" src="/resources/images/web-test.jpg">
                  <div class="overlay"></div>
-                    <div class="caption">
-                   <div class="tag"><a href="#">Real Estate</a></div>
-                   <div class="title"><a href="#">Gorgeous Ensea House in California</a></div>
+               <div class="caption" >
+                    <div class="tag"><a href="#">upcoming event</a></div>
+                    <div class="title"><a href="#">여기에는 행사제목에 해당하는 DB값을 가져옵니다.</a></div>
                    <div class="clearfix">
-                       <span class="meta-data">By <a href="">Admin</a>on 29/06/2016</span>
+                       <span class="meta-data">By <a href="">개최자</a>  on 29/06/2016(행사날짜)</span>
                        <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
                    </div>
                    <div class="content">
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nulla porro qui quo expedita voluptas ab iure dolore.</p>
+                       <p>박경훈 강사님과 그 외 17명의 학생들의 열정으로 이루어지는......</p>
                    </div>
                </div>
            </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
-           <div class="thumbnail img-thumb-bg">
-             <img  class="overlay" src="/resources/images/web-test.jpg">
+               <div class="col-lg-4 col-md-4 col-sm-6 centered-text">
+           <div class="thumbnail img-thumb-bg centered-text">
+               <img  class="overlay" src="/resources/images/web-test.jpg">
                  <div class="overlay"></div>
-               <div class="caption">
-                   <div class="tag"><a href="#">Real Estate</a></div>
-                   <div class="title"><a href="#">Gorgeous Ensea House in California</a></div>
+               <div class="caption centered-text" >
+                    <div class="tag"><a href="#">upcoming event</a></div>
+                    <div class="title"><a href="#">여기에는 행사제목에 해당하는 DB값을 가져옵니다.</a></div>
                    <div class="clearfix">
-                       <span class="meta-data">By <a href="">Admin</a>on 29/06/2016</span>
+                       <span class="meta-data">By <a href="">개최자</a>  on 29/06/2016(행사날짜)</span>
                        <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
                    </div>
                    <div class="content">
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nulla porro qui quo expedita voluptas ab iure dolore.</p>
+                       <p>박경훈 강사님과 그 외 17명의 학생들의 열정으로 이루어지는......</p>
                    </div>
                </div>
            </div>
         </div>
-		<div class="col-lg-4 col-md-4 col-sm-6">
-           <div class="thumbnail img-thumb-bg">
-      	   <img  class="overlay" src="/resources/images/web-test.jpg">
+  <div class="col-lg-4 col-md-4 col-sm-6 centered-text">
+           <div class="thumbnail img-thumb-bg centered-text">
+               <img  class="overlay" src="/resources/images/web-test.jpg">
                  <div class="overlay"></div>
-               <div class="caption">
-                   <div class="tag"><a href="#">Real Estate</a></div>
-                   <div class="title"><a href="#">Gorgeous Ensea House in California</a></div>
+               <div class="caption centered-text" >
+                    <div class="tag"><a href="#">upcoming event</a></div>
+                    <div class="title"><a href="#">여기에는 행사제목에 해당하는 DB값을 가져옵니다.</a></div>
                    <div class="clearfix">
-                       <span class="meta-data">By <a href="">Admin</a>on 29/06/2016</span>
+                       <span class="meta-data">By <a href="">개최자</a>  on 29/06/2016(행사날짜)</span>
                        <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
                    </div>
                    <div class="content">
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nulla porro qui quo expedita voluptas ab iure dolore.</p>
-                   </div>
-               </div>
-           </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
-           <div class="thumbnail img-thumb-bg">
-              	 <img  class="overlay" src="/resources/images/web-test.jpg">
-                 <div class="overlay"></div>
-               <div class="caption">
-                   <div class="tag"><a href="#">Real Estate</a></div>
-                   <div class="title"><a href="#">Gorgeous Ensea House in California</a></div>
-                   <div class="clearfix">
-                       <span class="meta-data">By <a href="">Admin</a>on 29/06/2016</span>
-                       <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
-                   </div>
-                   <div class="content">
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nulla porro qui quo expedita voluptas ab iure dolore.</p>
-                   </div>
-               </div>
-           </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
-           <div class="thumbnail img-thumb-bg">
-              <img  class="overlay" src="/resources/images/web-test.jpg">
-                 <div class="overlay"></div>
-               <div class="caption">
-                   <div class="tag"><a href="#">Real Estate</a></div>
-                   <div class="title"><a href="#">Gorgeous Ensea House in California</a></div>
-                   <div class="clearfix">
-                       <span class="meta-data">By <a href="">Admin</a>on 29/06/2016</span>
-                       <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
-                   </div>
-                   <div class="content">
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nulla porro qui quo expedita voluptas ab iure dolore.</p>
+                       <p>박경훈 강사님과 그 외 17명의 학생들의 열정으로 이루어지는......</p>
                    </div>
                </div>
            </div>
@@ -178,19 +227,15 @@
 	</div>
 </div>
 </div>
-            </div>
-            
-        </div>
-
-
+</div>
+</div>
         <!-- Javascript -->
         <script src="resources/assets/js/jquery-1.11.1.min.js"></script>
         <script src="resources/assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="resources/assets/js/jquery.backstretch.min.js"></script>
         <script src="resources/assets/js/retina-1.1.0.min.js"></script>
-        <script src="resources/assets/js/scripts.js"></script>
+        <script src="resources/assets/js/scripts-list.js"></script>
         
 
     </body>
-
 </html>
