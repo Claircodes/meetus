@@ -202,7 +202,7 @@
               
             </div>
             <!-- /.row (nested) -->
-            <a href="#" class="btn btn-dark">View More HANGOUT</a>
+            <a href="/list" class="btn btn-dark">View More HANGOUT</a>
           </div>
           <!-- /.col-lg-10 -->
         </div>
@@ -216,7 +216,7 @@
       <div class="container text-center">
         <h3>마음에 드시는 모임이 없나요? 직접 개설 해보세요!</h3>
         <a href="/create" class="btn btn-lg btn-light">모임 만들기</a>
-        <a href="#" class="btn btn-lg btn-dark">모임 검색하기</a>
+        <a href="/list" class="btn btn-lg btn-dark">모임 검색하기</a>
       </div>
     </aside>
 
