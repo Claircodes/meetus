@@ -5,8 +5,6 @@
 <!DOCTYPE html>
 
 <html > 
-.
-
 <script src="/resources/js/jquery.min.js"></script>
 <script src="/resources/js/jquery-ui-1.9.2.custom.js"></script>
 <script src="/resources/js/jquery.fileupload.js"></script>
