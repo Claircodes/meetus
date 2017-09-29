@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="resources/css/list.css">
 
 </body>
- </div>
+
     <div class="container">
     <p></p><p></p><br></br><p></p><p></p>
        <div style="background: #fff; background : rgba(0, 0, 0, 0.5);">
@@ -50,7 +50,7 @@
                    <div class="clearfix">
                        <span class="meta-data">By <a href="">개최자</a>  on 29/06/2016(행사날짜)</span>
                        <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
-                   </div>
+                   </div> 
                    <div class="content">
                        <p>박경훈 강사님과 그 외 17명의 학생들의 열정으로 이루어지는......</p>
                    </div>
