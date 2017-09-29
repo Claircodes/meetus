@@ -3,7 +3,7 @@
 
 <mapper namespace="listInfo">
 	<insert id="INSERT_LIST" parameterType="listInfo">
-		insert into list_info(
+		insert into hangout_info(
 		hangoutcreator,
 		hangoutname,
 		hangoutcontent, 

@@ -3,7 +3,7 @@ package com.meet.together.list.dto;
 public class ListInfo 
 {
 	private int hangoutNum;
-	private int hangoutCreator;
+	private String hangoutCreator;
 	private String hangoutName;
 	private String hangoutContent;
 	private String hangoutArea;
@@ -18,10 +18,10 @@ public class ListInfo
 	public void setHangoutNum(int hangoutNum) {
 		this.hangoutNum = hangoutNum;
 	}
-	public int getHangoutCreator() {
+	public String getHangoutCreator() {
 		return hangoutCreator;
 	}
-	public void setHangoutCreator(int hangoutCreator) {
+	public void setHangoutCreator(String hangoutCreator) {
 		this.hangoutCreator = hangoutCreator;
 	}
 	public String getHangoutName() {
