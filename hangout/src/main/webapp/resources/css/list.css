@@ -1,5 +1,6 @@
 body {
   padding: 10px 0;
+  background-color: #f4f4f4;
   font-family: 'Montserrat', sans-serif;
 }
 a {
@@ -29,6 +30,7 @@ a:active {
   border-radius: 3px;
   background-position: center;
   background-color: transparent;
+  background-image: url('http://projects.mostlikers.com/_images/estate-image.jpg');
 }
 .img-thumb-bg p {
   color: #fff;
@@ -108,13 +110,12 @@ a:active {
   display: block;
 }
 
+
 img { max-width: 100%; }
 /*
 아래는 form-elements.css 요소들 컴온.
 */
 
-input[type="text"], 
-input[type="password"], 
 textarea, 
 textarea.form-control {
 	height: 50px;
@@ -198,7 +199,7 @@ button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; bac
 }
 
 .text-vertical-center h1 {
-    font-size: 4.5em;
+    font-size: 3.0em;
     text-align: center;
     vertical-align: middle;
     font-weight: 500;

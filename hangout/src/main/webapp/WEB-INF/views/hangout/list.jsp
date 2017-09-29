@@ -10,12 +10,9 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.css">
 	<link rel="stylesheet" href="resources/css/list.css">
-    
-
-
 
 </body>
- </div>
+
     <div class="container">
     <p></p><p></p><br></br><p></p><p></p>
        <div style="background: #fff; background : rgba(0, 0, 0, 0.5);">
@@ -30,8 +27,9 @@
 					
 					<p></p>
 					<input type="text" class="form-control"
-						placeholder="원하시는 모임의 이름을 검색 해보세요."> <a href="#"
-						class="btn btn-lg btn-dark">모임 알아보기</a>
+						placeholder="원하시는 모임의 이름을 검색 해보세요.">
+						<p></p>
+						 <a href="#" class="btn btn-lg btn-dark">모임 알아보기</a>
 					<p></p>
 				</div>
 				</div>
@@ -52,7 +50,7 @@
                    <div class="clearfix">
                        <span class="meta-data">By <a href="">개최자</a>  on 29/06/2016(행사날짜)</span>
                        <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>
-                   </div>
+                   </div> 
                    <div class="content">
                        <p>박경훈 강사님과 그 외 17명의 학생들의 열정으로 이루어지는......</p>
                    </div>
@@ -164,7 +162,6 @@
 	</div>
 </div>
 	</div>
-
 
       <!-- Javascript -->
         <script src="resources/assets/js/jquery-1.11.1.min.js"></script>
