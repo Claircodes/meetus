@@ -10,9 +10,6 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.css">
 	<link rel="stylesheet" href="resources/css/list.css">
-    
-
-
 
 </body>
  </div>
@@ -30,8 +27,9 @@
 					
 					<p></p>
 					<input type="text" class="form-control"
-						placeholder="원하시는 모임의 이름을 검색 해보세요."> <a href="#"
-						class="btn btn-lg btn-dark">모임 알아보기</a>
+						placeholder="원하시는 모임의 이름을 검색 해보세요.">
+						<p></p>
+						 <a href="#" class="btn btn-lg btn-dark">모임 알아보기</a>
 					<p></p>
 				</div>
 				</div>
@@ -164,7 +162,6 @@
 	</div>
 </div>
 	</div>
-
 
       <!-- Javascript -->
         <script src="resources/assets/js/jquery-1.11.1.min.js"></script>

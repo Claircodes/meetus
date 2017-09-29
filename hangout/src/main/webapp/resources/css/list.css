@@ -24,7 +24,7 @@ a:active {
 .img-thumb-bg {
   padding: 0;
   overflow: hidden;
-  min-height: 200px;
+  min-height: 180px;
   position: relative;
   border-radius: 3px;
   background-position: center;
@@ -198,7 +198,7 @@ button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; bac
 }
 
 .text-vertical-center h1 {
-    font-size: 4.5em;
+    font-size: 3.0em;
     text-align: center;
     vertical-align: middle;
     font-weight: 500;
