@@ -52,7 +52,7 @@
 			<li class="nav-item">
 			<% }else{ 
 			login = true;%>
-			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">모임만들기</a></li>
+			<a class="nav-link js-scroll-trigger" href="${rootPath}/create">모임만들기</a></li>
 			<li class="nav-item">
 			<a class="nav-link js-scroll-trigger" href="${rootPath}/logout">로그아웃</a></li>
 			<li class="nav-item"><a class="nav-link js-scroll-trigger" ><%=user.getUserId()%></a></li><%} %>
