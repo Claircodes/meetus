@@ -4,15 +4,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 
-<html > 
-.
+<html >
 
-<script src="/resources/js/jquery.min.js"></script>
-<script src="/resources/js/jquery-ui-1.9.2.custom.js"></script>
-<script src="/resources/js/jquery.fileupload.js"></script>
-<script src="/resources/js/jquery.iframe-transport.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
-
+	  <!-- Bootstrap Core CSS -->
+<link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/stylish-portfolio.css">
 <script src="/resources/js/stylish-portfolio.js"></script>
 

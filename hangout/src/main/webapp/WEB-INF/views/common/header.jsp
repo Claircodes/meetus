@@ -9,7 +9,7 @@
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.css">
+
 
 <script src="/resources/assets/js/jquery.min.js"></script>
 <script src="/resources/assets/js/jquery-ui-1.9.2.custom.js"></script>
