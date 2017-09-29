@@ -3,8 +3,25 @@
 
 <mapper namespace="listInfo">
 	<insert id="INSERT_LIST" parameterType="listInfo">
-		insert into list_info(licity, likategorie, lititle, licontent, licredat, limeettime, creuser)
-		values(#{liCity}, #{liKategorie}, #{liTilte}, #{liContent},  DATE_FORMAT(NOW(), '%Y%m%d'), #{liMeettime}, #{creUser})
+		insert into list_info(
+		hangoutcreator,
+		hangoutname,
+		hangoutcontent, 
+		hangoutarea, 
+		hangoutopendate,  
+		hangoutclosedate, 
+		hangoutdate,
+		hangoutcategory)
+		values(
+		#{hangoutCreator}, 
+		#{hangoutName}, 
+		#{hangoutContent},  
+		#{hangoutArea},
+		DATE_FORMAT(NOW(), '%Y%m%d'),
+		#{hangoutCloseDate},
+		#{hangoutDate},
+		#{hangoutCategory}
+		)
 	</insert>
 </mapper>
 

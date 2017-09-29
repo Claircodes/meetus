@@ -16,7 +16,7 @@ public class ListInfo
 	public void setLiNum(int liNum) {
 		this.liNum = liNum;
 	}
-	public String getLiCity() {
+	public String getLiCity() { 
 		return liCity;
 	}
 	public void setLiCity(String liCity) {
