@@ -114,7 +114,8 @@
 								<div class="form-bottom">
 									<div class="form-group">
 										<div class="col-md-6">
-											<td>선택 지역 : </td><input type="text" name="cityname" id="cityname" >
+											<td>선택 지역 :</td> <input type="text" name="cityname"
+												id="cityname" readonly />
 											<div class="funkyradio">
 												<div class="funkyradio-default">
 													<input type="checkbox" name="chk_cate[]" id="checkbox_ca1"
@@ -160,29 +161,52 @@
 								</div>
 								<div class="form-bottom">
 									<div class="form-group">
-									<td>선택 지역 : </td><input type="text" name="cityname2" id="cityname2" >
-									<td>선택 카테고리 : </td><input type="text" name="catename" id="catename" >
-									</div>
-									<div class="form-group">
-										<label class="sr-only" for="form-twitter">Category</label> <input
-											type="text" name="form-twitter" placeholder="Twitter..."
-											class="form-twitter form-control" id="form-twitter">
-									</div>
-									<div class="form-group">
-										<label class="sr-only" for="form-google-plus">Title</label> <input
-											type="text" name="form-google-plus"
-											placeholder="Google plus..."
-											class="form-google-plus form-control" id="form-google-plus">
-									</div>
-									<div class="form-group">
-										<label class="sr-only" for="form-content">Content</label> <input
-											type="text" name="form-content" placeholder="Content..."
-											class="form-content form-control" id="form-content">
-									</div>
+										<div class="form-group">
+											<td>작성자 :</td><label class="sr-only" for="form-google-plus">ID</label> <input
+												type="text" name="form-google-plus" value=<%=user.getUserId()%>
+												class="form-google-plus form-control" id="hangoutCreator" readonly>
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="form-google-plus">Title</label> <input
+												type="text" name="form-google-plus" placeholder="Title..."
+												class="form-google-plus form-control" id="hangoutName">
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="form-content">Content</label> <input
+												type="text" name="form-content" placeholder="Content..."
+												class="form-content form-control" id="hangoutContent">
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="form-content">신청시작 날짜</label> <input
+												type="text" name="form-content" placeholder="신청시작 날짜..."
+												class="form-content form-control" id="hangoutOpenDate">
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="form-content">신청마감 날짜</label> <input
+												type="text" name="form-content" placeholder="신청마감 날짜..."
+												class="form-content form-control" id="hangoutCloseDate">
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="form-content">만남 날짜</label> <input
+												type="text" name="form-content" placeholder="만남 날짜..."
+												class="form-content form-control" id="hangoutDate">
+										</div>
+										<div class="form-group">
+											<td>선택 지역 :</td> <label class="sr-only"
+												for="form-google-plus">선택 지역</label> <input type="text"
+												name="form-google-plus"
+												class="form-google-plus form-control" id="hangoutArea" readonly />
+										</div>
+										<div class="form-group">
+											<td>선택 카테고리 :</td> <label class="sr-only"
+												for="form-google-plus">선택 카테고리</label> <input type="text"
+												name="form-google-plus"
+												class="form-google-plus form-control" id="hangoutCategory" readonly/>
+										</div>
 
-									<button type="button" class="btn btn-previous">Previous</button>
-									<button type="submit" class="btn">Sign me up!</button>
-								</div>
+										<button type="button" class="btn btn-previous">Previous</button>
+										<button id="sign" type="button" class="btn">Sign me up!</button>
+									</div>
 							</fieldset>
 
 						</form>
@@ -194,94 +218,104 @@
 
 	</div>
 	<script>
-	var rowid = '';         //체크된 지역 값들
-	var rowid_ca = ''; //체크된 카테고리 값들
-	$("#next1").click(function() {
-	var chk = document.getElementsByName("chk_unit[]"); // 체크박스객체를 담는다
-	var len = chk.length;    //체크박스의 전체 개수
-	var checkRow = '';      //체크된 체크박스의 value를 담기위한 변수
-	var checkCnt = 0;        //체크된 체크박스의 개수
-	var checkLast = '';      //체크된 체크박스 중 마지막 체크박스의 인덱스를 담기위한 변수                
-	var cnt = 0;
+		var rowid = ''; //체크된 지역 값들
+		var rowid_ca = ''; //체크된 카테고리 값들
+		$("#next1").click(function() {
+			var chk = document.getElementsByName("chk_unit[]"); // 체크박스객체를 담는다
+			var len = chk.length; //체크박스의 전체 개수
+			var checkRow = ''; //체크된 체크박스의 value를 담기위한 변수
+			var checkCnt = 0; //체크된 체크박스의 개수
+			var checkLast = ''; //체크된 체크박스 중 마지막 체크박스의 인덱스를 담기위한 변수                
+			var cnt = 0;
 
-	for(var i=0; i<len; i++){
+			for (var i = 0; i < len; i++) {
 
-	if(chk[i].checked == true){
-	checkCnt++;        //체크된 체크박스의 개수
-	checkLast = i;     //체크된 체크박스의 인덱스
-	}
-	} 
+				if (chk[i].checked == true) {
+					checkCnt++; //체크된 체크박스의 개수
+					checkLast = i; //체크된 체크박스의 인덱스
+				}
+			}
 
-	for(var i=0; i<len; i++){
+			for (var i = 0; i < len; i++) {
 
-	if(chk[i].checked == true){  //체크가 되어있는 값 구분
-	checkRow = chk[i].value;
-	
-	if(checkCnt == 1){                            //체크된 체크박스의 개수가 한 개 일때,
-		rowid += "'"+checkRow+"'";        //'value'의 형태 (뒤에 ,(콤마)가 붙지않게)
-		}else{                                            //체크된 체크박스의 개수가 여러 개 일때,
-		if(i == checkLast){                     //체크된 체크박스 중 마지막 체크박스일 때,
-		rowid += "'"+checkRow+"'";  //'value'의 형태 (뒤에 ,(콤마)가 붙지않게)
-		}else{
-		rowid += "'"+checkRow+"',";	 //'value',의 형태 (뒤에 ,(콤마)가 붙게)         			
-		}
-	}
-	cnt++;
-	alert(checkRow);
-	checkRow="";
-	}
-	$("#cityname").val(rowid);
-	}
-	});
-	
+				if (chk[i].checked == true) { //체크가 되어있는 값 구분
+					checkRow = chk[i].value;
+
+					if (checkCnt == 1) { //체크된 체크박스의 개수가 한 개 일때,
+						rowid += checkRow; //'value'의 형태 (뒤에 ,(콤마)가 붙지않게)
+					} else { //체크된 체크박스의 개수가 여러 개 일때,
+						if (i == checkLast) { //체크된 체크박스 중 마지막 체크박스일 때,
+							rowid += checkRow; //'value'의 형태 (뒤에 ,(콤마)가 붙지않게)
+						} else {
+							rowid += checkRow + ","; //'value',의 형태 (뒤에 ,(콤마)가 붙게)         			
+						}
+					}
+					cnt++;
+					alert(checkRow);
+					checkRow = "";
+				}
+				$("#cityname").val(rowid);
+			}
+		});
+
 		$("#next2").click(function() {
-	var chk_ca = document.getElementsByName("chk_cate[]"); // 체크박스객체를 담는다
-	var len_ca = chk_ca.length;    //체크박스의 전체 개수
-	var checkRow_ca = '';      //체크된 체크박스의 value를 담기위한 변수
-	var checkCnt_ca = 0;        //체크된 체크박스의 개수
-	var checkLast_ca = '';      //체크된 체크박스 중 마지막 체크박스의 인덱스를 담기위한 변수                            
-	var cnt_ca = 0;
-	
-	for(var i=0; i<len_ca; i++){
+			var chk_ca = document.getElementsByName("chk_cate[]"); // 체크박스객체를 담는다
+			var len_ca = chk_ca.length; //체크박스의 전체 개수
+			var checkRow_ca = ''; //체크된 체크박스의 value를 담기위한 변수
+			var checkCnt_ca = 0; //체크된 체크박스의 개수
+			var checkLast_ca = ''; //체크된 체크박스 중 마지막 체크박스의 인덱스를 담기위한 변수                            
+			var cnt_ca = 0;
 
-	if(chk_ca[i].checked == true){
-	checkCnt_ca++;        //체크된 체크박스의 개수
-	checkLast_ca = i;     //체크된 체크박스의 인덱스
-	}
-	} 
+			for (var i = 0; i < len_ca; i++) {
 
-	for(var i=0; i<len_ca; i++){
+				if (chk_ca[i].checked == true) {
+					checkCnt_ca++; //체크된 체크박스의 개수
+					checkLast_ca = i; //체크된 체크박스의 인덱스
+				}
+			}
 
-	if(chk_ca[i].checked == true){  //체크가 되어있는 값 구분
+			for (var i = 0; i < len_ca; i++) {
 
-	checkRow_ca = chk_ca[i].value;
+				if (chk_ca[i].checked == true) { //체크가 되어있는 값 구분
 
-	if(checkCnt_ca == 1){                            
-		rowid_ca += "'"+checkRow_ca+"'";        
-		}else{                                            
-		if(i == checkLast_ca){                     
-		rowid_ca += "'"+checkRow_ca+"'"; 
-		}else{
-		rowid_ca += "'"+checkRow_ca+"',";	 		
-		}
-	}
-	cnt_ca++;
-	alert(checkRow_ca);
-	checkRow_ca="";
-	}
-	$("#cityname2").val(rowid);
-	$("#catename").val(rowid_ca);
-	}
-	});
+					checkRow_ca = chk_ca[i].value;
+
+					if (checkCnt_ca == 1) {
+						rowid_ca += checkRow_ca;
+					} else {
+						if (i == checkLast_ca) {
+							rowid_ca += checkRow_ca;
+						} else {
+							rowid_ca += checkRow_ca + ",";
+						}
+					}
+					cnt_ca++;
+					alert(checkRow_ca);
+					checkRow_ca = "";
+				}
+				$("#hangoutArea").val(rowid);
+				$("#hangoutCategory").val(rowid_ca);
+			}
+		});
+		
+		$("#sign").click(function(){
+			   var paramIds = "hangoutCreator,hangoutName,hangoutContent,hangoutArea,hangoutOpenDate,hangoutCloseDate,hangoutDate,hangoutCategory";
+			   var au = new AjaxUtil("insert/list",paramIds); 
+			   au.send();
+			})
 	</script>
 
 	<%
 		} else {
 	%>
 	<script>
-       			alert("로그인을 해주세요");
-       			location.href = ${rootPath}"/login";
-       		</script>
+		alert("로그인을 해주세요");
+		location.href = $
+		{
+			rootPath
+		}
+		"/login";
+	</script>
 	<%
 		}
 	%>
