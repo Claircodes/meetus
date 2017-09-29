@@ -3,7 +3,9 @@
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<% if(login == true) {%>
+<%
+	if (login == true) {
+%>
 <!DOCTYPE html>
 <head>
 
@@ -23,12 +25,12 @@
 <link rel="stylesheet" href="resources/assets/css/style.css">
 <link rel="stylesheet" href="resources/css/radio.css">
 
-	<!-- Javascript -->
-	<script src="resources/assets/js/jquery-1.11.1.min.js"></script>
-	<script src="resources/assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="resources/assets/js/jquery.backstretch.min.js"></script>
-	<script src="resources/assets/js/retina-1.1.0.min.js"></script>
-	<script src="resources/assets/js/scripts.js"></script>
+<!-- Javascript -->
+<script src="resources/assets/js/jquery-1.11.1.min.js"></script>
+<script src="resources/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="resources/assets/js/jquery.backstretch.min.js"></script>
+<script src="resources/assets/js/retina-1.1.0.min.js"></script>
+<script src="resources/assets/js/scripts.js"></script>
 
 
 </head>
@@ -67,7 +69,7 @@
 								</div>
 								<div class="form-bottom">
 									<div class="col-md-6">
-									
+
 										<div class="funkyradio">
 											<div class="funkyradio-default">
 												<input type="checkbox" name="chk_unit[]" id="checkbox1"
@@ -75,7 +77,7 @@
 											</div>
 											<div class="funkyradio-primary">
 												<input type="checkbox" name="chk_unit[]" id="checkbox2"
-													value="인천" /> <label for="checkbox2">인천</label>
+													value="대전" /> <label for="checkbox2">대전</label>
 											</div>
 											<div class="funkyradio-success">
 												<input type="checkbox" name="chk_unit[]" id="checkbox3"
@@ -111,38 +113,38 @@
 								</div>
 								<div class="form-bottom">
 									<div class="form-group">
-									<div class="col-md-6">
-									
-										<div class="funkyradio">
-											<div class="funkyradio-default">
-												<input type="checkbox" name="checkbox" id="checkbox1"
-												 value="서울"/> <label for="checkbox1">서울</label>
-											</div>
-											<div class="funkyradio-primary">
-												<input type="checkbox" name="checkbox" id="checkbox2"
-													value="인천" /> <label for="checkbox2">인천</label>
-											</div>
-											<div class="funkyradio-success">
-												<input type="checkbox" name="checkbox" id="checkbox3"
-													value="울산" /> <label for="checkbox3">울산</label>
-											</div>
-											<div class="funkyradio-danger">
-												<input type="checkbox" name="checkbox" id="checkbox4"
-													value="부산" /> <label for="checkbox4">부산</label>
-											</div>
-											<div class="funkyradio-warning">
-												<input type="checkbox" name="checkbox" id="checkbox5"
-													value="광주" /> <label for="checkbox5">광주</label>
-											</div>
-											<div class="funkyradio-info">
-												<input type="checkbox" name="checkbox" id="checkbox6"
-													value="대구" /> <label for="checkbox6">대구</label>
+										<div class="col-md-6">
+											<td>선택 지역 : </td><input type="text" name="cityname" id="cityname" >
+											<div class="funkyradio">
+												<div class="funkyradio-default">
+													<input type="checkbox" name="chk_cate[]" id="checkbox_ca1"
+														value="PET" /> <label for="checkbox_ca1">PET</label>
+												</div>
+												<div class="funkyradio-primary">
+													<input type="checkbox" name="chk_cate[]" id="checkbox_ca2"
+														value="MUSIC" /> <label for="checkbox_ca2">MUSIC</label>
+												</div>
+												<div class="funkyradio-success">
+													<input type="checkbox" name="chk_cate[]" id="checkbox_ca3"
+														value="LANGUAGE" /> <label for="checkbox_ca3">LANGUAGE</label>
+												</div>
+												<div class="funkyradio-danger">
+													<input type="checkbox" name="chk_cate[]" id="checkbox_ca4"
+														value="DRINK" /> <label for="checkbox_ca4">DRINK</label>
+												</div>
+												<div class="funkyradio-warning">
+													<input type="checkbox" name="chk_cate[]" id="checkbox_ca5"
+														value="BOOK" /> <label for="checkbox_ca5">BOOK</label>
+												</div>
+												<div class="funkyradio-info">
+													<input type="checkbox" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">FOOD</label>
+												</div>
 											</div>
 										</div>
 									</div>
-									</div>
 									<button type="button" class="btn btn-previous">Previous</button>
-									<button type="button" class="btn btn-next">Next</button>
+									<button id="next2" type="button" class="btn btn-next">Next</button>
 								</div>
 							</fieldset>
 
@@ -158,9 +160,8 @@
 								</div>
 								<div class="form-bottom">
 									<div class="form-group">
-										<label class="sr-only" for="form-facebook">City</label> <input
-											type="text" name="form-facebook" placeholder="Facebook..."
-											class="form-facebook form-control" id="form-facebook">
+									<td>선택 지역 : </td><input type="text" name="cityname2" id="cityname2" >
+									<td>선택 카테고리 : </td><input type="text" name="catename" id="catename" >
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-twitter">Category</label> <input
@@ -192,13 +193,16 @@
 		</div>
 
 	</div>
-		<script>
+	<script>
+	var rowid = '';         //체크된 지역 값들
+	var rowid_ca = ''; //체크된 카테고리 값들
 	$("#next1").click(function() {
 	var chk = document.getElementsByName("chk_unit[]"); // 체크박스객체를 담는다
 	var len = chk.length;    //체크박스의 전체 개수
 	var checkRow = '';      //체크된 체크박스의 value를 담기위한 변수
 	var checkCnt = 0;        //체크된 체크박스의 개수
 	var checkLast = '';      //체크된 체크박스 중 마지막 체크박스의 인덱스를 담기위한 변수                
+	var cnt = 0;
 
 	for(var i=0; i<len; i++){
 
@@ -211,21 +215,75 @@
 	for(var i=0; i<len; i++){
 
 	if(chk[i].checked == true){  //체크가 되어있는 값 구분
-
 	checkRow = chk[i].value;
-
+	
+	if(checkCnt == 1){                            //체크된 체크박스의 개수가 한 개 일때,
+		rowid += "'"+checkRow+"'";        //'value'의 형태 (뒤에 ,(콤마)가 붙지않게)
+		}else{                                            //체크된 체크박스의 개수가 여러 개 일때,
+		if(i == checkLast){                     //체크된 체크박스 중 마지막 체크박스일 때,
+		rowid += "'"+checkRow+"'";  //'value'의 형태 (뒤에 ,(콤마)가 붙지않게)
+		}else{
+		rowid += "'"+checkRow+"',";	 //'value',의 형태 (뒤에 ,(콤마)가 붙게)         			
+		}
+	}
+	cnt++;
 	alert(checkRow);
+	checkRow="";
 	}
-	checkRow='';
+	$("#cityname").val(rowid);
 	}
-	})
+	});
+	
+		$("#next2").click(function() {
+	var chk_ca = document.getElementsByName("chk_cate[]"); // 체크박스객체를 담는다
+	var len_ca = chk_ca.length;    //체크박스의 전체 개수
+	var checkRow_ca = '';      //체크된 체크박스의 value를 담기위한 변수
+	var checkCnt_ca = 0;        //체크된 체크박스의 개수
+	var checkLast_ca = '';      //체크된 체크박스 중 마지막 체크박스의 인덱스를 담기위한 변수                            
+	var cnt_ca = 0;
+	
+	for(var i=0; i<len_ca; i++){
+
+	if(chk_ca[i].checked == true){
+	checkCnt_ca++;        //체크된 체크박스의 개수
+	checkLast_ca = i;     //체크된 체크박스의 인덱스
+	}
+	} 
+
+	for(var i=0; i<len_ca; i++){
+
+	if(chk_ca[i].checked == true){  //체크가 되어있는 값 구분
+
+	checkRow_ca = chk_ca[i].value;
+
+	if(checkCnt_ca == 1){                            
+		rowid_ca += "'"+checkRow_ca+"'";        
+		}else{                                            
+		if(i == checkLast_ca){                     
+		rowid_ca += "'"+checkRow_ca+"'"; 
+		}else{
+		rowid_ca += "'"+checkRow_ca+"',";	 		
+		}
+	}
+	cnt_ca++;
+	alert(checkRow_ca);
+	checkRow_ca="";
+	}
+	$("#cityname2").val(rowid);
+	$("#catename").val(rowid_ca);
+	}
+	});
 	</script>
 
-	<%} else {%>
+	<%
+		} else {
+	%>
 	<script>
        			alert("로그인을 해주세요");
        			location.href = ${rootPath}"/login";
        		</script>
-	<%} %>
+	<%
+		}
+	%>
 </body>
 </html>

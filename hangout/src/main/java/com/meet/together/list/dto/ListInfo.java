@@ -2,82 +2,60 @@ package com.meet.together.list.dto;
 
 public class ListInfo 
 {
-	private int hangoutNum;
-	private int hangoutCreator;
-	private String hangoutName;
-	private String hangoutContent;
-	private String hangoutArea;
-	private String hangoutOpenDate;
-	private String hangoutCloseDate;
-	private String hangoutDate;
-	private String hangoutCategory;
-	private String hangoutTag;
-	public int getHangoutNum() {
-		return hangoutNum;
+	private int liNum;
+	private String liCity;
+	private String liKateGorie;
+	private String liTitle;
+	private String liContent;
+	private String liMeetTime;
+	private String creUser;
+	
+	public int getLiNum() {
+		return liNum;
 	}
-	public void setHangoutNum(int hangoutNum) {
-		this.hangoutNum = hangoutNum;
+	public void setLiNum(int liNum) {
+		this.liNum = liNum;
 	}
-	public int getHangoutCreator() {
-		return hangoutCreator;
+	public String getLiCity() {
+		return liCity;
 	}
-	public void setHangoutCreator(int hangoutCreator) {
-		this.hangoutCreator = hangoutCreator;
+	public void setLiCity(String liCity) {
+		this.liCity = liCity;
 	}
-	public String getHangoutName() {
-		return hangoutName;
+	public String getLiKateGorie() {
+		return liKateGorie;
 	}
-	public void setHangoutName(String hangoutName) {
-		this.hangoutName = hangoutName;
+	public void setLiKateGorie(String liKateGorie) {
+		this.liKateGorie = liKateGorie;
 	}
-	public String getHangoutContent() {
-		return hangoutContent;
+	public String getLiTitle() {
+		return liTitle;
 	}
-	public void setHangoutContent(String hangoutContent) {
-		this.hangoutContent = hangoutContent;
+	public void setLiTitle(String liTitle) {
+		this.liTitle = liTitle;
 	}
-	public String getHangoutArea() {
-		return hangoutArea;
+	public String getLiContent() {
+		return liContent;
 	}
-	public void setHangoutArea(String hangoutArea) {
-		this.hangoutArea = hangoutArea;
+	public void setLiContent(String liContent) {
+		this.liContent = liContent;
 	}
-	public String getHangoutOpenDate() {
-		return hangoutOpenDate;
+	public String getLiMeetTime() {
+		return liMeetTime;
 	}
-	public void setHangoutOpenDate(String hangoutOpenDate) {
-		this.hangoutOpenDate = hangoutOpenDate;
+	public void setLiMeetTime(String liMeetTime) {
+		this.liMeetTime = liMeetTime;
 	}
-	public String getHangoutCloseDate() {
-		return hangoutCloseDate;
+	public String getCreUser() {
+		return creUser;
 	}
-	public void setHangoutCloseDate(String hangoutCloseDate) {
-		this.hangoutCloseDate = hangoutCloseDate;
-	}
-	public String getHangoutDate() {
-		return hangoutDate;
-	}
-	public void setHangoutDate(String hangoutDate) {
-		this.hangoutDate = hangoutDate;
-	}
-	public String getHangoutCategory() {
-		return hangoutCategory;
-	}
-	public void setHangoutCategory(String hangoutCategory) {
-		this.hangoutCategory = hangoutCategory;
-	}
-	public String getHangoutTag() {
-		return hangoutTag;
-	}
-	public void setHangoutTag(String hangoutTag) {
-		this.hangoutTag = hangoutTag;
+	public void setCreUser(String creUser) {
+		this.creUser = creUser;
 	}
 	@Override
 	public String toString() {
-		return "ListInfo [hangoutNum=" + hangoutNum + ", hangoutCreator=" + hangoutCreator + ", hangoutName="
-				+ hangoutName + ", hangoutContent=" + hangoutContent + ", hangoutArea=" + hangoutArea
-				+ ", hangoutOpenDate=" + hangoutOpenDate + ", hangoutCloseDate=" + hangoutCloseDate + ", hangoutDate="
-				+ hangoutDate + ", hangoutCategory=" + hangoutCategory + ", hangoutTag=" + hangoutTag + "]";
+		return "ListInfo [liNum=" + liNum + ", liCity=" + liCity + ", liKateGorie=" + liKateGorie + ", liTitle="
+				+ liTitle + ", liContent=" + liContent + ", liMeetTime=" + liMeetTime + ", creUser=" + creUser + "]";
 	}
 	
 }
