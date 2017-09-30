@@ -49,7 +49,16 @@ public class UserController {
 	public String testsite(UserInfo ui) {
 		return "test/index2";
 	}
-
+	// datepicker 테스트용
+	@RequestMapping(value = "/test/date", method = RequestMethod.GET)
+	public String testdate(UserInfo ui) {
+		return "test/datepick";
+	}
+	// googlemap 테스트용
+	@RequestMapping(value = "/test/map", method = RequestMethod.GET)
+	public String testmap(UserInfo ui) {
+		return "test/googlemap";
+	}
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public @ResponseBody ModelMap login(HttpSession hs, @RequestBody UserInfo user, ModelMap hm) {
 		UserInfo rUser = us.login(user);

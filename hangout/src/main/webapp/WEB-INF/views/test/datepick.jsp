@@ -7,12 +7,9 @@
 <link href="/resources/assets/bootstrap/css/base.css" rel="stylesheet">
 <link href="/resources/assets/bootstrap/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
-
 <script type="text/javascript" src="/resources/assets/bootstrap/js/jquery-2.1.1.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen" href="/resources/assets/bootstrap/css/bootstrap.min.css" />
-
 <script src="/resources/assets/bootstrap/js/moment-with-locales.js"></script>
-
 <script	src="/resources/assets/bootstrap/js/bootstrap-datetimepicker.js"></script>
 
 
