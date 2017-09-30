@@ -59,6 +59,11 @@ public class UserController {
 	public String testmap(UserInfo ui) {
 		return "test/googlemap";
 	}
+	// googleplace 테스트용
+	@RequestMapping(value = "/test/place", method = RequestMethod.GET)
+	public String testplace(UserInfo ui) {
+		return "test/googleplace";
+	}
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public @ResponseBody ModelMap login(HttpSession hs, @RequestBody UserInfo user, ModelMap hm) {
 		UserInfo rUser = us.login(user);
