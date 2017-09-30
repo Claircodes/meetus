@@ -43,6 +43,11 @@ public class UserController {
 	public String createsite(UserInfo ui) {
 		return "hangout/create";
 	}
+	
+	@RequestMapping(value = "/hangout", method = RequestMethod.GET)
+	public String hangoutesite(UserInfo ui) {
+		return "hangout/hangout";
+	}
 
 	// 정규 css 테스트용
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
