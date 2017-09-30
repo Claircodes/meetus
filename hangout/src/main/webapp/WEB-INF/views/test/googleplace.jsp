@@ -47,10 +47,9 @@
       function callback(results, status) {
 
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-//여러개          for (var i = 0; i < results.length; i++) {
-//            clicklocation(results[i]);
-//          }
-            clicklocation(results[0]);
+       for (var i = 0; i < results.length; i++) {
+            clicklocation(results[i]);
+          }
         }
         
 
