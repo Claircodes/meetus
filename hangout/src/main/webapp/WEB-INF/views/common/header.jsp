@@ -34,7 +34,46 @@
 			}
 		%>	
 
-	 <!-- Navigation -->	
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a href="/main" align="left">
+        <img width="10%" src="https://cdn.worldvectorlogo.com/logos/kakao.svg"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            
+            <%if((UserInfo)session.getAttribute("user")==null){ %>
+            <li class="nav-item">
+              <a class="nav-link" href="${rootPath}/create">모임 개설하기</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="${rootPath}/signup">회원가입</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="${rootPath}/login">로그인</a>
+            </li>
+            <% }else{ 
+			login = true;%>
+			<li class="nav-item">
+              <a class="nav-link" href="${rootPath}/create">모임만들기</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="${rootPath}/logout">로그아웃</a>
+            </li>
+			<li class="nav-item"><a class="nav-link js-scroll-trigger" ><%=user.getUserId()%></a></li><%} %>
+          </ul>
+          
+        </div>
+        
+      </div>
+    </nav>
+	<!--  위에 메뉴바가 새로가져온거!! 왜가져왔냐면 페이지마다 소스가 살짝 달라 자꾸 깨져서 위에꺼는 안깨지길래 저걸로 적용할거임! -->
+
+	 <!-- Navigation 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="${rootPath}/main">HANG OUT</a>
@@ -61,7 +100,7 @@
         </div>
       </div>
     </nav>
-	
+	-->	
 <script >
 var JSException = function(msg){
    alert(msg);
