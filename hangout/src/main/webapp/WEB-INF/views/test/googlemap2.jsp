@@ -75,7 +75,7 @@
     <div id="map" ></div>
 
     <div id="infowindow-content">
-      <span id="place-name"  class="title"></span><br>
+      <span id="place-name" ></span><br>
       Place ID <span id="place-id"></span><br>
       <span id="place-address"></span>
     </div>
@@ -138,7 +138,7 @@
           });
           marker.setVisible(true);
 
-          document.getElemtById('place-name').textContent = place.name;
+          document.getElementById('place-name').textContent = place.name;
           document.getElementById('place-id').textContent = place.place_id;
           document.getElementById('place-address').textContent = place.formatted_address;
           $("#placeName").val(place.name);

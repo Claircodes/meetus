@@ -23,7 +23,7 @@ public class UserController {
 		return "user/signup";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/login", method = RequestMethod.GET)
 	public String loginsite(UserInfo ui) {
 		return "user/login";
 	}
@@ -49,32 +49,7 @@ public class UserController {
 		return "hangout/hangout";
 	}
 
-	// 정규 css 테스트용
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	public String testsite(UserInfo ui) {
-		return "test/index2";
-	}
-	// datepicker 테스트용
-	@RequestMapping(value = "/test/date", method = RequestMethod.GET)
-	public String testdate(UserInfo ui) {
-		return "test/datepick";
-	}
-	// googlemap 테스트용
-	@RequestMapping(value = "/test/map", method = RequestMethod.GET)
-	public String testmap(UserInfo ui) {
-		return "test/googlemap";
-	}
-	// googleplace 테스트용
-	@RequestMapping(value = "/test/place", method = RequestMethod.GET)
-	public String testplace(UserInfo ui) {
-		return "test/googleplace";
-	}
-	// googlesearch 테스트용
-	@RequestMapping(value = "/test/search", method = RequestMethod.GET)
-	public String testsearch(UserInfo ui) {
-		return "test/googlesearch";
-	}
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/user/login", method = RequestMethod.POST)
 	public @ResponseBody ModelMap login(HttpSession hs, @RequestBody UserInfo user, ModelMap hm) {
 		UserInfo rUser = us.login(user);
 		if (rUser != null) {

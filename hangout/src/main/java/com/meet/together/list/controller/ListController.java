@@ -8,17 +8,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.meet.together.list.dto.ListInfo;
+import com.meet.together.list.dto.Place;
 import com.meet.together.list.service.ListService;
 
 @Controller
-public class ListController 
-{
+public class ListController {
 	@Autowired
 	ListService ls;
-	
-	@RequestMapping(value = "insert/list", method=RequestMethod.POST)
-	public @ResponseBody int insertListInfo(@RequestBody ListInfo li)
-	{
+
+	@RequestMapping(value = "insert/list", method = RequestMethod.POST)
+	public @ResponseBody int insertListInfo(@RequestBody ListInfo li) {
 		return ls.insertListInfo(li);
+	}
+	
+	@RequestMapping(value = "place", method = RequestMethod.POST)
+	public @ResponseBody int insertPlace(@RequestBody Place pi) {
+		return ls.insertPlace(pi);
 	}
 }

@@ -138,7 +138,6 @@ var AjaxUtil = function (url, params, type, dataType){
 	this.param = generateJSON(params);
 	this.callbackSuccess = function(json){
     	var url = json.url;
-    	var data = json.data;
     	var msg = json.msg;
     	if(msg){
     		alert(msg);
@@ -147,6 +146,7 @@ var AjaxUtil = function (url, params, type, dataType){
         	pageMove(url);
     	}
 	}
+	
 	
 	this.setCallbackSuccess = function(callback){
 		this.callbackSuccess = callback;
@@ -160,11 +160,18 @@ var AjaxUtil = function (url, params, type, dataType){
 	    ,   beforeSend: function(xhr) {
 	        xhr.setRequestHeader("Accept", "application/json");
 	        xhr.setRequestHeader("Content-Type", "application/json");
+	        xhr.setRequestHeader("AJAX",true);
 	    }
 	    ,   data     : this.param
 	    ,   success : this.callbackSuccess
 	    ,   error : function(xhr, status, e) {
+	    	if(xhr.responseJSON){
+	    		var obj = xhr.responseJSON;
+	    		alert(obj.msg);
+	    		pageMove(obj.url);
+	    	}else{
 		    	alert("에러 : "+e);
+	    	}
 		},
 		complete : function(e) {
 		}
