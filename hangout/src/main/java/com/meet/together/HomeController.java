@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.meet.together.user.dto.UserInfo;
+
 /**
  * Handles requests for the application home page.
  */
@@ -35,5 +37,41 @@ public class HomeController {
 		
 		return "home";
 	}
+	   // 정규 css 테스트용
+	   @RequestMapping(value = "/test", method = RequestMethod.GET)
+	   public String testsite(UserInfo ui) {
+	      return "test/index2";
+	   }
+	   // datepicker 테스트용
+	   @RequestMapping(value = "/test/date", method = RequestMethod.GET)
+	   public String testdate(UserInfo ui) {
+	      return "test/datepick";
+	   }
+	   // create Collapsible 테스트용
+	   @RequestMapping(value = "/test/create", method = RequestMethod.GET)
+	   public String testcreate(UserInfo ui) {
+	      return "test/createTest";
+	   }
+	   
+	   // googlemap 테스트용
+	   @RequestMapping(value = "/test/map", method = RequestMethod.GET)
+	   public String testmap(UserInfo ui) {
+	      return "test/googlemap2";
+	   }
+	   // googleplace 테스트용
+	   @RequestMapping(value = "/test/place", method = RequestMethod.GET)
+	   public String testplace(UserInfo ui) {
+	      return "test/googleplace";
+	   }
+	   // googlesearch 테스트용
+	   @RequestMapping(value = "/test/search", method = RequestMethod.GET)
+	   public String testsearch(UserInfo ui) {
+	      return "test/googlesearch";
+	   }
+	   // 자동완성 테스트용
+	   @RequestMapping(value = "/test/auto", method = RequestMethod.GET)
+	   public String testauto(UserInfo ui) {
+	      return "test/autocomplete";
+	   }
 	
 }
