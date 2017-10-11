@@ -18,7 +18,7 @@
       #{hangoutName}, 
       #{hangoutContent},  
       #{hangoutArea},
-      DATE_FORMAT(NOW(), '%Y%m%d'),
+      #{hangoutOpenDate},
       #{hangoutCloseDate},
       #{hangoutDate},
       #{hangoutCategory},
