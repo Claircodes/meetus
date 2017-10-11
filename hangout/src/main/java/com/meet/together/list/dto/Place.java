@@ -1,7 +1,9 @@
 package com.meet.together.list.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Place {
-	
 	private String placeName;
 	private String placeId;
 	private String placeAddress;

@@ -1,5 +1,8 @@
 package com.meet.together.list.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ListInfo 
 {
 	private int hangoutNum;

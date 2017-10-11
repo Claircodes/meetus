@@ -68,36 +68,29 @@
                               <i class="fa fa-user"></i>
                            </div>
                         </div>
-                        
+
                         <div class="form-bottom">
-                              <button type="button" class="btn2 btn2-default btn-lg">
-                                    서울
-                                 </button>
-                                 <button type="button" class="btn2 btn2-default btn-lg">
-                                    인천
-                                 </button>
-                                 <button type="button" class="btn2 btn2-default btn-lg">
-                                    부산
-                                 </button>
-                                 <button type="button" class="btn2 btn2-default btn-lg">
-                                    부산
-                                 </button>
-                                    <button type="button" class="btn2 btn2-default btn-lg">
-                                    부산
-                                 </button>
-                                    <button type="button" class="btn2 btn2-default btn-lg">
-                                    부산
-                                 </button>
-                                    <button type="button" class="btn2 btn2-default btn-lg">
-                                    부산
-                                 </button>
-                           
-                           </div>
-                           
-                           <div class="form-bottom">
-                            <button type="button" class="btn btn-next">Next</button>
-                        
-                               
+                           <input type="radio" class="btn btn-default btn-lg"
+                              name="chk_unit" value="서울" id="radio0">서울 </input> <input
+                              type="radio" class="btn btn-default btn-lg" name="chk_unit"
+                              value="인천" id="radio1"> 인천 </input> <input type="radio"
+                              class="btn btn-default btn-lg" name="chk_unit" value="부산"
+                              id="radio2"> 부산 </input> <input type="radio"
+                              class="btn btn-default btn-lg" name="chk_unit" value="대전"
+                              id="radio3"> 대전 </input> <input type="radio"
+                              class="btn btn-default btn-lg" name="chk_unit" value="대구"
+                              id="radio4"> 대구 </input> <input type="radio"
+                              class="btn btn-default btn-lg" name="chk_unit" value="광주"
+                              id="radio5"> 광주 </input> <input type="radio"
+                              class="btn btn-default btn-lg" name="chk_unit" value="울산"
+                              id="radio6"> 울산 </input>
+
+                        </div>
+
+                        <div class="form-bottom">
+                           <button id="next1" type="button" class="btn btn-next">Next</button>
+
+
                         </div>
                      </fieldset>
 
@@ -114,30 +107,31 @@
                         <div class="form-bottom">
                            <div class="form-group">
                               <div class="col-md-6">
-                                 <td>선택 지역 : </td><input type="text" name="cityname" id="cityname" >
+                                 <td>선택 지역 :</td> <input type="text" name="cityname"
+                                    id="cityname">
                                  <div class="funkyradio">
                                     <div class="funkyradio-default">
-                                       <input type="checkbox" name="chk_cate[]" id="checkbox_ca1"
+                                       <input type="radio" name="chk_cate[]" id="checkbox_ca1"
                                           value="PET" /> <label for="checkbox_ca1">PET</label>
                                     </div>
                                     <div class="funkyradio-primary">
-                                       <input type="checkbox" name="chk_cate[]" id="checkbox_ca2"
+                                       <input type="radio" name="chk_cate[]" id="checkbox_ca2"
                                           value="MUSIC" /> <label for="checkbox_ca2">MUSIC</label>
                                     </div>
                                     <div class="funkyradio-success">
-                                       <input type="checkbox" name="chk_cate[]" id="checkbox_ca3"
+                                       <input type="radio" name="chk_cate[]" id="checkbox_ca3"
                                           value="LANGUAGE" /> <label for="checkbox_ca3">LANGUAGE</label>
                                     </div>
                                     <div class="funkyradio-danger">
-                                       <input type="checkbox" name="chk_cate[]" id="checkbox_ca4"
+                                       <input type="radio" name="chk_cate[]" id="checkbox_ca4"
                                           value="DRINK" /> <label for="checkbox_ca4">DRINK</label>
                                     </div>
                                     <div class="funkyradio-warning">
-                                       <input type="checkbox" name="chk_cate[]" id="checkbox_ca5"
+                                       <input type="radio" name="chk_cate[]" id="checkbox_ca5"
                                           value="BOOK" /> <label for="checkbox_ca5">BOOK</label>
                                     </div>
                                     <div class="funkyradio-info">
-                                       <input type="checkbox" name="chk_cate[]" id="checkbox_ca6"
+                                       <input type="radio" name="chk_cate[]" id="checkbox_ca6"
                                           value="FOOD" /> <label for="checkbox_ca6">FOOD</label>
                                     </div>
                                  </div>
@@ -160,28 +154,46 @@
                         </div>
                         <div class="form-bottom">
                            <div class="form-group">
-                           <td>선택 지역 : </td><input type="text" name="cityname2" id="cityname2" >
-                           <td>선택 카테고리 : </td><input type="text" name="catename" id="catename" >
-                           </div>
-                           <div class="form-group">
-                              <label class="sr-only" for="form-twitter">Category</label> <input
-                                 type="text" name="form-twitter" placeholder="Twitter..."
-                                 class="form-twitter form-control" id="form-twitter">
+                              <td>선택 지역 :</td> <input type="text" name="hangoutArea"
+                                 id="hangoutArea" readonly></br>
+                              <td>선택 카테고리 :</td> <input type="text" name="hangoutCategory"
+                                 id="hangoutCategory" readonly></br>
+                              <td>작성자 :</td> <input type="text" name="hangoutCreator"
+                                 id="hangoutCreator" value=<%=user.getUserId()%>  readonly>
                            </div>
                            <div class="form-group">
                               <label class="sr-only" for="form-google-plus">Title</label> <input
-                                 type="text" name="form-google-plus"
-                                 placeholder="Google plus..."
-                                 class="form-google-plus form-control" id="form-google-plus">
+                                 type="text" name="hangoutName" placeholder="Title..."
+                                 class="form-google-plus form-control" id="hangoutName">
                            </div>
                            <div class="form-group">
                               <label class="sr-only" for="form-content">Content</label> <input
-                                 type="text" name="form-content" placeholder="Content..."
-                                 class="form-content form-control" id="form-content">
+                                 type="text" name="hangoutContent" placeholder="Content..."
+                                 class="form-content form-control" id="hangoutContent" >
+                           </div>
+                           <div class="form-group">
+                              <label class="sr-only" for="form-content">OpenDate</label> <input
+                                 type="text" name="hangoutOpenDate" placeholder="OpenDate..."
+                                 class="form-content form-control" id="hangoutOpenDate">
+                           </div>
+                           <div class="form-group">
+                              <label class="sr-only" for="form-twitter">CloseDate</label> <input
+                                 type="text" name="hangoutCloseDate" placeholder="CloseDate..."
+                                 class="form-twitter form-control" id="hangoutCloseDate">
+                           </div>
+                           <div class="form-group">
+                              <label class="sr-only" for="form-twitter">Date</label> <input
+                                 type="text" name="hangoutDate" placeholder="Date..."
+                                 class="form-twitter form-control" id="hangoutDate">
+                           </div>
+                           <div class="form-group">
+                              <label class="sr-only" for="form-twitter">Tag</label> <input
+                                 type="text" name="hangoutTag" placeholder="Tag..."
+                                 class="form-twitter form-control" id="hangoutTag">
                            </div>
 
                            <button type="button" class="btn btn-previous">Previous</button>
-                           <button type="submit" class="btn">Sign me up!</button>
+                           <button id="hang_signup" type="button" class="btn">Sign me up!</button>
                         </div>
                      </fieldset>
 
@@ -194,85 +206,59 @@
 
    </div>
    <script>
-   var rowid = '';         //체크된 지역 값들
-   var rowid_ca = ''; //체크된 카테고리 값들
+   var checkRow = '';         //체크된 지역 값들
+   var checkRow_ca = ''; //체크된 카테고리 값들
+   
    $("#next1").click(function() {
-   var chk = document.getElementsByName("chk_unit[]"); // 체크박스객체를 담는다
+   var chk = document.getElementsByName("chk_unit"); // 체크박스객체를 담는다
    var len = chk.length;    //체크박스의 전체 개수
-   var checkRow = '';      //체크된 체크박스의 value를 담기위한 변수
-   var checkCnt = 0;        //체크된 체크박스의 개수
-   var checkLast = '';      //체크된 체크박스 중 마지막 체크박스의 인덱스를 담기위한 변수                
-   var cnt = 0;
+   var checkCnt = 0;        //체크된 체크박스의 개수                
 
    for(var i=0; i<len; i++){
 
    if(chk[i].checked == true){
-   checkCnt++;        //체크된 체크박스의 개수
-   checkLast = i;     //체크된 체크박스의 인덱스
+      checkCnt++;
+      if(checkCnt == 1){                           
+         checkRow = chk[i].value;        
+         }
+      alert(checkRow);
    }
-   } 
-
-   for(var i=0; i<len; i++){
-
-   if(chk[i].checked == true){  //체크가 되어있는 값 구분
-   checkRow = chk[i].value;
-   
-   if(checkCnt == 1){                            //체크된 체크박스의 개수가 한 개 일때,
-      rowid += "'"+checkRow+"'";        //'value'의 형태 (뒤에 ,(콤마)가 붙지않게)
-      }else{                                            //체크된 체크박스의 개수가 여러 개 일때,
-      if(i == checkLast){                     //체크된 체크박스 중 마지막 체크박스일 때,
-      rowid += "'"+checkRow+"'";  //'value'의 형태 (뒤에 ,(콤마)가 붙지않게)
-      }else{
-      rowid += "'"+checkRow+"',";    //'value',의 형태 (뒤에 ,(콤마)가 붙게)                  
-      }
    }
-   cnt++;
-   alert(checkRow);
-   checkRow="";
+   if(checkCnt==0){
+      alert("지역을 선택하시오");
+      location.reload();
    }
-   $("#cityname").val(rowid);
-   }
+   $("#cityname").val(checkRow);
    });
    
       $("#next2").click(function() {
    var chk_ca = document.getElementsByName("chk_cate[]"); // 체크박스객체를 담는다
    var len_ca = chk_ca.length;    //체크박스의 전체 개수
-   var checkRow_ca = '';      //체크된 체크박스의 value를 담기위한 변수
-   var checkCnt_ca = 0;        //체크된 체크박스의 개수
-   var checkLast_ca = '';      //체크된 체크박스 중 마지막 체크박스의 인덱스를 담기위한 변수                            
-   var cnt_ca = 0;
+   var checkCnt_ca = 0;
    
    for(var i=0; i<len_ca; i++){
 
    if(chk_ca[i].checked == true){
-   checkCnt_ca++;        //체크된 체크박스의 개수
-   checkLast_ca = i;     //체크된 체크박스의 인덱스
-   }
-   } 
-
-   for(var i=0; i<len_ca; i++){
-
-   if(chk_ca[i].checked == true){  //체크가 되어있는 값 구분
-
-   checkRow_ca = chk_ca[i].value;
-
-   if(checkCnt_ca == 1){                            
-      rowid_ca += "'"+checkRow_ca+"'";        
-      }else{                                            
-      if(i == checkLast_ca){                     
-      rowid_ca += "'"+checkRow_ca+"'"; 
-      }else{
-      rowid_ca += "'"+checkRow_ca+"',";          
+      checkCnt_ca++;
+      if(checkCnt_ca==1){
+         checkRow_ca = chk_ca[i].value;   
       }
+      alert(checkRow_ca);
    }
-   cnt_ca++;
-   alert(checkRow_ca);
-   checkRow_ca="";
    }
-   $("#cityname2").val(rowid);
-   $("#catename").val(rowid_ca);
+   if(checkCnt_ca==0){
+      alert("카테고리를 선택하시오");
    }
+  
+   $("#hangoutArea").val(checkRow);
+   $("#hangoutCategory").val(checkRow_ca);
    });
+      
+   $("#hang_signup").click(function() {
+          var paramIds = "hangoutArea,hangoutCategory,hangoutCreator,hangoutName,hangoutContent,hangoutOpenDate,hangoutCloseDate,hangoutDate,hangoutTag";
+          var au = new AjaxUtil("insert/list",paramIds);
+          au.send();
+       });
    </script>
 
    <%
@@ -280,10 +266,10 @@
    %>
    <script>
                 alert("로그인을 해주세요");
-                location.href = ${rootPath}"/login";
+                location.href = ${rootPath}"/user/login";
              </script>
    <%
       }
    %>
 </body>
-</html>s
+</html>
