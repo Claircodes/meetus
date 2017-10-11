@@ -266,7 +266,7 @@
    %>
    <script>
                 alert("로그인을 해주세요");
-                location.href = ${rootPath}"/user/login";
+                location.href = ${rootPath}"/login";
              </script>
    <%
       }

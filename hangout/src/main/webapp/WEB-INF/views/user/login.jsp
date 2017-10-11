@@ -78,7 +78,7 @@
 <script>
 $("#btn").click(function(){
    var paramIds = "userId,userPwd";
-   var au = new AjaxUtil("user/login",paramIds); 
+   var au = new AjaxUtil("login",paramIds); 
    au.send();
 })
 </script>
