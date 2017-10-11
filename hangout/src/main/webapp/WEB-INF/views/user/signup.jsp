@@ -33,6 +33,7 @@
 									class="fa fa-lock fa-lg" aria-hidden="true"></i></span> <input
 									type="text" class="form-control" name="userId" id="userId"
 									placeholder="아이디를 만들어 주세요." />
+								<button type="button" class="btn m-progress btn-xs btn-primary" id="overlapBtn">중복검사</button>
 							</div>
 						</div>
 					</div>
@@ -147,6 +148,9 @@
 </body>
 
 <script>
+<!-- 아이디 중복처리에 정상적으로 실패할경우 false 성공한경우 true -->
+var overlapCheck = false;
+
 $('#radioBtn a').on('click', function(){
     var sel = $(this).data('title');
     var tog = $(this).data('toggle');
@@ -162,10 +166,51 @@ $('#radioBtn a').on('click', function(){
 })
 
 
-   $("#signupbtn").click(function() {
-      var paramIds = "userId,userPwd,userName,userEmail,userPhone,userGender,userCountry";
-      var au = new AjaxUtil("signup/insert",paramIds);
-      au.send();
-   });
+$("#signupbtn").click(function() 
+{
+	<!-- 아이디 중복체크를 성공했을 경우 -->
+	if(overlapCheck == true)
+	{
+		var paramIds = "userId,userPwd,userName,userEmail,userPhone,userGender,userCountry";
+		var au = new AjaxUtil("signup/insert",paramIds);
+		au.send();
+	}
+	<!-- 아이디 중복체크를 안눌렀을경우 && 아이디 중복체크에 실패했는데 회원가입 버튼을 눌렀을경우 -->
+	else
+	{
+		alert("아이디 중복체크를 눌러주세요! \nPlease click the duplicate ID check");
+		document.getElementById("userId").focus();
+	}
+});
+   
+$("#overlapBtn").click(function()
+{
+	var id = $("#userId").val();
+	if(id == "")
+	{
+		alert("아이디를 입력하시고 눌러주세요. \nPlease enter your ID and press.");
+		document.getElementById("userId").focus();
+	}
+	var au = new AjaxUtil("overlapId", "userId");
+	au.setCallbackSuccess(overlapIdCheck);
+	au.send();
+});
+
+function overlapIdCheck(results)
+{
+	var id = $("#userId").val();
+	
+	for(var i = 0; i < results.length; i++)
+	{
+		if(results[i].userId == id)
+		{
+			alert(id + "는 사용하실수 없는 아이디입니다. \n" + id + " You can not use ID.");
+			document.getElementById("userId").focus();
+			return;
+		}
+	}
+	alert(id + "는 사용하실수 있는 아이디입니다." + id + " You can use ID.");
+	checkValue = true;
+}
 </script>
 </html>

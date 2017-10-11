@@ -1,5 +1,7 @@
 package com.meet.together.user.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,13 @@ import com.meet.together.user.service.UserService;
 public class UserController {
 	@Autowired
 	UserService us;
+	
+	@RequestMapping(value = "overlapId", method = RequestMethod.POST)
+	public @ResponseBody List<UserInfo> overlapId(@RequestBody UserInfo ui)
+	{
+		List<UserInfo> rUser = us.overlapId(ui);
+		return rUser;
+	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String sigupsite(UserInfo ui) {

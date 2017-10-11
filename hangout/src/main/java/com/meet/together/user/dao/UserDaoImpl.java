@@ -20,4 +20,10 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
 	{
 		return this.getSqlSession().selectOne("user.USER_LOGIN", ui);
 	}
+
+	@Override
+	public List<UserInfo> overlapId(UserInfo ui) 
+	{
+		return this.getSqlSession().selectList("user.USER_OVERLAP_ID", ui);
+	}
 }

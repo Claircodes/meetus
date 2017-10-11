@@ -8,4 +8,6 @@ public interface UserService {
 	public int signinUser(UserInfo ui);
 	
 	public UserInfo login(UserInfo ui);
+	
+	public List<UserInfo> overlapId(UserInfo ui);
 }
