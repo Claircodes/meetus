@@ -189,7 +189,7 @@
     <!-- /.banner -->
 
     <!-- Footer -->
-    <footer>
+    <footer> 
       <div class="container">
         <ul class="list-inline">
           <li class="list-inline-item">
