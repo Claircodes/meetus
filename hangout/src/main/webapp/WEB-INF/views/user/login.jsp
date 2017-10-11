@@ -1,85 +1,115 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" type="text/css" href="/resources/css/login.css">
+    <head>
 
-<section class="login-block">
-<div class="container">
-   <div class="row">
-      <div class="col-md-4 login-sec">
-         <h2 class="text-center">Login Now</h2>
-         <form class="login-form">
-            <div class="form-group">
-               <label for="exampleInputEmail1" class="text-uppercase">아이디
-                  ID</label> <input id="userId" name="userId" type="text" class="form-control" placeholder="">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap Login Form Template</title>
 
+        <!-- CSS -->
+
+		<link rel="stylesheet" href="/resources/css/form-elements.css">
+        <link rel="stylesheet" href="/resources/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+     
+    </head>
+
+    <body>
+
+
+
+
+        <!-- Top content -->
+        <div class="top-content">
+        	<div class="inner-bg h-100">
+                <div class="container">
+                    <div class="row justify-content-center align-self-center">
+                        <div class="col-sm-8 col-sm-offset-2 text ">
+                            <h1 class="text-vertical-center"><h1>HANG OUT</h1>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-self-center">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Login NOW</h3>
+                            		<p>We hope you would be satisfied :) <i class="fa fa-heart"></i> </p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-lock"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" action="" method="post" class="login-form">
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="form-username">E-mail</label>
+			                        	<input type="text" name="userId" placeholder="E-mail address(유저아이디)" class="form-username form-control" id="userId">
+			                        </div>
+			                        <div class="form-group">
+			                          	<label class="sr-only" for="form-password">Password</label>
+			                        	<input type="password" name="userPwd" placeholder="Password" class="form-password form-control" id="userPwd">
+			                        </div>
+									<div class="form-check">
+									<label class="form-check-label"> <input type="checkbox"
+										class="form-check-input"> Remember Me
+									</label> <br>
+									<button type="button" class="btn" id="btn">로그인</button>
+								</div>
+							</form>
+		                    </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-self-center">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                        	<h3> login with +</h3>
+                        	<div class="social-login-buttons">
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-facebook"></i> Facebook
+	                        	</a>
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-google-plus"></i> Google
+	                        	</a>
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-comment"></i> KakaoTalk
+	                        	</a>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-               <label for="exampleInputPassword1" class="text-uppercase">비밀번호
-                  Password</label> <input id="userPwd" name="userPwd" type="password" class="form-control"
-                  placeholder="">
-            </div>
+        </div>
 
+	<script>
+		$("#btn").click(function() {
+			var paramIds = "userId,userPwd";
+			var au = new AjaxUtil("login", paramIds);
+			au.send();
+		})
+	</script>
 
-            <div class="form-check">
-               <label class="form-check-label"> <input type="checkbox"
-                  class="form-check-input"> <small>Remember Me</small>
-               </label> <br>
-               <button id="btn" type="button" class="btn btn-login float-right">로그인</button>
-            </div>
+	<!-- Javascript -->
+        <script src="/resources/js/jquery-1.12.1.min.js"></script>
+        <script src="/resources/js/bootstrap.min.js"></script>
+        <script src="/resources/js/jquery.backstretch.min.js"></script>
+        <script src="/resources/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
 
-         </form>
-         <div class="copy-text">
-            We hope you would be satisfied :) <i class="fa fa-heart"></i>
-         </div>
-      </div>
-      <div class="col-md-8 banner-sec">
-         <div id="carouselExampleIndicators" class="carousel slide"
-            data-ride="carousel">
-            <ol class="carousel-indicators">
-               <li data-target="#carouselExampleIndicators" data-slide-to="0"
-                  class="active"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-               <div class="carousel-item active">
-                  <img class="d-block img-fluid" src="/resources/images/login1.jpg"
-                     alt="First slide">
-                  <div class="carousel-caption d-none d-md-block">
-                     <div class="banner-text">
-                        <h2>HANG OUT</h2>
-                        <p>새로운 친구를 만들어 보세요.</p> 
-                        <p>새로운 경험이 당신을 기다리고 있습니다.</p> 
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <img class="d-block img-fluid" src="/resources/images/login2.jpg"
-                     alt="First slide">
-                  <div class="carousel-caption d-none d-md-block">
-                     <div class="banner-text">
-                        <p>그동안 당신이 경험해보지 못 했던</p>
-                        <p>새로운것을 HANG OUT에서 만들어보세요!</p>
-                     </div>
-                  </div>
-               </div>
+    </body>
 
-            </div>
-
-         </div>
-      </div>
-   </div>
-</section>
-<script>
-$("#btn").click(function(){
-   var paramIds = "userId,userPwd";
-   var au = new AjaxUtil("login",paramIds); 
-   au.send();
-})
-</script>
 </html>

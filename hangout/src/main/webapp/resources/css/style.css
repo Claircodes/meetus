@@ -5,9 +5,16 @@ body {
     font-weight: 300;
     color: #888;
     line-height: 30px;
-    text-align: center;
-    text-align: center;
+
+    float: none;
+        text-align: center;
 }
+
+.text-vertical-center h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
 
 .col-centered {
     display: inline-block;
