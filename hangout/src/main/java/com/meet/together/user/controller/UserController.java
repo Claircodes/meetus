@@ -32,7 +32,7 @@ public class UserController {
 		return "user/signup";
 	}
 
-	@RequestMapping(value = "/user/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginsite(UserInfo ui) {
 		return "user/login";
 	}
