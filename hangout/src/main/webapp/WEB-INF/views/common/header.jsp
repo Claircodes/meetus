@@ -10,11 +10,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/resources/font-awesome/css/font-awesome.min.css" />
 
-<script src="/resources/assets/js/jquery.min.js"></script>
-<script src="/resources/assets/js/jquery-ui-1.9.2.custom.js"></script>
-<script src="/resources/assets/js/jquery.fileupload.js"></script>
-<script src="/resources/assets/js/jquery.iframe-transport.js"></script>
+<script src="/resources/js/jquery.min.js"></script>
+<script src="/resources/js/jquery-ui-1.9.2.custom.js"></script>
+<script src="/resources/js/jquery.fileupload.js"></script>
+<script src="/resources/js/jquery.iframe-transport.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
 
 <!-- Website Font style -->
@@ -71,36 +72,7 @@
         
       </div>
     </nav>
-	<!--  위에 메뉴바가 새로가져온거!! 왜가져왔냐면 페이지마다 소스가 살짝 달라 자꾸 깨져서 위에꺼는 안깨지길래 저걸로 적용할거임! -->
 
-	 <!-- Navigation 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="${rootPath}/main">HANG OUT</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-			<%if((UserInfo)session.getAttribute("user")==null){ %>
-			<li class="nav-item">
-			<a class="nav-link js-scroll-trigger" href="${rootPath}/signup">회원가입</a></li>
-			<li class="nav-item">
-			<a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그인</a></li>
-			<li class="nav-item">
-			<% }else{ 
-			login = true;%>
-			<a class="nav-link js-scroll-trigger" href="${rootPath}/create">모임만들기</a></li>
-			<li class="nav-item">
-			<a class="nav-link js-scroll-trigger" href="${rootPath}/logout">로그아웃</a></li>
-			<li class="nav-item"><a class="nav-link js-scroll-trigger" ><%=user.getUserId()%></a></li><%} %>
-			
-          </ul>
-        </div>
-      </div>
-    </nav>
-	-->	
 <script >
 var JSException = function(msg){
    alert(msg);

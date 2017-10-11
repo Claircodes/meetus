@@ -5,14 +5,6 @@
 <!DOCTYPE html>
 
 <html > 
-<script src="/resources/js/jquery.min.js"></script>
-<script src="/resources/js/jquery-ui-1.9.2.custom.js"></script>
-<script src="/resources/js/jquery.fileupload.js"></script>
-<script src="/resources/js/jquery.iframe-transport.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="/resources/css/stylish-portfolio.css">
-<script src="/resources/js/stylish-portfolio.js"></script>
 
   <head>
 
@@ -23,36 +15,129 @@
 
     <title>HANG OUT</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
-    <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom CSS -->
-    <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
+	<link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
+	<script src="/resources/js/stylish-portfolio.js"></script>
+    <link href="/resources/css/new-style.css" rel="stylesheet">
+
 
   </head>
 
   <body>
-   
-    <!-- Header -->
-    <header class="header" id="top">
-      <div class="text-vertical-center">
-        <h1>wanna hang out?</h1>
-        <h3>우리 같이 한번 놀아볼까?</h3>
-        <br>
-        
-        <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger">모임 알아보기</a>
+
+    
+<br></br><p></p>
+    <!-- Info Block-01 -->
+  <section class="banner-sec float-left w-300 pt-4 pb-5">
+    <div class="container-fluid">
+     <div class="container text-center">
+   	  <h2>Hey, Let's </h2>
+   	  <h1>HANG OUT</h1>
+       
+        <p></p><b></b>
+       </div>
+       
+       
+       
+       <h4>_____현재의 인기 모임리스트</h4>
+      <div class="row px-3">
+        <div class="col-md-3">
+          <div class="card mb-4"> <img class="img-fluid" src="/resources/images/asia.jpg" alt="">
+            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">HOT</span> </div>
+            <div class="card-body p-2">
+              <div class="news-title">
+                <h2 class=" title-small"><a href="#">아두이노 수업</a></h2>
+              </div>
+                  <h4 class=" title-small"><a href="#">2017/10/12 3pm</a></h4>
+            </div>
+          </div>
+          <div class="card mb-4"> <img class="img-fluid" src="/resources/images/asia.jpg" alt="">
+            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">HOT</span> </div>
+            <div class="card-body p-2">
+              <div class="news-title">
+                <h2 class=" title-small"><a href="#">아리아나 그란데 콘서트</a></h2>
+              <h4 class=" title-small"><a href="#">2017/10/12 3pm</a></h4>
+            
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4"> <img class="img-fluid" src="/resources/images/asia.jpg" alt="">
+            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">HOT</span> </div>
+            <div class="card-body p-2">
+              <div class="news-title">
+                <h2 class=" title-small"><a href="#">추석연휴 몸살 </a></h2>
+              </div>
+              <h4 class=" title-small"><a href="#">2017/10/12 3pm</a></h4>
+            </div>
+          </div>
+          <div class="card"> <img class="img-fluid" src="/resources/images/asia.jpg" alt="">
+            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">HOT</span> </div>
+            <div class="card-body p-2">
+              <div class="news-title">
+                <h2 class=" title-small"><a href="#">졸려여영</a></h2>
+              </div>
+              <h4 class=" title-small"><a href="#">2017/10/12 3pm</a></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 top-slider">
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <div class="news-block">
+                  <div class="news-media"><img class="img-fluid" src="/resources/images/mainP.jpg" alt=""></div>
+                  <div class="news-title">
+                    <h2 class=" title-large"><a href="#">Ray madison may struggle to get best from Paul in a 4-2-3-1 formation</a></h2>
+                  </div>
+                  <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+                  <div class="time-text"><strong>2h ago</strong></div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="news-block">
+                  <div class="news-media"><img class="img-fluid" src="/resources/images/mainP.jpg" alt=""></div>
+                  <div class="news-title">
+                    <h2 class=" title-large"><a href="#">An Alternative Form of Mental Health Care Gains a Foothold</a></h2>
+                  </div>
+                  <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+                  <div class="time-text"><strong>2h ago</strong></div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="news-block">
+                  <div class="news-media"><img class="img-fluid" src="/resources/images/mainP.jpg" alt=""></div>
+                  <div class="news-title">
+                    <h2 class=" title-large"><a href="#">Key Republican Senator Says She Will Not Vote for former president!</a></h2>
+                  </div>
+                  <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+                  <div class="time-text"><strong>2h ago</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
+    </div>
+  </section>
+
 
     <!-- About -->
     <section id="about" class="about">
       <div class="container text-center">
-        <h2>전국의 325,000개의 모임이 현재 당신을 기다리고 있습니다!</h2>
-        <p class="lead">HANG OUT</p>
+       <p class="lead">HANG OUT</p>
       </div>
       <!-- /.container -->
     </section>
@@ -232,53 +317,69 @@
       </small>
     </section>-->
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 mx-auto text-center">
-            <h4>
-              <strong>HANG OUT</strong>
-              
-            </h4>
-            <p>Hyung-Je-Building
-              <br>826 Gangnam Street</p>
-            <ul class="list-unstyled">
-              <li>
-                <i class="fa fa-phone fa-fw"></i>
-                (02) 752-9990</li>
-              <li>
-                <i class="fa fa-envelope-o fa-fw"></i>
-                <a href="mailto:hangout@gmail.com">hangout@gmail.com</a>
-              </li>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row px-3">
+        <div class="col-lg-4 col-md-12">
+          <h4 class="heading-footer">ABOUT US</h4>
+          <p>HANGOUT 은 모임개설을 위한 페이지 입니다. 블라블라</p>
+          <p><i class="fa fa-phone"></i> <span>Call Us :</span> +91 9999 878 398</p>
+          <p><i class="fa fa-envelope"></i> <span>Send Email :</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="660f0800092611030403080a070805034805090b">[email&#160;protected]</a></p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="heading-footer">QUICK LINKS</h4>
+            <ul class="footer-ul">
+              <li></li>
+              <li><a href="#"> 모임 만들기</a></li>
+              <li><a href="#"> 모임 리스트</a></li>
+              <li><a href="#"> 모임 페이지</a></li>
+              <li><a href="#"> 회원 정보</a></li>
+              <li><a href="#"> Contact US</a></li>
             </ul>
-            <br>
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-facebook fa-fw fa-3x"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-twitter fa-fw fa-3x"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-commenting-o fa-fw fa-3x"></i>
-                </a>
-              </li>
-            </ul>
-            <hr class="small">
-            <p class="text-muted">Copyright &copy; Hang Out 2017</p>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h4 class="heading-footer">LATEST NEWS</h4>
+          <div class="post">
+            <p>Key Republicans sign letter warning against candidate</p>
+            <p>Obamacare Appears to Be Making People Healthie </p>
+            <p>Syria war: Why the battle for Aleppo matters</p>
           </div>
         </div>
+        <div class="col-lg-2 col-md-4 social-icons">
+          <h4 class="heading-footer">FOLLOW</h4>
+          <ul class="footer-ul">
+            <li><a href="#"><i class=" fa fa-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class=" fa fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class=" fa fa-google-plus"></i> Google+</a></li>
+            <li><a href="#"><i class=" fa fa-linkedin"></i> Linkedin</a></li>
+          </ul>
+        </div>
       </div>
-      <a id="to-top" href="#top" class="btn btn-dark btn-lg js-scroll-trigger">
-        <i class="fa fa-chevron-up fa-fw fa-1x"></i>
-      </a>
-    </footer>
+    </div>
+  </footer>
+
+  <!-- Copy footer start from here-->
+  <div class="copyright">
+    <div class="container-fluid">
+      <div class="row px-3">
+        <div class="col-lg-6 col-md-4">
+          <p>© 2016 - <a href="http://grafreez.com">Grafreez.com</a></p>
+        </div>
+        <div class="col-lg-6 col-md-8">
+          <ul class="bottom_ul">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Faq's</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Site Map</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="/resources/vendor/jquery/jquery.min.js"></script>
@@ -294,4 +395,46 @@
   </body>
 
 </html>
+
+<script type='text/javascript'> 
+function attracta_loadjs(url) {
+   (function() {
+       var s = document.createElement('script');
+       s.type = 'text/javascript';
+       s.async = true;
+       s.src = url;
+       var x = document.getElementsByTagName('script')[0];
+       x.parentNode.insertBefore(s, x);
+   })();
+}
+function attracta_shouldrun() {
+   var v = ["/admin/","/adm/","/wp-admin/","/administrator/"];
+   for (x in v) if(window.location.pathname.indexOf(v[x]) == 0) return false;
+   return true;
+}
+function attracta_window_width() {
+   if (document.body && document.body.offsetWidth) return document.body.offsetWidth;
+   if (document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.offsetWidth ) return document.documentElement.offsetWidth;
+   if (window.innerWidth) return window.innerWidth;
+   return 0;
+}
+function attracta_window_height() {
+   if (document.body && document.body.offsetHeight) return document.body.offsetHeight;
+   if (document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.offsetHeight ) return document.documentElement.offsetHeight;
+   if (window.innerHeight) return window.innerHeight;
+   return 0;
+}
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-82921805-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+ 
 
