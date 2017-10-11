@@ -77,5 +77,5 @@ public class HomeController {
 	   @RequestMapping(value = "/test/new", method = RequestMethod.GET)
 	   public String testnew(UserInfo ui) {
 	      return "test/NewFile";
-	   }
+	   } 
 }
