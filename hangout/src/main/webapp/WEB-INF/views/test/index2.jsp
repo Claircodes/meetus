@@ -48,7 +48,7 @@
           </ul>
         </div>
       </div>
-    </nav>d
+    </nav>
 
     <!-- Header -->
     <header class="intro-header">
