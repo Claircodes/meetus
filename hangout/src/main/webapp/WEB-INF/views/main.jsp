@@ -152,7 +152,7 @@
           
               <div class="col-md-3 col-sm-6">
        	    <div class="place-seoul">
-                 <img class="img-portfolio img-fluid" src="/resources/images/seoul.jpg">  
+                 <img class="img-portfolio img-fluid" src="/resources/images/area/seoul.jpg">  
                   <h4>
                     <strong>서울</strong>
                   </h4>
@@ -162,7 +162,7 @@
             
               <div class="col-md-3 col-sm-6">
                 <div class="place-busan">
-              <img class="img-portfolio img-fluid" src="/resources/images/busan.jpg">         
+              <img class="img-portfolio img-fluid" src="/resources/images/area/busan.jpg">         
                   <h4>
                     <strong>부산</strong>
                   </h4>
@@ -172,7 +172,7 @@
             
               <div class="col-md-3 col-sm-6">
           	  <div class="place-daegu">
-              <img class="img-portfolio img-fluid" src="/resources/images/daegu.jpg">  
+              <img class="img-portfolio img-fluid" src="/resources/images/area/daegu.jpg">  
                   <h4>
                     <strong>대구</strong>
                   </h4>
@@ -181,7 +181,7 @@
             
               <div class="col-md-3 col-sm-6">
                 <div class="place-kwangju">
-                  <img class="img-portfolio img-fluid" src="/resources/images/kwangju.jpg">  
+                  <img class="img-portfolio img-fluid" src="/resources/images/area/kwangju.jpg">  
                   <h4>
                     <strong>광주</strong>
                   </h4>
@@ -191,7 +191,7 @@
             
               <div class="col-md-3 col-sm-6">
                 <div class="place-daejeon">
-                  <img class="img-portfolio img-fluid" src="/resources/images/daejeon.JPG">  
+                  <img class="img-portfolio img-fluid" src="/resources/images/area/daejeon.JPG">  
                   <h4>
                     <strong>대전</strong>
                   </h4>
@@ -220,76 +220,177 @@
     <section id="portfolio" class="portfolio">
       <div class="container">
         <div class="row">
-          <div class="col-lg-10 mx-auto text-center">
+          <div class="col-lg-10 mx-auto">
             <h2>카테고리별 모임 찾기</h2>
             <hr class="small">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/pet.png">
+                  <a href="#"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/art.png">
                   </a>
                    <h4>
-                    <strong>PET</strong>
+                    <strong>ART</strong></center>
                   </h4>
                 </div>
               </div>
-              <div class="col-md-6">
+             <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/music.png">
+                  <a href="#"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/beauty.png">
                   </a>
                    <h4>
-                    <strong>MUSIC</strong>
+                    <strong>BEAUTY</strong></center>
                   </h4>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/language.png">
+                  <a href="#"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/book.png">
                   </a>
                    <h4>
-                    <strong>LANGUAGE</strong>
+                    <strong>BOOK</strong></center>
                   </h4>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/drink.png">
+                  <a href="#"><center>
+                    <img width="50%"  class="img-portfolio img-fluid" src="/resources/images/category/business.png">
                   </a>
                    <h4>
-                    <strong>DRINK</strong>
+                    <strong>BUSINESS</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/dance.png">
+                  </a>
+                   <h4>
+                    <strong>DANCE</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/education.png">
+                  </a>
+                   <h4>
+                    <strong>EDUCATION</strong></center>
+                  </h4>
+                </div>
+              </div>
+                <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/food.png">
+                  </a>
+                   <h4>
+                    <strong>FOOD</strong></center>
+                  </h4>
+                </div>
+              </div>
+                <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/game.png">
+                  </a>
+                   <h4>
+                    <strong>GAME</strong></center>
+                  </h4>
+                </div>
+              </div>
+                <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/language.png">
+                  </a>
+                   <h4>
+                   <strong>LANGUAGE</strong></center>
                   </h4>
                 </div>
               </div>
               
-              <div class="col-md-6">
+               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/book.png">
+                  <a href="#"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/movie.png">
                   </a>
                    <h4>
-                    <strong>BOOK</strong>
+                   <strong>MOVIE</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/music.png">
+                  </a>
+                   <h4>
+                   <strong>MUSIC</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/pet.png">
+                  </a>
+                   <h4>
+                   <strong>PET</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/photo.png">
+                  </a>
+                   <h4>
+                   <strong>PHOTO</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/religion.png">
+                  </a>
+                   <h4>
+                   <strong>RELIGION</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/sport.png">
+                  </a>
+                   <h4>
+                   <strong>SPORT</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="portfolio-item">
+                  <a href="#"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/technical.png">
+                  </a>
+                   <h4>
+                   <strong>TECHNICAL</strong></center>
                   </h4>
                 </div>
               </div>
               
-              <div class="col-md-6">
-                <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/food.png">
-                  </a>
-                   <h4>
-                    <strong>FOOD</strong>
-                  </h4>
-                </div>
-              </div>
+              
               
             </div>
             <!-- /.row (nested) -->
-            <a href="#" class="btn btn-dark">View More HANGOUT</a>
+            <center><a href="#" class="btn btn-dark">View More HANGOUT</a></center>
           </div>
           <!-- /.col-lg-10 -->
         </div>
@@ -323,11 +424,11 @@
       <div class="row px-3">
         <div class="col-lg-4 col-md-12">
           <h4 class="heading-footer">ABOUT US</h4>
-          <p>HANGOUT 은 모임개설을 위한 페이지 입니다. 블라블라</p>
-          <p><i class="fa fa-phone"></i> <span>Call Us :</span> +91 9999 878 398</p>
+          <p>HANGOUT 은 모임개설을 위한 페이지 입니다. </p>
+          <p><i class="fa fa-phone"></i> <span>Call Us :</span> +02 752 7942</p>
           <p><i class="fa fa-envelope"></i> <span>Send Email :</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="660f0800092611030403080a070805034805090b">[email&#160;protected]</a></p>
         </div>
-        <div class="col-lg-2 col-md-4">
+        <div class="col-lg-3 col-md-4">
           <h4 class="heading-footer">QUICK LINKS</h4>
             <ul class="footer-ul">
               <li></li>
@@ -338,13 +439,15 @@
               <li><a href="#"> Contact US</a></li>
             </ul>
         </div>
-        <div class="col-lg-4 col-md-4">
-          <h4 class="heading-footer">LATEST NEWS</h4>
-          <div class="post">
-            <p>Key Republicans sign letter warning against candidate</p>
-            <p>Obamacare Appears to Be Making People Healthie </p>
-            <p>Syria war: Why the battle for Aleppo matters</p>
-          </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="heading-footer">WHO MADE THIS?</h4>
+          <ul class="footer-ul">
+              <li></li>
+              <li><a href="#"> 김정규</a></li>
+              <li><a href="#"> 박용성</a></li>
+              <li><a href="#"> 장지훈</a></li>
+              <li><a href="#"> 임혜진</a></li>
+            </ul>
         </div>
         <div class="col-lg-2 col-md-4 social-icons">
           <h4 class="heading-footer">FOLLOW</h4>
@@ -352,7 +455,6 @@
             <li><a href="#"><i class=" fa fa-facebook"></i> Facebook</a></li>
             <li><a href="#"><i class=" fa fa-twitter"></i> Twitter</a></li>
             <li><a href="#"><i class=" fa fa-google-plus"></i> Google+</a></li>
-            <li><a href="#"><i class=" fa fa-linkedin"></i> Linkedin</a></li>
           </ul>
         </div>
       </div>
@@ -364,17 +466,9 @@
     <div class="container-fluid">
       <div class="row px-3">
         <div class="col-lg-6 col-md-4">
-          <p>© 2016 - <a href="http://grafreez.com">Grafreez.com</a></p>
+          <p>www.hangout.com은 상업성이 아니라 팀 프로젝트 제출을 위하여 만들어진 무수익성 페이지입니다.</p>
         </div>
-        <div class="col-lg-6 col-md-8">
-          <ul class="bottom_ul">
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Faq's</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Site Map</a></li>
-          </ul>
-        </div>
+       
       </div>
     </div>
   </div>
