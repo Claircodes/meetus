@@ -45,12 +45,12 @@
 
 <body>
 
-
+<br></br><p></p>
 	<!-- Top content -->
 	<div class="top-content">
 		<div class="inner-bg">
 			<div class="container">
-				<div class="row">
+				<div class="row justify-content-center align-self-center">
 					<div class="col-sm-8 col-sm-offset-2 text">
 						<h1>
 							<strong>Hang out</strong> 모임 개설하기
@@ -60,7 +60,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row justify-content-center align-self-center">
 					<div class="col-sm-6 col-sm-offset-3 form-box">
 
 						<form role="form" action="" method="post"
@@ -182,7 +182,7 @@
 
 									<div class="bootstrap-iso">
 										<div class="container-fluid">
-											<div class="row">
+											<div class="row justify-content-center align-self-center">
 												<div class="col-md-6 col-sm-6 col-xs-12">
 													<form action="https://formden.com/post/MlKtmY4x/"
 														class="form-horizontal" method="post">
@@ -214,7 +214,7 @@
 
 									<div class="bootstrap-iso">
 										<div class="container-fluid">
-											<div class="row">
+											<div class="row justify-content-center align-self-center">
 												<div class="col-md-6 col-sm-6 col-xs-12">
 													<form action="https://formden.com/post/MlKtmY4x/"
 														class="form-horizontal" method="post">
@@ -246,7 +246,7 @@
 									
 									<div class="bootstrap-iso">
 										<div class="container-fluid">
-											<div class="row">
+											<div class="row justify-content-center align-self-center">
 												<div class="col-md-6 col-sm-6 col-xs-12">
 													<form action="https://formden.com/post/MlKtmY4x/"
 														class="form-horizontal" method="post">

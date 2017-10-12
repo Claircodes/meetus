@@ -40,8 +40,15 @@ public class HomeController {
 	   // 정규 css 테스트용
 	   @RequestMapping(value = "/test", method = RequestMethod.GET)
 	   public String testsite(UserInfo ui) {
-	      return "test/index2";
+	      return "test/test";
 	   }
+	   
+	   // 정규 css 테스트용
+	   @RequestMapping(value = "/test2", method = RequestMethod.GET)
+	   public String test2site(UserInfo ui) {
+	      return "test/test2";
+	   }
+	   
 	   // datepicker 테스트용
 	   @RequestMapping(value = "/test/date", method = RequestMethod.GET)
 	   public String testdate(UserInfo ui) {
