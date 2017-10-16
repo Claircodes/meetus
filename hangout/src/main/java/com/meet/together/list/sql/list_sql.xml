@@ -8,8 +8,7 @@
       hangoutname,
       hangoutcontent, 
       hangoutarea, 
-      hangoutopendate,  
-      hangoutclosedate, 
+      hangoutdays,
       hangoutdate,
       hangoutcategory,
       hangouttag)
