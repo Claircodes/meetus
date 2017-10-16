@@ -31,7 +31,7 @@ public class ListController {
    }
 
    
-   @RequestMapping(value = "place", method = RequestMethod.POST)
+   @RequestMapping(value = "/place", method = RequestMethod.POST)
    public @ResponseBody int insertPlace(@RequestBody Place pi) {
       return ls.insertPlace(pi);
    }

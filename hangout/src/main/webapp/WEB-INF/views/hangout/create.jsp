@@ -167,7 +167,7 @@
 										<td>선택 카테고리 :</td> <input type="text" name="hangoutCategory"
 											id="hangoutCategory" readonly></br>
 										<td>작성자 :</td> <input type="text" name="hangoutCreator"
-											id="hangoutCreator" value=<%=user.getUserId()%> readonly>
+											id="hangoutCreator" value=<%=user.getUserNum()%> readonly>
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-google-plus">Title</label> <input
@@ -197,7 +197,7 @@
 																		<i class="fa fa-calendar"> </i>
 																	</div>
 																	<input class="form-control" id="hangoutOpenDate"
-																		name="date" placeholder="MM/DD/YYYY" type="text" />
+																		name="date" placeholder="YYYY/MM/DD/" type="text" />
 																</div>
 															</div>
 														</div>
@@ -229,7 +229,7 @@
 																		<i class="fa fa-calendar"> </i>
 																	</div>
 																	<input class="form-control" id="hangoutCloseDate"
-																		name="date" placeholder="MM/DD/YYYY" type="text" />
+																		name="date" placeholder="YYYY/MM/DD/" type="text" />
 																</div>
 															</div>
 														</div>
@@ -261,7 +261,7 @@
 																		<i class="fa fa-calendar"> </i>
 																	</div>
 																	<input class="form-control" id="hangoutDate"
-																		name="date" placeholder="MM/DD/YYYY" type="text" />
+																		name="date" placeholder="YYYY/MM/DD/" type="text" />
 																</div>
 															</div>
 														</div>
