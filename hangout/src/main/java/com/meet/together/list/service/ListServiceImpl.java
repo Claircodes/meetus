@@ -1,5 +1,7 @@
 package com.meet.together.list.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,11 @@ public class ListServiceImpl implements ListService {
 	@Override
 	public int insertPlace(Place pi) {
 		return listDao.insertPlace(pi);
+	}
+
+	@Override
+	public List<ListInfo> selectListInfo(ListInfo li) {
+		return listDao.selectListInfo(li);
 	}
 
 }

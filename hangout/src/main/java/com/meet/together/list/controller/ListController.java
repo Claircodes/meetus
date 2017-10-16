@@ -1,5 +1,7 @@
 package com.meet.together.list.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -28,6 +30,12 @@ public class ListController {
          hm.put("url", "hangout/create");
       }
       return hm;
+   }
+   
+   @RequestMapping(value = "/select/list", method = RequestMethod.POST)
+   public @ResponseBody List<ListInfo> selectList(@RequestBody ListInfo li)
+   {
+	   return ls.selectListInfo(li);
    }
 
    
