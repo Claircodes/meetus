@@ -20,7 +20,7 @@ public class UserController {
 	@Autowired
 	UserService us;
 	
-	@RequestMapping(value = "overlapId", method = RequestMethod.POST)
+	@RequestMapping(value = "/overlapId", method = RequestMethod.POST)
 	public @ResponseBody List<UserInfo> overlapId(@RequestBody UserInfo ui)
 	{
 		List<UserInfo> rUser = us.overlapId(ui);

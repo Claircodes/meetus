@@ -171,7 +171,7 @@
 								</div>
 								<form role="form" action="" method="post" class="login-form">
 
-									<button type="button" class="btn" id="btn">로그인</button>
+									<button type="button" class="btn" id="btn">회원가입</button>
 							</div>
 							</form>
 						</div>
@@ -216,7 +216,7 @@ $('#radioBtn a').on('click', function(){
 })
 
 
-$("#signupbtn").click(function() 
+$("#btn").click(function() 
 {
 	<!-- 아이디 중복체크를 성공했을 경우 -->
 	if(overlapCheck == true)
@@ -260,7 +260,7 @@ function overlapIdCheck(results)
 		}
 	}
 	alert(id + "는 사용하실수 있는 아이디입니다." + id + " You can use ID.");
-	checkValue = true;
+	overlapCheck = true;
 }
 </script>
 
