@@ -10,4 +10,6 @@ public interface UserService {
 	public UserInfo login(UserInfo ui);
 	
 	public List<UserInfo> overlapId(UserInfo ui);
+	
+	public UserInfo getUserProfile(UserInfo ui);
 }

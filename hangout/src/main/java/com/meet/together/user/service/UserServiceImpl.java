@@ -34,4 +34,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.overlapId(ui);
 	}
 
+	@Override
+	public UserInfo getUserProfile(UserInfo ui) {
+		return userDao.getUserProfile(ui);
+	}
+
 }

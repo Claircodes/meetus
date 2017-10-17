@@ -42,7 +42,7 @@
        
        
        <h4>_____현재의 인기 모임리스트</h4>
-      <div class="row px-3">
+      <div class="row px-3" size="80%">
         <div class="col-md-3">
           <div class="card mb-4"> <img class="img-fluid" src="/resources/images/asia.jpg" alt="">
             <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">HOT</span> </div>

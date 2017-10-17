@@ -26,6 +26,12 @@ public class UserController {
 		List<UserInfo> rUser = us.overlapId(ui);
 		return rUser;
 	}
+	
+	@RequestMapping(value = "/user/profile", method = RequestMethod.GET)
+	public String updateUserProfile(UserInfo ui)
+	{
+		return "user/userprofile";
+	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String sigupsite(UserInfo ui) {
