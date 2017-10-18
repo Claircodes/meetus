@@ -80,9 +80,10 @@ public class HomeController {
 	   public String testauto(UserInfo ui) {
 	      return "test/autocomplete";
 	   }
-	   // 자동완성 테스트용
+
+	   // tag 테스트용
 	   @RequestMapping(value = "/test/new", method = RequestMethod.GET)
-	   public String testnew(UserInfo ui) {
+	   public String testtag(UserInfo ui) {
 	      return "test/NewFile";
 	   } 
 }

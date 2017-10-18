@@ -3,19 +3,21 @@
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%
-   if (login == true) {
-%>
-<!DOCTYPE html>
-<head>
-
 
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bootstrap Multi Step Registration Form Template</title>
-
+<%
+   if (login == true) {
+	} else {
+%>
+<script>
+	alert("로그인을 해주세요");
+	location.href = ${rootPath}"/login";
+</script>
+<%	}%>
 <!-- CSS -->
 <link rel="stylesheet"
 	href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -29,18 +31,20 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
 
+<link rel="stylesheet" type="text/css" href="resources/tags/bootstrap-tags.css" />
 <!-- Javascript -->
 <script src="resources/assets/js/jquery-1.11.1.min.js"></script>
-<script src="resources/assets/bootstrap/js/bootstrap.min.js"></script>
+
 <script src="resources/assets/js/jquery.backstretch.min.js"></script>
 <script src="resources/assets/js/retina-1.1.0.min.js"></script>
 <script src="resources/assets/js/scripts.js"></script>
-
+<script src="resources/assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript"
 	src="https://formden.com/static/cdn/formden.js"></script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-
+<script src='resources/tags/bootstrap-tags.min.js'></script>
+<script src='resources/tags/bootstrap-tags.js'></script>
 </head>
 
 <body>
@@ -277,9 +281,9 @@
 									</div>
 
 									<div class="form-group">
-										<label class="sr-only" for="form-twitter">Tag</label> <input
-											type="text" name="hangoutTag" placeholder="Tag..."
-											class="form-twitter form-control" id="hangoutTag">
+										<label class="sr-only" for="form-twitter">Tag</label>
+										<input type="text" value="Amsterdam,Washington" data-role="tagsinput" name="hangoutTag" id="hangoutTag" />
+
 									</div>
 
 									<button type="button" class="btn btn-previous">Previous</button>
@@ -350,18 +354,9 @@
           var au = new AjaxUtil("insert/list",paramIds);
           au.send();
        });
-   </script>
 
-	<%
-      } else {
-   %>
-	<script>
-                alert("로그인을 해주세요");
-                location.href = ${rootPath}"/login";
-             </script>
-	<%
-      }
-   %>
+</script>
+
 </body>
 </html>
 
