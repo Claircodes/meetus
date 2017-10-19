@@ -1,6 +1,6 @@
 <%@page import="com.meet.together.user.dto.UserInfo"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -8,24 +8,22 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="/resources/font-awesome/css/font-awesome.min.css" />
 
-<script src="/resources/js/jquery.min.js"></script>
-<script src="/resources/js/jquery-ui-1.9.2.custom.js"></script>
-<script src="/resources/js/jquery.fileupload.js"></script>
-<script src="/resources/js/jquery.iframe-transport.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
+<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>"/>
+<link rel="stylesheet" href="<c:url value="/resources/font-awesome/css/font-awesome.min.css"/>"/>
+
+<script src="<c:url value='/resources/js/jquery.min.js' />"></script>
+<script src="<c:url value='/resources/js/jquery-ui-1.9.2.custom.js' />"></script>
+<script src="<c:url value='/resources/js/jquery.fileupload.js' />"></script>
+<script src="<c:url value='/resources/js/jquery.iframe-transport.js' />"></script>
+<script src="<c:url value='//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js' />"></script>
 
 <!-- Website Font style -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link rel="stylesheet" href="<c:url value="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>"/>
 
 <!-- Google Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Passion+One'
-	rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Oxygen'
-	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="<c:url value="https://fonts.googleapis.com/css?family=Passion+One"/>"/>
+<link rel="stylesheet" href="<c:url value="https://fonts.googleapis.com/css?family=Oxygen"/>"/>
 		<%
 		UserInfo user=new UserInfo();
 		boolean login = false;
