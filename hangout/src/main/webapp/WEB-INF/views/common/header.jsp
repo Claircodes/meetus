@@ -6,7 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
+     
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>"/>
@@ -107,7 +107,6 @@ var AjaxUtil = function (url, params, type, dataType){
 	this.dataType = dataType?dataType:"json";
 	this.param = generateJSON(params);
 	this.callbackSuccess = function(json){
-		var hangoutList=json.list;
     	var url = json.url;
     	var msg = json.msg;
     	if(msg){
@@ -116,37 +115,7 @@ var AjaxUtil = function (url, params, type, dataType){
     	if(url){
         	pageMove(url);
     	}
-    	if(hangoutList){
-    		var result="";
-    		for(var i=0, max=hangoutList.length;i<max;i++){
-    			var list=hangoutList[i];
- 
-    		    result+="<div class='container'>";
-    		    result+="<div class='row justify-content-center align-self-center'>";
-    		    	result+="<div class='[ col-xs-12 col-sm-offset-2 col-sm-8 ]'>";
-    		    		result+="<ul class='event-list'>";
-    		    			result+="<li>";
-    		    				result+="<time datetime='2014-07-20'>";
-    		    					result+="<span class='day'>" + list.hangoutDate + "</span>";
-    		    					result+="<span class='month'>Jul</span>";
-    		    						result+="<span class='year'>2014</span>";
-    		    							result+="</time>";
-    		    								result+="<img alt='Independence Day' src='https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg' />";
-    		    									result+="<div class='info'>";
-    		    										result+="<h2 class='title'>" + list.hangoutName + "</h2>";
-    		    										result+="<p class='desc'>" + list.hangoutContent+ "</p>";
-    		    										result+="</div>";
-    		    											result+="</li>";
-    		    												result+="</ul>";
-    		    													result+="</div>";
-    		    														result+="</div>";
-    		    															result+="</div>";
-    		}
-    		$("#list_body").html(result);
-    	}
 	}
-	
-	
 	this.setCallbackSuccess = function(callback){
 		this.callbackSuccess = callback;
 	}
