@@ -33,9 +33,11 @@ public class ListController {
    }
    
    @RequestMapping(value = "/select/list", method = RequestMethod.POST)
-   public @ResponseBody List<ListInfo> selectList(@RequestBody ListInfo li)
+   public @ResponseBody ModelMap selectList(@RequestBody ListInfo li, ModelMap hm)
    {
-	   return ls.selectListInfo(li);
+	   List<ListInfo> list=ls.selectListInfo(li);
+	   hm.put("list",list);
+	   return hm;
    }
 
    
