@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <!DOCTYPE html>
 
@@ -8,13 +8,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
 <link href="<c:url value='/resources/font-awesome/css/font-awesome.min.css"'/>" rel="stylesheet"/>
-
-<script src="<c:url value='/resources/js/jquery.min.js'/>"></script>
-
+        <script src="/resources/js/jquery-1.12.1.min.js"></script>
+                <script src="/resources/js/bootstrap.min.js"></script>
+        <script src="/resources/js/jquery.backstretch.min.js"></script>
+        <script src="/resources/js/scripts.js"></script>
+        
 
     <title>HANG OUT</title>
 
@@ -22,185 +21,83 @@
     <link href="/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom CSS -->
-	<link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
-	<script src="/resources/js/stylish-portfolio.js"></script>
+   <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
+   <script src="/resources/js/stylish-portfolio.js"></script>
     <link href="/resources/css/new-style.css" rel="stylesheet">
-
-
+<link href="/resources/css/mainSlide.css" rel="stylesheet">
   </head>
 
   <body>
 
-    
-<br></br><p></p>
-    <!-- Info Block-01 -->
-  <section class="banner-sec float-left w-300 pt-4 pb-5">
-    <div class="container-fluid">
-     <div class="container text-center">
-   	  <h2>Hey, Let's </h2>
-   	  <h1>HANG OUT</h1>
-       
-        <p></p><b></b>
+  
+  
+ <header>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#hangout1" data-slide-to="0" class="active"></li>
+          <li data-target="#hangout2" data-slide-to="1"></li>
+          <li data-target="#hangout3" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('https://c2.staticflickr.com/8/7390/9605176212_83f74b4f6d_b.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+                 <div class="container-fluid">
+      <h1>Hey, Let's  HANG OUT</h1>
+      <h4>New York 애완견 모임</h4>
        </div>
-       
-       
-       
-       <h4>_____현재의 인기 모임리스트</h4>
-      <div class="row px-3" size="80%">
-        <div class="col-md-3">
-          <div class="card mb-4"> <img class="img-fluid" src="/resources/images/asia.jpg" alt="">
-            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">HOT</span> </div>
-            <div class="card-body p-2">
-              <div class="news-title">
-                <h2 class=" title-small"><a href="#">아두이노 수업</a></h2>
-              </div>
-                  <h4 class=" title-small"><a href="#">2017/10/12 3pm</a></h4>
+              
             </div>
           </div>
-          <div class="card mb-4"> <img class="img-fluid" src="/resources/images/asia.jpg" alt="">
-            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">HOT</span> </div>
-            <div class="card-body p-2">
-              <div class="news-title">
-                <h2 class=" title-small"><a href="#">아리아나 그란데 콘서트</a></h2>
-              <h4 class=" title-small"><a href="#">2017/10/12 3pm</a></h4>
-            
-              </div>
-            </div>
-          </div>  
-        </div>
-        <div class="col-md-3">
-          <div class="card mb-4"> <img class="img-fluid" src="/resources/images/asia.jpg" alt="">
-            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">HOT</span> </div>
-            <div class="card-body p-2">
-              <div class="news-title">
-                <h2 class=" title-small"><a href="#">추석연휴 몸살 </a></h2>
-              </div>
-              <h4 class=" title-small"><a href="#">2017/10/12 3pm</a></h4>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/KU-vs-Mizzou-Nov-29-08_%282%29.jpg/1200px-KU-vs-Mizzou-Nov-29-08_%282%29.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Second Slide</h3>
+              <p>This is a description for the second slide.</p>
             </div>
           </div>
-          <div class="card"> <img class="img-fluid" src="/resources/images/asia.jpg" alt="">
-            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">HOT</span> </div>
-            <div class="card-body p-2">
-              <div class="news-title">
-                <h2 class=" title-small"><a href="#">졸려여영</a></h2>
-              </div>
-              <h4 class=" title-small"><a href="#">2017/10/12 3pm</a></h4>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Third Slide</h3>
+              <p>This is a description for the third slide.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 top-slider">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <div class="news-block">
-                  <div class="news-media"><img class="img-fluid" src="/resources/images/mainP.jpg" alt=""></div>
-                  <div class="news-title">
-                    <h2 class=" title-large"><a href="#">Ray madison may struggle to get best from Paul in a 4-2-3-1 formation</a></h2>
-                  </div>
-                  <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
-                  <div class="time-text"><strong>2h ago</strong></div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="news-block">
-                  <div class="news-media"><img class="img-fluid" src="/resources/images/mainP.jpg" alt=""></div>
-                  <div class="news-title">
-                    <h2 class=" title-large"><a href="#">An Alternative Form of Mental Health Care Gains a Foothold</a></h2>
-                  </div>
-                  <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
-                  <div class="time-text"><strong>2h ago</strong></div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="news-block">
-                  <div class="news-media"><img class="img-fluid" src="/resources/images/mainP.jpg" alt=""></div>
-                  <div class="news-title">
-                    <h2 class=" title-large"><a href="#">Key Republican Senator Says She Will Not Vote for former president!</a></h2>
-                  </div>
-                  <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
-                  <div class="time-text"><strong>2h ago</strong></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-    </div>
-  </section>
+    </header>
 
-
-    <!-- About -->
-    <section id="about" class="about">
-      <div class="container text-center">
-       <p class="lead">HANG OUT</p>
+  <!-- Page Content -->
+    <section class="py-5">
+      <div class="container">
+        <h2>Hangout?!</h2>
+        <p>전국의 32,500개의 모임이 당신을 기다리고 있습니다!</p>
       </div>
-      <!-- /.container -->
     </section>
 
     <!-- Services -->
     <section id="services" class="services bg-primary text-white">
       <div class="container">
-        <div class="row text-center">
-          <div class="col-lg-10 mx-auto">
+        <div class="row justify-content-center align-self-center">
+          <div class="col-sm-4 auto">
             <h2>지역별 모임 찾기</h2>
+            <input type="text-center" class="form-control"
+                  placeholder="원하시는 모임의 이름을 검색 해보세요." id="hangoutName">
+                  <p></p>
+                   
+               <p></p>
             <hr class="small">
             <div class="row">
           
-              <div class="col-md-3 col-sm-6">
-       	    <div class="place-seoul">
-                 <img class="img-portfolio img-fluid" src="/resources/images/area/seoul.jpg">  
-                  <h4>
-                    <strong>서울</strong>
-                  </h4>
-                  </div>
-              </div>
-            
-            
-              <div class="col-md-3 col-sm-6">
-                <div class="place-busan">
-              <img class="img-portfolio img-fluid" src="/resources/images/area/busan.jpg">         
-                  <h4>
-                    <strong>부산</strong>
-                  </h4>
-                </div>
-              </div>
-            
-            
-              <div class="col-md-3 col-sm-6">
-          	  <div class="place-daegu">
-              <img class="img-portfolio img-fluid" src="/resources/images/area/daegu.jpg">  
-                  <h4>
-                    <strong>대구</strong>
-                  </h4>
-                           </div>
-              </div>
-            
-              <div class="col-md-3 col-sm-6">
-                <div class="place-kwangju">
-                  <img class="img-portfolio img-fluid" src="/resources/images/area/kwangju.jpg">  
-                  <h4>
-                    <strong>광주</strong>
-                  </h4>
-                    </div>
-              </div>
-            
-            
-              <div class="col-md-3 col-sm-6">
-                <div class="place-daejeon">
-                  <img class="img-portfolio img-fluid" src="/resources/images/area/daejeon.JPG">  
-                  <h4>
-                    <strong>대전</strong>
-                  </h4>
-                     </div>
-              </div>
+             
                                
             </div>
              <a href="/list" class="btn btn-dark">View More HANGOUT</a>
@@ -216,7 +113,7 @@
     <!-- Callout -->
     <aside class="callout">
       <div class="text-vertical-center">
-        <h1>	HANG OUT</h1>
+        <h1>   HANG OUT</h1>
       </div>
     </aside>
 
@@ -479,12 +376,9 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="/resources/vendor/jquery/jquery.min.js"></script>
-    <script src="/resources/vendor/popper/popper.min.js"></script>
-    <script src="/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/resources/js/jquery.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
 
     <!-- Custom scripts for this template -->
     <script src="/resources/js/stylish-portfolio.js"></script>
@@ -492,6 +386,33 @@
   </body>
 
 </html>
+
+<!-- 이것은 메인 상단의 HOT LIST를 위한 JS -->
+<script>
+$('#myTab a').click(function (e) {
+     e.preventDefault()
+     $(this).tab('show')
+   })
+
+
+   $(window).load(function() {
+       var boxheight = $('#myCarousel .carousel-inner').innerHeight();
+       var itemlength = $('#myCarousel .item').length;
+       var triggerheight = Math.round(boxheight/itemlength+1);
+       $('#myCarousel .list-group-item').outerHeight(triggerheight);
+   });
+
+   var monthNames = [ "January", "February", "March", "April", "May", "June",
+       "July", "August", "September", "October", "November", "December" ];
+   var dayNames= ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+
+   var newDate = new Date();
+   newDate.setDate(newDate.getDate() + 1);    
+   $('#Date').html(dayNames[newDate.getDay()] + ", " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+</script> 
+
+
+
 
 <script type='text/javascript'> 
 function attracta_loadjs(url) {
@@ -533,5 +454,12 @@ function attracta_window_height() {
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
- 
 
+
+<script>
+$('#myCarousel').on('slide.bs.carousel', function () {
+     // do something…
+   })
+</script>
+
+ 
