@@ -24,6 +24,8 @@
 <!-- Google Fonts -->
 <link rel="stylesheet" href="<c:url value="https://fonts.googleapis.com/css?family=Passion+One"/>"/>
 <link rel="stylesheet" href="<c:url value="https://fonts.googleapis.com/css?family=Oxygen"/>"/>
+<link rel="icon" type="image/png" href="<c:url value="/resources/images/logo.png"/>"/>
+
 		<%
 		UserInfo user=new UserInfo();
 		boolean login = false;
@@ -37,7 +39,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
         <a href="/main" align="left">
-        <img width="50%" src="/resources/images/logo.png"></a>
+        <img width="50%" href="<c:url value="/resources/images/logo.png"/>"/>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
