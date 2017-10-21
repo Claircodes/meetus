@@ -78,7 +78,7 @@ public class UserController {
 		return hm;
 	}
 
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String mainsite(UserInfo ui) {
 		return "main";
 	}

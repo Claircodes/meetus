@@ -1,4 +1,7 @@
+
+ /* hang out list 프로시저 삭제 */
 DROP PROCEDURE p_insert_hangout_info;
+ /* hang out list 프로시저 시작  */
 DELIMITER $$
 CREATE PROCEDURE p_insert_hangout_info(IN loop_cnt int(1))
 BEGIN
@@ -29,7 +32,9 @@ END
 $$
 delimiter ;
 call p_insert_hangout_info(1000);
+ /* hang out list 프로시저 끝 */
 
+ /* user_info 테이블 생성 시작 */
 CREATE	CREATE	user_info	CREATE TABLE `user_info` (
    `usernum` INT(11) NOT NULL AUTO_INCREMENT,
    `username` VARCHAR(30) NOT NULL,
@@ -41,7 +46,9 @@ CREATE	CREATE	user_info	CREATE TABLE `user_info` (
    `userCountry` VARCHAR(30) NOT NULL,
    PRIMARY KEY (`usernum`)
 );
+ /* user_info 테이블 생성 끝 */
 
+ /* hangout_info 테이블 생성 시작 */
 CREATE	CREATE	hangout_info	CREATE TABLE `hangout_info` (
  `hangoutnum` INT(11) NOT NULL AUTO_INCREMENT,
  `hangoutcreator` INT(11) NOT NULL,
@@ -55,3 +62,5 @@ CREATE	CREATE	hangout_info	CREATE TABLE `hangout_info` (
  `hangouttag` VARCHAR(30) NOT NULL,
  PRIMARY KEY (`hangoutnum`)
 );
+/* hangout_info 테이블 생성 끝 */
+
