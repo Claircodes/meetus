@@ -1,9 +1,8 @@
-PROCEDURE	DROP	hangout_info	DROP PROCEDURE p_insert_hangout_info;
-PROCEDURE	CREATE	hangout_info	DELIMITER $$
+DROP PROCEDURE p_insert_hangout_info;
+DELIMITER $$
 CREATE PROCEDURE p_insert_hangout_info(IN loop_cnt int(1))
 BEGIN
  DECLARE i INT DEFAULT 0;
-
  /* 만약 SQL에러라면 ROLLBACK 처리한다. */
  DECLARE exit handler for SQLEXCEPTION
    BEGIN
@@ -29,11 +28,8 @@ BEGIN
 END
 $$
 delimiter ;
-PROCEDURE	CREATE(1000)	hangout_info	call p_insert_hangout_info(1000);
-			
-			
-			
-			
+call p_insert_hangout_info(1000);
+
 CREATE	CREATE	user_info	CREATE TABLE `user_info` (
    `usernum` INT(11) NOT NULL AUTO_INCREMENT,
    `username` VARCHAR(30) NOT NULL,
@@ -45,11 +41,7 @@ CREATE	CREATE	user_info	CREATE TABLE `user_info` (
    `userCountry` VARCHAR(30) NOT NULL,
    PRIMARY KEY (`usernum`)
 );
-			
-			
-			
-			
-			
+
 CREATE	CREATE	hangout_info	CREATE TABLE `hangout_info` (
  `hangoutnum` INT(11) NOT NULL AUTO_INCREMENT,
  `hangoutcreator` INT(11) NOT NULL,
