@@ -9,22 +9,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="<c:url value='/resources/font-awesome/css/font-awesome.min.css"'/>" rel="stylesheet"/>
-        <script src="/resources/js/jquery-1.12.1.min.js"></script>
-                <script src="/resources/js/bootstrap.min.js"></script>
-        <script src="/resources/js/jquery.backstretch.min.js"></script>
-        <script src="/resources/js/scripts.js"></script>
-        
+<script src="<c:url value='/resources/js/jquery-1.12.1.min.js' />"></script>
+<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
+<script src="<c:url value='/resources/js/jquery.backstretch.min.js' />"></script>
+<!--  <script src="<c:url value='/resources/js/scripts.js' />"></script>
+        -->
 
     <title>HANG OUT</title>
 
     <!-- Custom Fonts -->
-    <link href="/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="<c:url value='/resources/font-awesome/css/font-awesome.min.css"'/>" type="text/css" rel="stylesheet"/>
 
     <!-- Custom CSS -->
-   <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
-   <script src="/resources/js/stylish-portfolio.js"></script>
-    <link href="/resources/css/new-style.css" rel="stylesheet">
-<link href="/resources/css/mainSlide.css" rel="stylesheet">
+<link href="<c:url value='/resources/css/stylish-portfolio.css"'/>" rel="stylesheet"/>
+<script src="<c:url value='/resources/js/stylish-portfolio.js' />"></script>
+<link href="<c:url value='/resources/css/new-style.css"'/>" rel="stylesheet"/>
+<link href="<c:url value='/resources/css/mainSlide.css"'/>" rel="stylesheet"/>
   </head>
 
   <body>
@@ -100,7 +100,7 @@
              
                                
             </div>
-             <a href="/list" class="btn btn-dark">View More HANGOUT</a>
+             <a href="<c:url value='/list'/>" class="btn btn-dark">View More HANGOUT</a>
             <!-- /.row (nested) -->
           </div>
           <!-- /.col-lg-10 -->
@@ -128,7 +128,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"><center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/art.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/art.png'/>"/>
                   </a>
                    <h4>
                     <strong>ART</strong></center>
@@ -138,7 +138,7 @@
              <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"><center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/beauty.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/beauty.png'/>"/>
                   </a>
                    <h4>
                     <strong>BEAUTY</strong></center>
@@ -148,7 +148,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"><center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/book.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/book.png'/>"/>
                   </a>
                    <h4>
                     <strong>BOOK</strong></center>
@@ -158,7 +158,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"><center>
-                    <img width="50%"  class="img-portfolio img-fluid" src="/resources/images/category/business.png">
+                    <img width="50%"  class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/business.png'/>"/>
                   </a>
                    <h4>
                     <strong>BUSINESS</strong></center>
@@ -168,7 +168,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"><center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/dance.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/dance.png'/>"/>
                   </a>
                    <h4>
                     <strong>DANCE</strong></center>
@@ -178,7 +178,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"><center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/education.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/education.png'/>"/>
                   </a>
                    <h4>
                     <strong>EDUCATION</strong></center>
@@ -188,7 +188,7 @@
                 <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"><center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/food.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/food.png'/>"/>
                   </a>
                    <h4>
                     <strong>FOOD</strong></center>
@@ -198,7 +198,7 @@
                 <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"><center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/game.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/game.png'/>"/>
                   </a>
                    <h4>
                     <strong>GAME</strong></center>
@@ -208,7 +208,7 @@
                 <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"> <center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/language.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/language.png'/>"/>
                   </a>
                    <h4>
                    <strong>LANGUAGE</strong></center>
@@ -219,7 +219,7 @@
                <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"> <center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/movie.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/movie.png'/>"/>
                   </a>
                    <h4>
                    <strong>MOVIE</strong></center>
@@ -229,7 +229,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"> <center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/music.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/music.png'/>"/>
                   </a>
                    <h4>
                    <strong>MUSIC</strong></center>
@@ -239,7 +239,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"> <center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/pet.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/pet.png'/>"/>
                   </a>
                    <h4>
                    <strong>PET</strong></center>
@@ -249,7 +249,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"> <center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/photo.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/photo.png'/>"/>
                   </a>
                    <h4>
                    <strong>PHOTO</strong></center>
@@ -259,7 +259,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"> <center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/religion.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/religion.png'/>"/>
                   </a>
                    <h4>
                    <strong>RELIGION</strong></center>
@@ -269,7 +269,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"> <center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/sport.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/sport.png'/>"/>
                   </a>
                    <h4>
                    <strong>SPORT</strong></center>
@@ -279,7 +279,7 @@
               <div class="col-md-3 col-sm-6">
                 <div class="portfolio-item">
                   <a href="#"> <center>
-                    <img width="50%" class="img-portfolio img-fluid" src="/resources/images/category/technical.png">
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/technical.png'/>"/>
                   </a>
                    <h4>
                    <strong>TECHNICAL</strong></center>
@@ -304,7 +304,7 @@
     <aside class="call-to-action bg-primary text-white">
       <div class="container text-center">
         <h3>마음에 드시는 모임이 없나요? 직접 개설 해보세요!</h3>
-        <a href="/create" class="btn btn-lg btn-light">모임 만들기</a>
+        <a href="<c:url value='/create'/>" class="btn btn-lg btn-light">모임 만들기</a>
         <a href="#" class="btn btn-lg btn-dark">모임 검색하기</a>
       </div>
     </aside>
@@ -376,12 +376,12 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="/resources/js/jquery.min.js"></script>
+<script src="<c:url value='/resources/js/jquery.min.js' />"></script>
 
 
 
     <!-- Custom scripts for this template -->
-    <script src="/resources/js/stylish-portfolio.js"></script>
+<script src="<c:url value='/resources/js/stylish-portfolio.js' />"></script>
 
   </body>
 
