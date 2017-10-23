@@ -45,37 +45,49 @@
 
   <!-- Page Content -->
     <section class="py-5">
-      <div class="container">
-        <h2>Hangout?!</h2>
-        <p>전국의 32,500개의 모임이 당신을 기다리고 있습니다!</p>
-      </div>
+    <div class="container">
+                <!-- Example row of columns -->
+                <div class="row">
+					<div class="col-sm-4">
+						<h3>32,500<br> HangOut 모임 갯수</h3>
+						<p>전국의 수많은 모임들이 당신을 기다리고 있습니다.</p>
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						<h3>70<br>참가국 갯수</h3>
+						<p>아시아, 유럽, 북미, 남미 등 다양한 국가에서 참가하고 있습니다.</p>
+						</a>
+					
+					</div>
+					
+					<div class="col-sm-4">
+						<h3>24/7<br> No Break</h3>
+						<p>시간 제한없이 원하는 시간에 모임의 시간을 설정할 수 있습니다.</p>
+						</a>
+					</div>
+
+                </div>
+            </div> <!-- /container --> 
     </section>
 
     <!-- Services -->
     <section id="services" class="services bg-primary text-white">
       <div class="container">
         <div class="row justify-content-center align-self-center">
-          <div class="col-sm-4 auto">
-            <h2>지역별 모임 찾기</h2>
-            <input type="text-center" class="form-control"
+        <div class="col-sm-12">
+         <h2>지역별 모임 찾기</h2></div>
+          <div class="col-sm-6 ">
+          	 	 <input type="text-center" class="form-control"
                   placeholder="원하시는 모임의 이름을 검색 해보세요." id="hangoutName">
-                  <p></p>
-                   
-               <p></p>
-            <hr class="small">
-            <div class="row">
-          
-             
-                               
-            </div>
-             <a href="<c:url value='/list'/>" class="btn btn-dark">View More HANGOUT</a>
-            <!-- /.row (nested) -->
-          </div>
-          <!-- /.col-lg-10 -->
-        </div>
+           </div>
+         <div class="col-sm-6 .col-md-6">
+      
+             <a href="<c:url value='/list'/>" class="btn btn-dark">SEARCH HANGOUT</a></div>
         <!-- /.row -->
       </div>
       <!-- /.container -->
+      </div>
     </section>
 
     <!-- Callout -->
