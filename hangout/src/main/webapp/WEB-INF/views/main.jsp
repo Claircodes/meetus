@@ -24,56 +24,24 @@
 <link href="<c:url value='/resources/css/stylish-portfolio.css"'/>" rel="stylesheet"/>
 <script src="<c:url value='/resources/js/stylish-portfolio.js' />"></script>
 <link href="<c:url value='/resources/css/new-style.css"'/>" rel="stylesheet"/>
-<link href="<c:url value='/resources/css/mainSlide.css"'/>" rel="stylesheet"/>
   </head>
 
   <body>
 
   
   
- <header>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#hangout1" data-slide-to="0" class="active"></li>
-          <li data-target="#hangout2" data-slide-to="1"></li>
-          <li data-target="#hangout3" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-          <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('https://c2.staticflickr.com/8/7390/9605176212_83f74b4f6d_b.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-                 <div class="container-fluid">
-      <h1>Hey, Let's  HANG OUT</h1>
-      <h4>New York 애완견 모임</h4>
-       </div>
-              
-            </div>
-          </div>
-          <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/KU-vs-Mizzou-Nov-29-08_%282%29.jpg/1200px-KU-vs-Mizzou-Nov-29-08_%282%29.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Second Slide</h3>
-              <p>This is a description for the second slide.</p>
-            </div>
-          </div>
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p>
-            </div>
-          </div>
+<!-- Header -->
+    <header class="header" id="top">
+      <div class="text-vertical-center">
+        <div class="btn btn-dark btn-lg js-scroll-trigger">
+        <h1>Hey, Let's Hangout!</h1>
+        <h3>10월의 우수 모임, Pet is my family.</h3>
+        <p> 사람뿐만 아니라 애완견들도 커뮤니티가 필요해요. Hangout을 통해서 말이죠! - Kimberly Noma</p>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <br>
       </div>
     </header>
+
 
   <!-- Page Content -->
     <section class="py-5">
