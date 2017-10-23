@@ -141,7 +141,7 @@
                     <img width="50%"  class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/business.png'/>"/>
                   </a>
                    <h4>
-                    <strong>BUSINESS</strong></center>
+                    <strong id="business">BUSINESS</strong></center>
                   </h4>
                 </div>
               </div>

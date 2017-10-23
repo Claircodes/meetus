@@ -24,7 +24,7 @@ public class ListController {
       int result = ls.insertListInfo(li);
       if (result == 1) {
          hm.put("msg", "모임생성이 완료되었습니다.");
-         hm.put("url", "main");
+         hm.put("url", "");
       } else {
          hm.put("msg", "모임생성 실패, 정보를 확인하세요");
          hm.put("url", "hangout/create");

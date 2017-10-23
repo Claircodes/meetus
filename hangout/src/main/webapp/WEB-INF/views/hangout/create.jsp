@@ -146,6 +146,42 @@
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
 														value="FOOD" /> <label for="checkbox_ca6">FOOD</label>
 												</div>
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">ART</label>
+												</div>
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">GAME</label>
+												</div>
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">MOVIE</label>
+												</div>
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">RELIGION</label>
+												</div>
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">SPORT</label>
+												</div>
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">EDUCATION</label>
+												</div>
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">TECHNICAL</label>
+												</div>
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">DANCE</label>
+												</div>
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">PHOTO</label>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -352,8 +388,14 @@
    $("#hang_signup").click(function() {
           var paramIds = "hangoutArea,hangoutCategory,hangoutCreator,hangoutName,hangoutContent,hangoutOpenDate,hangoutCloseDate,hangoutDate,hangoutTag";
           var au = new AjaxUtil("insert/list",paramIds);
+          au.setCallbackSuccess(callbackCreate);
           au.send();
        });
+   function callbackCreate(results)
+   {
+	   alert(results.msg);
+	   location.href = "/" + results.url;
+   }
 
 </script>
 
