@@ -96,8 +96,13 @@
 		$("#btn").click(function() {
 			var paramIds = "userId,userPwd";
 			var au = new AjaxUtil("login", paramIds);
+			au.setCallbackSuccess(callbackMain);
 			au.send();
 		})
+		function callbackMain(results)
+		{
+			location.href = "/" + results.url;
+		}
 	</script>
 
 	<!-- Javascript -->

@@ -70,7 +70,7 @@ public class UserController {
 		if (rUser != null) {
 			hs.setAttribute("user", rUser);
 			hm.put("msg", "로그인 성공하셨습니다.");
-			hm.put("url", "main");
+			hm.put("url", "");
 		} else {
 			hm.put("msg", "아이디와 비밀번호를 확인해주세요.");
 			hm.put("url", "user/login");

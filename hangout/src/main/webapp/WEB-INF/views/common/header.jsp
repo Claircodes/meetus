@@ -37,7 +37,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-        <a href="${rootPath }" align="left">
+        <a href="${rootPath}/" align="left">
         <img width="50%"  src="<c:url value="/resources/images/logo.png"/>"/>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -62,6 +62,9 @@
               <a class="nav-link" href="${rootPath}/create">모임만들기</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="${rootPath}/user/profile">마이페이지</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link"  href="${rootPath}/logout">로그아웃</a>
             </li>
 			<li class="nav-item"><a class="nav-link js-scroll-trigger" ><%=user.getUserId()%></a></li><%} %>
@@ -71,7 +74,7 @@
         
       </div>
     </nav>
-   	<br/><br/><br/>
+   	<br/><br/><br/><br/><br/><br/>
 
 <script >
 var JSException = function(msg){
