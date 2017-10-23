@@ -6,6 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<c:set var="rootPath" value="${pageContext.request.contextPath}"/>
      
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,13 +19,11 @@
 <script src="<c:url value='/resources/js/jquery.iframe-transport.js' />"></script>
 <script src="<c:url value='//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js' />"></script>
 
-<!-- Website Font style -->
-<link rel="stylesheet" href="<c:url value="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>"/>
 
 <!-- Google Fonts -->
 <link rel="stylesheet" href="<c:url value="https://fonts.googleapis.com/css?family=Passion+One"/>"/>
 <link rel="stylesheet" href="<c:url value="https://fonts.googleapis.com/css?family=Oxygen"/>"/>
-<link rel="icon" type="image/png" href="<c:url value="/resources/images/logo.png"/>"/>
+<link rel="icon" type="${rootPath }/image/png" href="<c:url value="/resources/images/logo.png"/>"/>
 
 		<%
 		UserInfo user=new UserInfo();
@@ -38,9 +37,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-        <a href="/main" align="left">
-        <img width="50%" href="<c:url value="/resources/images/logo.png"/>"/>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <a href="${rootPath }" align="left">
+        <img width="50%" src="<c:url value="/resources/images/logo.png"/>"  data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"/>
+        <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -71,7 +70,7 @@
         
       </div>
     </nav>
-    </br></br></br></br>
+   	<br/><br/><br/>
 
 <script >
 var JSException = function(msg){
