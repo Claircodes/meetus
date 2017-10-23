@@ -37,17 +37,10 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-<<<<<<< HEAD
         <a href="${rootPath }" align="left">
         <img width="50%" src="<c:url value="/resources/images/logo.png"/>"  data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"/>
         <button class="navbar-toggler" type="button">
-=======
         <a href="/main" align="left">
-        <img width="50%"  src="<c:url value="/resources/images/logo.png"/>"/>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
->>>>>>> branch 'master' of https://github.com/Claircodes/meetus.git
-          <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             
