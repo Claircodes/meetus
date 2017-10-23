@@ -31,7 +31,7 @@
 		if((UserInfo)session.getAttribute("user")!=null){		
 			user=(UserInfo)session.getAttribute("user");
 			} 
-		%>	
+		%>	 
 
 
     <!-- Navigation -->
