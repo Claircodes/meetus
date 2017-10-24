@@ -57,7 +57,7 @@ public class ListController {
    public @ResponseBody List<ListInfo> selectCategory(@RequestBody ListInfo li)
    {
 	   List<ListInfo> liList = ls.selectCategory(li);
-	   return liList;
+	   return ls.selectCategory(li);
    }
    
    @RequestMapping(value = "/category/list", method = RequestMethod.GET)

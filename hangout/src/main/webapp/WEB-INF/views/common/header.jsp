@@ -128,8 +128,8 @@ var AjaxUtil = function (url, params, type, dataType){
 	    ,   url      : this.url
 	    ,   dataType : this.dataType 
 	    ,   beforeSend: function(xhr) {
-	        xhr.setRequestHeader("Accept", "application/json");
-	        xhr.setRequestHeader("Content-Type", "application/json");
+	        xhr.setRequestHeader("Accept", "application/json; charset=UTF-8");
+	        xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 	        xhr.setRequestHeader("AJAX",true);
 	    }
 	    ,   data     : this.param

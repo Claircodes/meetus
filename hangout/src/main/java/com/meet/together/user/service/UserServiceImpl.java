@@ -39,4 +39,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.getUserProfile(ui);
 	}
 
+	@Override
+	public int updateUser(UserInfo ui) {
+		return userDao.updateUser(ui);
+	}
+
 }
