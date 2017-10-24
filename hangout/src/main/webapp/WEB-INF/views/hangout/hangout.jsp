@@ -2,16 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
 
-<html lang="en">
-
-  <head>
-
-    <!-- Custom styles for this template -->
     <link href="/resources/css/hangout.css" rel="stylesheet">
-
-
   </head>
   
   <body>
