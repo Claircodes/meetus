@@ -27,22 +27,20 @@ body {
 }
 
 .album {
-  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  min-height: 100rem; /* Can be removed; just added for demo purposes */
   padding-top: 3rem;
   padding-bottom: 3rem;
   background-color: #f7f7f7;
 }
 
 .card {
-  flex: 0 0 30%;
-  max-width: 25%;
+  flex: 0 0 25%;
+  max-width: 100%;
   position: relative;
-  float: left;
-  width: 100%;
+  float: none;
+  width: 100%;  
   margin-bottom: 2rem;
   border: 0;
-  margin-right: 1px;
-  margin-left: 1px;
 }
 
 .card > img {
@@ -60,4 +58,7 @@ footer {
 
 footer p {
   margin-bottom: .25rem;
+}
+.list_body{
+	
 }

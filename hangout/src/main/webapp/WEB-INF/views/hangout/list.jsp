@@ -9,8 +9,7 @@
     <link href="<c:url value="/resources/css/album.css"/>" rel="stylesheet">
 
     <p></p><p></p><br></br><p></p><p></p>
-       <div style="background: #fff; background : rgba(0, 0, 0, 0.7); margin-left: 50px ; margin-right: 50px">
-   
+
       <!-- 검색 bar -->
          <div class="row justify-content-center align-self-center">
             <div class="span6" style="float: none; margin: 0 auto;">
@@ -30,13 +29,10 @@
 
 
 <!-- 모임 리스트 -->
-	<div class="container">
-		<div class="row">
-			<div id="list_body">
+
+	
+			<div id="list_body" class="row justify-content-center align-self-center">
 			</div>
-		</div>
-	</div>
-	   </div>
     <script>
     $(document).ready(function(){
        var paramIds="hangoutName";
@@ -49,10 +45,10 @@
       var str = "";
       for (var i = 0, max = hangoutList.length; i < max; i++) {
          var list = hangoutList[i]; 
-         str += "<div class='card'>";						
-         str += "<img src=\"<c:url value='/resources/images/testimg.jpg'/>\" >";											
+         str += "<div class='col-sm-3'><div class='card'>";						
+         str += "<img src=\"<c:url value='http://img.insight.co.kr/static/2017/06/23/700/u0bn4swj5g5dp29xzp74.jpg'/>\" >";											
          str += "<h4>"+list.hangoutName+"</h4>";							
-         str += "</div>";
+         str += "</div></div>";
          }
       $("#list_body").html(str);
       }

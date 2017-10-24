@@ -42,5 +42,6 @@
 			<if test="hangoutName!=null">
 	and hangoutname like concat('%',#{hangoutName},'%')
 	</if>
+	limit 12
 	</select>
 </mapper>
