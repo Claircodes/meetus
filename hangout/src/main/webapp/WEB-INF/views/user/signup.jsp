@@ -131,10 +131,10 @@
 											class="fa fa-users fa" aria-hidden="true"></i></span>
 										<div id="radioBtn" class="form-control">
 										<div class="col-sm-5">
-												<input type="radio" name="userGender" value="M"><label for="M">남/Male</label><br>
+												<input type="radio" name="userGender"  id="userGender" value="M"><label for="M">남/Male</label><br>
 											</div>
 											<div class="col-sm-5">
-												<input type="radio" name="userGender" value="F"><label for="F">여/Female</label><br>
+												<input type="radio" name="userGender" id="userGender" value="F"><label for="F">여/Female</label><br>
 												</div>
 										</div>
 									</div>
