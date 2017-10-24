@@ -12,6 +12,7 @@
 
 		<link rel="stylesheet" href="/resources/css/form-elements.css">
         <link rel="stylesheet" href="/resources/css/style.css">
+           <link rel="stylesheet" href="/resources/css/dropdown.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -152,7 +153,7 @@
 										<span class="input-group-addon"> <i
 											class="fa  fa-map-marker fa" aria-hidden="true"></i></span>
 											 <select
-											class="selectpicker" data-style="btn-danger" id="userCountry" >
+											class="selectpicker size" data-style="btn-danger" id="userCountry" >
 											<optgroup label="Asia">
 												<option>Korea</option>
 												<option>Japan</option>
@@ -167,9 +168,8 @@
 
 
 									</div>
-								</div>
+								</div><br>
 								<form role="form" action="" method="post" class="login-form">
-
 									<button type="button" class="btn" id="btn">회원가입</button>
 							</div>
 							</form>
