@@ -48,9 +48,6 @@
             
             <%if((UserInfo)session.getAttribute("user")==null){ %>
             <li class="nav-item">
-              <a class="nav-link" href="${rootPath}/create">모임 개설하기</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="${rootPath}/signup">회원가입</a>
             </li>
             <li class="nav-item">

@@ -12,11 +12,13 @@
     	<typeAlias alias="user" type="com.meet.together.user.dto.UserInfo"/>
     	<typeAlias alias="listInfo" type="com.meet.together.list.dto.ListInfo"/>
     	<typeAlias alias="place" type="com.meet.together.list.dto.Place"/>
+    	<typeAlias alias="category" type="com.meet.together.list.dto.CategoryInfo"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="com/meet/together/user/sql/user_sql.xml" />
 		<mapper resource="com/meet/together/list/sql/list_sql.xml" />
 		<mapper resource="com/meet/together/list/sql/place_sql.xml" />
+		<mapper resource="com/meet/together/list/sql/category_sql.xml" />
 	</mappers>
 </configuration>
 

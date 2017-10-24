@@ -1,15 +1,22 @@
 package com.meet.together.list.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.meet.together.list.dto.CategoryInfo;
 import com.meet.together.list.dto.ListInfo;
 import com.meet.together.list.dto.Place;
 import com.meet.together.list.service.ListService;
@@ -44,5 +51,34 @@ public class ListController {
    @RequestMapping(value = "/place", method = RequestMethod.POST)
    public @ResponseBody int insertPlace(@RequestBody Place pi) {
       return ls.insertPlace(pi);
+   }
+   
+   @RequestMapping(value = "/select/category", method = RequestMethod.POST)
+   public @ResponseBody List<ListInfo> selectCategory(@RequestBody ListInfo li)
+   {
+	   List<ListInfo> liList = ls.selectCategory(li);
+	   return liList;
+   }
+   
+   @RequestMapping(value = "/category/list", method = RequestMethod.GET)
+   public String getCategoryInfo(Model model, HttpServletRequest request)
+   {
+	   List<CategoryInfo> ciList = ls.selectCategoryInfo();
+	   List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
+	   
+	   for(CategoryInfo ci : ciList)
+	   {
+		   Map<String, Object> hm = new HashMap<String, Object>();
+		   hm.put("value", ci.getCategoryNum());
+		   hm.put("text", ci.getCategoryName());
+		   result.add(hm);
+	   }
+	   model.addAttribute("categoryList", result);
+	   String url = request.getParameter("url");
+	   if(url == null || url.equals(""))
+	   {
+		   url = "hangout/categorylist";
+	   }
+	   return url;
    }
 }

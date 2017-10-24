@@ -5,6 +5,7 @@ import java.util.List;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import com.meet.together.list.dto.CategoryInfo;
 import com.meet.together.list.dto.ListInfo;
 import com.meet.together.list.dto.Place;
 
@@ -23,6 +24,16 @@ public class ListDaoImpl extends SqlSessionDaoSupport implements ListDao {
 	@Override
 	public List<ListInfo> selectListInfo(ListInfo li) {
 		return this.getSqlSession().selectList("listInfo.SELECT_LIST", li);
+	}
+
+	@Override
+	public List<CategoryInfo> selectCategoryInfo() {
+		return this.getSqlSession().selectList("category.SELECT_CATEGORY_INFO");
+	}
+
+	@Override
+	public List<ListInfo> selectCategory(ListInfo li) {
+		return this.getSqlSession().selectList("listInfo.SELECT_CATEGORY_LIST", li);
 	}
 
 }
