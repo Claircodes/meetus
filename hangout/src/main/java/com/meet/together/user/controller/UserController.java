@@ -27,6 +27,13 @@ public class UserController {
 		return rUser;
 	}
 	
+	@RequestMapping(value = "/overlapPwd", method = RequestMethod.POST)
+	public @ResponseBody List<UserInfo> overlapPwd(@RequestBody UserInfo ui)
+	{
+		List<UserInfo> rUser = us.overlapPwd(ui);
+		return rUser;
+	}
+	
 	@RequestMapping(value = "/user/profile", method = RequestMethod.GET)
 	public String UserProfile(UserInfo ui)
 	{

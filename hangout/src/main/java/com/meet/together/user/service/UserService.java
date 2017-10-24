@@ -13,5 +13,7 @@ public interface UserService {
 	
 	public List<UserInfo> overlapId(UserInfo ui);
 	
+	public List<UserInfo> overlapPwd(UserInfo ui);
+	
 	public UserInfo getUserProfile(UserInfo ui);
 }
