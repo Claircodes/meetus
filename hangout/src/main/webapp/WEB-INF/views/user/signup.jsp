@@ -25,6 +25,9 @@
 
     <body>
 
+
+
+
         <!-- Top content -->
         <div class="top-content">
         	<div class="inner-bg h-100">
@@ -126,10 +129,12 @@
 										<span class="input-group-addon"> <i
 											class="fa fa-users fa" aria-hidden="true"></i></span>
 										<div id="radioBtn" class="form-control">
-											<a id="userGender" class="btn btn-login btn-sm active"
-												data-toggle="happy" data-title="Y">남/Male</a> <a
-												id="userGender" class="btn btn-login btn-sm notActive"
-												data-toggle="happy" data-title="N">여/Female</a>
+										<div class="col-sm-5">
+												<input type="radio" name="userGender" value="M"><label for="M">남/Male</label><br>
+											</div>
+											<div class="col-sm-5">
+												<input type="radio" name="userGender" value="F"><label for="F">여/Female</label><br>
+												</div>
 										</div>
 									</div>
 								</div>
@@ -145,8 +150,9 @@
 								<div class="cols-sm-10">
 									<div class="input-group">
 										<span class="input-group-addon"> <i
-											class="fa  fa-map-marker fa" aria-hidden="true"></i></span> <select
-											class="selectpicker" data-style="btn-danger" id="userCountry">
+											class="fa  fa-map-marker fa" aria-hidden="true"></i></span>
+											 <select
+											class="selectpicker" data-style="btn-danger" id="userCountry" >
 											<optgroup label="Asia">
 												<option>Korea</option>
 												<option>Japan</option>
