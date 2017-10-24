@@ -25,9 +25,6 @@
 
     <body>
 
-
-
-
         <!-- Top content -->
         <div class="top-content">
         	<div class="inner-bg h-100">

@@ -33,6 +33,17 @@
 			where 1=1
 		</if>
 	</select>
+	
+	<update id="USER_UPDATE" parameterType="user">
+		update user_info
+		set username = #{userName},
+		userpwd=#{userPwd},
+		usercountry=#{userCountry},
+		useremail=#{userEmail},
+		userphone=#{userPhone}
+	  
+	  where userid=#{userId}
+	</update>
 </mapper>
 
 
