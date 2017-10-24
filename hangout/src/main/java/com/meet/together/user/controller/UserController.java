@@ -27,23 +27,10 @@ public class UserController {
 		return rUser;
 	}
 	
-	@RequestMapping(value = "/overlapPwd", method = RequestMethod.POST)
-	public @ResponseBody List<UserInfo> overlapPwd(@RequestBody UserInfo ui)
-	{
-		List<UserInfo> rUser = us.overlapPwd(ui);
-		return rUser;
-	}
-	
 	@RequestMapping(value = "/user/profile", method = RequestMethod.GET)
-	public String UserProfile(UserInfo ui)
-	{
-		return "user/userprofile";
-	}
-	
-	@RequestMapping(value = "/user/update", method = RequestMethod.GET)
 	public String updateUserProfile(UserInfo ui)
 	{
-		return "user/userupdate";
+		return "user/userprofile";
 	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
@@ -66,7 +53,7 @@ public class UserController {
 	public String listsite(UserInfo ui) {
 		return "hangout/list";
 	}
-	
+
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public String createsite(UserInfo ui) {
 		return "hangout/create";
@@ -106,20 +93,6 @@ public class UserController {
 		} else {
 			hm.put("msg", "회원가입 실패, 정보를 확인하세요");
 			hm.put("url", "signup");
-		}
-		return hm;
-	}
-	
-	@RequestMapping(value = "/signup/update", method = RequestMethod.POST)
-	public @ResponseBody ModelMap updateUser(@RequestBody UserInfo ui, ModelMap hm) {
-
-		int result = us.updateUser(ui);
-		if (result >= 1) {
-			hm.put("msg", "수정이 완료되었습니다.");
-			hm.put("url", "user/profile");
-		} else {
-			hm.put("msg", "수정 실패, 정보를 확인하세요");
-			hm.put("url", "user/update");
 		}
 		return hm;
 	}

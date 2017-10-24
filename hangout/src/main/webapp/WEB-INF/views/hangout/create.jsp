@@ -146,39 +146,39 @@
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="ART" /> <label for="checkbox_ca6">ART</label>
+														value="FOOD" /> <label for="checkbox_ca6">ART</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="GAME" /> <label for="checkbox_ca6">GAME</label>
+														value="FOOD" /> <label for="checkbox_ca6">GAME</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="MOVIE" /> <label for="checkbox_ca6">MOVIE</label>
+														value="FOOD" /> <label for="checkbox_ca6">MOVIE</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="RELIGION" /> <label for="checkbox_ca6">RELIGION</label>
+														value="FOOD" /> <label for="checkbox_ca6">RELIGION</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="SPORT" /> <label for="checkbox_ca6">SPORT</label>
+														value="FOOD" /> <label for="checkbox_ca6">SPORT</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="EDUCATION" /> <label for="checkbox_ca6">EDUCATION</label>
+														value="FOOD" /> <label for="checkbox_ca6">EDUCATION</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="TECHNICAL" /> <label for="checkbox_ca6">TECHNICAL</label>
+														value="FOOD" /> <label for="checkbox_ca6">TECHNICAL</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="DANCE" /> <label for="checkbox_ca6">DANCE</label>
+														value="FOOD" /> <label for="checkbox_ca6">DANCE</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="PHOTO" /> <label for="checkbox_ca6">PHOTO</label>
+														value="FOOD" /> <label for="checkbox_ca6">PHOTO</label>
 												</div>
 											</div>
 										</div>

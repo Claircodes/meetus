@@ -2,19 +2,28 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link href="/resources/css/hangout.css" rel="stylesheet">
   </head>
   
   <body>
+<%String hangoutNum =request.getParameter("hangoutNum");%>
+        <input type="text" id="hangoutNum" value=<%=hangoutNum%>>
       <div id="fb-root"></div>
-            <script>(function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
+            <script>
+
+            $(document).ready(function(){ 
+                var paramIds="hangoutNum";
+                var au = new AjaxUtil("select/listcontent",paramIds,"GET");
+                au.setCallbackSuccess(callbackSql);
+                au.send();
+            });
+            
+            function callbackSql(result){
+             var result2 = result.list;
+             alert(result2);
+            }
+            </script>
     <!-- Navigation -->
     
     <!-- Page Content -->
@@ -24,14 +33,14 @@
 
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-          <h1 class="my-4">모임 제목
-          </h1>
+
+          <h1 class="my-4">모임 제목</h1>
 
           <!-- Blog Post -->
           <div class="card mb-4">
             <img class="card-img-top" src="https://pbs.twimg.com/media/Cq5tz18VUAAFT5q.jpg"  alt="Card image cap" >
             <div class="card-body">
-              <h2 class="card-title">위에사진은 모임생성할때 올리는 이미지 정보</h2>
+              <h2 class="card-title">위에 사진은 모임생성할때 올리는 이미지 정보</h2>
               <p class="card-text">“사물인터넷의 최종 단계는 전 지구의 모든 물건에 저렴하게 연결되어 향기나 냄새처럼 어디든지 퍼져있는 스마트 먼지와 같이 확산되며 기술이 사회를 변혁 시키는 것” 4차 산업혁명은 사물인터넷부터 시작된다는 말이 있을 만큼 사물 인터넷(IoT)에 대한 주목과 시장가치가 커지고 있습니다.	현재 사용되는 대표적인 사례로는 자동차 스마트키부터 홈 CCTV, 가스 잠금 등 다양하며 편의성, 경제성, 안전성을 모두 갖춘 효용성으로 생활의 질을 향상시키기 때문에 앞으로도 다양한 분야와 접목하여 발전할 가능성이 높은 분야로 주목받고 있습니다..</p>
               <a href="#" class="btn btn-primary">more →</a>
             </div>
@@ -41,36 +50,7 @@
             </div>
           </div>
 
-          <!-- Blog Post -->
-          <div class="card mb-4">
-            <img class="card-img-top" src="http://sv1.upsieutoc.com/2017/08/30/AI.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h2 class="card-title">Microsoft</h2>
-              <p class="card-text">응가를 하여라!!!.</p>
-              <a href="#" class="btn btn-primary">more →</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on January 8, 2017 by
-              <a href="#">Admin</a>
-            </div>
-          </div>
 
-          <!-- Blog Post -->
-          <div class="card mb-4">
-            <img class="card-img-top" src="http://image.cine21.com/cine21/poster/2017/0628/16_53_48__5953608c4ae76.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h2 class="card-title">극장판 짱구는 못말려 : 습격!! 외계인 덩덩이</h2>
-              <p class="card-text">짱구의 집에 불시착한 UFO의 주인 외계인 ‘덩덩이’. 
-				‘나스파디’별에서 온 ‘덩덩이’는 무시무시한 ‘꼬마꼬마 파워’로 짱구의 엄빠를 어린이로 만들어버린다!	 
-				엄빠를 다시 어른으로 되돌리기 위해 ‘덩덩이’의 아빠를 만나러 떠나지만 연락이 닿지 않고, 심지어 지구를 위협하는 외계인의 음모까지 드러나기 시작하는데….!!! 
-				짱구의 엉덩이에 숨은 외계인 ‘덩덩이’와 가족들의 스펙터클한 대모험이 펼쳐진다!.</p>
-              <a href="#" class="btn btn-primary">more →</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on January 8, 2017 by
-              <a href="#">Admin</a>
-            </div>
-          </div>
 
           <!-- Pagination -->
           <ul class="pagination justify-content-center mb-4">
@@ -139,42 +119,14 @@
               </div>
           </div>
        
-          
+ <!--         
           <div class="card my-4">
               <h5 class="card-header">
                   FaceBook 가져오기
               </h5>
                <div class="fb-page" data-href="https://www.facebook.com/Devwonwon-1439494016140368/" data-tabs="timeline" data-width="900" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Devwonwon-1439494016140368/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Devwonwon-1439494016140368/">Devwonwon</a></blockquote></div>
           </div>
-          
-          
-          
-          <div class="card my-4">
-            <h5 class="card-header">
-                최근에 등록된 게시물
-            </h5>
-             <div class="project">
-                <figure class="img-responsive">
-                    <img src="http://image.cine21.com/cine21/poster/2017/0628/16_53_48__5953608c4ae76.jpg" width="100%" height="100%">
-                    <span class="actions">
-                         <span class="text-capitalize">최신등록글 1</span>
-                    </span>
-                     
-                </figure>
-                <a href="#" class="btn btn-primary">게시물 보기</a>
-            </div>
-            <div class="project">
-                <figure class="img-responsive">
-                    <img src="http://sv1.upsieutoc.com/2017/08/30/AI.jpg" width="100%" height="100%">
-                    <span class="actions">
-                         <span class="text-capitalize">최신등록글2</span>
-                    </span>
-
-                </figure>
-                <a href="#" class="btn btn-primary">게시물 보기</a>
-            </div>
-          </div>
-          
+-->          
 <!-- Search Widget -->
           <div class="card my-4">
             <h5 class="card-header">검색하기</h5>
@@ -223,16 +175,8 @@
             </div>
           </div>
         </div>
-
-      </div>
-      <!-- /.row -->
-
+     </div>
     </div>
-    <!-- /.container -->
-    <!-- /.container -->
-
-
-
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">

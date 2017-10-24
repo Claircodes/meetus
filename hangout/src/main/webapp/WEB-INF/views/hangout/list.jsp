@@ -38,16 +38,20 @@
        var paramIds="hangoutName";
        var au = new AjaxUtil("select/list",paramIds);
        au.setCallbackSuccess(callbackSql);
-        au.send();
+       au.send();
     });
+    function listclick(url){
+    	pageMove("hangout?hangoutNum="+url);
+        }   
+    
    function callbackSql(result){
       var hangoutList=result.list;
       var str = "";
       for (var i = 0, max = hangoutList.length; i < max; i++) {
          var list = hangoutList[i]; 
-         str += "<div class='col-sm-3'><div class='card'>";						
-         str += "<img src=\"<c:url value='http://img.insight.co.kr/static/2017/06/23/700/u0bn4swj5g5dp29xzp74.jpg'/>\" >";											
-         str += "<h4>"+list.hangoutName+"</h4>";							
+         str += "<div class='col-sm-3'><div class='card' onclick='listclick("+list.hangoutNum+")' >";						
+         str += "<img src=\"<c:url value='http://img.insight.co.kr/static/2017/06/23/700/u0bn4swj5g5dp29xzp74.jpg'/>\" >";
+         str += "<h4>"+list.hangoutName+"</h4>";
          str += "</div></div>";
          }
       $("#list_body").html(str);
@@ -62,6 +66,7 @@
        var au = new AjaxUtil("select/list",paramIds);
         au.send();
     });
+
     </script>
 
 <!-- Javascript -->

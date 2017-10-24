@@ -48,6 +48,9 @@
             
             <%if((UserInfo)session.getAttribute("user")==null){ %>
             <li class="nav-item">
+              <a class="nav-link" href="${rootPath}/create">모임 개설하기</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="${rootPath}/signup">회원가입</a>
             </li>
             <li class="nav-item">
@@ -128,8 +131,8 @@ var AjaxUtil = function (url, params, type, dataType){
 	    ,   url      : this.url
 	    ,   dataType : this.dataType 
 	    ,   beforeSend: function(xhr) {
-	        xhr.setRequestHeader("Accept", "application/json; charset=UTF-8");
-	        xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+	        xhr.setRequestHeader("Accept", "application/json");
+	        xhr.setRequestHeader("Content-Type", "application/json");
 	        xhr.setRequestHeader("AJAX",true);
 	    }
 	    ,   data     : this.param

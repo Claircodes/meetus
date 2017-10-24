@@ -33,21 +33,10 @@ public class UserServiceImpl implements UserService {
 	{
 		return userDao.overlapId(ui);
 	}
-	
-	@Override
-	public List<UserInfo> overlapPwd(UserInfo ui) 
-	{
-		return userDao.overlapPwd(ui);
-	}
 
 	@Override
 	public UserInfo getUserProfile(UserInfo ui) {
 		return userDao.getUserProfile(ui);
-	}
-
-	@Override
-	public int updateUser(UserInfo ui) {
-		return userDao.updateUser(ui);
 	}
 
 }

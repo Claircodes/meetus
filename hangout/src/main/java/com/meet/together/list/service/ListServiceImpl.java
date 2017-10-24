@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.meet.together.list.dao.ListDao;
-import com.meet.together.list.dto.CategoryInfo;
 import com.meet.together.list.dto.ListInfo;
 import com.meet.together.list.dto.Place;
 
@@ -31,13 +30,8 @@ public class ListServiceImpl implements ListService {
 	}
 
 	@Override
-	public List<CategoryInfo> selectCategoryInfo() {
-		return listDao.selectCategoryInfo();
-	}
-
-	@Override
-	public List<ListInfo> selectCategory(ListInfo li) {
-		return listDao.selectCategory(li);
+	public ListInfo selectListContent(ListInfo li) {
+		return listDao.selectListContent(li);
 	}
 
 }
