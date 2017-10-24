@@ -75,14 +75,14 @@
     <section id="services" class="services bg-primary text-white">
       <div class="container">
         <div class="row justify-content-center align-self-center">
-        <div class="col-sm-12">
-         <h2>지역별 모임 찾기</h2></div>
-          <div class="col-sm-6 ">
-          	 	 <input type="text-center" class="form-control"
+        <div class="col-sm-12 text-center">
+         <h2>지역별 모임 찾기</h2><p></div>
+         <div class="col-sm-2"></div>
+          <div class="col-sm-5 text-right">
+          	 	 <input type="text-center" class="form-control btn"   
                   placeholder="원하시는 모임의 이름을 검색 해보세요." id="hangoutName">
            </div>
-         <div class="col-sm-6 .col-md-6">
-      
+         <div class="col-sm-4">      
              <a href="<c:url value='/list'/>" class="btn btn-dark">SEARCH HANGOUT</a></div>
         <!-- /.row -->
       </div>
@@ -100,12 +100,12 @@
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center align-self-center">
           <div class="col-lg-10 mx-auto">
             <h2>카테고리별 모임 찾기</h2>
             <hr class="small">
             <div class="row">
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/art.png'/>"/>
@@ -115,7 +115,7 @@
                   </h4>
                 </div>
               </div>
-             <div class="col-md-3 col-sm-6">
+             <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/beauty.png'/>"/>
@@ -125,7 +125,7 @@
                   </h4>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/book.png'/>"/>
@@ -135,7 +135,7 @@
                   </h4>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"><center>
                     <img width="50%"  class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/business.png'/>"/>
@@ -145,7 +145,7 @@
                   </h4>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/dance.png'/>"/>
@@ -155,7 +155,7 @@
                   </h4>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/education.png'/>"/>
@@ -165,7 +165,7 @@
                   </h4>
                 </div>
               </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/food.png'/>"/>
@@ -175,7 +175,7 @@
                   </h4>
                 </div>
               </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/game.png'/>"/>
@@ -185,7 +185,7 @@
                   </h4>
                 </div>
               </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/language.png'/>"/>
@@ -196,7 +196,7 @@
                 </div>
               </div>
               
-               <div class="col-md-3 col-sm-6">
+               <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/movie.png'/>"/>
@@ -206,7 +206,7 @@
                   </h4>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/music.png'/>"/>
@@ -216,7 +216,7 @@
                   </h4>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/pet.png'/>"/>
@@ -226,7 +226,7 @@
                   </h4>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/photo.png'/>"/>
@@ -236,7 +236,7 @@
                   </h4>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/religion.png'/>"/>
@@ -246,7 +246,7 @@
                   </h4>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/sport.png'/>"/>
@@ -256,7 +256,7 @@
                   </h4>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="#"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/technical.png'/>"/>
@@ -285,7 +285,7 @@
       <div class="container text-center">
         <h3>마음에 드시는 모임이 없나요? 직접 개설 해보세요!</h3>
         <a href="<c:url value='/create'/>" class="btn btn-lg btn-light">모임 만들기</a>
-        <a href="#" class="btn btn-lg btn-dark">모임 검색하기</a>
+          <a href="<c:url value='/list'/>"  class="btn btn-lg btn-dark">모임 검색하기</a>
       </div>
     </aside>
 
@@ -313,11 +313,11 @@
           <h4 class="heading-footer">QUICK LINKS</h4>
             <ul class="footer-ul">
               <li></li>
-              <li><a href="#"> 모임 만들기</a></li>
-              <li><a href="#"> 모임 리스트</a></li>
+              <li><a href="<c:url value='/create'/>" > 모임 만들기</a></li>
+              <li><a href="<c:url value='/list'/>" > 모임 리스트</a></li>
               <li><a href="#"> 모임 페이지</a></li>
               <li><a href="#"> 회원 정보</a></li>
-              <li><a href="#"> Contact US</a></li>
+              <li><a href="#"> Contact us</a></li>
             </ul>
         </div>
         <div class="col-lg-3 col-md-4">
