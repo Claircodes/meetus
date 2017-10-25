@@ -124,7 +124,7 @@ $("#update").click(function() { //수정 버튼 클릭시
 		 }
 	 }
 	 if(pwd1==pwd2){ //비밀번호가 서로 같다면 서버 전송
-	 var au=new AjaxUtil("overlapPwd","userId,userPwd");
+	 var au=new AjaxUtil("user/overlapPwd","userId,userPwd");
 	 au.setCallbackSuccess(overlapPwdCheck);
 	 au.send();
 	 }else if(pwd1!=pwd2 && (pwd1!="" && pwd2!="")){ //둘다 널값이 아닌데 틀렸을시
