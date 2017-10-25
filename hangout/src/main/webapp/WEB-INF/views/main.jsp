@@ -107,7 +107,7 @@
             <div class="row">
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/list'/>?category=PET"><center>
+                  <a href="<c:url value='/hangout/golist'/>?category=PET"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/art.png'/>"/>
                   </a>
                    <h4>

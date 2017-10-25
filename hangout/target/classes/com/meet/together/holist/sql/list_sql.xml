@@ -39,12 +39,17 @@
 		hangouttag
 		from hangout_info
 		where 1=1
-			<if test="hangoutName!=null">
-	and hangoutname like concat('%',#{hangoutName},'%')
-	</if>
-	limit 12
+		<if test="hangoutName != '' and hangoutName != null">
+			and hangoutname like concat('%',#{hangoutName},'%')
+		</if>
+		<if test="hangoutCategory != '' and hangoutCategory != null">
+			and hangoutcategory like #{hangoutCategory}
+		</if>
+		limit 12
 	</select>
-		<select id="SELECT_LIST_ONE" parameterType="listInfo" resultType="listInfo">
+	
+	<select id="SELECT_LIST_ONE" parameterType="listInfo"
+		resultType="listInfo">
 		select hangoutnum,
 		hangoutcreator,
 		hangoutname,
@@ -57,12 +62,13 @@
 		hangouttag
 		from hangout_info
 		where 1=1
-	<if test="hangoutNum!=null">
-		and hangoutNum = #{hangoutNum}
-	</if>
+		<if test="hangoutNum!=null">
+			and hangoutNum = #{hangoutNum}
+		</if>
 	</select>
-	
-	<select id="SELECT_CATEGORY_LIST" parameterType="listInfo" resultType="listInfo">
+
+	<select id="SELECT_CATEGORY_LIST" parameterType="listInfo"
+		resultType="listInfo">
 		select hangoutnum,
 		hangoutcreator,
 		hangoutname,
