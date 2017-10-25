@@ -22,15 +22,14 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
 
-          <h1 class="my-4">모임 제목</h1>
+          <h1 class="my-4">${ListInfo.hangoutName}</h1>
 
           <!-- Blog Post -->
           <div class="card mb-4">
             <img class="card-img-top" src="https://pbs.twimg.com/media/Cq5tz18VUAAFT5q.jpg"  alt="Card image cap" >
             <div class="card-body">
-              <h2 class="card-title">위에 사진은 모임생성할때 올리는 이미지 정보</h2>
-              <p class="card-text">“사물인터넷의 최종 단계는 전 지구의 모든 물건에 저렴하게 연결되어 향기나 냄새처럼 어디든지 퍼져있는 스마트 먼지와 같이 확산되며 기술이 사회를 변혁 시키는 것” 4차 산업혁명은 사물인터넷부터 시작된다는 말이 있을 만큼 사물 인터넷(IoT)에 대한 주목과 시장가치가 커지고 있습니다.	현재 사용되는 대표적인 사례로는 자동차 스마트키부터 홈 CCTV, 가스 잠금 등 다양하며 편의성, 경제성, 안전성을 모두 갖춘 효용성으로 생활의 질을 향상시키기 때문에 앞으로도 다양한 분야와 접목하여 발전할 가능성이 높은 분야로 주목받고 있습니다..</p>
-              <a href="#" class="btn btn-primary">more →</a>
+              <h2 class="card-title">${ListInfo.hangoutName}</h2>
+              <p class="card-text">${ListInfo.hangoutContent}</p>
             </div>
             <div class="card-footer text-muted">
               Posted on January 8, 2017 by
