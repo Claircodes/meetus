@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <br><br><br><br><br>
 <!-- Javascript -->
-<script src="/resources/assets/js/retina-1.1.0.min.js"></script>
+<
 <script src="/resources/js/jquery-1.12.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/jquery.backstretch.min.js"></script>
