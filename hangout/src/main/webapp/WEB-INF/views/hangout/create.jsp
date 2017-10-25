@@ -20,20 +20,20 @@
 
 
 <!-- CSS -->
-<link rel="stylesheet" href="resources/css/form-elements.css">
-<link rel="stylesheet" href="resources/css/style-create.css">
+<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css'/>" >
+<link rel="stylesheet" href="<c:url value='/resources/css/style-create.css'/>" >
 
 <!-- Javascript -->
-<script src="resources/js/scripts-create.js"></script>
-<script src="resources/assets/js/jquery.backstretch.min.js"></script>
+<script src="<c:url value='/resources/js/scripts-create.js'/>"></script>
+<script src="<c:url value='/resources/assets/js/jquery.backstretch.min.js'/>"></script>
 
 
 <!-- 달력관련 script -->
-<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
-<link rel="stylesheet" type="text/css" href="resources/tags/bootstrap-tags.css" />
-<script type="text/javascript"	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<script src='resources/tags/bootstrap-tags.min.js'></script>
-<script src='resources/tags/bootstrap-tags.js'></script>
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css'">
+<link rel="stylesheet" type="text/css" href="<c:url value='/resources/tags/bootstrap-tags.css'/>" >
+<script type="text/javascript"	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js" />"></script>
+<script src="<c:url value='/resources/tags/bootstrap-tags.min.js' />"></script>
+<script src="<c:url value='/resources/tags/bootstrap-tags.js' />"></script>
 
 
 
