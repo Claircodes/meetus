@@ -39,7 +39,7 @@
        var paramIds="hangoutName,hangoutCategory";
        var au = new AjaxUtil("hangout/list",paramIds);
        au.setCallbackSuccess(callbackSql);
-       au.send();
+       au.send(); 
     });
     function listclick(url){
     	pageMove("hangout?hangoutNum="+url);
