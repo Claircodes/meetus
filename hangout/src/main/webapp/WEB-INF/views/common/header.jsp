@@ -1,4 +1,4 @@
-<%@page import="com.meet.together.user.dto.UserInfo"%>
+<%@page import="com.meet.together.houser.dto.UserInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.text.SimpleDateFormat"%>

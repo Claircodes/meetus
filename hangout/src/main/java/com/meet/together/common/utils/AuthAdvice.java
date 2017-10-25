@@ -16,7 +16,7 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.meet.together.user.dto.UserInfo;
+import com.meet.together.houser.dto.UserInfo;
 
 
 @Service
