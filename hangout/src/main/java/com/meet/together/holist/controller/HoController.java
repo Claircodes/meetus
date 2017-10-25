@@ -32,6 +32,11 @@ public class HoController {
 		}
 		return hm;
 	}
+	
+	@RequestMapping(value = "/hangout/create", method = RequestMethod.GET)
+	public String createsite(UserInfo ui) {
+		return "hangout/create";
+	}
 
 	@RequestMapping(value = "/hangout/list", method = RequestMethod.POST)
 	public @ResponseBody ModelMap selectList(@RequestBody ListInfo li, ModelMap hm) {

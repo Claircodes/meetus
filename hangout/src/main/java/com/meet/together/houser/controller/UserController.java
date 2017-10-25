@@ -62,11 +62,6 @@ public class UserController {
 		return "main";
 	}
 	
-
-	@RequestMapping(value = "/create", method = RequestMethod.GET)
-	public String createsite(UserInfo ui) {
-		return "hangout/create";
-	}
 	
 	@RequestMapping(value = "/hangout", method = RequestMethod.GET)
 	public String hangoutesite(UserInfo ui) {
