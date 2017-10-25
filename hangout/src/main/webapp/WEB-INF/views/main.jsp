@@ -13,7 +13,7 @@
 <script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
 <script src="<c:url value='/resources/js/jquery.backstretch.min.js' />"></script>
 <!--  <script src="<c:url value='/resources/js/scripts.js' />"></script>
-        -->
+        --> 
 
     <title>HANG OUT</title>
 
