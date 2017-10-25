@@ -48,24 +48,21 @@
             
             <%if((UserInfo)session.getAttribute("user")==null){ %>
             <li class="nav-item">
-              <a class="nav-link" href="${rootPath}/create">모임 개설하기</a>
+              <a class="nav-link" href="${rootPath}/user/signup">회원가입</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="${rootPath}/signup">회원가입</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="${rootPath}/login">로그인</a>
+              <a class="nav-link" href="${rootPath}/user/login">로그인</a>
             </li>
             <% }else{ 
 			login = true;%>
 			<li class="nav-item">
-              <a class="nav-link" href="${rootPath}/create">모임만들기</a>
+              <a class="nav-link" href="${rootPath}/hangout/create">모임만들기</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="${rootPath}/user/profile">마이페이지</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"  href="${rootPath}/logout">로그아웃</a>
+              <a class="nav-link"  href="${rootPath}/user/logout">로그아웃</a>
             </li>
 			<li class="nav-item"><a class="nav-link js-scroll-trigger" ><%=user.getUserId()%></a></li><%} %>
           </ul>
