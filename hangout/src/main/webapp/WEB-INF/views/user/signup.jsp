@@ -12,6 +12,7 @@
         
 		<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
         <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
+        <link rel="stylesheet" href="<c:url value='/resources/css/dropdown.css'/>">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -121,7 +122,7 @@
 							</div>
 
 
-							<div class="form-group">
+						<div class="form-group">
 								<label for="username" class="cols-sm-2 control-label">Your
 									Gender</label>
 								<div class="cols-sm-10">
@@ -129,15 +130,16 @@
 										<span class="input-group-addon"> <i
 											class="fa fa-users fa" aria-hidden="true"></i></span>
 										<div id="radioBtn" class="form-control">
-											<a id="userGender" class="btn btn-login btn-sm active"
-												data-toggle="happy" data-title="Y">남/Male</a> <a
-												id="userGender" class="btn btn-login btn-sm notActive"
-												data-toggle="happy" data-title="N">여/Female</a>
+										<div class="col-sm-5">
+												<input type="radio" name="userGender"  id="userGender" value="M"><label for="M">남/Male</label><br>
+											</div>
+											<div class="col-sm-5">
+												<input type="radio" name="userGender" id="userGender" value="F"><label for="F">여/Female</label><br>
+												</div>
 										</div>
 									</div>
 								</div>
 							</div>
-
 
 
 
@@ -148,8 +150,9 @@
 								<div class="cols-sm-10">
 									<div class="input-group">
 										<span class="input-group-addon"> <i
-											class="fa  fa-map-marker fa" aria-hidden="true"></i></span> <select
-											class="selectpicker" data-style="btn-danger" id="userCountry">
+											class="fa  fa-map-marker fa" aria-hidden="true"></i></span>
+											 <select
+											class="selectpicker size" data-style="btn-danger" id="userCountry" >
 											<optgroup label="Asia">
 												<option>Korea</option>
 												<option>Japan</option>
@@ -164,9 +167,8 @@
 
 
 									</div>
-								</div>
+								</div><br>
 								<form role="form" action="" method="post" class="login-form">
-
 									<button type="button" class="btn" id="btn">회원가입</button>
 							</div>
 							</form>
