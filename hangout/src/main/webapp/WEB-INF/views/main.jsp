@@ -284,7 +284,7 @@
     <aside class="call-to-action bg-primary text-white">
       <div class="container text-center">
         <h3>마음에 드시는 모임이 없나요? 직접 개설 해보세요!</h3>
-        <a href="<c:url value='/create'/>" class="btn btn-lg btn-light">모임 만들기</a>
+        <a href="<c:url value='/hangout/create'/>" class="btn btn-lg btn-light">모임 만들기</a>
           <a href="<c:url value='/hangout/golist'/>"  class="btn btn-lg btn-dark">모임 검색하기</a>
       </div>
     </aside>
@@ -313,7 +313,7 @@
           <h4 class="heading-footer">QUICK LINKS</h4>
             <ul class="footer-ul">
               <li></li>
-              <li><a href="<c:url value='/create'/>" > 모임 만들기</a></li>
+              <li><a href="<c:url value='/hangout/create'/>" > 모임 만들기</a></li>
               <li><a href="<c:url value='/hangout/golist'/>" > 모임 리스트</a></li>
               <li><a href="#"> 모임 페이지</a></li>
               <li><a href="<c:url value='/user/profile'/>"> 회원 정보</a></li>
