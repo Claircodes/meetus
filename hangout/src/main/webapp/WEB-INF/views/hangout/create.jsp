@@ -29,9 +29,9 @@
 
 
 <!-- 달력관련 script -->
-<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css'">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/tags/bootstrap-tags.css'/>" >
-<script type="text/javascript"	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js" />"></script>
+<script type="text/javascript"	src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js' />"></script>
 <script src="<c:url value='/resources/tags/bootstrap-tags.min.js' />"></script>
 <script src="<c:url value='/resources/tags/bootstrap-tags.js' />"></script>
 
@@ -195,11 +195,11 @@
 								<div class="form-bottom">
 								<center>
 									<div class="form-group">
-									<button class="btn-dark">
+									<button class="btn-dark disabled">
 										AREA : <input type="button" name="hangoutArea"
 											id="hangoutArea" class="btn-dark" readonly >
 										CATEGORY : <input type="button" name="hangoutCategory"
-											id="hangoutCategory" class="btn-dark" readonly>
+											id="hangoutCategory" class="btn-dark" readonly >
 										OWNER : <input type="button" name="hangoutCreator"
 											id="hangoutCreator" class="btn-dark" value=<%=user.getUserNum()%> readonly>
 									</input>
@@ -387,7 +387,7 @@
       
    $("#hang_signup").click(function() {
           var paramIds = "hangoutArea,hangoutCategory,hangoutCreator,hangoutName,hangoutContent,hangoutDate";
-          var au = new AjaxUtil("insert/list",paramIds);
+          var au = new AjaxUtil("hangout/insert",paramIds);
           au.setCallbackSuccess(callbackCreate);
           au.send();
        });
