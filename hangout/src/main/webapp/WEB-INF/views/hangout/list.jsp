@@ -34,7 +34,7 @@
   <button type="button" class="btn btn-default">Right</button>
 </div>
 <input type="hidden" id="hangoutCategory" value="${param.category}"/>
-<script>
+<script> 
     $(document).ready(function(){
        var paramIds="hangoutName,hangoutCategory";
        var au = new AjaxUtil("hangout/list",paramIds);
