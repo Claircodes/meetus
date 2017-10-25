@@ -10,8 +10,8 @@
 
         <!-- CSS -->
 
-		<link rel="stylesheet" href="/resources/css/form-elements.css">
-        <link rel="stylesheet" href="/resources/css/style.css">
+		<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
+        <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -72,10 +72,8 @@
                         <div class="col-sm-6 col-sm-offset-3 social-login">
                         	<h3> login with +</h3>
                         	<div class="social-login-buttons">
-	                        	<a class="btn btn-link-2" href="#">
-	                        		<i class="fa fa-facebook"></i> Facebook
-	                        	</a>
-	                        	<a class="btn btn-link-2" href="#">
+								<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+							<a class="btn btn-link-2" href="#">
 	                        		<i class="fa fa-google-plus"></i> Google
 	                        	</a>
 	                        	<a class="btn btn-link-2" href="#">
@@ -88,6 +86,27 @@
             </div>
         </div>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{718650078344310}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{v2.10}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 	<script>
 		$("#btn").click(function() {
 			var paramIds = "userId,userPwd";
@@ -102,10 +121,10 @@
 	</script>
 
 	<!-- Javascript -->
-        <script src="/resources/js/jquery-1.12.1.min.js"></script>
-        <script src="/resources/js/bootstrap.min.js"></script>
-        <script src="/resources/js/jquery.backstretch.min.js"></script>
-        <script src="/resources/js/scripts.js"></script>
+        <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/scripts.js' />"></script>
         
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
