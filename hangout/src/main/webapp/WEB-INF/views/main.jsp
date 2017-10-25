@@ -285,7 +285,7 @@
       <div class="container text-center">
         <h3>마음에 드시는 모임이 없나요? 직접 개설 해보세요!</h3>
         <a href="<c:url value='/create'/>" class="btn btn-lg btn-light">모임 만들기</a>
-          <a href="<c:url value='/list'/>"  class="btn btn-lg btn-dark">모임 검색하기</a>
+          <a href="<c:url value='hangout/golist'/>"  class="btn btn-lg btn-dark">모임 검색하기</a>
       </div>
     </aside>
 
@@ -327,7 +327,7 @@
               <li><a href="#"> 김정규</a></li>
               <li><a href="#"> 박용성</a></li>
               <li><a href="#"> 장지훈</a></li>
-              <li><a href="#"> 임혜진</a></li>
+              <li><a href="#"> 임혜진</a></li> 
             </ul>
         </div>
         <div class="col-lg-2 col-md-4 social-icons">

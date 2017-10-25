@@ -37,7 +37,7 @@
 <script>
     $(document).ready(function(){
        var paramIds="hangoutName,hangoutCategory";
-       var au = new AjaxUtil("select/list",paramIds);
+       var au = new AjaxUtil("hangout/list",paramIds);
        au.setCallbackSuccess(callbackSql);
        au.send();
     });
@@ -64,13 +64,13 @@
          return
       }
       var paramIds="hangoutName";
-       var au = new AjaxUtil("select/list",paramIds);
+       var au = new AjaxUtil("hangout/list",paramIds);
         au.send();
     });
 
     </script>
 
-<!-- Javascript -->
+<!-- Javascript --> 
 <script src="/resources/assets/js/retina-1.1.0.min.js"></script>
 <script src="/resources/js/jquery-1.12.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
