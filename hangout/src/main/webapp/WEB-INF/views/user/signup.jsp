@@ -266,7 +266,7 @@ function overlapIdCheck(results)
         <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
         <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
         <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
-        <script src="<c:url value='/resources/js/scripts.js' />"></script>
+        <script src="<c:url value='/resources/js/scripts_signup.js' />"></script>
         
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
