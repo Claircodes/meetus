@@ -6,7 +6,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Multi Step Registration Form Template</title>
+<title>Create Hangout</title>
+
 <%
    if (login == true) {
 	} else {
@@ -16,35 +17,28 @@
 	location.href = ${rootPath}"/login";
 </script>
 <%	}%>
+
+
 <!-- CSS -->
-<link rel="stylesheet"
-	href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-<link rel="stylesheet"
-	href="resources/assets/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="resources/assets/css/form-elements.css">
-<link rel="stylesheet" href="resources/assets/css/style.css">
+<link rel="stylesheet" href="resources/css/form-elements.css">
+<link rel="stylesheet" href="resources/css/style-create.css">
 
-<link rel="stylesheet"
-	href="https://formden.com/static/cdn/bootstrap-iso.css" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
-
-<link rel="stylesheet" type="text/css" href="resources/tags/bootstrap-tags.css" />
 <!-- Javascript -->
-<script src="resources/assets/js/jquery-1.11.1.min.js"></script>
-
+<script src="resources/js/scripts-create.js"></script>
 <script src="resources/assets/js/jquery.backstretch.min.js"></script>
-<script src="resources/assets/js/retina-1.1.0.min.js"></script>
-<script src="resources/assets/js/scripts.js"></script>
-<script src="resources/assets/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="https://formden.com/static/cdn/formden.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
+
+<!-- 달력관련 script -->
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+<link rel="stylesheet" type="text/css" href="resources/tags/bootstrap-tags.css" />
+<script type="text/javascript"	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <script src='resources/tags/bootstrap-tags.min.js'></script>
 <script src='resources/tags/bootstrap-tags.js'></script>
-</head>
 
+
+
+
+</head>
 <body>
 
 <br></br><p></p>
@@ -55,11 +49,8 @@
 				<div class="row justify-content-center align-self-center">
 					<div class="col-sm-8 col-sm-offset-2 text">
 						<h1>
-							<strong>Hang out</strong> 모임 개설하기
+							<strong>CREATE NEW HANGOUT! </strong>
 						</h1>
-						<div class="description">
-							<p>내가 원하는 카테고리로 내가 원하는 HANG OUT 만들기!</p>
-						</div>
 					</div>
 				</div>
 				<div class="row justify-content-center align-self-center">
@@ -71,15 +62,17 @@
 							<fieldset>
 								<div class="form-top">
 									<div class="form-top-left">
-										<h3>지역 선택</h3>
+										<h3>새 모임 생성하기</h3>
 										<p>모임을 개최하고자하는 위치를 선택하여 주세요.</p>
+										<p>(추후 지역선택이 아니라 지역검색기능 필요)</p>
 									</div>
 									<div class="form-top-right">
-										<i class="fa fa-user"></i>
+										<i class="fa fa-heart"></i>
 									</div>
 								</div>
 
 								<div class="form-bottom">
+								<center>
 									<input type="radio" class="btn btn-default btn-lg"
 										name="chk_unit" value="서울" id="radio0">서울 </input> <input
 										type="radio" class="btn btn-default btn-lg" name="chk_unit"
@@ -91,14 +84,12 @@
 										class="btn btn-default btn-lg" name="chk_unit" value="대구"
 										id="radio4"> 대구 </input> <input type="radio"
 										class="btn btn-default btn-lg" name="chk_unit" value="광주"
-										id="radio5"> 광주 </input> <input type="radio"
-										class="btn btn-default btn-lg" name="chk_unit" value="울산"
-										id="radio6"> 울산 </input>
-
+										id="radio5"> 광주 </input> 
+								</center>
 								</div>
 
-								<div class="form-bottom">
-									<button id="next1" type="button" class="btn btn-next">Next</button>
+								<div class="form-bottom text-right">
+									<button id="next1" type="button" class="btn btn-next align-right">Next</button>
 
 
 								</div>
@@ -108,18 +99,17 @@
 								<div class="form-top">
 									<div class="form-top-left">
 										<h3>카테고리 선택</h3>
-										<p>카테고리를 선택하세요 :)</p>
+										<p>생성하고자하는 모임의 성격을 체크해주세요!</p>
 									</div>
 									<div class="form-top-right">
-										<i class="fa fa-key"></i>
+										<i class="fa fa-tag"></i>
 									</div>
 								</div>
 								<div class="form-bottom">
 									<div class="form-group">
-										<div class="col-md-6">
-											<td>선택 지역 :</td> <input type="text" name="cityname"
-												id="cityname">
-											<div class="funkyradio">
+										<div class="funkyradio">
+										<div class="row">
+												<div class="col-sm-6">
 												<div class="funkyradio-default">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca1"
 														value="PET" /> <label for="checkbox_ca1">PET</label>
@@ -146,78 +136,96 @@
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="ART" /> <label for="checkbox_ca6">ART</label>
+														value="FOOD" /> <label for="checkbox_ca6">ART</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="GAME" /> <label for="checkbox_ca6">GAME</label>
+														value="FOOD" /> <label for="checkbox_ca6">GAME</label>
+												</div>
+												</div>
+												<div class="col-sm-6 pull-right">
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">MOVIE</label>
+												</div>
+												
+												<div class="funkyradio-info">
+													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
+														value="FOOD" /> <label for="checkbox_ca6">RELIGION</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="MOVIE" /> <label for="checkbox_ca6">MOVIE</label>
+														value="FOOD" /> <label for="checkbox_ca6">SPORT</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="RELIGION" /> <label for="checkbox_ca6">RELIGION</label>
+														value="FOOD" /> <label for="checkbox_ca6">EDUCATION</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="SPORT" /> <label for="checkbox_ca6">SPORT</label>
+														value="FOOD" /> <label for="checkbox_ca6">TECHNICAL</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="EDUCATION" /> <label for="checkbox_ca6">EDUCATION</label>
+														value="FOOD" /> <label for="checkbox_ca6">DANCE</label>
 												</div>
 												<div class="funkyradio-info">
 													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="TECHNICAL" /> <label for="checkbox_ca6">TECHNICAL</label>
-												</div>
-												<div class="funkyradio-info">
-													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="DANCE" /> <label for="checkbox_ca6">DANCE</label>
-												</div>
-												<div class="funkyradio-info">
-													<input type="radio" name="chk_cate[]" id="checkbox_ca6"
-														value="PHOTO" /> <label for="checkbox_ca6">PHOTO</label>
+														value="FOOD" /> <label for="checkbox_ca6">PHOTO</label>
 												</div>
 											</div>
-										</div>
+								</div></div>
 									</div>
-									<button type="button" class="btn btn-previous">Previous</button>
-									<button id="next2" type="button" class="btn btn-next">Next</button>
+									<button type="button" class="btn btn-previous text-left">Previous</button>
+									
+									<button id="next2" type="button" class="btn btn-next pull-right" >Next</button>
 								</div>
 							</fieldset>
 
 							<fieldset>
 								<div class="form-top">
 									<div class="form-top-left">
-										<h3>모임 생성</h3>
-										<p>모임을 만드세요 :)</p>
+										<h3>모임 생성 마무리단계</h3>
+										<p>당신의 모임에 대해서 알려주세요.</p>
 									</div>
 									<div class="form-top-right">
-										<i class="fa fa-twitter"></i>
+										<i class="fa fa-check"></i>
 									</div>
 								</div>
 								<div class="form-bottom">
+								<center>
 									<div class="form-group">
-										<td>선택 지역 :</td> <input type="text" name="hangoutArea"
-											id="hangoutArea" readonly></br>
-										<td>선택 카테고리 :</td> <input type="text" name="hangoutCategory"
-											id="hangoutCategory" readonly></br>
-										<td>작성자 :</td> <input type="text" name="hangoutCreator"
-											id="hangoutCreator" value=<%=user.getUserNum()%> readonly>
+									<button class="btn-dark">
+										AREA : <input type="button" name="hangoutArea"
+											id="hangoutArea" class="btn-dark" readonly >
+										CATEGORY : <input type="button" name="hangoutCategory"
+											id="hangoutCategory" class="btn-dark" readonly>
+										OWNER : <input type="button" name="hangoutCreator"
+											id="hangoutCreator" class="btn-dark" value=<%=user.getUserNum()%> readonly>
+									</input>
 									</div>
+								</center>
+								<p>
 									<div class="form-group">
-										<label class="sr-only" for="form-google-plus">Title</label> <input
-											type="text" name="hangoutName" placeholder="Title..."
+										<label class="sr-only" for="form-google-plus"></label> <input
+											type="text" name="hangoutName" placeholder="모임의 이름을 지어주세요."
 											class="form-google-plus form-control" id="hangoutName">
 									</div>
 									<div class="form-group">
-										<label class="sr-only" for="form-content">Content</label> <input
-											type="text" name="hangoutContent" placeholder="Content..."
+										<label class="sr-only" for="form-content"></label> <input
+											type="text" name="hangoutContent" placeholder="모임을 간략히 소개해주세요.(50자이내)"
 											class="form-content form-control" id="hangoutContent">
 									</div>
-
+									<div class="form-group">
+										<div class="input-group date" data-provide="datepicker">
+											<input type="text" class="form-control" placeholder="모임의 날짜를 선택해주세요." id="hangoutDate">
+											<div class="input-group-addon">
+												<span class="glyphicon glyphicon-th"></span>
+											</div>
+										</div>
+									</div>
+									<br><p>
+									<!-- 지도차단 
 									<div class="bootstrap-iso">
 										<div class="container-fluid">
 											<div class="row justify-content-center align-self-center">
@@ -313,16 +321,10 @@
 											</div>
 										</div>
 									</div>
-
-									<div class="form-group">
-										<label class="sr-only" for="form-twitter">Tag</label>
-										<input type="text" value="Amsterdam,Washington" data-role="tagsinput" name="hangoutTag" id="hangoutTag" />
-
-									</div>
-
+-->
+	
 									<button type="button" class="btn btn-previous">Previous</button>
-									<button id="hang_signup" type="button" class="btn">Sign
-										me up!</button>
+									<button id="hang_signup" type="button" class="btn pull-right">Done</button>
 								</div>
 							</fieldset>
 
@@ -384,8 +386,8 @@
    });
       
    $("#hang_signup").click(function() {
-          var paramIds = "hangoutArea,hangoutCategory,hangoutCreator,hangoutName,hangoutContent,hangoutOpenDate,hangoutCloseDate,hangoutDate,hangoutTag";
-          var au = new AjaxUtil("hangout/insert",paramIds);
+          var paramIds = "hangoutArea,hangoutCategory,hangoutCreator,hangoutName,hangoutContent,hangoutDate";
+          var au = new AjaxUtil("insert/list",paramIds);
           au.setCallbackSuccess(callbackCreate);
           au.send();
        });
