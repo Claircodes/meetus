@@ -31,7 +31,7 @@
 <!-- 달력관련 script -->
 <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/tags/bootstrap-tags.css'/>" >
-<script type="text/javascript"	src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js' />"></script>
+<script type="text/javascript"	src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js'"></script>
 <script src="<c:url value='/resources/tags/bootstrap-tags.min.js' />"></script>
 <script src="<c:url value='/resources/tags/bootstrap-tags.js' />"></script>
 

@@ -6,12 +6,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap Login Form Template</title>
+        <title>SignUp HANGOUT</title>
 
         <!-- CSS -->
         
-		<link rel="stylesheet" href="/resources/css/form-elements.css">
-        <link rel="stylesheet" href="/resources/css/style.css">
+		<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
+        <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -261,10 +261,10 @@ function overlapIdCheck(results)
 </script>
 
 	<!-- Javascript -->
-        <script src="/resources/js/jquery-1.12.1.min.js"></script>
-        <script src="/resources/js/bootstrap.min.js"></script>
-        <script src="/resources/js/jquery.backstretch.min.js"></script>
-        <script src="/resources/js/scripts_signup.js"></script>
+        <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/scripts.js' />"></script>
         
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
