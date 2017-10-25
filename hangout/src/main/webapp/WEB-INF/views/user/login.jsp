@@ -91,7 +91,7 @@
 	<script>
 		$("#btn").click(function() {
 			var paramIds = "userId,userPwd";
-			var au = new AjaxUtil("login", paramIds);
+			var au = new AjaxUtil("user/login", paramIds);
 			au.setCallbackSuccess(callbackMain);
 			au.send();
 		})

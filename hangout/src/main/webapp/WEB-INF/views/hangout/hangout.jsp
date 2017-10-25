@@ -14,7 +14,7 @@
 
             $(document).ready(function(){ 
                 var paramIds="hangoutNum";
-                var au = new AjaxUtil("select/listcontent",paramIds,"GET");
+                var au = new AjaxUtil("hangout/listcontent",paramIds,"GET");
                 au.setCallbackSuccess(callbackSql);
                 au.send();
             });

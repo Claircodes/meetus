@@ -90,7 +90,7 @@ var pwdCheck = false; //확인버튼 클릭 여부 확인, 기본값 false
 $("#update").click(function() { //수정 버튼 클릭시
 	if(pwdCheck==true){  //비밀번호 확인 버튼 클릭 했을시, 변경된 모든 파라미터를 서버에 전송
     var paramIds = "userId,userName,userPwd,userGender,userCountry,userEmail,userPhone";
-    var au = new AjaxUtil("signup/update",paramIds);
+    var au = new AjaxUtil("user/update",paramIds);
     au.send();
 	}
 	else{  //비밀번호 확인 버튼 클릭 안했을시 2가지 경우(비밀번호를 바꿀경우, 안바꿀경우)
@@ -99,7 +99,7 @@ $("#update").click(function() { //수정 버튼 클릭시
 		if(pwdCheck==false && pwd1==<%=user.getUserPwd()%> && pwd2==<%=user.getUserPwd()%>){  //비밀번호를 안바꿀 경우
 		$("#userPwd").val(<%=user.getUserPwd()%>);   ////비밀번호를 안바꿀 경우에 기존의 비밀번호 값을 넣는다
 		var paramIds = "userId,userName,userPwd,userGender,userCountry,userEmail,userPhone";
-	    var au = new AjaxUtil("signup/update",paramIds);
+	    var au = new AjaxUtil("user/update",paramIds);
 	    au.send();
 		}
 		else if(pwdCheck==false && pwd1!=<%=user.getUserPwd()%> && pwd2!=<%=user.getUserPwd()%>){ //비밀번호를 바꾸는데 확인 버튼 안눌렀을때

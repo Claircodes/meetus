@@ -31,4 +31,16 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
 	public UserInfo getUserProfile(UserInfo ui) {
 		return this.getSqlSession().selectOne("user.GET_USER_PROFILE", ui);
 	}
+	
+	@Override
+	public int updateUser(UserInfo ui) {
+		return this.getSqlSession().update("user.USER_UPDATE", ui);
+	}
+	
+	@Override
+	public List<UserInfo> overlapPwd(UserInfo ui) 
+	{
+		return this.getSqlSession().selectList("user.USER_OVERLAP_PWD", ui);
+	}
+	
 }

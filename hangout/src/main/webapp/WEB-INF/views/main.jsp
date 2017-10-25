@@ -13,7 +13,7 @@
 <script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
 <script src="<c:url value='/resources/js/jquery.backstretch.min.js' />"></script>
 <!--  <script src="<c:url value='/resources/js/scripts.js' />"></script>
-        --> 
+        -->
 
     <title>HANG OUT</title>
 
@@ -107,7 +107,7 @@
             <div class="row">
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"><center>
+                  <a href="<c:url value='/list'/>?category=PET"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/art.png'/>"/>
                   </a>
                    <h4>
@@ -441,5 +441,3 @@ $('#myCarousel').on('slide.bs.carousel', function () {
      // do something…
    })
 </script>
-
- 

@@ -218,7 +218,7 @@ $("#btn").click(function()
 	if(overlapCheck == true)
 	{
 		var paramIds = "userId,userPwd,userName,userEmail,userPhone,userGender,userCountry";
-		var au = new AjaxUtil("signup/insert",paramIds);
+		var au = new AjaxUtil("user/signup",paramIds);
 		au.send();
 	}
 	<!-- 아이디 중복체크를 안눌렀을경우 && 아이디 중복체크에 실패했는데 회원가입 버튼을 눌렀을경우 -->
@@ -237,7 +237,7 @@ $("#overlapBtn").click(function()
 		alert("아이디를 입력하시고 눌러주세요. \nPlease enter your ID and press.");
 		document.getElementById("userId").focus();
 	}
-	var au = new AjaxUtil("overlapId", "userId");
+	var au = new AjaxUtil("user/overlapId", "userId");
 	au.setCallbackSuccess(overlapIdCheck);
 	au.send();
 });

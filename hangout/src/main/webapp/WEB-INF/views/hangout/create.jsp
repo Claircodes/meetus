@@ -385,7 +385,7 @@
       
    $("#hang_signup").click(function() {
           var paramIds = "hangoutArea,hangoutCategory,hangoutCreator,hangoutName,hangoutContent,hangoutOpenDate,hangoutCloseDate,hangoutDate,hangoutTag";
-          var au = new AjaxUtil("insert/list",paramIds);
+          var au = new AjaxUtil("hangout/insert",paramIds);
           au.setCallbackSuccess(callbackCreate);
           au.send();
        });

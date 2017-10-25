@@ -33,9 +33,10 @@
   <button type="button" class="btn btn-default">Middle</button>
   <button type="button" class="btn btn-default">Right</button>
 </div>
+<input type="hidden" id="hangoutCategory" value="${param.category}"/>
 <script>
     $(document).ready(function(){
-       var paramIds="hangoutName";
+       var paramIds="hangoutName,hangoutCategory";
        var au = new AjaxUtil("select/list",paramIds);
        au.setCallbackSuccess(callbackSql);
        au.send();

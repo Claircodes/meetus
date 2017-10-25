@@ -4,13 +4,16 @@
 <mapper namespace="user">
 	<insert id="USER_SIGNUP" parameterType="user">
 		insert into user_info
-		(userId, userPwd, userName, userEmail, userPhone, userGender, userCountry)
+		(userId, userPwd, userName, userEmail, userPhone, userGender,
+		userCountry)
 		values
-		(#{userId}, #{userPwd}, #{userName}, #{userEmail}, #{userPhone}, #{userGender}, #{userCountry})
+		(#{userId}, #{userPwd}, #{userName}, #{userEmail},
+		#{userPhone}, #{userGender}, #{userCountry})
 	</insert>
-	
+
 	<select id="USER_LOGIN" parameterType="user" resultType="user">
-		select usernum,userid, userpwd, username, useremail, userphone, usergender, usercountry
+		select usernum,userid, userpwd, username, useremail, userphone,
+		usergender, usercountry
 		from user_info
 		where 1=1
 		<if test="userId != null and userId !=''">
@@ -20,19 +23,36 @@
 			and usernum = #{userNum}
 		</if>
 	</select>
-	
+
 	<select id="USER_OVERLAP_ID" parameterType="user" resultType="user">
 		select userid from user_info
 		where 1=1
 	</select>
-	
+
+	<select id="USER_OVERLAP_PWD" parameterType="user" resultType="user">
+		select userpwd from user_info
+		where userid like #{userId}
+	</select>
+
 	<select id="GET_USER_PROFILE" parameterType="user" resultType="user">
 		<if test="userNum != 0">
-			select username, userid, userpwd, useremail, userphone, usercountry
+			select username, userid, userpwd, useremail, userphone,
+			usercountry
 			from user_info
 			where 1=1
 		</if>
 	</select>
+	
+	<update id="USER_UPDATE" parameterType="user">
+		update user_info
+		set username = #{userName},
+		userpwd=#{userPwd},
+		usercountry=#{userCountry},
+		useremail=#{userEmail},
+		userphone=#{userPhone}
+	  
+	  where userid=#{userId}
+	</update>
 </mapper>
 
 
