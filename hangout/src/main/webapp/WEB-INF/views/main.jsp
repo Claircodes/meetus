@@ -107,7 +107,7 @@
             <div class="row">
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=PET"><center>
+                  <a href="<c:url value='/hangout/golist'/>?category=ART"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/art.png'/>"/>
                   </a>
                    <h4>
@@ -117,7 +117,7 @@
               </div>
              <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"><center>
+                  <a href="<c:url value='/hangout/golist'/>?category=BEAUTY"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/beauty.png'/>"/>
                   </a>
                    <h4>
@@ -127,7 +127,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"><center>
+                  <a href="<c:url value='/hangout/golist'/>?category=BOOK"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/book.png'/>"/>
                   </a>
                    <h4>
@@ -137,7 +137,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"><center>
+                  <a href="<c:url value='/hangout/golist'/>?category=BUSINESS"><center>
                     <img width="50%"  class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/business.png'/>"/>
                   </a>
                    <h4>
@@ -147,7 +147,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"><center>
+                  <a href="<c:url value='/hangout/golist'/>?category=DANCE"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/dance.png'/>"/>
                   </a>
                    <h4>
@@ -157,7 +157,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"><center>
+                  <a href="<c:url value='/hangout/golist'/>?category=EDUCATION"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/education.png'/>"/>
                   </a>
                    <h4>
@@ -167,7 +167,7 @@
               </div>
                 <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"><center>
+                  <a href="<c:url value='/hangout/golist'/>?category=FOOD"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/food.png'/>"/>
                   </a>
                    <h4>
@@ -177,7 +177,7 @@
               </div>
                 <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"><center>
+                  <a href="<c:url value='/hangout/golist'/>?category=GAME"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/game.png'/>"/>
                   </a>
                    <h4>
@@ -187,7 +187,7 @@
               </div>
                 <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"> <center>
+                  <a href="<c:url value='/hangout/golist'/>?category=LANGUAGE"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/language.png'/>"/>
                   </a>
                    <h4>
@@ -198,7 +198,7 @@
               
                <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"> <center>
+                  <a href="<c:url value='/hangout/golist'/>?category=MOVIE"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/movie.png'/>"/>
                   </a>
                    <h4>
@@ -208,7 +208,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"> <center>
+                  <a href="<c:url value='/hangout/golist'/>?category=MUSIC"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/music.png'/>"/>
                   </a>
                    <h4>
@@ -218,7 +218,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"> <center>
+                  <a href="<c:url value='/hangout/golist'/>?category=PET"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/pet.png'/>"/>
                   </a>
                    <h4>
@@ -228,7 +228,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"> <center>
+                  <a href="<c:url value='/hangout/golist'/>?category=PHOTO"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/photo.png'/>"/>
                   </a>
                    <h4>
@@ -238,7 +238,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"> <center>
+                  <a href="<c:url value='/hangout/golist'/>?category=RELIGION"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/religion.png'/>"/>
                   </a>
                    <h4>
@@ -248,7 +248,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"> <center>
+                  <a href="<c:url value='/hangout/golist'/>?category=SPORT"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/sport.png'/>"/>
                   </a>
                    <h4>
@@ -258,7 +258,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#"> <center>
+                  <a href="<c:url value='/hangout/golist'/>?category=TECHNICAL"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/technical.png'/>"/>
                   </a>
                    <h4>
@@ -271,7 +271,7 @@
               
             </div>
             <!-- /.row (nested) -->
-            <center><a href="#" class="btn btn-dark">View More HANGOUT</a></center>
+            <center><a href="<c:url value='/hangout/golist'/>" class="btn btn-dark">View More HANGOUT</a></center>
           </div>
           <!-- /.col-lg-10 -->
         </div>
@@ -285,7 +285,7 @@
       <div class="container text-center">
         <h3>마음에 드시는 모임이 없나요? 직접 개설 해보세요!</h3>
         <a href="<c:url value='/create'/>" class="btn btn-lg btn-light">모임 만들기</a>
-          <a href="<c:url value='hangout/golist'/>"  class="btn btn-lg btn-dark">모임 검색하기</a>
+          <a href="<c:url value='/hangout/golist'/>"  class="btn btn-lg btn-dark">모임 검색하기</a>
       </div>
     </aside>
 
@@ -314,9 +314,9 @@
             <ul class="footer-ul">
               <li></li>
               <li><a href="<c:url value='/create'/>" > 모임 만들기</a></li>
-              <li><a href="<c:url value='/list'/>" > 모임 리스트</a></li>
+              <li><a href="<c:url value='/hangout/golist'/>" > 모임 리스트</a></li>
               <li><a href="#"> 모임 페이지</a></li>
-              <li><a href="#"> 회원 정보</a></li>
+              <li><a href="<c:url value='/user/profile'/>"> 회원 정보</a></li>
               <li><a href="#"> Contact us</a></li>
             </ul>
         </div>
@@ -327,7 +327,7 @@
               <li><a href="#"> 김정규</a></li>
               <li><a href="#"> 박용성</a></li>
               <li><a href="#"> 장지훈</a></li>
-              <li><a href="#"> 임혜진</a></li> 
+              <li><a href="#"> 임혜진</a></li>
             </ul>
         </div>
         <div class="col-lg-2 col-md-4 social-icons">
