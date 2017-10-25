@@ -63,8 +63,9 @@
          alert("모임이름을 입력해주세요");
          return
       }
-      var paramIds="hangoutName";
+      var paramIds="hangoutName,hangoutCategory";
        var au = new AjaxUtil("hangout/list",paramIds);
+       au.setCallbackSuccess(callbackSql);
         au.send();
     });
 
