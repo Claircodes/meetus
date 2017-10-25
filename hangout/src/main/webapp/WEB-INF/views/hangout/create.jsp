@@ -25,7 +25,7 @@
 
 <!-- Javascript -->
 <script src="<c:url value='/resources/js/scripts-create.js'/>"></script>
-<script src="<c:url value='/resources/assets/js/jquery.backstretch.min.js'/>"></script>
+<script src="<c:url value='/resources/js/create-jquery.backstretch.min.js'/>"></script>
 
 
 <!-- 달력관련 script -->
