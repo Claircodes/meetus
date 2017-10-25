@@ -315,7 +315,6 @@
               <li></li>
               <li><a href="<c:url value='/hangout/create'/>" > 모임 만들기</a></li>
               <li><a href="<c:url value='/hangout/golist'/>" > 모임 리스트</a></li>
-              <li><a href="#"> 모임 페이지</a></li>
               <li><a href="<c:url value='/user/profile'/>"> 회원 정보</a></li>
               <li><a href="#"> Contact us</a></li>
             </ul>
