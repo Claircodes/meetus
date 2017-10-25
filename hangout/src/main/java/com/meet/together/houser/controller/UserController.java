@@ -62,11 +62,7 @@ public class UserController {
 		return "main";
 	}
 	
-	
-	@RequestMapping(value = "/hangout", method = RequestMethod.GET)
-	public String hangoutesite(UserInfo ui) {
-		return "hangout/hangout";
-	}
+
 
 	@RequestMapping(value = "/user/login", method = RequestMethod.POST)
 	public @ResponseBody ModelMap login(HttpSession hs, @RequestBody UserInfo user, ModelMap hm) {

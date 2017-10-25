@@ -50,17 +50,12 @@ public class HoController {
 		return "hangout/list";
 	}
 
-	@RequestMapping(value = "/hangout/listcontent", method = RequestMethod.POST)
-	public @ResponseBody ModelMap selectListContent(@RequestBody ListInfo li, ModelMap hm) {
-		ListInfo li2 = ls.selectListContent(li);
-		if (li2 != null) {
-			hm.put("list", li2);
-		} else {
-			hm.put("msg", "존재하지않는 게시물입니다. ");
-			hm.put("url", "user/list");
-		}
-		return hm;
-	}
+	   @RequestMapping(value = "/hangout", method = RequestMethod.GET)
+	   public String listsiteinfo(ListInfo li,ModelMap model) {
+	      ListInfo li2 = ls.selectListContent(li);
+	      model.addAttribute("ListInfo", li2 );
+	      return "hangout/hangout";
+	   }
 
 	@RequestMapping(value = "/place", method = RequestMethod.POST)
 	public @ResponseBody int insertPlace(@RequestBody Place pi) {

@@ -8,21 +8,9 @@
   
   <body>
 <%String hangoutNum =request.getParameter("hangoutNum");%>
-        <input type="text" id="hangoutNum" value=<%=hangoutNum%>>
       <div id="fb-root"></div>
             <script>
 
-            $(document).ready(function(){ 
-                var paramIds="hangoutNum";
-                var au = new AjaxUtil("hangout/listcontent",paramIds,"GET");
-                au.setCallbackSuccess(callbackSql);
-                au.send();
-            });
-            
-            function callbackSql(result){
-             var result2 = result.list;
-             alert(result2);
-            }
             </script>
     <!-- Navigation -->
     
