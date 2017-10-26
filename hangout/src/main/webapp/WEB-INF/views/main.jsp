@@ -412,7 +412,7 @@ function attracta_window_height() {
 
 
 
-<!--  구글map API -->
+<!--  구글map API 
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
 	<script type="text/javascript"> 
 	  var geocoder;
@@ -484,4 +484,4 @@ function attracta_window_height() {
 	</script>
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&callback=initMap"
-		async defer></script>
+		async defer></script>-->
