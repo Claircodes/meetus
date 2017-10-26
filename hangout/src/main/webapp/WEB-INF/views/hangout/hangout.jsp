@@ -63,17 +63,17 @@
 				<div class="card my-4">
 					<div class="card">
 						<div class="card-header">
-							<h5 class="cards-header"> ${ListInfo.hangoutTag}</h5>
+							<h5 class="cards-header">Tag</h5>
 						</div>
 						<div class="card-block">
 							<div class="desc">
-								<h6>수박바 비비빅 바밤바</h6>
+								<h6> #${ListInfo.hangoutTag}</h6>
 							</div>
 
 						</div>
 					</div>
 				</div>
-
+ 
 
 				<div class="card my-4">
 					<h5 class="card-header">${ListInfo.userId}</h5>
