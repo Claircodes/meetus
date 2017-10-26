@@ -12,7 +12,7 @@ public interface HoService {
 	List<ListInfo> selectListInfo(ListInfo li);
 	int insertListInfo(ListInfo li);
 	int insertPlace(Place pi);
-	HashMap selectListContent(ListInfo li);
+	HashMap<String,Object> selectListContent(ListInfo li);
 	List<CategoryInfo> selectCategoryInfo();
 	List<ListInfo> selectCategory(ListInfo li);
 }

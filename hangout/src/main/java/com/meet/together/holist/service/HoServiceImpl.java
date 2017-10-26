@@ -32,7 +32,7 @@ public class HoServiceImpl implements HoService {
 	}
 
 	@Override
-	public HashMap selectListContent(ListInfo li) {
+	public HashMap<String,Object> selectListContent(ListInfo li) {
 		return listDao.selectListContent(li);
 	}
 	@Override

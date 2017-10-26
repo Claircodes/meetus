@@ -39,7 +39,7 @@
 	<select id="GET_USER_PROFILE" parameterType="user" resultType="user">
 		<if test="userNum != 0">
 			select 
-				username, userid, userpwd, useremail, userphone, usercountry
+			usernum, userid, userpwd, username, useremail, userphone, usergender, usercountry
 			from user_info
 			where 1=1
 		</if>

@@ -28,7 +28,7 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	}
 
 	@Override
-	public HashMap selectListContent(ListInfo li) {
+	public HashMap<String,Object> selectListContent(ListInfo li) {
 		return this.getSqlSession().selectOne("listInfo.SELECT_LIST_ONE", li);
 	}
 

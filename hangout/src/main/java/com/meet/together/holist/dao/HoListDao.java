@@ -14,7 +14,7 @@ public interface HoListDao {
 
 	List<ListInfo> selectListInfo(ListInfo li);
 
-	HashMap selectListContent(ListInfo li);
+	HashMap<String, Object> selectListContent(ListInfo li);
 
 	List<CategoryInfo> selectCategoryInfo();
 

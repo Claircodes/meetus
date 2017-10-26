@@ -70,7 +70,7 @@
 	WHERE 1=1
 	AND h.hangoutcreator = u.usernum 
 		<if test="hangoutNum!=null">
-	AND hangoutNum = #{hangoutNum}
+	AND h.hangoutNum = #{hangoutNum}
 		</if>
 	</select>
 

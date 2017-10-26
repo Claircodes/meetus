@@ -50,13 +50,13 @@ public class HoController {
 	public String listsite(UserInfo ui) {
 		return "hangout/list";
 	}
-
-	@RequestMapping(value = "/hangout", method = RequestMethod.GET)
-	public String listsiteinfo(ListInfo li, ModelMap model) {
-		HashMap hm =  ls.selectListContent(li);
-		model.addAttribute("ListInfo", hm);
-		return "hangout/hangout";
-	}
+ 
+	   @RequestMapping(value = "/hangout", method = RequestMethod.GET)
+	   public String listsiteinfo(ListInfo li,ModelMap model) {
+		  HashMap<String, Object> hm = ls.selectListContent(li);
+	      model.addAttribute("ListInfo", hm );
+	      return "hangout/hangout";
+	   }
  
 	@RequestMapping(value = "/place", method = RequestMethod.POST)
 	public @ResponseBody int insertPlace(@RequestBody Place pi) {
