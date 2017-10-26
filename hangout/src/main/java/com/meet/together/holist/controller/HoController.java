@@ -57,7 +57,7 @@ public class HoController {
 		model.addAttribute("ListInfo", hm);
 		return "hangout/hangout";
 	}
-
+ 
 	@RequestMapping(value = "/place", method = RequestMethod.POST)
 	public @ResponseBody int insertPlace(@RequestBody Place pi) {
 		return ls.insertPlace(pi);
