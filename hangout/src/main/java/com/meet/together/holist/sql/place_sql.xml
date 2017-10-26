@@ -7,7 +7,7 @@
 			placename,
 			placeid,
 			placeaddress
-		)
+		) 
 		values(
 			#{placeName}, 
 			#{placeId}, 

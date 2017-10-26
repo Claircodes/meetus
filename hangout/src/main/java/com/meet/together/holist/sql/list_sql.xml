@@ -6,7 +6,7 @@
 		insert into hangout_info(
 			hangoutcreator,
 			hangoutname,
-			hangoutcontent,
+			hangoutcontent, 
 			hangoutarea,
 			hangoutopendate,
 			hangoutclosedate,

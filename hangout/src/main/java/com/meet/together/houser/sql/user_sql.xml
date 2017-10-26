@@ -8,7 +8,7 @@
 		values
 			(#{userId}, #{userPwd}, #{userName}, #{userEmail}, #{userPhone}, #{userGender}, #{userCountry})
 	</insert>
-
+ 
 	<select id="USER_LOGIN" parameterType="user" resultType="user">
 		select
 			usernum, userid, userpwd, username, useremail, userphone, usergender, usercountry
