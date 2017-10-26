@@ -16,7 +16,7 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	public int insertListInfo(ListInfo li) {
 		return this.getSqlSession().insert("listInfo.INSERT_LIST", li);
 	}
-
+ 
 	@Override
 	public int insertPlace(Place pi) {
 		return this.getSqlSession().insert("place.INSERT_PLACE", pi);

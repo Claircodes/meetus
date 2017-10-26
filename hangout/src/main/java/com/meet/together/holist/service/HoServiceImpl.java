@@ -20,7 +20,7 @@ public class HoServiceImpl implements HoService {
 	public int insertListInfo(ListInfo li) {
 		return listDao.insertListInfo(li);
 	}
-
+ 
 	@Override
 	public int insertPlace(Place pi) {
 		return listDao.insertPlace(pi);

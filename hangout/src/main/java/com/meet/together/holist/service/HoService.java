@@ -16,3 +16,4 @@ public interface HoService {
 	List<CategoryInfo> selectCategoryInfo();
 	List<ListInfo> selectCategory(ListInfo li);
 }
+ 
