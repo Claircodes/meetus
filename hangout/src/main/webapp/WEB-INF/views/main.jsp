@@ -98,7 +98,7 @@
 	</form>
            </div>
          <div class="col-sm-4">      
-             <a href="<c:url value='/list'/>" class="btn btn-dark">SEARCH HANGOUT</a></div>
+             <a href="${rootPath}/hangout/golist" class="btn btn-dark">SEARCH HANGOUT</a></div>
         <!-- /.row -->
       </div>
       <!-- /.container -->
@@ -122,7 +122,7 @@
             <div class="row">
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=ART"><center>
+                  <a href="${rootPath}/hangout/golist?category=ART"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/art.png'/>"/>
                   </a>
                    <h4>
@@ -132,7 +132,7 @@
               </div>
              <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=BEAUTY"><center>
+                  <a href="${rootPath}/hangout/golist?category=BEAUTY"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/beauty.png'/>"/>
                   </a>
                    <h4>
@@ -142,7 +142,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=BOOK"><center>
+                  <a href="${rootPath}/hangout/golist?category=BOOK"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/book.png'/>"/>
                   </a>
                    <h4>
@@ -152,7 +152,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=BUSINESS"><center>
+                  <a href="${rootPath}/hangout/golist?category=BUSINESS"><center>
                     <img width="50%"  class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/business.png'/>"/>
                   </a>
                    <h4>
@@ -162,7 +162,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=DANCE"><center>
+                  <a href="${rootPath}/hangout/golist?category=DANCE"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/dance.png'/>"/>
                   </a>
                    <h4>
@@ -172,7 +172,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=EDUCATION"><center>
+                  <a href="${rootPath}/hangout/golist?category=EDUCATION"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/education.png'/>"/>
                   </a>
                    <h4>
@@ -182,7 +182,7 @@
               </div>
                 <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=FOOD"><center>
+                  <a href="${rootPath}/hangout/golist?category=FOOD"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/food.png'/>"/>
                   </a>
                    <h4>
@@ -192,7 +192,7 @@
               </div>
                 <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=GAME"><center>
+                  <a href="${rootPath}/hangout/golist?category=GAME"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/game.png'/>"/>
                   </a>
                    <h4>
@@ -202,7 +202,7 @@
               </div>
                 <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=LANGUAGE"> <center>
+                  <a href="${rootPath}/hangout/golist?category=LANGUAGE"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/language.png'/>"/>
                   </a>
                    <h4>
@@ -213,7 +213,7 @@
               
                <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=MOVIE"> <center>
+                  <a href="${rootPath}/hangout/golist?category=MOVIE"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/movie.png'/>"/>
                   </a>
                    <h4>
@@ -223,7 +223,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=MUSIC"> <center>
+                  <a href="${rootPath}/hangout/golist?category=MUSIC"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/music.png'/>"/>
                   </a>
                    <h4>
@@ -233,7 +233,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=PET"> <center>
+                  <a href="${rootPath}/hangout/golist?category=PET"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/pet.png'/>"/>
                   </a>
                    <h4>
@@ -243,7 +243,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=PHOTO"> <center>
+                  <a href="${rootPath}/hangout/golist?category=PHOTO"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/photo.png'/>"/>
                   </a>
                    <h4>
@@ -253,7 +253,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=RELIGION"> <center>
+                  <a href="${rootPath}/hangout/golist?category=RELIGION"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/religion.png'/>"/>
                   </a>
                    <h4>
@@ -263,7 +263,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=SPORT"> <center>
+                  <a href="${rootPath}/hangout/golist?category=SPORT"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/sport.png'/>"/>
                   </a>
                    <h4>
@@ -273,7 +273,7 @@
               </div>
               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="<c:url value='/hangout/golist'/>?category=TECHNICAL"> <center>
+                  <a href="${rootPath}/hangout/golist?category=TECHNICAL"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/technical.png'/>"/>
                   </a>
                    <h4>
@@ -286,7 +286,7 @@
               
             </div>
             <!-- /.row (nested) -->
-            <center><a href="<c:url value='/hangout/golist'/>" class="btn btn-dark">View More HANGOUT</a></center>
+            <center><a href="${rootPath}/hangout/golist" class="btn btn-dark">View More HANGOUT</a></center>
           </div>
           <!-- /.col-lg-10 -->
         </div>
@@ -299,8 +299,8 @@
     <aside class="call-to-action bg-primary text-white">
       <div class="container text-center">
         <h3>마음에 드시는 모임이 없나요? 직접 개설 해보세요!</h3>
-        <a href="<c:url value='/hangout/create'/>" class="btn btn-lg btn-light">모임 만들기</a>
-          <a href="<c:url value='/hangout/golist'/>"  class="btn btn-lg btn-dark">모임 검색하기</a>
+        <a href="${rootPath}/hangout/create" class="btn btn-lg btn-light">모임 만들기</a>
+          <a href="${rootPath}/hangout/golist"  class="btn btn-lg btn-dark">모임 검색하기</a>
       </div>
     </aside>
 
@@ -328,9 +328,9 @@
           <h4 class="heading-footer">QUICK LINKS</h4>
             <ul class="footer-ul">
               <li></li>
-              <li><a href="<c:url value='/hangout/create'/>" > 모임 만들기</a></li>
-              <li><a href="<c:url value='/hangout/golist'/>" > 모임 리스트</a></li>
-              <li><a href="<c:url value='/user/profile'/>"> 회원 정보</a></li>
+              <li><a href="${rootPath}/hangout/create"> 모임 만들기</a></li>
+              <li><a href="${rootPath}/hangout/golist"> 모임 리스트</a></li>
+              <li><a href="${rootPath}/user/profile"> 회원 정보</a></li>
               <li><a href="#"> Contact us</a></li>
             </ul>
         </div>
