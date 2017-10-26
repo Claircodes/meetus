@@ -24,12 +24,22 @@
 <link href="<c:url value='/resources/css/stylish-portfolio.css"'/>" rel="stylesheet"/>
 <script src="<c:url value='/resources/js/stylish-portfolio.js' />"></script>
 <link href="<c:url value='/resources/css/new-style.css"'/>" rel="stylesheet"/>
+	
+	<!--  구글맵 -->
+	<script
+		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&amp;libraries=places"></script>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+	<script src="/resources/js/jquery.geocomplete.js"></script>
+	<script src="/resources/js/logger.js"></script>
+
   </head>
 
-  <body>
 
-  
-  
+
+
+  <body>
 <!-- Header -->
     <header class="header" id="top">
       <div class="text-vertical-center">
@@ -82,6 +92,10 @@
           <div class="col-sm-5 text-right">
           	 	 <input type="text-center" class="form-control btn"   
                   placeholder="검색지역을 입력해주세요." id="citysearch">
+                  	<form>
+		<input id="geocomplete" type="text" placeholder="Type in an address"
+			size="90" /> <input id="find" type="button" value="find" />
+	</form>
            </div>
          <div class="col-sm-4">      
              <a href="<c:url value='/list'/>" class="btn btn-dark">SEARCH HANGOUT</a></div>
@@ -485,3 +499,30 @@ function attracta_window_height() {
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&callback=initMap"
 		async defer></script>-->
+		
+		<!-- 구글맵 도시검색 -->
+	<script>
+		$(function() {
+
+			$("#geocomplete").geocomplete().bind("geocode:result",
+					function(event, result) {
+						$.log("Result: " + result.vicinity);
+					}).bind("geocode:error", function(event, status) {
+				$.log("ERROR: " + status);
+			}).bind("geocode:multiple", function(event, results) {
+				$.log("Multiple: " + results.length + " results found");
+			});
+
+			$("#find").click(function() {
+				$("#geocomplete").trigger("geocode");
+			});
+
+			$("#examples a").click(function() {
+				$("#geocomplete").val($(this).text()).trigger("geocode");
+				return false;
+			});
+
+		});
+	</script>
+</body>
+</html>
