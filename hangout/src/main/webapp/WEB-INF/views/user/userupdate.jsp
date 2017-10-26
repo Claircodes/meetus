@@ -7,87 +7,103 @@
 
 	
 
-		<div
+		<div id="body"
 			class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
 
 
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<h3 class="panel-title"><%=user.getUserId()%>님 회원 정보 수정</h3>
-				</div>
-				<br></br>
-				<div class="panel-body">
-					<div class="row">
-						<div class=" col-md-9 col-lg-9 ">
-							<table class="table table-user-information">
-								<tbody>
-									<tr>
-										<td>ID</td>
-										<td><input  id="userId" type="text" value="<%=user.getUserId()%>" style="border:none;" readonly></td>
-									</tr>
-									<tr>
-										<td>Name</td>
-										<td><input id="userName" type="text" value="<%=user.getUserName()%>" style="border:none;"></td>
-									</tr>
-									<tr>
-										<td>Password</td>
-										<td><input id="userPwd" type="password" value="<%=user.getUserPwd()%>" style="border:none;">
-									</tr>
-										<tr>
-										<td>Password Check</td>
-										<td>
-										<input id="userPwd2" type="password" value="<%=user.getUserPwd()%>" style="border:none;"><button type="button"class="btn btn-primary" id="overlapBtn">확인</button></td>
-									</tr>
-									<tr>
-										<td>Gender</td>
-										<td><input id="userGender" type="text" value="<%=user.getUserGender()%>" style="border:none;" readonly></td>
-									</tr>
-									<tr>
-										<td>Country</td>
-										<td><select
-											class="selectpicker" data-style="btn-danger" id="userCountry">
-											<optgroup label="기존국가">
-												<option><%=user.getUserCountry()%></option>
-											<optgroup label="Asia">
-												<option>Korea</option>
-												<option>Japan</option>
-												<option>China</option>
-											</optgroup>
-											<optgroup label="Europe">
-												<option>England</option>
-												<option>Germany</option>
-												<option>France</option>
-											</optgroup>
-										</select></td>
-									</tr>
-									<tr>
-										<td>Email</td>
-										<td><input id="userEmail" type="text" value="<%=user.getUserEmail()%>" style="border:none;"></td>
-									</tr>
-									<td>Phone Number</td>
-									<td><input id="userPhone" type="text" value="<%=user.getUserPhone()%>" style="border:none;">
-									</td>
-
-									</tr>
-
-								</tbody>
-							</table>
-
-							<button class="btn btn-primary" type="button" id="update">수정하기</button>
-							<a href="#" class="btn btn-primary">탈퇴하기</a>
-						</div>
-					</div>
-				</div>
-
-			</div>
 		</div>
 	</div>
 </div>
 
+<input type="hidden" id="userId" value="<%=user.getUserId()%>"/>
+<input type="hidden" id="userNum" value="<%=user.getUserNum()%>"/>
 <script>
+$(document).ready(function(){
+    var paramIds="userNum,userId";
+    var au = new AjaxUtil("user/profile",paramIds);
+    au.setCallbackSuccess(callbackSql);
+    au.send(); 
+ });
+function callbackSql(result){
+    var profileList=result.list;
+    var str = "";
+    for (var i = 0, max = profileList.length; i < max; i++) {
+    var list = profileList[i];
+    str+="<div class='panel panel-info'>";
+    str+="<div class='panel-heading'>";
+    str+="<h3 class='panel-title'>" + list.userId + " 님 회원 정보 수정</h3>";
+    str+="</div>";
+    str+="<br></br>";
+    str+="<div class='panel-body'>";
+    str+="<div class='row'>";
+    str+="<div class='col-md-9 col-lg-9'>";
+     str+="<table class='table table-user-information'>";
+    str+="<tbody>";
+     str+="<tr>";
+    str+="<td>ID</td>";
+    str+="<td><input  id='userId' type='text' value='" + list.userId + "' style='border:none;' readonly></td>";
+    str+="</tr>";
+     str+="<tr>";
+    str+="<td>Name</td>";
+    str+="<td><input id='userName' type='text' value='" + list.userName + "' style='border:none;'></td>";
+   str+="</tr>";
+    str+="<tr>";
+    str+="<td>Password</td>";
+    str+="<td><input id='userPwd' type='password' value='" + list.userPwd + "' style='border:none;'></td>";
+    str+="</tr>";
+    str+="<tr>";
+   str+="<td>Password Check</td>";
+   str+="<td>";
+     str+="<input id='userPwd2' type='password' value='" + list.userPwd + "' style='border:none;'><a onclick='overlapBtn()' type='button'class='btn btn-primary' id='overlapBtn'>확인</a></td>";
+    str+="</tr>";
+    str+="<tr>";
+    str+="<td>Gender</td>";
+     str+="<td><input id='userGender' type='text' value='" + list.userGender + "' style='border:none;' readonly></td>";
+    str+="</tr>";
+    str+="<tr>";
+    str+="<td>Country</td>";
+    str+="<td><select class='selectpicker' data-style='btn-danger' id='userCountry'>";
+    str+="<optgroup label='기존국가'>";
+    str+="<option>" + list.userCountry + "</option>";
+   str+="<optgroup label='Asia'>";
+     str+="<option>Korea</option>";
+    str+="<option>Japan</option>";
+      str+="<option>China</option>";
+   str+="</optgroup>";
+     str+="<optgroup label='Europe'>";
+     str+="<option>England</option>";
+     str+="<option>Germany</option>";
+    str+="<option>France</option>";
+     str+="</optgroup>";
+    str+="</select></td>";
+    str+="</tr>";
+     str+="<tr>";
+    str+="<td>Email</td>";
+    str+="<td><input id='userEmail' type='text' value='" + list.userEmail + "' style='border:none;'></td>";
+    str+="</tr>";
+    str+="<td>Phone Number</td>";
+     str+="<td><input id='userPhone' type='text' value='" + list.userPhone +"' style='border:none;'>";
+    str+="</td>";
+
+    str+="</tr>";
+
+     str+="</tbody>";
+    str+="</table>";
+
+    str+="<a onclick='update()' class='btn btn-primary' type='button' id='update'>수정하기</a>   ";
+     str+="<a href=''#' class='btn btn-primary'>탈퇴하기</a>";
+    str+="</div>";
+    str+="</div>";
+    str+="</div>";
+
+     str+="</div>";
+    }
+    $("#body").html(str);
+    }
+
 var pwdCheck = false; //확인버튼 클릭 여부 확인, 기본값 false
 
-$("#update").click(function() { //수정 버튼 클릭시
+function update(){ //수정 버튼 클릭시 
 	if(pwdCheck==true){  //비밀번호 확인 버튼 클릭 했을시, 변경된 모든 파라미터를 서버에 전송
     var paramIds = "userId,userName,userPwd,userGender,userCountry,userEmail,userPhone";
     var au = new AjaxUtil("user/update",paramIds);
@@ -106,9 +122,9 @@ $("#update").click(function() { //수정 버튼 클릭시
 			alert("비밀번호를 변경하시려면 확인 버튼을 눌러주세요.");
 		}
 	}
- });
+ }
  
- $("#overlapBtn").click(function(){  //비밀번호 확인버튼 누를시
+ function overlapBtn(){  //비밀번호 확인버튼 누를시
 	 var pwd1=$("#userPwd").val();
 	 var pwd2=$("#userPwd2").val();
 	 if(pwd1=="" || pwd2==""){ //두개의 비밀번호란중에 하나라도 입력 안했을때
@@ -131,7 +147,7 @@ $("#update").click(function() { //수정 버튼 클릭시
 		 alert("비밀번호가 일치하지 않습니다. \n" + "다시 입력해주시기 바랍니다.");
 		 document.getElementById("userPwd").focus();
 	 }
- });
+ }
  
  function overlapPwdCheck(result){
 	 var pwd1=$("#userPwd").val();

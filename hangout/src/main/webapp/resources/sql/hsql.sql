@@ -1,4 +1,3 @@
-
  /* hang out list 프로시저 삭제 */
 DROP PROCEDURE p_insert_hangout_info;
  /* hang out list 프로시저 시작  */
@@ -64,3 +63,8 @@ CREATE	CREATE	hangout_info	CREATE TABLE `hangout_info` (
 );
 /* hangout_info 테이블 생성 끝 */
 
+/* category_info 테이블 생성 시작 */
+create table category_info(
+categorynum int not null auto_increment primary key,
+categoryname varchar(15) not null);
+/* category_info 테이블 생성 끝 */

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.houser.dto.UserInfo;
 import com.meet.together.houser.service.UserService;
 
@@ -105,4 +106,12 @@ public class UserController {
 		}
 		return hm;
 	}
+	
+	@RequestMapping(value = "/user/profile", method = RequestMethod.POST)
+	public @ResponseBody ModelMap selectUser(@RequestBody UserInfo ui, ModelMap hm) {
+		List<UserInfo> list = us.selectUser(ui);
+		hm.put("list", list);
+		return hm;
+	}
+	
 }

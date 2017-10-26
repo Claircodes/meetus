@@ -50,6 +50,11 @@ public class UserServiceImpl implements UserService {
 		return userDao.overlapPwd(ui);
 	}
 
+	@Override
+	public List<UserInfo> selectUser(UserInfo ui) {
+		return userDao.selectUser(ui);
+	}
+
 
 
 }
