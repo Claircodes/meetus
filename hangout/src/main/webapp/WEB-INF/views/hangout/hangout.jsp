@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -7,7 +6,9 @@
 </head>
 
 <body>
-
+	<%
+		String hangoutNum = request.getParameter("hangoutNum");
+	%>
 	<div id="fb-root"></div>
 	<script>
 		
@@ -33,10 +34,10 @@
 
 					<div class="card-body">
 						<p class="card-text">${ListInfo}<br>
-							${ListInfo.hangoutCategory}
+						${ListInfo.hangoutCategory}
 						</p>
-
-
+						
+						
 					</div>
 					<div class="card-footer text-muted">
 						모임 기간 : ${ListInfo.hangoutOpenDate}- ${ListInfo.hangoutCloseDate}<br>
@@ -62,7 +63,7 @@
 				<div class="card my-4">
 					<div class="card">
 						<div class="card-header">
-							<h5 class="cards-header">${ListInfo.hangoutTag}</h5>
+							<h5 class="cards-header"> ${ListInfo.hangoutTag}</h5>
 						</div>
 						<div class="card-block">
 							<div class="desc">
@@ -135,8 +136,7 @@
 							<input type="text" class="form-control"
 								placeholder="검색하실 내용을 입력하세요."> <span
 								class="input-group-btn">
-								<button class="btn btn-secondary" type="button"
-									id="searchContent">Search!</button>
+								<button class="btn btn-secondary" type="button" id="searchContent">Search!</button>
 							</span>
 						</div>
 					</div>
@@ -188,7 +188,7 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
 		integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
 		crossorigin="anonymous"></script>
-	<script type="text/javascript">
+<script type="text/javascript">
 $(".btn btn-secondary").click(function(){
 	pageMove("hangout?hangoutNum="+);
 });

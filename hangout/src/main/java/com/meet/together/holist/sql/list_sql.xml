@@ -4,52 +4,52 @@
 <mapper namespace="listInfo">
 	<insert id="INSERT_LIST" parameterType="listInfo">
 		insert into hangout_info(
-		hangoutcreator,
-		hangoutname,
-		hangoutcontent,
-		hangoutarea,
-		hangoutopendate,
-		hangoutclosedate,
-		hangoutdate,
-		hangoutcategory,
-		hangouttag)
+			hangoutcreator,
+			hangoutname,
+			hangoutcontent,
+			hangoutarea,
+			hangoutopendate,
+			hangoutclosedate,
+			hangoutdate,
+			hangoutcategory,
+			hangouttag)
 		values(
-		#{hangoutCreator},
-		#{hangoutName},
-		#{hangoutContent},
-		#{hangoutArea},
-		#{hangoutOpenDate},
-		#{hangoutCloseDate},
-		DATE_FORMAT(NOW(), '%Y%m%d'),
-		#{hangoutCategory},
-		#{hangoutTag}
+			#{hangoutCreator},
+			#{hangoutName},
+			#{hangoutContent},
+			#{hangoutArea},
+			#{hangoutOpenDate},
+			#{hangoutCloseDate},
+			DATE_FORMAT(NOW(), '%Y%m%d'),
+			#{hangoutCategory},
+			#{hangoutTag}
 		)
 	</insert>
 
 	<select id="SELECT_LIST" parameterType="listInfo" resultType="listInfo">
-		select hangoutnum,
-		hangoutcreator,
-		hangoutname,
-		hangoutcontent,
-		hangoutarea,
-		hangoutopendate,
-		hangoutclosedate,
-		hangoutdate,
-		hangoutcategory,
-		hangouttag
+		select
+			hangoutnum,
+			hangoutcreator,
+			hangoutname,
+			hangoutcontent,
+			hangoutarea,
+			hangoutopendate,
+			hangoutclosedate,
+			hangoutdate,
+			hangoutcategory,
+			hangouttag
 		from hangout_info
 		where 1=1
 		<if test="hangoutName != '' and hangoutName != null">
-			and hangoutname like concat('%',#{hangoutName},'%')
+		and hangoutname like concat('%',#{hangoutName},'%')
 		</if>
 		<if test="hangoutCategory != '' and hangoutCategory != null">
-			and hangoutcategory like #{hangoutCategory}
+		and hangoutcategory like #{hangoutCategory}
 		</if>
 		limit 12
 	</select>
 	
-	<select id="SELECT_LIST_ONE" parameterType="listInfo"
-		resultType="java.util.HashMap">
+	<select id="SELECT_LIST_ONE" parameterType="listInfo" resultType="java.util.HashMap">
 	SELECT
 		h.hangoutNum,
 		h.hangoutName,
@@ -68,28 +68,28 @@
 		u.userCountry
 	FROM hangout_info AS h, user_info AS u
 	WHERE 1=1
-		AND h.hangoutcreator = u.usernum 
+	AND h.hangoutcreator = u.usernum 
 		<if test="hangoutNum!=null">
-			AND hangoutNum = #{hangoutNum}
+	AND hangoutNum = #{hangoutNum}
 		</if>
 	</select>
 
-	<select id="SELECT_CATEGORY_LIST" parameterType="listInfo"
-		resultType="listInfo">
-		select hangoutnum,
-		hangoutcreator,
-		hangoutname,
-		hangoutcontent,
-		hangoutarea,
-		hangoutopendate,
-		hangoutclosedate,
-		hangoutdate,
-		hangoutcategory,
-		hangouttag
+	<select id="SELECT_CATEGORY_LIST" parameterType="listInfo" resultType="listInfo">
+		select 
+			hangoutnum,
+			hangoutcreator,
+			hangoutname,
+			hangoutcontent,
+			hangoutarea,
+			hangoutopendate,
+			hangoutclosedate,
+			hangoutdate,
+			hangoutcategory,
+			hangouttag
 		from hangout_info
 		where 1=1
 		<if test="hangoutCategory != null">
-			and hangoutcategory = #{hangoutCategory}
+		and hangoutcategory = #{hangoutCategory}
 		</if>
 	</select>
 </mapper>

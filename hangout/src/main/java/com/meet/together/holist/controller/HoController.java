@@ -33,7 +33,7 @@ public class HoController {
 		}
 		return hm;
 	}
-	
+
 	@RequestMapping(value = "/hangout/create", method = RequestMethod.GET)
 	public String createsite(UserInfo ui) {
 		return "hangout/create";
@@ -45,18 +45,18 @@ public class HoController {
 		hm.put("list", list);
 		return hm;
 	}
-	
+
 	@RequestMapping(value = "/hangout/golist", method = RequestMethod.GET)
 	public String listsite(UserInfo ui) {
 		return "hangout/list";
 	}
 
-	   @RequestMapping(value = "/hangout", method = RequestMethod.GET)
-	   public String listsiteinfo(ListInfo li,ModelMap model) {
-	      HashMap li2 = ls.selectListContent(li);
-	      model.addAttribute("ListInfo", li2 );
-	      return "hangout/hangout";
-	   }
+	@RequestMapping(value = "/hangout", method = RequestMethod.GET)
+	public String listsiteinfo(ListInfo li, ModelMap model) {
+		HashMap hm =  ls.selectListContent(li);
+		model.addAttribute("ListInfo", hm);
+		return "hangout/hangout";
+	}
 
 	@RequestMapping(value = "/place", method = RequestMethod.POST)
 	public @ResponseBody int insertPlace(@RequestBody Place pi) {

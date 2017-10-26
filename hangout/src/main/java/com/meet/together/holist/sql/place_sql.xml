@@ -4,14 +4,14 @@
 <mapper namespace="place">
 	<insert id="INSERT_PLACE" parameterType="place">
 		insert into place(
-		placename,
-		placeid,
-		placeaddress
+			placename,
+			placeid,
+			placeaddress
 		)
 		values(
-		#{placeName}, 
-		#{placeId}, 
-		#{placeAddress} 
+			#{placeName}, 
+			#{placeId}, 
+			#{placeAddress} 
 		)
 	</insert>
 </mapper>
