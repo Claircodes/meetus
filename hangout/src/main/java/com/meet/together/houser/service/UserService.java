@@ -11,6 +11,8 @@ public interface UserService {
 	
 	public int updateUser(UserInfo ui);
 	
+	public int deleteUser(UserInfo ui);
+	
 	public UserInfo login(UserInfo ui);
 	
 	public List<UserInfo> overlapId(UserInfo ui);

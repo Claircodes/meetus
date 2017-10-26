@@ -56,4 +56,9 @@
 	  
 	  where userid=#{userId}
 	</update>
+	
+		<delete id="USER_DELETE" parameterType="user">
+		delete from user_info
+	  where userid like #{userId}
+	</delete>
 </mapper>

@@ -91,7 +91,7 @@ function callbackSql(result){
     str+="</table>";
 
     str+="<a onclick='update()' class='btn btn-primary' type='button' id='update'>수정하기</a>   ";
-     str+="<a href=''#' class='btn btn-primary'>탈퇴하기</a>";
+     str+="<a onclick='delete_user()'class='btn btn-primary' type='button' id='delete'>탈퇴하기</a>";
     str+="</div>";
     str+="</div>";
     str+="</div>";
@@ -160,4 +160,14 @@ function update(){ //수정 버튼 클릭시
 	 pwdCheck=true;  //비밀번호 확인 클릭 true 반환
 	 }
  }
+ 
+ 
+function delete_user(){
+	if(confirm("정말 탈퇴하시겠습니까??")==true){
+	    var au = new AjaxUtil("user/delete","userId");
+	    au.send();
+	}else{
+		return;
+	}
+}
 </script>

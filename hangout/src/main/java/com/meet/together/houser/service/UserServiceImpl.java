@@ -55,6 +55,11 @@ public class UserServiceImpl implements UserService {
 		return userDao.selectUser(ui);
 	}
 
+	@Override
+	public int deleteUser(UserInfo ui) {
+		return userDao.deleteUser(ui);
+	}
+
 
 
 }

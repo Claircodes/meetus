@@ -114,4 +114,18 @@ public class UserController {
 		return hm;
 	}
 	
+	@RequestMapping(value = "/user/delete", method = RequestMethod.POST)
+	public @ResponseBody ModelMap deleteUser(@RequestBody UserInfo ui, ModelMap hm) {
+
+		int result = us.deleteUser(ui);
+		if (result == 1) {
+			hm.put("msg", "탈퇴가 완료되었습니다.");
+			hm.put("url", "user/logout");
+		} else {
+			hm.put("msg", "탈퇴 실패, 정보를 확인하세요");
+			hm.put("url", "user/update");
+		}
+		return hm;
+	}
+	
 }
