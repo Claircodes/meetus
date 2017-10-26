@@ -76,11 +76,13 @@
       <div class="container">
         <div class="row justify-content-center align-self-center">
         <div class="col-sm-12 text-center">
-         <h2>지역별 모임 찾기</h2><p></div>
+         <h2>지역별 모임 찾기</h2><p>
+         현재위치 : 
+         </div>
          <div class="col-sm-2"></div>
           <div class="col-sm-5 text-right">
           	 	 <input type="text-center" class="form-control btn"   
-                  placeholder="원하시는 모임의 이름을 검색 해보세요." id="hangoutName">
+                  placeholder="원하시는 모임의 이름을 검색 해보세요." id="citysearch">
            </div>
          <div class="col-sm-4">      
              <a href="<c:url value='/list'/>" class="btn btn-dark">SEARCH HANGOUT</a></div>
@@ -435,8 +437,78 @@ function attracta_window_height() {
 </script>
 
 
-<script>
-$('#myCarousel').on('slide.bs.carousel', function () {
-     // do something…
-   })
-</script>
+
+
+
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+	<script type="text/javascript"> 
+	  var geocoder;
+	 
+	  if (navigator.geolocation) {
+	    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+	} 
+	//Get the latitude and the longitude;
+	function successFunction(position) {
+	    var lat = position.coords.latitude;
+	    var lng = position.coords.longitude;
+	    codeLatLng(lat, lng)
+	}
+	 
+	function errorFunction(){
+	    alert("Geocoder failed");
+	}
+	 
+	  function initialize() {
+	    geocoder = new google.maps.Geocoder();
+	 
+	 
+	 
+	  }
+	 
+	  function codeLatLng(lat, lng) {
+	 
+	    var latlng = new google.maps.LatLng(lat, lng);
+	    geocoder.geocode({'latLng': latlng}, function(results, status) {
+	      if (status == google.maps.GeocoderStatus.OK) {
+	      console.log(results)
+	        if (results[1]) {
+			//alert (results[0].address_components[3].short_name);
+			
+				
+	 
+	         //formatted address
+	     //    alert(results[0].formatted_address)
+	        //find country name
+	             for (var i=0; i<results[0].address_components.length; i++) {
+	            for (var b=0;b<results[0].address_components[i].types.length;b++) {
+				         
+	 
+	            //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+	                if (results[0].address_components[i].types[b] == "locality") {
+	                    //this is the object you are looking for
+	                    city= results[0].address_components[i];
+	                    break;
+	                }
+	            }
+	        }
+	        //city data 
+			//alert(city.long_name)
+			$(document).ready(function(){
+				$('#test').val('city.long_name');
+			});
+	        
+	 
+	        } else {
+	          alert("No results found");
+	        }
+	      } else {
+	        alert("Geocoder failed due to: " + status);
+	      }
+	    });
+	  }
+	</script> 
+	<body onload="initialize()"> 
+	</script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&callback=initMap"
+		async defer></script>
