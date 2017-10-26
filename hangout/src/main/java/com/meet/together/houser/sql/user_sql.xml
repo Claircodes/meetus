@@ -36,13 +36,10 @@
 
 	<select id="GET_USER_PROFILE" parameterType="user" resultType="user">
 		<if test="userNum != 0">
-			select username, userid, userpwd, useremail, userphone, usergender,
+			select username, userid, userpwd, useremail, userphone,
 			usercountry
 			from user_info
 			where 1=1
-			<if test="userId != null">
-			and userid like #{userId}
-			</if>
 		</if>
 	</select>
 	
@@ -56,9 +53,10 @@
 	  
 	  where userid=#{userId}
 	</update>
-	
-		<delete id="USER_DELETE" parameterType="user">
-		delete from user_info
-	  where userid like #{userId}
-	</delete>
 </mapper>
+
+
+
+
+
+
