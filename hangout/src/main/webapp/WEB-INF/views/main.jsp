@@ -77,12 +77,11 @@
         <div class="row justify-content-center align-self-center">
         <div class="col-sm-12 text-center">
          <h2>지역별 모임 찾기</h2><p>
-         현재위치 : 
          </div>
          <div class="col-sm-2"></div>
           <div class="col-sm-5 text-right">
           	 	 <input type="text-center" class="form-control btn"   
-                  placeholder="원하시는 모임의 이름을 검색 해보세요." id="citysearch">
+                  placeholder="검색지역을 입력해주세요." id="citysearch">
            </div>
          <div class="col-sm-4">      
              <a href="<c:url value='/list'/>" class="btn btn-dark">SEARCH HANGOUT</a></div>
@@ -368,32 +367,6 @@
 
 </html>
 
-<!-- 이것은 메인 상단의 HOT LIST를 위한 JS -->
-<script>
-$('#myTab a').click(function (e) {
-     e.preventDefault()
-     $(this).tab('show')
-   })
-
-
-   $(window).load(function() {
-       var boxheight = $('#myCarousel .carousel-inner').innerHeight();
-       var itemlength = $('#myCarousel .item').length;
-       var triggerheight = Math.round(boxheight/itemlength+1);
-       $('#myCarousel .list-group-item').outerHeight(triggerheight);
-   });
-
-   var monthNames = [ "January", "February", "March", "April", "May", "June",
-       "July", "August", "September", "October", "November", "December" ];
-   var dayNames= ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
-
-   var newDate = new Date();
-   newDate.setDate(newDate.getDate() + 1);    
-   $('#Date').html(dayNames[newDate.getDay()] + ", " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
-</script> 
-
-
-
 
 <script type='text/javascript'> 
 function attracta_loadjs(url) {
@@ -439,7 +412,7 @@ function attracta_window_height() {
 
 
 
-
+<!--  구글map API -->
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
 	<script type="text/javascript"> 
 	  var geocoder;
@@ -494,7 +467,7 @@ function attracta_window_height() {
 	        //city data 
 			//alert(city.long_name)
 			$(document).ready(function(){
-				$('#test').val('city.long_name');
+				$('#citysearch').val(city.long_name);
 			});
 	        
 	 
