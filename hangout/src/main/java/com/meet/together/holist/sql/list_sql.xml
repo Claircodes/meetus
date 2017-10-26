@@ -49,21 +49,28 @@
 	</select>
 	
 	<select id="SELECT_LIST_ONE" parameterType="listInfo"
-		resultType="listInfo">
-		select hangoutnum,
-		hangoutcreator,
-		hangoutname,
-		hangoutcontent,
-		hangoutarea,
-		hangoutopendate,
-		hangoutclosedate,
-		hangoutdate,
-		hangoutcategory,
-		hangouttag
-		from hangout_info
-		where 1=1
+		resultType="java.util.HashMap">
+	SELECT
+		h.hangoutNum,
+		h.hangoutName,
+		h.hangoutContent,
+		h.hangoutArea,
+		h.hangoutOpendate,
+		h.hangoutClosedate,
+		h.hangoutDate,
+		h.hangoutCategory,
+		h.hangoutTag,
+		u.userId, 
+		u.userName, 
+		u.userEmail, 
+		u.userPhone, 
+		u.userGender,
+		u.userCountry
+	FROM hangout_info AS h, user_info AS u
+	WHERE 1=1
+		AND h.hangoutcreator = u.usernum 
 		<if test="hangoutNum!=null">
-			and hangoutNum = #{hangoutNum}
+			AND hangoutNum = #{hangoutNum}
 		</if>
 	</select>
 

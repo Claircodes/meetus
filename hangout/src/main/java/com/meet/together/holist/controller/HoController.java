@@ -1,5 +1,6 @@
 package com.meet.together.holist.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,7 @@ public class HoController {
 
 	   @RequestMapping(value = "/hangout", method = RequestMethod.GET)
 	   public String listsiteinfo(ListInfo li,ModelMap model) {
-	      ListInfo li2 = ls.selectListContent(li);
+	      HashMap li2 = ls.selectListContent(li);
 	      model.addAttribute("ListInfo", li2 );
 	      return "hangout/hangout";
 	   }

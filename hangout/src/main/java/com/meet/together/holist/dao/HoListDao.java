@@ -1,5 +1,6 @@
 package com.meet.together.holist.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.meet.together.holist.dto.CategoryInfo;
@@ -13,7 +14,7 @@ public interface HoListDao {
 
 	List<ListInfo> selectListInfo(ListInfo li);
 
-	ListInfo selectListContent(ListInfo li);
+	HashMap selectListContent(ListInfo li);
 
 	List<CategoryInfo> selectCategoryInfo();
 

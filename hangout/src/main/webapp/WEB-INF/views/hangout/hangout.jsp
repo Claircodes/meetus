@@ -1,182 +1,198 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <link href="/resources/css/hangout.css" rel="stylesheet">
-  </head>
-  
-  <body>
-<%String hangoutNum =request.getParameter("hangoutNum");%>
-      <div id="fb-root"></div>
-            <script>
+<link href="/resources/css/hangout.css" rel="stylesheet">
+</head>
 
-            </script>
-    <!-- Navigation -->
-    
-    <!-- Page Content -->
- <div class="container">
+<body>
 
-      <div class="row">
+	<div id="fb-root"></div>
+	<script>
+		
+	</script>
+	<!-- Navigation -->
 
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
+	<!-- Page Content -->
+	<div class="container">
 
-          <h1 class="my-4">${ListInfo.hangoutName}</h1>
+		<div class="row">
 
-          <!-- Blog Post -->
-          <div class="card mb-4">
-            <img class="card-img-top" src="https://pbs.twimg.com/media/Cq5tz18VUAAFT5q.jpg"  alt="Card image cap" >
-            <div class="card-body">
-              <h2 class="card-title">${ListInfo.hangoutName}</h2>
-              <p class="card-text">${ListInfo.hangoutContent}</p>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on January 8, 2017 by
-              <a href="#">Admin</a>
-            </div>
-          </div>
+			<!-- Blog Entries Column -->
+			<div class="col-md-8">
 
 
 
-          <!-- Pagination -->
-          <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
-              <a class="page-link" href="#">← Older</a>
-            </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#">Newer →</a>
-            </li>
-          </ul>
+				<!-- Blog Post -->
+				<div class="card mb-4">
+					<h1 class="my-4">${ListInfo.hangoutName}</h1>
+					<img class="card-img-top"
+						src="https://pbs.twimg.com/media/Cq5tz18VUAAFT5q.jpg"
+						alt="Card image cap">
 
-        </div>
-        <div class="col-md-4">
+					<div class="card-body">
+						<p class="card-text">${ListInfo}<br>
+							${ListInfo.hangoutCategory}
+						</p>
 
 
-          <!-- Side Widget -->
-             <div class="card my-4">
-          <div class="card">
-            <div class="card-header">
-              <h5 class="cards-header">#hashtag</h5>
-            </div>
-            <div class="card-block">
-              <div class="desc"><h6>수박바  비비빅  바밤바</h6></div>
-                      
-            </div>
-          </div></div>
-          
-          
-          <div class="card my-4">
-            <h5 class="card-header">Admin</h5>
-              <div col-lg-3 col-sm-6>
-                <div class="card hovercard">
-                <div class="cardheader">
+					</div>
+					<div class="card-footer text-muted">
+						모임 기간 : ${ListInfo.hangoutOpenDate}- ${ListInfo.hangoutCloseDate}<br>
+						모임 날짜 : ${ListInfo.hangoutDate}
+					</div>
+				</div>
 
-                </div>
-                <div class="avatar">
-                    <img alt="" src="http://cfile233.uf.daum.net/image/193BA6384DE105340A2D8E" width="100%" height="80%">
-                </div>
-                <div class="info">
-                    <div class="title">
-                        <br/>
-                        <a target="_blank" href="http://scripteden.com/"><h3 align="center">신짱구</h3></a>
-                    </div>
-                    <div class="desc"><h6>개설자 정보1</h6></div>
-                    <div class="desc"><h6>개설자 정보2</h6></div>
-                    <div class="desc"><h6>개설자 정보3</h6></div>
-                </div>
-                <div class="bottom" align="center">
-                    <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a class="btn btn-danger btn-sm" rel="publisher"
-                       href="https://plus.google.com/+ahmshahnuralam">
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-                    <a class="btn btn-primary btn-sm" rel="publisher"
-                       href="https://plus.google.com/shahnuralam">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-                        <i class="fa fa-behance"></i>
-                    </a>
-                </div>
-            </div>
 
-              </div>
-          </div>
-       
- <!--         
+
+				<!-- Pagination -->
+				<ul class="pagination justify-content-center mb-4">
+					<li class="page-item"><a class="page-link" href="#">←
+							Older</a></li>
+					<li class="page-item disabled"><a class="page-link" href="#">Newer
+							→</a></li>
+				</ul>
+
+			</div>
+			<div class="col-md-4">
+
+
+				<!-- Side Widget -->
+				<div class="card my-4">
+					<div class="card">
+						<div class="card-header">
+							<h5 class="cards-header">${ListInfo.hangoutTag}</h5>
+						</div>
+						<div class="card-block">
+							<div class="desc">
+								<h6>수박바 비비빅 바밤바</h6>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+
+				<div class="card my-4">
+					<h5 class="card-header">${ListInfo.userId}</h5>
+					<div col-lg-3 col-sm-6>
+						<div class="card hovercard">
+							<div class="cardheader"></div>
+							<div class="avatar">
+								<img alt=""
+									src="http://cfile233.uf.daum.net/image/193BA6384DE105340A2D8E"
+									width="100%" height="80%">
+							</div>
+							<div class="info">
+								<div class="title">
+									<br /> <a target="_blank" href="http://scripteden.com/"><h3
+											align="center">${ListInfo.userName}</h3></a>
+								</div>
+								<div class="desc">
+									<h6>핸드폰번호:${ListInfo.userPhone}</h6>
+								</div>
+								<div class="desc">
+									<h6>국적:${ListInfo.userCountry}</h6>
+								</div>
+								<div class="desc">
+									<h6>이메일:${ListInfo.userEmail}</h6>
+								</div>
+							</div>
+							<div class="bottom" align="center">
+								<a class="btn btn-primary btn-twitter btn-sm"
+									href="https://twitter.com/webmaniac"> <i
+									class="fa fa-twitter"></i>
+								</a> <a class="btn btn-danger btn-sm" rel="publisher"
+									href="https://plus.google.com/+ahmshahnuralam"> <i
+									class="fa fa-google-plus"></i>
+								</a> <a class="btn btn-primary btn-sm" rel="publisher"
+									href="https://plus.google.com/shahnuralam"> <i
+									class="fa fa-facebook"></i>
+								</a> <a class="btn btn-warning btn-sm" rel="publisher"
+									href="https://plus.google.com/shahnuralam"> <i
+									class="fa fa-behance"></i>
+								</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<!--         
           <div class="card my-4">
               <h5 class="card-header">
                   FaceBook 가져오기
               </h5>
                <div class="fb-page" data-href="https://www.facebook.com/Devwonwon-1439494016140368/" data-tabs="timeline" data-width="900" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Devwonwon-1439494016140368/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Devwonwon-1439494016140368/">Devwonwon</a></blockquote></div>
           </div>
--->          
-<!-- Search Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">검색하기</h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="검색하실 내용을 입력하세요.">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Search!</button>
-                </span>
-              </div>
-            </div>
-          </div>
+-->
+				<!-- Search Widget -->
+				<div class="card my-4">
+					<h5 class="card-header">검색하기</h5>
+					<div class="card-body">
+						<div class="input-group">
+							<input type="text" class="form-control"
+								placeholder="검색하실 내용을 입력하세요."> <span
+								class="input-group-btn">
+								<button class="btn btn-secondary" type="button"
+									id="searchContent">Search!</button>
+							</span>
+						</div>
+					</div>
+				</div>
 
-          <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">카테고리</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Web Design</a>
-                    </li>
-                    <li>
-                      <a href="#">HTML</a>
-                    </li>
-                    <li>
-                      <a href="#">Freebies</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">JavaScript</a>
-                    </li>
-                    <li>
-                      <a href="#">CSS</a>
-                    </li>
-                    <li>
-                      <a href="#">Tutorials</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-     </div>
-    </div>
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Designe:© Phantuan - Framework: bootstrap 4</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+				<!-- Categories Widget -->
+				<div class="card my-4">
+					<h5 class="card-header">카테고리</h5>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-lg-6">
+								<ul class="list-unstyled mb-0">
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">HTML</a></li>
+									<li><a href="#">Freebies</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-6">
+								<ul class="list-unstyled mb-0">
+									<li><a href="#">JavaScript</a></li>
+									<li><a href="#">CSS</a></li>
+									<li><a href="#">Tutorials</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	<footer class="py-5 bg-dark">
+		<div class="container">
+			<p class="m-0 text-center text-white">Designe:© Phantuan -
+				Framework: bootstrap 4</p>
+		</div>
+		<!-- /.container -->
+	</footer>
 
-    <!-- Bootstrap core JavaScript -->
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-
-  </body>
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+		integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+		integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+		crossorigin="anonymous"></script>
+	<script type="text/javascript">
+$(".btn btn-secondary").click(function(){
+	pageMove("hangout?hangoutNum="+);
+});
+</script>
+</body>
 
 </html>

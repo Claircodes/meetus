@@ -1,5 +1,6 @@
 package com.meet.together.holist.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class HoServiceImpl implements HoService {
 	}
 
 	@Override
-	public ListInfo selectListContent(ListInfo li) {
+	public HashMap selectListContent(ListInfo li) {
 		return listDao.selectListContent(li);
 	}
 	@Override

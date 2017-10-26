@@ -1,5 +1,6 @@
 package com.meet.together.holist.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
@@ -27,7 +28,7 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	}
 
 	@Override
-	public ListInfo selectListContent(ListInfo li) {
+	public HashMap selectListContent(ListInfo li) {
 		return this.getSqlSession().selectOne("listInfo.SELECT_LIST_ONE", li);
 	}
 
