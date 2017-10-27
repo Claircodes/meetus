@@ -50,6 +50,16 @@ public class HoController {
 	public String listsite(UserInfo ui) {
 		return "hangout/list";
 	}
+	
+	@RequestMapping(value = "/hangout/mylist", method = RequestMethod.GET)
+	public String myListSite(UserInfo ui) {
+		return "hangout/myholist";
+	}
+	
+	@RequestMapping(value = "/hangout/partimylist", method = RequestMethod.GET)
+	public String myParticipateSite(UserInfo ui) {
+		return "hangout/myparlist";
+	}
  
 	   @RequestMapping(value = "/hangout", method = RequestMethod.GET)
 	   public String listsiteinfo(ListInfo li,ModelMap model) {

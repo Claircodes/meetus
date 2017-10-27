@@ -46,6 +46,9 @@
 		<if test="hangoutCategory != '' and hangoutCategory != null">
 		and hangoutcategory like #{hangoutCategory}
 		</if>
+		<if test="hangoutCreator != '' and hangoutCreator != null">
+		and hangoutcreator like #{hangoutCreator}
+		</if>
 		limit 12
 	</select>
 	

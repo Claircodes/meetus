@@ -83,7 +83,7 @@ function callbackSql(result){
 	str+="</table>";
 	str+="<a href='<c:url value='/user/update'/>' class='btn btn-primary'>수정하기</a>  ";
 	str+="<a href='${rootPath}/' class='btn btn-primary'>메인 가기</a> ";
-	str+="<a href='<c:url value='/hangout/golist'/>' class='btn btn-primary'>나의 모임</a>";
+	str+="<a href='${rootPath}/hangout/mylist?creator=" + profileList.userId + "' class='btn btn-primary'>나의 모임</a>";
 	 $("#profile").html(str);
        }
     
