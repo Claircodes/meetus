@@ -44,8 +44,8 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
 	}
 
 	@Override
-	public List<UserInfo> selectUser(UserInfo ui) {
-		return this.getSqlSession().selectList("user.GET_USER_PROFILE", ui);
+	public UserInfo selectUser(UserInfo ui) {
+		return this.getSqlSession().selectOne("user.GET_USER_PROFILE", ui);
 	}
 
 	@Override

@@ -35,11 +35,9 @@ $(document).ready(function(){
 function callbackSql(result){
     var profileList=result.list;
     var str = "";
-    for (var i = 0, max = profileList.length; i < max; i++) {
-       var list = profileList[i]; 
 	str+="<div class='panel panel-info'>";
 	str+="<div class='panel-heading'>";
-	str+="<h3 class='panel-title'>" + list.userId + " 님 회원 정보  </h3>";
+	str+="<h3 class='panel-title'>" + profileList.userId + " 님 회원 정보  </h3>";
 	str+="</div>";
 	str+="<br></br>";
 	str+="<div class='panel-body'>";
@@ -54,31 +52,31 @@ function callbackSql(result){
 	str+="<tbody>";
 	str+="<tr>";
 	str+="<td>ID</td>";
-	str+="<td>" + list.userId + "</td>";
+	str+="<td>" + profileList.userId + "</td>";
 	str+="</tr>";
 	str+="<tr>";
 	str+="<td>Name</td>";
-	str+="<td>" + list.userName + "</td>";
+	str+="<td>" + profileList.userName + "</td>";
 	str+="</tr>";
 	str+="<tr>";
 	str+="<td>Password</td>";
-	str+="<td><input type='password' value='" + list.userPwd +"' style='border:none;' readonly></td>";
+	str+="<td><input type='password' value='" + profileList.userPwd +"' style='border:none;' readonly></td>";
 	str+="</tr>";
 	str+="<tr>";
 	str+="<tr>";
 	str+="<td>Gender</td>";
-	str+="<td>" + list.userGender + "</td>";
+	str+="<td>" + profileList.userGender + "</td>";
 	str+="</tr>";
 	str+="<tr>";
 	str+="<td>Country</td>";
-	str+="<td>" + list.userCountry + "</td>";
+	str+="<td>" + profileList.userCountry + "</td>";
 	str+="</tr>";
 	str+="<tr>";
 	str+="<td>Email</td>";
-	str+="<td><a href='mailto:" + list.userEmail + "'>" + list.userEmail + "</a></td>";
+	str+="<td><a href='mailto:" + profileList.userEmail + "'>" + profileList.userEmail + "</a></td>";
 	str+="</tr>";
 	str+="<td>Phone Number</td>";
-	str+="<td>" + list.userPhone + "</td>";
+	str+="<td>" + profileList.userPhone + "</td>";
 	str+="</tr>";
 
 	str+="</tbody>";
@@ -86,7 +84,7 @@ function callbackSql(result){
 	str+="<a href='<c:url value='/user/update'/>' class='btn btn-primary'>수정하기</a>  ";
 	str+="<a href='${rootPath}/' class='btn btn-primary'>메인 가기</a> ";
 	str+="<a href='<c:url value='/hangout/golist'/>' class='btn btn-primary'>나의 모임</a>";
+	 $("#profile").html(str);
        }
-    $("#profile").html(str);
-    }
+    
 </script>

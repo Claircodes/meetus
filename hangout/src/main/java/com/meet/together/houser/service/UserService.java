@@ -5,7 +5,7 @@ import java.util.List;
 import com.meet.together.houser.dto.UserInfo;
 
 public interface UserService {
-	public List<UserInfo> selectUser(UserInfo ui);
+	public UserInfo selectUser(UserInfo ui);
 	
 	public int signinUser(UserInfo ui);
 	

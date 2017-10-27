@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<UserInfo> selectUser(UserInfo ui) {
+	public UserInfo selectUser(UserInfo ui) {
 		return userDao.selectUser(ui);
 	}
 

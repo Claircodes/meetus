@@ -27,11 +27,9 @@ $(document).ready(function(){
 function callbackSql(result){
     var profileList=result.list;
     var str = "";
-    for (var i = 0, max = profileList.length; i < max; i++) {
-    var list = profileList[i];
     str+="<div class='panel panel-info'>";
     str+="<div class='panel-heading'>";
-    str+="<h3 class='panel-title'>" + list.userId + " 님 회원 정보 수정</h3>";
+    str+="<h3 class='panel-title'>" + profileList.userId + " 님 회원 정보 수정</h3>";
     str+="</div>";
     str+="<br></br>";
     str+="<div class='panel-body'>";
@@ -41,30 +39,30 @@ function callbackSql(result){
     str+="<tbody>";
      str+="<tr>";
     str+="<td>ID</td>";
-    str+="<td><input  id='userId' type='text' value='" + list.userId + "' style='border:none;' readonly></td>";
+    str+="<td><input  id='userId' type='text' value='" + profileList.userId + "' style='border:none;' readonly></td>";
     str+="</tr>";
      str+="<tr>";
     str+="<td>Name</td>";
-    str+="<td><input id='userName' type='text' value='" + list.userName + "' style='border:none;'></td>";
+    str+="<td><input id='userName' type='text' value='" + profileList.userName + "' style='border:none;'></td>";
    str+="</tr>";
     str+="<tr>";
     str+="<td>Password</td>";
-    str+="<td><input id='userPwd' type='password' value='" + list.userPwd + "' style='border:none;'></td>";
+    str+="<td><input id='userPwd' type='password' value='" + profileList.userPwd + "' style='border:none;'></td>";
     str+="</tr>";
     str+="<tr>";
    str+="<td>Password Check</td>";
    str+="<td>";
-     str+="<input id='userPwd2' type='password' value='" + list.userPwd + "' style='border:none;'><a onclick='overlapBtn()' type='button'class='btn btn-primary' id='overlapBtn'>확인</a></td>";
+     str+="<input id='userPwd2' type='password' value='" + profileList.userPwd + "' style='border:none;'><a onclick='overlapBtn()' type='button'class='btn btn-primary' id='overlapBtn' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer color:white;'>확인</a></td>";
     str+="</tr>";
     str+="<tr>";
     str+="<td>Gender</td>";
-     str+="<td><input id='userGender' type='text' value='" + list.userGender + "' style='border:none;' readonly></td>";
+     str+="<td><input id='userGender' type='text' value='" + profileList.userGender + "' style='border:none;' readonly></td>";
     str+="</tr>";
     str+="<tr>";
     str+="<td>Country</td>";
     str+="<td><select class='selectpicker' data-style='btn-danger' id='userCountry'>";
     str+="<optgroup label='기존국가'>";
-    str+="<option>" + list.userCountry + "</option>";
+    str+="<option>" + profileList.userCountry + "</option>";
    str+="<optgroup label='Asia'>";
      str+="<option>Korea</option>";
     str+="<option>Japan</option>";
@@ -79,10 +77,10 @@ function callbackSql(result){
     str+="</tr>";
      str+="<tr>";
     str+="<td>Email</td>";
-    str+="<td><input id='userEmail' type='text' value='" + list.userEmail + "' style='border:none;'></td>";
+    str+="<td><input id='userEmail' type='text' value='" + profileList.userEmail + "' style='border:none;'></td>";
     str+="</tr>";
     str+="<td>Phone Number</td>";
-     str+="<td><input id='userPhone' type='text' value='" + list.userPhone +"' style='border:none;'>";
+     str+="<td><input id='userPhone' type='text' value='" + profileList.userPhone +"' style='border:none;'>";
     str+="</td>";
 
     str+="</tr>";
@@ -90,16 +88,16 @@ function callbackSql(result){
      str+="</tbody>";
     str+="</table>";
 
-    str+="<a onclick='update()' class='btn btn-primary' type='button' id='update'>수정하기</a>   ";
-     str+="<a onclick='delete_user()'class='btn btn-primary' type='button' id='delete'>탈퇴하기</a>";
+    str+="<a onclick='update()' class='btn btn-primary' type='button' id='update' style='cursor:pointer;'>수정하기</a>   ";
+     str+="<a onclick='delete_user()'class='btn btn-primary' type='button' id='delete' style='cursor:pointer;'>탈퇴하기</a>";
     str+="</div>";
     str+="</div>";
     str+="</div>";
 
      str+="</div>";
+     $("#body").html(str);
     }
-    $("#body").html(str);
-    }
+    
 
 var pwdCheck = false; //확인버튼 클릭 여부 확인, 기본값 false
 

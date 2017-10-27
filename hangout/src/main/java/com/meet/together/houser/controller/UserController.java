@@ -109,7 +109,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/user/profile", method = RequestMethod.POST)
 	public @ResponseBody ModelMap selectUser(@RequestBody UserInfo ui, ModelMap hm) {
-		List<UserInfo> list = us.selectUser(ui);
+		UserInfo list = us.selectUser(ui);
 		hm.put("list", list);
 		return hm;
 	}
