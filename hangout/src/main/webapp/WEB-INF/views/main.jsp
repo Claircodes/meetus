@@ -80,19 +80,15 @@
       <div class="container">
         <div class="row justify-content-center align-self-center">
         <div class="col-sm-12 text-center">
-         <h2>지역별 모임 찾기</h2><p>
+          <h2>지역별 모임 찾기</h2><p>
          </div>
          <div class="col-sm-2"></div>
           <div class="col-sm-5 text-right">
           	 	 <input type="text-center" class="form-control btn"   
-                  placeholder="검색지역을 입력해주세요." id="citysearch">           </div>
-                  	<form>
-		<input id="geocomplete" type="text" placeholder="Type in an address" size="90" /> 
-		<input id="find" type="button" value="find" />
-	</form>
-
+                  placeholder="검색지역을 입력해주세요." id="geocomplete">           </div>
+               
          <div class="col-sm-4">      
-             <a href="${rootPath}/hangout/golist" class="btn btn-dark">SEARCH HANGOUT</a></div>
+             <a href="${rootPath}/hangout/golist" class="btn btn-dark" id=searchplace>SEARCH HANGOUT</a></div>
         <!-- /.row -->
       </div>
       <!-- /.container -->
