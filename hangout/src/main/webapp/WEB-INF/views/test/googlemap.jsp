@@ -8,10 +8,8 @@
 </head>
 <body>
 
-	<script
-		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&amp;libraries=places"></script>
-	<script
-		src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&amp;libraries=places"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 	<script src="/resources/js/jquery.geocomplete.js"></script>
 	<script src="/resources/js/logger.js"></script>

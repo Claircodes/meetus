@@ -28,11 +28,10 @@
 	<!--  구글맵 -->
 	<script
 		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&amp;libraries=places"></script>
-	<script
-		src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
-	<script src="/resources/js/jquery.geocomplete.js"></script>
-	<script src="/resources/js/logger.js"></script>
+
+	<script src="<c:url value='/resources/js/jquery.geocomplete.js' />"></script>
+	<script src="<c:url value='/resources/js/logger.js' />"></script>
 
   </head>
 
@@ -91,12 +90,12 @@
          <div class="col-sm-2"></div>
           <div class="col-sm-5 text-right">
           	 	 <input type="text-center" class="form-control btn"   
-                  placeholder="검색지역을 입력해주세요." id="citysearch">
+                  placeholder="검색지역을 입력해주세요." id="citysearch">           </div>
                   	<form>
-		<input id="geocomplete" type="text" placeholder="Type in an address"
-			size="90" /> <input id="find" type="button" value="find" />
+		<input id="geocomplete" type="text" placeholder="Type in an address" size="90" /> 
+		<input id="find" type="button" value="find" />
 	</form>
-           </div>
+
          <div class="col-sm-4">      
              <a href="${rootPath}/hangout/golist" class="btn btn-dark">SEARCH HANGOUT</a></div>
         <!-- /.row -->
@@ -424,9 +423,7 @@ function attracta_window_height() {
 </script>
 
 
-
-
-<!--  구글map API 
+<!-- 
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
 	<script type="text/javascript"> 
 	  var geocoder;
@@ -502,27 +499,27 @@ function attracta_window_height() {
 		
 		<!-- 구글맵 도시검색 -->
 	<script>
-		$(function() {
+	
+	   $(document).ready(function() {
 
-			$("#geocomplete").geocomplete().bind("geocode:result",
-					function(event, result) {
-						$.log("Result: " + result.vicinity);
-					}).bind("geocode:error", function(event, status) {
-				$.log("ERROR: " + status);
-			}).bind("geocode:multiple", function(event, results) {
-				$.log("Multiple: " + results.length + " results found");
-			});
+				$("#geocomplete").geocomplete().bind("geocode:result",
+						function(event, result) {
+							$.log("Result: " + result.vicinity);
+						}).bind("geocode:error", function(event, status) {
+					$.log("ERROR: " + status);
+				}).bind("geocode:multiple", function(event, results) {
+					$.log("Multiple: " + results.length + " results found");
+				});
 
-			$("#find").click(function() {
-				$("#geocomplete").trigger("geocode");
-			});
+				$("#find").click(function() {
+					$("#geocomplete").trigger("geocode");
+				});
 
-			$("#examples a").click(function() {
-				$("#geocomplete").val($(this).text()).trigger("geocode");
-				return false;
-			});
-
-		});
+				$("#examples a").click(function() {
+					$("#geocomplete").val($(this).text()).trigger("geocode");
+					return false;
+				});
+	    });
 	</script>
 </body>
 </html>

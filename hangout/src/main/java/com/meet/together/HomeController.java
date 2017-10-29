@@ -91,6 +91,6 @@ public class HomeController {
 	// tag 테스트용
 	@RequestMapping(value = "/test/new", method = RequestMethod.GET)
 	public String testtag(UserInfo ui) {
-		return "test/NewFile";
+		return "test/googlemap";
 	}
 }
