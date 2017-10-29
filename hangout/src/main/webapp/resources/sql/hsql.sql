@@ -34,7 +34,7 @@ call p_insert_hangout_info(1000);
  /* hang out list 프로시저 끝 */
 
  /* user_info 테이블 생성 시작 */
-CREATE	user_info	CREATE TABLE `user_info` (
+CREATE TABLE `user_info` (
    `usernum` INT(11) NOT NULL AUTO_INCREMENT,
    `username` VARCHAR(30) NOT NULL,
    `userid` VARCHAR(30) NOT NULL,
@@ -48,7 +48,7 @@ CREATE	user_info	CREATE TABLE `user_info` (
  /* user_info 테이블 생성 끝 */
 
  /* hangout_info 테이블 생성 시작 */
-CREATE	hangout_info	CREATE TABLE `hangout_info` (
+CREATE TABLE `hangout_info` (
  `hangoutnum` INT(11) NOT NULL AUTO_INCREMENT,
  `hangoutcreator` INT(11) NOT NULL,
  `hangoutname` VARCHAR(30) NOT NULL,
