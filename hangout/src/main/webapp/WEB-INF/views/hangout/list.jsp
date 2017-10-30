@@ -10,23 +10,39 @@
 <br><br><br><br>
 
 <!-- 검색 bar -->
-<div class="row justify-content-center align-self-center">
-	<div class="span6" style="float: none; margin: 0 auto;">
-		<p></p>
-		<div class="text-vertical-center">
-			<h1>Search more HANG OUT</h1>
+<div class="container">
+<br><p><p></p></br><br><p><p></p></br><br>
 
-			<p></p>
-			<input type="text" class="form-control"	placeholder="원하시는 모임의 이름을 검색 해보세요." id="hangoutName">
-			<p></p>
-			<a href="#" class="btn btn-lg btn-dark" type="button" id="searchLists">모임 알아보기</a>
-			<p></p>
+	<div class="row justify-content-center align-self-center">
+		<div class="col-sm-12 text-center">
+			<h2>HANGOUT 모임 리스트</h2>
+			<p>
 		</div>
+		<div class="col-sm-1"></div>
+		<div class="col-sm-2 text-right">
+			<input type="text" class="form-control btn btn-primary"
+				placeholder="서울특별시" id="geocomplete">
+		</div>
+		<div class="col-sm-5">
+			<input type="text" class="form-control btn" placeholder="TITLE"
+				id="hangoutName">
+		</div>
+		<div class="col-sm-4">
+			<a href="#" class="btn btn-dark" id=searchLists>SEARCH HANGOUT</a>
+		<p></p><br>
+		</div>
+	
 	</div>
 </div>
 
+
 <!-- 모임 리스트 -->
-<div id="list_body" class="row justify-content-center align-self-center"></div>
+	<div class="col-lg-10 mx-auto">
+		<div id="list_body"
+			class="row justify-content-center align-self-center"></div>
+	</div>
+
+
 
 <div class="btn-group" role="group" aria-label="...">
   <button type="button" class="btn btn-default">Left</button>
@@ -72,9 +88,8 @@
     </script>
 
 <!-- Javascript --> 
-<script src="/resources/assets/js/retina-1.1.0.min.js"></script>
-<script src="/resources/js/jquery-1.12.1.min.js"></script>
-<script src="/resources/js/bootstrap.min.js"></script>
-<script src="/resources/js/jquery.backstretch.min.js"></script>
-<script src="/resources/js/scripts_list.js"></script>
+<script src="<c:url value='/resources/js/scripts_list.js' />"></script>
+<script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
+<script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
+<script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
 </html>
