@@ -330,6 +330,7 @@
 	<script>
    var checkLocation= '';         //체크된 지역 값들
    var checkRow_ca = ''; //체크된 카테고리 값들
+   $("#hangoutArea").val( "서울특별시");
 /*    
    $("#next1").click(function() {
    var chk = document.getElementsByName("chk_unit"); // 체크박스객체를 담는다
@@ -372,7 +373,7 @@
       alert("카테고리를 선택하시오");
    }
   
-   $("#hangoutArea").val(geocomplete);
+  
    $("#hangoutCategory").val(checkRow_ca);
    });
       
@@ -416,16 +417,13 @@
 
 				$("#geocomplete").geocomplete().bind("geocode:result",
 						function(event, result) {
-							$.log("Result: " + result.vicinity);
+					 $("#hangoutArea").val( result.vicinity);
 						}).bind("geocode:error", function(event, status) {
-					$.log("ERROR: " + status);
+				
 				}).bind("geocode:multiple", function(event, results) {
-					$.log("Multiple: " + results.length + " results found");
+				
 				});
 
-				$("#find").click(function() {
-					$("#geocomplete").trigger("geocode");
-				});
 
 				$("#examples a").click(function() {
 					$("#geocomplete").val($(this).text()).trigger("geocode");

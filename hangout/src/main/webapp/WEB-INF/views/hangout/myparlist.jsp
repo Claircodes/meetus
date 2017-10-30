@@ -71,8 +71,8 @@
     });
     
     function gomylist(){
-    	var userid="<%=user.getUserId()%>";
-    	$("#participateLists").attr("href", "${rootPath}/hangout/mylist?creator=" + userid);
+    	var usernum="<%=user.getUserNum()%>";
+    	$("#participateLists").attr("href", "${rootPath}/hangout/mylist?creator=" + usernum);
     }
 
     </script>
