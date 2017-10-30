@@ -1,16 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
+		<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
+        <link rel="stylesheet" href="<c:url value='/resources/css/style-user.css'/>">
 
-<br/><br/><br/><br/><br/><br/>
-<div class="container">
+<div class="top-content">
+	<div class="inner-bg">
+		<div class="container">
+			<div class="row justify-content-center align-self-center">
+				<div class="col-sm-8 col-sm-offset-2 text"">
+					<br>
+					<h1 class="form-box">나의 프로필</h1>
+					<br>
+				</div>
+				<div class="col-sm-5 ebook">
+					<img src="/resources/images/web-test.jpg" alt="사진사진">
+				</div>
 
-	
-
-		<div id="body"
-			class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
-
-
+				<div class="form-top">
+					<div id="body">
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -29,7 +40,6 @@ function callbackSql(result){
     var str = "";
     str+="<div class='panel panel-info'>";
     str+="<div class='panel-heading'>";
-    str+="<h3 class='panel-title'>" + profileList.userId + " 님 회원 정보 수정</h3>";
     str+="</div>";
     str+="<br></br>";
     str+="<div class='panel-body'>";
@@ -52,7 +62,7 @@ function callbackSql(result){
     str+="<tr>";
    str+="<td>Password Check</td>";
    str+="<td>";
-     str+="<input id='userPwd2' type='password' value='" + profileList.userPwd + "' style='border:none;'><a onclick='overlapBtn()' type='button'class='btn btn-primary' id='overlapBtn' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer color:white;'>확인</a></td>";
+     str+="<input id='userPwd2' type='password' value='" + profileList.userPwd + "' style='border:none;'><a onclick='overlapBtn()' type='button'class='btn btn-primary' id='overlapBtn' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer color:white;'>변경</a></td>";
     str+="</tr>";
     str+="<tr>";
     str+="<td>Gender</td>";
@@ -87,9 +97,9 @@ function callbackSql(result){
 
      str+="</tbody>";
     str+="</table>";
-
-    str+="<a onclick='update()' class='btn btn-primary' type='button' id='update' style='cursor:pointer;'>수정하기</a>   ";
-     str+="<a onclick='delete_user()'class='btn btn-primary' type='button' id='delete' style='cursor:pointer;'>탈퇴하기</a>";
+	   str+="<a href='${rootPath}/user/profile' class='btn-link-2'>수정 취소</a> ";
+    str+="<a onclick='update()' class='btn-link-1' type='button' id='update' style='cursor:pointer;'>수정완료</a>   ";
+     str+="<a onclick='delete_user()'class='btn-link-2' type='button' id='delete' style='cursor:pointer;'>탈퇴하기</a>";
     str+="</div>";
     str+="</div>";
     str+="</div>";
@@ -169,3 +179,9 @@ function delete_user(){
 	}
 }
 </script>
+
+	<!-- Javascript -->
+        <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/scripts-userprofile.js' />"></script>
