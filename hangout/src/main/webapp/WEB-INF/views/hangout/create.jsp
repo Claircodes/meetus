@@ -191,7 +191,7 @@
 											id="hangoutArea" class="btn-dark" readonly >
 										CATEGORY : <input type="button" name="hangoutCategory"
 											id="hangoutCategory" class="btn-dark" readonly >
-										OWNER : <input type="button" name="hangoutCreator"
+										<input type="hidden" name="hangoutCreator"
 											id="hangoutCreator" class="btn-dark" value=<%=user.getUserNum()%> readonly>
 									</input>
 									</div>
@@ -209,9 +209,9 @@
 									</div>
 									<div class="form-group">
 										<div class="input-group date" data-provide="datepicker">
-											<input type="text" class="form-control" placeholder="모임의 날짜를 선택해주세요." id="hangoutDate">
-											<div class="input-group-addon">
-												<span class="glyphicon glyphicon-th"></span>
+											<input type="text" class="form-control" placeholder="모임의 날짜를 선택해주세요." id="hangoutDate" disabled>
+											<div class="input-group-addon">선택
+												
 											</div>
 										</div>
 									</div>
@@ -328,68 +328,49 @@
 
 	</div>
 	<script>
-   var checkLocation= '';         //체크된 지역 값들
+
    var checkRow_ca = ''; //체크된 카테고리 값들
    $("#hangoutArea").val( "서울특별시");
-/*    
-   $("#next1").click(function() {
-   var chk = document.getElementsByName("chk_unit"); // 체크박스객체를 담는다
-   var len = chk.length;    //체크박스의 전체 개수
-   var checkCnt = 0;        //체크된 체크박스의 개수                
-
-   for(var i=0; i<len; i++){
-
-   if(chk[i].checked == true){
-      checkCnt++;
-      if(checkCnt == 1){                           
-         checkRow = chk[i].value;        
-         }
-      
-   }
-   }
-   if(checkCnt==0){
-      alert("지역을 선택하시오");
-      location.reload();
-   }
-   $("#cityname").val(checkRow);
-   }); */
    
-      $("#next2").click(function() {
+   $("#next2").click(function() {
    var chk_ca = document.getElementsByName("chk_cate[]"); // 체크박스객체를 담는다
    var len_ca = chk_ca.length;    //체크박스의 전체 개수
    var checkCnt_ca = 0;
-   
-   for(var i=0; i<len_ca; i++){
+	   	for (var i = 0; i < len_ca; i++) {
+				if (chk_ca[i].checked == true) {
+					checkCnt_ca++;
+					if (checkCnt_ca == 1) {
+						checkRow_ca = chk_ca[i].value;
+					}
+				}
+			}
+			if (checkCnt_ca == 0) {
+				alert("카테고리를 선택하시오");
+				return false;
+			} else
+				$("#hangoutCategory").val(checkRow_ca);
+		});
 
-   if(chk_ca[i].checked == true){
-      checkCnt_ca++;
-      if(checkCnt_ca==1){
-         checkRow_ca = chk_ca[i].value;   
-      }
-     
-   }
-   }
-   if(checkCnt_ca==0){
-      alert("카테고리를 선택하시오");
-   }
-  
-  
-   $("#hangoutCategory").val(checkRow_ca);
-   });
-      
-   $("#hang_signup").click(function() {
-          var paramIds = "hangoutArea,hangoutCategory,hangoutCreator,hangoutName,hangoutContent,hangoutDate";
-          var au = new AjaxUtil("hangout/insert",paramIds);
-          au.setCallbackSuccess(callbackCreate);
-          au.send();
-       });
-   function callbackCreate(results)
-   {
-	   alert(results.msg);
-	   location.href = "/" + results.url;
-   }
-
-</script>
+		$("#hang_signup")
+				.click(
+						function() {
+							if (document.getElementById("hangoutName").value == ""
+									|| document
+											.getElementById("hangoutContent").value == ""
+									|| document.getElementById("hangoutDate").value == "") {
+								alert("입력하지 않은 영역이 있습니다.");
+								return false;
+							} else
+								var paramIds = "hangoutArea,hangoutCategory,hangoutCreator,hangoutName,hangoutContent,hangoutDate";
+							var au = new AjaxUtil("hangout/insert", paramIds);
+							au.setCallbackSuccess(callbackCreate);
+							au.send();
+						});
+		function callbackCreate(results) {
+			alert(results.msg);
+			location.href = "/" + results.url;
+		}
+	</script>
 
 </body>
 </html>
@@ -410,21 +391,15 @@
 
 
 		<!-- 구글맵 도시검색 -->
-
 	<script>
-	
 	   $(document).ready(function() {
 
 				$("#geocomplete").geocomplete().bind("geocode:result",
 						function(event, result) {
 					 $("#hangoutArea").val( result.vicinity);
 						}).bind("geocode:error", function(event, status) {
-				
 				}).bind("geocode:multiple", function(event, results) {
-				
-				});
-
-
+					});
 				$("#examples a").click(function() {
 					$("#geocomplete").val($(this).text()).trigger("geocode");
 					return false;
