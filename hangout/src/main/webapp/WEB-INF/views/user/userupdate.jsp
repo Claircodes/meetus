@@ -39,17 +39,17 @@ function callbackSql(result){
     var profileList=result.list;
     var str = "";
     str+="<div class='panel panel-info'>";
-    str+="<div class='panel-heading'>";
+    str+="<div class='panel-heading'><div class='col-sm-12 text'>";
     str+="</div>";
     str+="<br></br>";
     str+="<div class='panel-body'>";
     str+="<div class='row'>";
-    str+="<div class='col-md-9 col-lg-9'>";
+    str+="<div class='col-sm-4'>";
      str+="<table class='table table-user-information'>";
     str+="<tbody>";
      str+="<tr>";
     str+="<td>ID</td>";
-    str+="<td><input  id='userId' type='text' value='" + profileList.userId + "' style='border:none;' readonly></td>";
+    str+="<td><input  id='userId' type='text' class='btn-link-2' value='" + profileList.userId + "' style='border:none;' readonly></td>";
     str+="</tr>";
      str+="<tr>";
     str+="<td>Name</td>";
@@ -62,7 +62,7 @@ function callbackSql(result){
     str+="<tr>";
    str+="<td>Password Check</td>";
    str+="<td>";
-     str+="<input id='userPwd2' type='password' value='" + profileList.userPwd + "' style='border:none;'><a onclick='overlapBtn()' type='button'class='btn btn-primary' id='overlapBtn' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer color:white;'>변경</a></td>";
+     str+="<input id='userPwd2' type='password' value='" + profileList.userPwd + "' style='border:none;'><a onclick='overlapBtn()' type='text' id='overlapBtn' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer color:white;'>변경하기</a></td>";
     str+="</tr>";
     str+="<tr>";
     str+="<td>Gender</td>";
@@ -95,11 +95,11 @@ function callbackSql(result){
 
     str+="</tr>";
 
-     str+="</tbody>";
-    str+="</table>";
+     str+="</tbody></div>";
+    str+="</table></div></div>";
 	   str+="<a href='${rootPath}/user/profile' class='btn-link-2'>수정 취소</a> ";
     str+="<a onclick='update()' class='btn-link-1' type='button' id='update' style='cursor:pointer;'>수정완료</a>   ";
-     str+="<a onclick='delete_user()'class='btn-link-2' type='button' id='delete' style='cursor:pointer;'>탈퇴하기</a>";
+     str+="<a onclick='delete_user()'class='btn-dark' type='button' id='delete' style='cursor:pointer;'>탈퇴하기</a>";
     str+="</div>";
     str+="</div>";
     str+="</div>";

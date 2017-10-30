@@ -86,11 +86,10 @@
 
 		str += "</tbody></div>";
 		str += "</table></div></div>";
-		   str+="<a href='${rootPath}/' class='btn-link-2'>메인 가기</a> ";
+		str+= "<a href='${rootPath}/' class='btn-link-0'>메인 가기</a> ";
 		str += "<a href='${rootPath}/hangout/mylist?creator="
-				+ profileList.userNum + "' class='btn-link-2'>나의 모임</a>";
-
-				str += "<a href='<c:url value='/user/update'/>' class='btn-link-1'>수정하기</a>  ";
+				+ profileList.userNum + "' class='btn-link-2'>나의 모임</a> ";
+		str += "<a href='<c:url value='/user/update'/>' class='btn-link-1'>수정하기</a>  ";
 		$("#profile").html(str);
 	}
 </script>
