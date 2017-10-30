@@ -61,7 +61,7 @@
 				<li class="nav-item"><a class="nav-link"
 					href="${rootPath}/hangout/create">모임 개설하기</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="${rootPath}/hangout/golist">모임 리스트</a></li>
+					href="${rootPath}/hangout/golist?hop=hangoutName">모임 리스트</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${rootPath}/user/signup">회원가입</a></li>
 				<li class="nav-item"><a class="nav-link"

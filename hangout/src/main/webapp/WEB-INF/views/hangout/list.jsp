@@ -8,7 +8,17 @@
 <link href="<c:url value="/resources/css/bootstrap.min.css"/>"	rel="stylesheet">
 <link href="<c:url value="/resources/css/album.css"/>" rel="stylesheet">
 <br><br><br><br>
+<%
+String hangoutParam = "";
+String hangoutValue = "";
 
+if (request.getParameter("hop")!=null){
+	hangoutParam = request.getParameter("hop");
+}
+if (request.getParameter("hov")!=null){
+	hangoutValue = request.getParameter("hov");
+}
+%>
 <!-- 검색 bar -->
 <div class="container">
 <br><p><p></p></br><br><p><p></p></br><br>
@@ -24,8 +34,7 @@
 				placeholder="서울특별시" id="geocomplete">
 		</div>
 		<div class="col-sm-5">
-			<input type="text" class="form-control btn" placeholder="TITLE"
-				id="hangoutName">
+			<input type="text" class="form-control btn" placeholder="TITLE" value="<%=hangoutValue%>" id="<%=hangoutParam%>">
 		</div>
 		<div class="col-sm-4">
 			<a href="#" class="btn btn-dark" id=searchLists>SEARCH HANGOUT</a>
@@ -52,7 +61,7 @@
 <input type="hidden" id="hangoutCategory" value="${param.category}"/>
 <script> 
     $(document).ready(function(){
-       var paramIds="hangoutName,hangoutCategory";
+       var paramIds="<%=hangoutParam%>";
        var au = new AjaxUtil("hangout/list",paramIds);
        au.setCallbackSuccess(callbackSql);
        au.send(); 
