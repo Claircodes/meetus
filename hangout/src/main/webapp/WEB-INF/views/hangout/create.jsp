@@ -64,7 +64,6 @@
 									<div class="form-top-left">
 										<h3>새 모임 생성하기</h3>
 										<p>모임을 개최하고자하는 위치를 선택하여 주세요.</p>
-										<p>(추후 지역선택이 아니라 지역검색기능 필요)</p>
 									</div>
 									<div class="form-top-right">
 										<i class="fa fa-heart"></i>
@@ -72,24 +71,16 @@
 								</div>
 
 								<div class="form-bottom">
-								<center>
-									<input type="radio" class="btn btn-default btn-lg"
-										name="chk_unit" value="서울" id="radio0">서울 </input> <input
-										type="radio" class="btn btn-default btn-lg" name="chk_unit"
-										value="인천" id="radio1"> 인천 </input> <input type="radio"
-										class="btn btn-default btn-lg" name="chk_unit" value="부산"
-										id="radio2"> 부산 </input> <input type="radio"
-										class="btn btn-default btn-lg" name="chk_unit" value="대전"
-										id="radio3"> 대전 </input> <input type="radio"
-										class="btn btn-default btn-lg" name="chk_unit" value="대구"
-										id="radio4"> 대구 </input> <input type="radio"
-										class="btn btn-default btn-lg" name="chk_unit" value="광주"
-										id="radio5"> 광주 </input> 
-								</center>
+									<div class="row justify-content-center align-self-center">
+										<div class="col-sm-7">
+											<input type="text-center" class="form-control btn"
+												placeholder="대한민국 서울특별시" id="geocomplete">
+										</div>
+									</div>
 								</div>
-
 								<div class="form-bottom text-right">
-									<button id="next1" type="button" class="btn btn-next align-right">Next</button>
+									<button id="next1" type="button"
+										class="btn btn-next align-right">Next</button>
 
 
 								</div>
@@ -201,7 +192,7 @@
 										CATEGORY : <input type="button" name="hangoutCategory"
 											id="hangoutCategory" class="btn-dark" readonly >
 										OWNER : <input type="button" name="hangoutCreator"
-											id="hangoutCreator" class="btn-dark" value=<%=user.getUserId()%> readonly>
+											id="hangoutCreator" class="btn-dark" value=<%=user.getUserNum()%> readonly>
 									</input>
 									</div>
 								</center>
@@ -337,9 +328,9 @@
 
 	</div>
 	<script>
-   var checkRow = '';         //체크된 지역 값들
+   var checkLocation= '';         //체크된 지역 값들
    var checkRow_ca = ''; //체크된 카테고리 값들
-   
+/*    
    $("#next1").click(function() {
    var chk = document.getElementsByName("chk_unit"); // 체크박스객체를 담는다
    var len = chk.length;    //체크박스의 전체 개수
@@ -360,7 +351,7 @@
       location.reload();
    }
    $("#cityname").val(checkRow);
-   });
+   }); */
    
       $("#next2").click(function() {
    var chk_ca = document.getElementsByName("chk_cate[]"); // 체크박스객체를 담는다
@@ -381,7 +372,7 @@
       alert("카테고리를 선택하시오");
    }
   
-   $("#hangoutArea").val(checkRow);
+   $("#hangoutArea").val(geocomplete);
    $("#hangoutCategory").val(checkRow_ca);
    });
       
@@ -415,3 +406,33 @@
 		})
 	})
 </script>
+
+
+		<!-- 구글맵 도시검색 -->
+
+	<script>
+	
+	   $(document).ready(function() {
+
+				$("#geocomplete").geocomplete().bind("geocode:result",
+						function(event, result) {
+							$.log("Result: " + result.vicinity);
+						}).bind("geocode:error", function(event, status) {
+					$.log("ERROR: " + status);
+				}).bind("geocode:multiple", function(event, results) {
+					$.log("Multiple: " + results.length + " results found");
+				});
+
+				$("#find").click(function() {
+					$("#geocomplete").trigger("geocode");
+				});
+
+				$("#examples a").click(function() {
+					$("#geocomplete").val($(this).text()).trigger("geocode");
+					return false;
+				});
+	    });
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places"></script>
+	<script src="<c:url value='/resources/js/jquery.geocomplete.js' />"></script>
+	<script src="<c:url value='/resources/js/logger.js' />"></script>
