@@ -15,7 +15,7 @@
 
 	<div class="row justify-content-center align-self-center">
 		<div class="col-sm-12 text-center">
-			<h2>HANGOUT 모임 리스트</h2>
+			<strong><h1>HANGOUT 모임 리스트</h1></strong>
 			<p>
 		</div>
 		<div class="col-sm-1"></div>
