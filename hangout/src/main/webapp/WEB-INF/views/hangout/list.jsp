@@ -35,7 +35,7 @@ if (request.getParameter("hov")!=null){
 				<div class="col-sm-12 text-center">
 				 <div class="text-vertical-center">
 					<h1>HANGOUT 모임 리스트</h1>
-					<p></p></div>
+					<p></div>
 				</div>
 		<div class="col-sm-2"></div>
 						<div class="col-sm-2 text-right">
@@ -66,59 +66,99 @@ if (request.getParameter("hov")!=null){
 	<!-- SQL 종료-->
 	    </div></div>
     <hr>
+    
+    
+    <!--  load more -->
+      <div class="col-sm-12 text-center">
+      <div id="loadMore" class="">
+         <a href="#"><button type="button" class="btn-lg btn-danger">load more</button></a>
+      </div>
+      </div>
+      
     <div class="clearfix"> </div>
 
 
+
+
+
 <input type="hidden" id="hangoutCategory" value="${param.category}" />
+	<!-- SQL을 통한 모임자동생성  -->
+	<script>
+		$(document).ready(function() {
+			var paramIds = "hangoutCategory";
+			var au = new AjaxUtil("hangout/list", paramIds);  
+			au.setCallbackSuccess(callbackSql);
+			au.send();
+		});
+		function listclick(url) {
+			pageMove("hangout?hangoutNum=" + url);
+		}
+	
+		function callbackSql(result) {
+			var hangoutList = result.list;
+			var str = "";
+			for (var i = 0, max = hangoutList.length; i < max; i++) {
+				var list = hangoutList[i];
+	
+				str += "<div class='mt-4 col-sm-4 morebox'>";
+				str += "<div class='mt-4 card rm' onclick='listclick("
+						+ list.hangoutNum + ")'>";
+				str += "<h5 class='card-header'>" + list.hangoutName + "</h5>";
+				str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
+				str += "<div class='card-body cb'>";
+				str += "<p class='card-text'>" + list.hangoutContent + "</p></div>";
+				str += "</div>";
+				str += "</div>";
+				str += "</div>";
+			}
+			$("#list_body").html(str);
+		}
+		$("#searchLists").click(function() {
+			var hangoutName = $("#hangoutName").val().trim();
+			if (hangoutName == "") {
+				alert("모임이름을 입력해주세요");
+				return
+	
+			}
+			var paramIds = "hangoutName,hangoutCategory";
+			var au = new AjaxUtil("hangout/list", paramIds);
+			au.setCallbackSuccess(callbackSql);
+			au.send();
+		});
+	</script>
+	<!-- SQL 생성 종료 -->
 
 
+	<!--  LOAD MORE (페이지네이션) -->
+	<script>
+	$( document ).ready(function () {
+		$("#loadMore").on('click', function (e) {
+			e.preventDefault();
+			if ($(".moreBox:hidden").length == 0) {
+				$("#loadMore").fadeOut('slow');
+			}
+		});
+	});
+	</script>
+	
+<!-- 	
+<script>
+$( document ).ready(function () {
+		$(".moreBox").slice(0, 9).show();
+		$("#loadMore").on('click', function (e) {
+			e.preventDefault();
+			$(".moreBox:hidden").slice(0, 9).slideDown();
+			if ($(".moreBox:hidden").length == 0) {
+				$("#loadMore").fadeOut('slow');
+			}
+		});
+	});
+</script> -->
+	
 
-<script> 
-$(document).ready(function(){
-       var paramIds="hangoutCategory";
-       var au = new AjaxUtil("hangout/list",paramIds);
-       au.setCallbackSuccess(callbackSql);
-       au.send(); 
-    });
-    function listclick(url){
-    	pageMove("hangout?hangoutNum="+url);
-        }   
-    
-   function callbackSql(result){
-      var hangoutList=result.list;
-      var str = "";
-      for (var i = 0, max = hangoutList.length; i < max; i++) {
-         var list = hangoutList[i]; 
-
-         str += "<div class='mt-4 col-sm-4'>";
-         str +="<div class='mt-4 card rm' onclick='listclick("+list.hangoutNum+")'>";
-         str +="<h5 class='card-header'>"+ list.hangoutName+"</h5>";						
-         str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
-         str += "<div class='card-body cb'>";
-         str += "<p class='card-text'>" +list.hangoutContent + "</p></div>";
-         str += "</div>";
-         str +="</div>";
-         str +="</div>";
-         }
-      $("#list_body").html(str);
-      }
-    $("#searchLists").click(function(){
-       var hangoutName= $("#hangoutName").val().trim();
-      if(hangoutName==""){
-         alert("모임이름을 입력해주세요");
-         return
-      }
-      var paramIds="hangoutName,hangoutCategory";
-       var au = new AjaxUtil("hangout/list",paramIds);
-       au.setCallbackSuccess(callbackSql);
-        au.send();
-    });
-
-    </script>
-
-<!-- Javascript --> 
-<script src="<c:url value='/resources/js/scripts_list.js' />"></script>
-<script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
-<script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
+	<!-- Javascript --> 
+	<script src="<c:url value='/resources/js/scripts_list.js' />"></script>
+	<script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
+	<script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
 <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
 </html>
