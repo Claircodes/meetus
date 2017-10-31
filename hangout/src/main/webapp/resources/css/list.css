@@ -15,3 +15,11 @@
     color: #FFF;
     transition: all .3s;
 }
+
+.text-vertical-center h1 {
+    font-size: 3.0em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    
+}

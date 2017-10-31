@@ -33,8 +33,9 @@ if (request.getParameter("hov")!=null){
 
 	<div class="row justify-content-center align-self-center">
 				<div class="col-sm-12 text-center">
-					<strong><h1>HANGOUT 모임 리스트</h1></strong>
-					<p>
+				 <div class="text-vertical-center">
+					<h1>HANGOUT 모임 리스트</h1>
+					<p></p></div>
 				</div>
 		<div class="col-sm-2"></div>
 						<div class="col-sm-2 text-right">
@@ -74,7 +75,7 @@ if (request.getParameter("hov")!=null){
 
 <script> 
 $(document).ready(function(){
-       var paramIds="<%=hangoutParam%>";
+       var paramIds="hangoutCategory";
        var au = new AjaxUtil("hangout/list",paramIds);
        au.setCallbackSuccess(callbackSql);
        au.send(); 
