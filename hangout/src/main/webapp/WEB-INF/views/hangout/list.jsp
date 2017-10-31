@@ -18,6 +18,7 @@
 <%
 String hangoutParam = "hangoutName";
 String hangoutValue = "";
+int count=0;
 
 if (request.getParameter("hop")!=null){
 	hangoutParam = request.getParameter("hop");
@@ -64,17 +65,16 @@ if (request.getParameter("hov")!=null){
 	<!-- SQL 실행 -> 부트스트랩 입력-->
 		<div id="list_body" 	class="row"></div>
 	<!-- SQL 종료-->
-	    </div></div>
-    <hr>
-    
+
     
     <!--  load more -->
-      <div class="col-sm-12 text-center">
-      <div id="loadMore" class="">
-         <a href="#"><button type="button" class="btn-lg btn-danger">load more</button></a>
-      </div>
-      </div>
-      
+
+   <div class="col-sm-12 text-center">
+   <div id="loadHangout" class="">
+   <input type="hidden" id="hangoutNowpage" value="12" />
+   <a href="#"><button type="button" class="btn-lg btn-danger">load</button></a>
+   </div>
+   </div>
     <div class="clearfix"> </div>
 
 
@@ -85,7 +85,8 @@ if (request.getParameter("hov")!=null){
 	<!-- SQL을 통한 모임자동생성  -->
 	<script>
 		$(document).ready(function() {
-			var paramIds = "<%=hangoutParam%>";
+			$("#list_body").html("");
+			var paramIds = "<%=hangoutParam%>,hangoutNowpage";
 			var au = new AjaxUtil("hangout/list", paramIds);  
 			au.setCallbackSuccess(callbackSql);
 			au.send();
@@ -94,9 +95,9 @@ if (request.getParameter("hov")!=null){
 			pageMove("hangout?hangoutNum=" + url);
 		}
 	
-		function callbackSql(result) {
+		function callbackSql(result) {	
 			var hangoutList = result.list;
-			var str = "";
+			str = "";
 			for (var i = 0, max = hangoutList.length; i < max; i++) {
 				var list = hangoutList[i];
 	
@@ -110,33 +111,25 @@ if (request.getParameter("hov")!=null){
 				str += "</div>";
 				str += "</div>";
 			}
-			$("#list_body").html(str);
+			$("#list_body").append(str);
 		}
 		$("#searchLists").click(function() {
 			var hangoutName = $("#hangoutName").val().trim();
 			if (hangoutName == "") {
 				alert("모임이름을 입력해주세요");
 				return
-	
 			}
 			var paramIds = "hangoutName,hangoutCategory";
 			var au = new AjaxUtil("hangout/list", paramIds);
 			au.setCallbackSuccess(callbackSql);
 			au.send();
 		});
-	</script>
-	<!-- SQL 생성 종료 -->
-
-
+	<!-- SQL 생성 종료    -->
 	<!--  LOAD MORE (페이지네이션) -->
-	<script>
-	$( document ).ready(function () {
-		$("#loadMore").on('click', function (e) {
-			e.preventDefault();
-			if ($(".moreBox:hidden").length == 0) {
-				$("#loadMore").fadeOut('slow');
-			}
-		});
+	$("#loadHangout").click(function() {
+			var paramIds = "<%=hangoutParam%>,hangoutNowpage";
+			var au = new AjaxUtil("hangout/list", paramIds);  
+			au.setCallbackSuccess(callbackSql);
 	});
 	</script>
 	

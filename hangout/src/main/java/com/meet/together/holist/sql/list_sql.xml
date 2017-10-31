@@ -49,7 +49,7 @@
 		<if test="hangoutCreator != '' and hangoutCreator != null">
 		and hangoutcreator like #{hangoutCreator}
 		</if>
-		limit 12
+		limit #{hangoutNowpage}
 	</select>
 	
 	<select id="SELECT_LIST_ONE" parameterType="listInfo" resultType="java.util.HashMap">

@@ -15,6 +15,13 @@ public class ListInfo
 	private String hangoutDate;
 	private String hangoutCategory;
 	private String hangoutTag;
+	private int hangoutNowpage;
+	public int getHangoutNowpage() {
+		return hangoutNowpage;
+	}
+	public void setHangoutNowpage(int hangoutNowpage) {
+		this.hangoutNowpage = hangoutNowpage;
+	}
 	public int getHangoutNum() {
 		return hangoutNum;
 	}
@@ -80,7 +87,9 @@ public class ListInfo
 		return "ListInfo [hangoutNum=" + hangoutNum + ", hangoutCreator=" + hangoutCreator + ", hangoutName="
 				+ hangoutName + ", hangoutContent=" + hangoutContent + ", hangoutArea=" + hangoutArea
 				+ ", hangoutOpenDate=" + hangoutOpenDate + ", hangoutCloseDate=" + hangoutCloseDate + ", hangoutDate="
-				+ hangoutDate + ", hangoutCategory=" + hangoutCategory + ", hangoutTag=" + hangoutTag + "]";
+				+ hangoutDate + ", hangoutCategory=" + hangoutCategory + ", hangoutTag=" + hangoutTag
+				+ ", hangoutNowpage=" + hangoutNowpage + "]";
 	}
+
 	
 }
