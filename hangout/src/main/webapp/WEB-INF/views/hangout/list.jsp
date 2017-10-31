@@ -3,10 +3,17 @@
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Search out!</title>
+
 <!--  CSS -->
-<link href="<c:url value='/resources/css/bootstrap.css"'/>"	rel="stylesheet" />
-<link href="<c:url value="/resources/css/bootstrap.min.css"/>"	rel="stylesheet">
-<link href="<c:url value="/resources/css/album.css"/>" rel="stylesheet">
+<link href="<c:url value='/resources/css/list.css"'/>"	rel="stylesheet" />
+
+
+<!DOCTYPE html>
+<html lang="en">
 <br><br><br><br>
 <%
 String hangoutParam = "";
@@ -19,55 +26,61 @@ if (request.getParameter("hov")!=null){
 	hangoutValue = request.getParameter("hov");
 }
 %>
-<!-- 검색 bar -->
+ <!-- 검색 bar -->
+ <section>
 <div class="container">
 <br><p><p></p></br><br><p><p></p></br><br>
 
 	<div class="row justify-content-center align-self-center">
-		<div class="col-sm-12 text-center">
-			<strong><h1>HANGOUT 모임 리스트</h1></strong>
-			<p>
+				<div class="col-sm-12 text-center">
+					<strong><h1>HANGOUT 모임 리스트</h1></strong>
+					<p>
+				</div>
+		<div class="col-sm-2"></div>
+						<div class="col-sm-2 text-right">
+							<input type="text" class="form-control btn btn-primary"
+								placeholder="서울특별시" id="geocomplete">
+						</div>
+						<div class="col-sm-4">
+							<input type="text" class="form-control btn" placeholder="TITLE" value="<%=hangoutValue%>" id="<%=hangoutParam%>">
+						</div>
+						<div class="col-sm-4">
+							<a href="#" class="btn btn-dark" id=searchLists>SEARCH HANGOUT</a>
+						<p></p><br>
+						</div>
 		</div>
-		<div class="col-sm-1"></div>
-		<div class="col-sm-2 text-right">
-			<input type="text" class="form-control btn btn-primary"
-				placeholder="서울특별시" id="geocomplete">
-		</div>
-		<div class="col-sm-5">
-			<input type="text" class="form-control btn" placeholder="TITLE" value="<%=hangoutValue%>" id="<%=hangoutParam%>">
-		</div>
-		<div class="col-sm-4">
-			<a href="#" class="btn btn-dark" id=searchLists>SEARCH HANGOUT</a>
-		<p></p><br>
-		</div>
-	
 	</div>
-</div>
-
-
-<!-- 모임 리스트 -->
-	<div class="col-lg-10 mx-auto">
-		<div id="list_body"
-			class="row justify-content-center align-self-center"></div>
-	</div>
+</section>
 
 
 
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Left</button>
-  <button type="button" class="btn btn-default">Middle</button>
-  <button type="button" class="btn btn-default">Right</button>
-</div>
-<input type="hidden" id="hangoutCategory" value="${param.category}"/>
+		<!-- 모임 리스트 -->
+	<div class="container">
+    <div class="row p-2" style="padding: 20px;">
+     
+
+
+	<!-- SQL 실행 -> 부트스트랩 입력-->
+		<div id="list_body" 	class="row"></div>
+	<!-- SQL 종료-->
+	    </div></div>
+    <hr>
+    <div class="clearfix"> </div>
+
+
+<input type="hidden" id="hangoutCategory" value="${param.category}" />
+
+
+
 <script> 
-    $(document).ready(function(){
-       var paramIds="hangoutCategory";
+$(document).ready(function(){
+       var paramIds="<%=hangoutParam%>";
        var au = new AjaxUtil("hangout/list",paramIds);
        au.setCallbackSuccess(callbackSql);
        au.send(); 
     });
-    function listclick(url1,url2){
-    	pageMove("hangout?hangoutNum="+url1 + "&hangoutCreator=" + url2);
+    function listclick(url){
+    	pageMove("hangout?hangoutNum="+url);
         }   
     
    function callbackSql(result){
@@ -75,10 +88,16 @@ if (request.getParameter("hov")!=null){
       var str = "";
       for (var i = 0, max = hangoutList.length; i < max; i++) {
          var list = hangoutList[i]; 
-         str += "<div class='col-sm-3'><div class='card' onclick='listclick("+list.hangoutNum+"," + list.hangoutCreator+ ")' >";						
-         str += "<img src=\"<c:url value='http://img.insight.co.kr/static/2017/06/23/700/u0bn4swj5g5dp29xzp74.jpg'/>\" >";
-         str += "<h4>"+list.hangoutName+"</h4>";
-         str += "</div></div>";
+
+         str += "<div class='mt-4 col-sm-4'>";
+         str +="<div class='mt-4 card rm' onclick='listclick("+list.hangoutNum+")'>";
+         str +="<h5 class='card-header'>"+ list.hangoutName+"</h5>";						
+         str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
+         str += "<div class='card-body cb'>";
+         str += "<p class='card-text'>" +list.hangoutContent + "</p></div>";
+         str += "</div>";
+         str +="</div>";
+         str +="</div>";
          }
       $("#list_body").html(str);
       }
