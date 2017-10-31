@@ -8,6 +8,9 @@
 <body>
 	<%
 		String hangoutNum = request.getParameter("hangoutNum");
+	int userNum=user.getUserNum();
+	String hc=request.getParameter("hangoutCreator");
+	int hangoutCreator=Integer.parseInt(hc);
 	%>
 	<div id="fb-root"></div>
 	<script>
@@ -47,15 +50,16 @@
 
 
 
-				<!-- Pagination -->
-				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link" href="#">←
-							Older</a></li>
-					<li class="page-item disabled"><a class="page-link" href="#">Newer
-							→</a></li>
-				</ul>
-
+	
+				<%
+if(userNum==hangoutCreator){
+%>
+<center><button class="btn btn-secondary" type="button" id="searchContent">수정하기</button></center>
+<%}else if(userNum!=hangoutCreator){ %>
+<center><button class="btn btn-secondary" type="button" id="participate" onclick="btn_count()">참가하기</button></center>
+<%}%>
 			</div>
+
 			<div class="col-md-4">
 
 
@@ -76,7 +80,7 @@
  
 
 				<div class="card my-4">
-					<h5 class="card-header">${ListInfo.userId}</h5>
+					<h5 class="card-header">ID : ${ListInfo.userId}</h5>
 					<div col-lg-3 col-sm-6>
 						<div class="card hovercard">
 							<div class="cardheader"></div>
@@ -100,21 +104,6 @@
 									<h6>이메일:${ListInfo.userEmail}</h6>
 								</div>
 							</div>
-							<div class="bottom" align="center">
-								<a class="btn btn-primary btn-twitter btn-sm"
-									href="https://twitter.com/webmaniac"> <i
-									class="fa fa-twitter"></i>
-								</a> <a class="btn btn-danger btn-sm" rel="publisher"
-									href="https://plus.google.com/+ahmshahnuralam"> <i
-									class="fa fa-google-plus"></i>
-								</a> <a class="btn btn-primary btn-sm" rel="publisher"
-									href="https://plus.google.com/shahnuralam"> <i
-									class="fa fa-facebook"></i>
-								</a> <a class="btn btn-warning btn-sm" rel="publisher"
-									href="https://plus.google.com/shahnuralam"> <i
-									class="fa fa-behance"></i>
-								</a>
-							</div>
 						</div>
 
 					</div>
@@ -128,7 +117,7 @@
                <div class="fb-page" data-href="https://www.facebook.com/Devwonwon-1439494016140368/" data-tabs="timeline" data-width="900" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Devwonwon-1439494016140368/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Devwonwon-1439494016140368/">Devwonwon</a></blockquote></div>
           </div>
 -->
-				<!-- Search Widget -->
+				<!-- Search Widget 
 				<div class="card my-4">
 					<h5 class="card-header">검색하기</h5>
 					<div class="card-body">
@@ -137,6 +126,20 @@
 								placeholder="검색하실 내용을 입력하세요."> <span
 								class="input-group-btn">
 								<button class="btn btn-secondary" type="button" id="searchContent">Search!</button>
+							</span>
+						</div>
+					</div>
+				</div>
+-->
+
+				<!-- Search Widget -->
+				<div class="card my-4">
+					<h5 class="card-header">현재 참가자 수</h5>
+					<div class="card-body">
+						<div class="input-group">
+							<input type="text" class="form-control"
+								id="participatenum"> <span
+								class="input-group-btn">
 							</span>
 						</div>
 					</div>
@@ -190,7 +193,7 @@
 		crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(".btn btn-secondary").click(function(){
-	pageMove("hangout?hangoutNum="+);
+	pageMove("hangout?hangoutNum=");
 });
 </script>
 </body>

@@ -61,13 +61,13 @@ if (request.getParameter("hov")!=null){
 <input type="hidden" id="hangoutCategory" value="${param.category}"/>
 <script> 
     $(document).ready(function(){
-       var paramIds="<%=hangoutParam%>";
+       var paramIds="hangoutCategory";
        var au = new AjaxUtil("hangout/list",paramIds);
        au.setCallbackSuccess(callbackSql);
        au.send(); 
     });
-    function listclick(url){
-    	pageMove("hangout?hangoutNum="+url);
+    function listclick(url1,url2){
+    	pageMove("hangout?hangoutNum="+url1 + "&hangoutCreator=" + url2);
         }   
     
    function callbackSql(result){
@@ -75,7 +75,7 @@ if (request.getParameter("hov")!=null){
       var str = "";
       for (var i = 0, max = hangoutList.length; i < max; i++) {
          var list = hangoutList[i]; 
-         str += "<div class='col-sm-3'><div class='card' onclick='listclick("+list.hangoutNum+")' >";						
+         str += "<div class='col-sm-3'><div class='card' onclick='listclick("+list.hangoutNum+"," + list.hangoutCreator+ ")' >";						
          str += "<img src=\"<c:url value='http://img.insight.co.kr/static/2017/06/23/700/u0bn4swj5g5dp29xzp74.jpg'/>\" >";
          str += "<h4>"+list.hangoutName+"</h4>";
          str += "</div></div>";
