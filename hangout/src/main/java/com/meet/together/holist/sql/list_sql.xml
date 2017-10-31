@@ -55,6 +55,7 @@
 	<select id="SELECT_LIST_ONE" parameterType="listInfo" resultType="java.util.HashMap">
 	SELECT
 		h.hangoutNum,
+		h.hangoutCreator,
 		h.hangoutName,
 		h.hangoutContent,
 		h.hangoutArea,

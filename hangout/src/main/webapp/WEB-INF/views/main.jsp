@@ -277,7 +277,7 @@
             </div>
 
             <!-- /.row (nested) -->
-            <center><a href="${rootPath}/hangout/golist" class="btn btn-dark">View More HANGOUT</a></center>
+            <center><a href="${rootPath}/hangout/golist?hop=hangoutName" class="btn btn-dark">View More HANGOUT</a></center>
           </div>
           <!-- /.col-lg-10 -->
         </div>

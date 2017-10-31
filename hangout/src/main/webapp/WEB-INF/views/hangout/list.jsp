@@ -16,7 +16,7 @@
 <html lang="en">
 <br><br><br><br>
 <%
-String hangoutParam = "";
+String hangoutParam = "hangoutName";
 String hangoutValue = "";
 
 if (request.getParameter("hop")!=null){
@@ -81,11 +81,11 @@ if (request.getParameter("hov")!=null){
 
 
 
-<input type="hidden" id="hangoutCategory" value="${param.category}" />
+<!-- <input type="hidden" id="hangoutCategory" value="${param.category}" /> -->
 	<!-- SQL을 통한 모임자동생성  -->
 	<script>
 		$(document).ready(function() {
-			var paramIds = "hangoutCategory";
+			var paramIds = "<%=hangoutParam%>";
 			var au = new AjaxUtil("hangout/list", paramIds);  
 			au.setCallbackSuccess(callbackSql);
 			au.send();
@@ -101,8 +101,7 @@ if (request.getParameter("hov")!=null){
 				var list = hangoutList[i];
 	
 				str += "<div class='mt-4 col-sm-4 morebox'>";
-				str += "<div class='mt-4 card rm' onclick='listclick("
-						+ list.hangoutNum + ")'>";
+				str += "<div class='mt-4 card rm' onclick='listclick("+ list.hangoutNum + ")'>";
 				str += "<h5 class='card-header'>" + list.hangoutName + "</h5>";
 				str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
 				str += "<div class='card-body cb'>";
