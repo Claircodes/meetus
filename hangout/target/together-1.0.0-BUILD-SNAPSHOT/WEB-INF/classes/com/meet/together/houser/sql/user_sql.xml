@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="user">
+	<insert id="USER_SIGNUP" parameterType="user">
+		insert into user_info
+			(userId, userPwd, userName, userEmail, userPhone, userGender, userCountry)
+		values
+			(#{userId}, #{userPwd}, #{userName}, #{userEmail}, #{userPhone}, #{userGender}, #{userCountry})
+	</insert>
+ 
+	<select id="USER_LOGIN" parameterType="user" resultType="user">
+		select
+			usernum, userid, userpwd, username, useremail, userphone, usergender, usercountry
+		from user_info
+		where 1=1
+		<if test="userId != null and userId !=''">
+			and userid = #{userId}
+		</if>
+		<if test="userNum != 0">
+			and usernum = #{userNum}
+		</if>
+	</select>
+
+	<select id="USER_OVERLAP_ID" parameterType="user" resultType="user">
+		select 
+			userid 
+		from user_info
+		where 1=1
+	</select>
+
+	<select id="USER_OVERLAP_PWD" parameterType="user" resultType="user">
+		select 
+			userpwd
+		from user_info
+		where userid like #{userId}
+	</select>
+
+	<select id="GET_USER_PROFILE" parameterType="user" resultType="user">
+			select 
+			usernum, userid, userpwd, username, useremail, userphone, usergender, usercountry
+			from user_info
+			where 1=1
+				<if test="userNum != 0">
+				and userid like #{userId}
+				</if>
+	</select>
+	
+	<update id="USER_UPDATE" parameterType="user">
+		update user_info set 
+			username = #{userName},
+			userpwd=#{userPwd},
+			usercountry=#{userCountry},
+			useremail=#{userEmail},
+			userphone=#{userPhone}
+		where userid=#{userId}
+	</update>
+	
+		<delete id="USER_DELETE" parameterType="user">
+		delete from user_info
+		where userid=#{userId}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+

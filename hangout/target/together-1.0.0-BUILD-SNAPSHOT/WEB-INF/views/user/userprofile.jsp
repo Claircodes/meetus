@@ -1,89 +1,101 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
-
-<br/><br/><br/><br/><br/><br/>
-<div class="container">
-	<div class="row">
-	
-		<div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-			<A href="edit.html">Edit Profile</A> <A href="edit.html">Logout</A>
-			<br>
-			<p class=" text-info">May 05,2014,03:00 pm</p>
-		</div>
-		<div
-			class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+		<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
+        <link rel="stylesheet" href="<c:url value='/resources/css/style-user.css'/>">
 
 
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<h3 class="panel-title">Sheena Shrestha</h3>
+<div class="top-content">
+	<div class="inner-bg">
+		<div class="container">
+			<div class="row justify-content-center align-self-center">
+				<div class="col-sm-8 col-sm-offset-2 text"">
+					<br>
+					<h1 class="form-box">나의 프로필</h1>
+					<br>
 				</div>
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-md-3 col-lg-3 " align="center">
-							<img alt="User Pic"
-								src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png"
-								class="img-circle img-responsive">
-						</div>
-						<div class=" col-md-9 col-lg-9 ">
-							<table class="table table-user-information">
-								<tbody>
-									<tr>
-										<td>Department:</td>
-										<td>Programming</td>
-									</tr>
-									<tr>
-										<td>Hire date:</td>
-										<td>06/23/2013</td>
-									</tr>
-									<tr>
-										<td>Date of Birth</td>
-										<td>01/24/1988</td>
-									</tr>
+				<div class="col-sm-5 ebook">
+					<img src="/resources/images/web-test.jpg" alt="사진사진">
+				</div>
 
-									<tr>
-									<tr>
-										<td>Gender</td>
-										<td>Female</td>
-									</tr>
-									<tr>
-										<td>Home Address</td>
-										<td>Kathmandu,Nepal</td>
-									</tr>
-									<tr>
-										<td>Email</td>
-										<td><a href="mailto:info@support.com">info@support.com</a></td>
-									</tr>
-									<td>Phone Number</td>
-									<td>123-4567-890(Landline)<br>
-									<br>555-4567-890(Mobile)
-									</td>
-
-									</tr>
-
-								</tbody>
-							</table>
-
-							<a href="#" class="btn btn-primary">My Sales Performance</a> <a
-								href="#" class="btn btn-primary">Team Sales Performance</a>
-						</div>
+				<div class="form-top">
+					<div id="profile">
 					</div>
 				</div>
-				<div class="panel-footer">
-					<a data-original-title="Broadcast Message" data-toggle="tooltip"
-						type="button" class="btn btn-sm btn-primary"><i
-						class="glyphicon glyphicon-envelope"></i></a> <span class="pull-right">
-						<a href="edit.html" data-original-title="Edit this user"
-						data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i
-							class="glyphicon glyphicon-edit"></i></a> <a
-						data-original-title="Remove this user" data-toggle="tooltip"
-						type="button" class="btn btn-sm btn-danger"><i
-							class="glyphicon glyphicon-remove"></i></a>
-					</span>
-				</div>
-
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<input type="hidden" id="userId" value="<%=user.getUserId()%>"/>
+<input type="hidden" id="userNum" value="<%=user.getUserNum()%>"/>
+<script>
+	$(document).ready(function() {
+		var paramIds = "userNum,userId";
+		var au = new AjaxUtil("user/profile", paramIds);
+		au.setCallbackSuccess(callbackSql);
+		au.send();
+	});
+	function callbackSql(result) {
+		var profileList = result.list;
+		var str = "";
+		str += "<div class='panel panel-info'>";
+		str += "<div class='panel-heading'><div class='col-sm-12 text'>";
+		str += "</div>";
+		str += "<br></br>";
+		str += "<div class='panel-body'>";
+		str += "<div class='row'>";
+		str += "<div class='col-sm-1 ' align='center'>";
+		/* str+="<img alt='User Pic'";
+	str+="src='http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png'";
+	str+="class='img-circle img-responsive'>"; */
+		str += "</div>";
+		str += "<div class=' col-sm-4 '>";
+		str += "<table class='table table-user-information'>";
+		str += "<tbody>";
+		str += "<tr>";
+		str += "<td>ID</td>";
+		str += "<td>" + profileList.userId + "</td>";
+		str += "</tr>";
+		str += "<tr>";
+		str += "<td>Name</td>";
+		str += "<td>" + profileList.userName + "</td>";
+		str += "</tr>";
+		str += "<tr>";
+		str += "<td>Password</td>";
+		str += "<td><input type='password' value='" + profileList.userPwd +"' style='border:none;' readonly></td>";
+		str += "</tr>";
+		str += "<tr>";
+		str += "<tr>";
+		str += "<td>Gender</td>";
+		str += "<td>" + profileList.userGender + "</td>";
+		str += "</tr>";
+		str += "<tr>";
+		str += "<td>Country</td>";
+		str += "<td>" + profileList.userCountry + "</td>";
+		str += "</tr>";
+		str += "<tr>";
+		str += "<td>Email</td>";
+		str += "<td><a href='mailto:" + profileList.userEmail + "'>"
+				+ profileList.userEmail + "</a></td>";
+		str += "</tr>";
+		str += "<td>Phone Number</td>";
+		str += "<td>" + profileList.userPhone + "</td>";
+		str += "</tr>";
+
+		str += "</tbody></div>";
+		str += "</table></div></div>";
+		str+= "<a href='${rootPath}/' class='btn-link-0'>메인 가기</a> ";
+		str += "<a href='${rootPath}/hangout/mylist?creator="
+				+ profileList.userNum + "' class='btn-link-2'>나의 모임</a> ";
+		str += "<a href='<c:url value='/user/update'/>' class='btn-link-1'>수정하기</a>  ";
+		$("#profile").html(str);
+	}
+</script>
+
+	<!-- Javascript -->
+        <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
+        <script src="<c:url value='/resources/js/scripts-userprofile.js' />"></script>

@@ -36,29 +36,29 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/user/profile", method = RequestMethod.GET)
-	public String moveUserProfile(UserInfo ui)
+	public String moveUserProfile()
 	{
 		return "user/userprofile";
 	}
 	
 	@RequestMapping(value = "/user/update", method = RequestMethod.GET)
-	public String updateUserProfile(UserInfo ui)
+	public String updateUserProfile()
 	{
 		return "user/userupdate";
 	}
 
 	@RequestMapping(value = "/user/signup", method = RequestMethod.GET)
-	public String sigupsite(UserInfo ui) {
+	public String sigupsite() {
 		return "user/signup";
 	}
 
 	@RequestMapping(value = "/user/login", method = RequestMethod.GET)
-	public String loginsite(UserInfo ui) {
+	public String loginsite() {
 		return "user/login";
 	}
 	
 	@RequestMapping(value = "/user/logout", method = RequestMethod.GET)
-	public String logoutsite(UserInfo ui,HttpSession hs) {
+	public String logoutsite(HttpSession hs) {
 		hs.invalidate();
 		return "main";
 	}

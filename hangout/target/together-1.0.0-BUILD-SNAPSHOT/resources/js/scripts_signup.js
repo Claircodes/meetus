@@ -3,8 +3,8 @@ jQuery(document).ready(function() {
 	
     /*
         Fullscreen background
-    */
-    $.backstretch("resources/images/signup.jpg");
+	*/
+    $.backstretch("../../resources/images/signup.jpg");
     
     /*
         Form validation

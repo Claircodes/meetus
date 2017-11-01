@@ -21,6 +21,12 @@ public class HoController {
 	@Autowired
 	HoService ls;
 
+	//메인화면
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String mainsite() {
+		return "main";
+	}
+	
 	@RequestMapping(value = "/hangout/insert", method = RequestMethod.POST)
 	public @ResponseBody ModelMap insertListInfo(@RequestBody ListInfo li, ModelMap hm) {
 		int result = ls.insertListInfo(li);
@@ -47,7 +53,7 @@ public class HoController {
 	}
 
 	@RequestMapping(value = "/hangout/golist", method = RequestMethod.GET)
-	public String listsite(UserInfo ui) {
+	public String listsite() {
 		return "hangout/list";
 	}
 	
@@ -67,9 +73,5 @@ public class HoController {
 	      model.addAttribute("ListInfo", hm );
 	      return "hangout/hangout";
 	   }
- 
-	@RequestMapping(value = "/place", method = RequestMethod.POST)
-	public @ResponseBody int insertPlace(@RequestBody Place pi) {
-		return ls.insertPlace(pi);
-	}
+
 }

@@ -1,229 +1,283 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+   pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/common/header.jsp"%>
 <!DOCTYPE html>
 
-<html >
-
-<link rel="stylesheet" type="text/css" href="/resources/css/stylish-portfolio.css">
-<script src="/resources/js/stylish-portfolio.js"></script>
+<html > 
 
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<link href="<c:url value='/resources/font-awesome/css/font-awesome.min.css"'/>" rel="stylesheet"/>
+<script src="<c:url value='/resources/js/jquery-1.12.1.min.js' />"></script>
+<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
+<script src="<c:url value='/resources/js/jquery.backstretch.min.js' />"></script>
+<!--  <script src="<c:url value='/resources/js/scripts.js' />"></script>
+        -->
 
     <title>HANG OUT</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
-    <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<link href="<c:url value='/resources/font-awesome/css/font-awesome.min.css"'/>" type="text/css" rel="stylesheet"/>
 
     <!-- Custom CSS -->
-    <link href="/resources/css/stylish-portfolio.css" rel="stylesheet">
+<link href="<c:url value='/resources/css/stylish-portfolio.css"'/>" rel="stylesheet"/>
+<script src="<c:url value='/resources/js/stylish-portfolio.js' />"></script>
+<link href="<c:url value='/resources/css/new-style.css"'/>" rel="stylesheet"/>
+	
+	<!--  구글맵 -->
+
 
   </head>
 
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="${rootPath}/main">HANG OUT</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="${rootPath}/signup">회원가입</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="${rootPath}/login">로그인</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
-    <!-- Header -->
+
+
+  <body>
+<!-- Header -->
     <header class="header" id="top">
       <div class="text-vertical-center">
-        <h1>wanna hang out?</h1>
-        <h3>우리 같이 한번 놀아볼까?</h3>
+        <div class="btn btn-dark btn-lg js-scroll-trigger">
+        <h1>Hey, Let's Hangout!</h1>
+        <h3>10월의 우수 모임, Pet is my family.</h3>
+        <p> 사람뿐만 아니라 애완견들도 커뮤니티가 필요해요. Hangout을 통해서 말이죠! - Kimberly Noma</p>
+        </div>
         <br>
-        
-        <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger">모임 알아보기</a>
       </div>
     </header>
 
-    <!-- About -->
-    <section id="about" class="about">
-      <div class="container text-center">
-        <h2>전국의 325,000개의 모임이 현재 당신을 기다리고 있습니다!</h2>
-        <p class="lead">HANG OUT</p>
-      </div>
-      <!-- /.container -->
+
+  <!-- Page Content -->
+    <section class="py-5">
+    <div class="container">
+                <!-- Example row of columns -->
+                <div class="row">
+					<div class="col-sm-4">
+						<h3>32,500<br> HangOut 모임 갯수</h3>
+						<p>전국의 수많은 모임들이 당신을 기다리고 있습니다.</p>
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						<h3>70<br>참가국 갯수</h3>
+						<p>아시아, 유럽, 북미, 남미 등 다양한 국가에서 참가하고 있습니다.</p>
+						</a>
+					
+					</div>
+					
+					<div class="col-sm-4">
+						<h3>24/7<br> No Break</h3>
+						<p>시간 제한없이 원하는 시간에 모임의 시간을 설정할 수 있습니다.</p>
+						</a>
+					</div>
+
+                </div>
+            </div> <!-- /container --> 
     </section>
 
     <!-- Services -->
     <section id="services" class="services bg-primary text-white">
       <div class="container">
-        <div class="row text-center">
-          <div class="col-lg-10 mx-auto">
-            <h2>지역별 모임 찾기</h2>
-            <hr class="small">
-            <div class="row">
-          
-              <div class="col-md-3 col-sm-6">
-       	    <div class="place-seoul">
-                 <img class="img-portfolio img-fluid" src="/resources/images/seoul.jpg">  
-                  <h4>
-                    <strong>서울</strong>
-                  </h4>
-                  </div>
-              </div>
-            
-            
-              <div class="col-md-3 col-sm-6">
-                <div class="place-busan">
-              <img class="img-portfolio img-fluid" src="/resources/images/busan.jpg">         
-                  <h4>
-                    <strong>부산</strong>
-                  </h4>
-                </div>
-              </div>
-            
-            
-              <div class="col-md-3 col-sm-6">
-          	  <div class="place-daegu">
-              <img class="img-portfolio img-fluid" src="/resources/images/daegu.jpg">  
-                  <h4>
-                    <strong>대구</strong>
-                  </h4>
-                           </div>
-              </div>
-            
-              <div class="col-md-3 col-sm-6">
-                <div class="place-kwangju">
-                  <img class="img-portfolio img-fluid" src="/resources/images/kwangju.jpg">  
-                  <h4>
-                    <strong>광주</strong>
-                  </h4>
-                    </div>
-              </div>
-            
-            
-              <div class="col-md-3 col-sm-6">
-                <div class="place-daejeon">
-                  <img class="img-portfolio img-fluid" src="/resources/images/daejeon.JPG">  
-                  <h4>
-                    <strong>대전</strong>
-                  </h4>
-                     </div>
-              </div>
-                               
-            </div>
-             <a href="#" class="btn btn-dark">View More HANGOUT</a>
-            <!-- /.row (nested) -->
-          </div>
-          <!-- /.col-lg-10 -->
-        </div>
+        <div class="row justify-content-center align-self-center">
+        <div class="col-sm-12 text-center">
+          <h2>지역별 모임 찾기</h2><p>
+         </div>
+         <div class="col-sm-2"></div>
+          <div class="col-sm-5 text-right">
+          	 	 <input type="text-center" class="form-control btn"   
+                  placeholder="검색지역을 입력해주세요." id="geocomplete">           </div>
+               
+         <div class="col-sm-4">      
+             <a href="${rootPath}/hangout/golist" class="btn btn-dark" id=searchplace>SEARCH HANGOUT</a></div>
         <!-- /.row -->
       </div>
       <!-- /.container -->
+      </div>
     </section>
 
     <!-- Callout -->
     <aside class="callout">
       <div class="text-vertical-center">
-        <h1>	HANG OUT</h1>
+        <h1>   HANG OUT</h1>
       </div>
     </aside>
 
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-10 mx-auto text-center">
+        <div class="row justify-content-center align-self-center">
+          <div class="col-lg-10 mx-auto">
             <h2>카테고리별 모임 찾기</h2>
             <hr class="small">
-            <div class="row">
-              <div class="col-md-6">
+                       <div class="row">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/pet.png">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=ART"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/art.png'/>"/>
                   </a>
                    <h4>
-                    <strong>PET</strong>
+                    <strong>ART</strong></center>
                   </h4>
                 </div>
               </div>
-              <div class="col-md-6">
+             <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/music.png">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=BEAUTY"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/beauty.png'/>"/>
                   </a>
                    <h4>
-                    <strong>MUSIC</strong>
+                    <strong>BEAUTY</strong></center>
                   </h4>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/language.png">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=BOOK"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/book.png'/>"/>
                   </a>
                    <h4>
-                    <strong>LANGUAGE</strong>
+                    <strong>BOOK</strong></center>
                   </h4>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/drink.png">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=BUSINESS"><center>
+                    <img width="50%"  class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/business.png'/>"/>
                   </a>
                    <h4>
-                    <strong>DRINK</strong>
+                    <strong id="business">BUSINESS</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=DANCE"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/dance.png'/>"/>
+                  </a>
+                   <h4>
+                    <strong>DANCE</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=EDUCATION"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/education.png'/>"/>
+                  </a>
+                   <h4>
+                    <strong>EDUCATION</strong></center>
+                  </h4>
+                </div>
+              </div>
+                <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=FOOD"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/food.png'/>"/>
+                  </a>
+                   <h4>
+                    <strong>FOOD</strong></center>
+                  </h4>
+                </div>
+              </div>
+                <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=GAME"><center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/game.png'/>"/>
+                  </a>
+                   <h4>
+                    <strong>GAME</strong></center>
+                  </h4>
+                </div>
+              </div>
+                <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=LANGUAGE"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/language.png'/>"/>
+                  </a>
+                   <h4>
+                   <strong>LANGUAGE</strong></center>
                   </h4>
                 </div>
               </div>
               
-              <div class="col-md-6">
+               <div class="col-sm-2">
                 <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/book.png">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=MOVIE"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/movie.png'/>"/>
                   </a>
                    <h4>
-                    <strong>BOOK</strong>
+                   <strong>MOVIE</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=MUSIC"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/music.png'/>"/>
+                  </a>
+                   <h4>
+                   <strong>MUSIC</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=PET"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/pet.png'/>"/>
+                  </a>
+                   <h4>
+                   <strong>PET</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=PHOTO"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/photo.png'/>"/>
+                  </a>
+                   <h4>
+                   <strong>PHOTO</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=RELIGION"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/religion.png'/>"/>
+                  </a>
+                   <h4>
+                   <strong>RELIGION</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=SPORT"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/sport.png'/>"/>
+                  </a>
+                   <h4>
+                   <strong>SPORT</strong></center>
+                  </h4>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="portfolio-item">
+                  <a href="${rootPath}/hangout/golist?hop=hangoutCategory&hov=TECHNICAL"> <center>
+                    <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/technical.png'/>"/>
+                  </a>
+                   <h4>
+                   <strong>TECHNICAL</strong></center>
                   </h4>
                 </div>
               </div>
               
-              <div class="col-md-6">
-                <div class="portfolio-item">
-                  <a href="#">
-                    <img class="img-portfolio img-fluid" src="/resources/images/food.png">
-                  </a>
-                   <h4>
-                    <strong>FOOD</strong>
-                  </h4>
-                </div>
-              </div>
+              
               
             </div>
+
             <!-- /.row (nested) -->
-            <a href="#" class="btn btn-dark">View More HANGOUT</a>
+            <center><a href="${rootPath}/hangout/golist?hop=hangoutName" class="btn btn-dark">View More HANGOUT</a></center>
           </div>
           <!-- /.col-lg-10 -->
         </div>
@@ -236,8 +290,8 @@
     <aside class="call-to-action bg-primary text-white">
       <div class="container text-center">
         <h3>마음에 드시는 모임이 없나요? 직접 개설 해보세요!</h3>
-        <a href="#" class="btn btn-lg btn-light">모임 만들기</a>
-        <a href="#" class="btn btn-lg btn-dark">모임 검색하기</a>
+        <a href="${rootPath}/hangout/create" class="btn btn-lg btn-light">모임 만들기</a>
+          <a href="${rootPath}/hangout/golist"  class="btn btn-lg btn-dark">모임 검색하기</a>
       </div>
     </aside>
 
@@ -250,66 +304,144 @@
       </small>
     </section>-->
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 mx-auto text-center">
-            <h4>
-              <strong>HANG OUT</strong>
-              
-            </h4>
-            <p>Hyung-Je-Building
-              <br>826 Gangnam Street</p>
-            <ul class="list-unstyled">
-              <li>
-                <i class="fa fa-phone fa-fw"></i>
-                (02) 752-9990</li>
-              <li>
-                <i class="fa fa-envelope-o fa-fw"></i>
-                <a href="mailto:hangout@gmail.com">hangout@gmail.com</a>
-              </li>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row px-3">
+        <div class="col-lg-4 col-md-12">
+          <h4 class="heading-footer">ABOUT US</h4>
+          <p>HANGOUT 은 모임개설을 위한 페이지 입니다. </p>
+          <p><i class="fa fa-phone"></i> <span>Call Us :</span> +02 752 7942</p>
+          <p><i class="fa fa-envelope"></i> <span>Send Email :</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="660f0800092611030403080a070805034805090b">[email&#160;protected]</a></p>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="heading-footer">QUICK LINKS</h4>
+            <ul class="footer-ul">
+              <li></li>
+              <li><a href="${rootPath}/hangout/create"> 모임 만들기</a></li>
+              <li><a href="${rootPath}/hangout/golist"> 모임 리스트</a></li>
+              <li><a href="${rootPath}/user/profile"> 회원 정보</a></li>
+              <li><a href="#"> Contact us</a></li>
             </ul>
-            <br>
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-facebook fa-fw fa-3x"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-twitter fa-fw fa-3x"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-commenting-o fa-fw fa-3x"></i>
-                </a>
-              </li>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h4 class="heading-footer">WHO MADE THIS?</h4>
+          <ul class="footer-ul">
+              <li></li>
+              <li><a href="#"> 김정규</a></li>
+              <li><a href="#"> 박용성</a></li>
+              <li><a href="#"> 장지훈</a></li>
+              <li><a href="#"> 임혜진</a></li>
             </ul>
-            <hr class="small">
-            <p class="text-muted">Copyright &copy; Hang Out 2017</p>
-          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 social-icons">
+          <h4 class="heading-footer">FOLLOW</h4>
+          <ul class="footer-ul">
+            <li><a href="#"><i class=" fa fa-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class=" fa fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class=" fa fa-google-plus"></i> Google+</a></li>
+          </ul>
         </div>
       </div>
-      <a id="to-top" href="#top" class="btn btn-dark btn-lg js-scroll-trigger">
-        <i class="fa fa-chevron-up fa-fw fa-1x"></i>
-      </a>
-    </footer>
+    </div>
+  </footer>
+
+  <!-- Copy footer start from here-->
+  <div class="copyright">
+    <div class="container-fluid">
+      <div class="row px-3">
+        <div class="col-lg-6 col-md-4">
+          <p>www.hangout.com은 상업성이 아니라 팀 프로젝트 제출을 위하여 만들어진 무수익성 페이지입니다.</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
 
     <!-- Bootstrap core JavaScript -->
-    <script src="/resources/vendor/jquery/jquery.min.js"></script>
-    <script src="/resources/vendor/popper/popper.min.js"></script>
-    <script src="/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<c:url value='/resources/js/jquery.min.js' />"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
 
     <!-- Custom scripts for this template -->
-    <script src="/resources/js/stylish-portfolio.js"></script>
+<script src="<c:url value='/resources/js/stylish-portfolio.js' />"></script>
 
   </body>
 
 </html>
 
+
+<script type='text/javascript'> 
+function attracta_loadjs(url) {
+   (function() {
+       var s = document.createElement('script');
+       s.type = 'text/javascript';
+       s.async = true;
+       s.src = url;
+       var x = document.getElementsByTagName('script')[0];
+       x.parentNode.insertBefore(s, x);
+   })();
+}
+function attracta_shouldrun() {
+   var v = ["/admin/","/adm/","/wp-admin/","/administrator/"];
+   for (x in v) if(window.location.pathname.indexOf(v[x]) == 0) return false;
+   return true;
+}
+function attracta_window_width() {
+   if (document.body && document.body.offsetWidth) return document.body.offsetWidth;
+   if (document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.offsetWidth ) return document.documentElement.offsetWidth;
+   if (window.innerWidth) return window.innerWidth;
+   return 0;
+}
+function attracta_window_height() {
+   if (document.body && document.body.offsetHeight) return document.body.offsetHeight;
+   if (document.compatMode=='CSS1Compat' && document.documentElement && document.documentElement.offsetHeight ) return document.documentElement.offsetHeight;
+   if (window.innerHeight) return window.innerHeight;
+   return 0;
+}
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-82921805-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+		<!-- 구글맵 도시검색 -->
+
+	<script>
+	
+	   $(document).ready(function() {
+
+				$("#geocomplete").geocomplete().bind("geocode:result",
+						function(event, result) {
+							$.log("Result: " + result.vicinity);
+						}).bind("geocode:error", function(event, status) {
+					$.log("ERROR: " + status);
+				}).bind("geocode:multiple", function(event, results) {
+					$.log("Multiple: " + results.length + " results found");
+				});
+
+				$("#find").click(function() {
+					$("#geocomplete").trigger("geocode");
+				});
+
+				$("#examples a").click(function() {
+					$("#geocomplete").val($(this).text()).trigger("geocode");
+					return false;
+				});
+	    });
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places"></script>
+	<script src="<c:url value='/resources/js/jquery.geocomplete.js' />"></script>
+	<script src="<c:url value='/resources/js/logger.js' />"></script>
+</body>
+
+</html>
