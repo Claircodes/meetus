@@ -6,34 +6,57 @@
 <!--  CSS -->
 <link href="<c:url value='/resources/css/bootstrap.css"'/>"	rel="stylesheet" />
 <link href="<c:url value="/resources/css/bootstrap.min.css"/>"	rel="stylesheet">
-<link href="<c:url value="/resources/css/album.css"/>" rel="stylesheet">
-<br><br><br><br>
+<link href="<c:url value='/resources/css/list.css"'/>"   rel="stylesheet" />
 
-<!-- 검색 bar -->
-<div class="row justify-content-center align-self-center">
-	<div class="span6" style="float: none; margin: 0 auto;">
-		<p></p>
-		<div class="text-vertical-center">
-			<h1>내가 만든 모임</h1>
 
-			<p></p>
-			<input type="text" class="form-control"	placeholder="모임을 검색 해보세요." id="hangoutName">
-			<p></p>
-			<a href="#" class="btn btn-lg btn-dark" type="button" id="searchLists">모임 찾기</a>
-			<a href="<c:url value='/hangout/partimylist'/>" class="btn btn-lg btn-dark" type="button" id="participateLists">참가 중인 모임</a>
-			<p></p>
+ <!-- 검색 bar -->
+<section>
+	<div class="container">
+		<div class="row justify-content-center align-self-center">
+			<div class="col-sm-12 text-center">
+				<div class="text-vertical-center">
+					<h1>
+						내가 만든 모임 리스트 <a href="<c:url value='/hangout/partimylist'/>"
+							class="btn btn-dark" id="participateLists">참가 중인 모임</a>
+					</h1>
+					<p>
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-2 text-right">
+				<input type="text" class="form-control btn btn-primary"
+					placeholder="서울특별시" id="geocomplete">
+			</div>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" placeholder="모임을 검색 해보세요."
+					id="hangoutName">
+			</div>
+			<div class="col-sm-4">
+				<a href="#" class="btn btn-dark" id="searchLists">SEARCH
+					HANGOUT</a>
+				<p></p>
+				<br>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
 
-<!-- 모임 리스트 -->
-<div id="list_body" class="row justify-content-center align-self-center"></div>
 
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Left</button>
-  <button type="button" class="btn btn-default">Middle</button>
-  <button type="button" class="btn btn-default">Right</button>
-</div>
+
+
+<!-- 모임 리스트 시작-->
+   <div class="container">
+    <div class="row p-2" style="padding: 20px;">
+   <!-- SQL 실행 -> 부트스트랩 입력-->
+      <div id="list_body"    class="row"></div>
+   <!-- SQL 종료-->
+       </div></div>
+    <hr>
+
+<!-- 모임 리스트 종료 -->
+
+
+
 <input type="hidden" id="hangoutCreator" value="${param.creator}"/>
 <script> 
     $(document).ready(function(){
@@ -51,10 +74,15 @@
       var str = "";
       for (var i = 0, max = hangoutList.length; i < max; i++) {
          var list = hangoutList[i]; 
-         str += "<div class='col-sm-3'><div class='card' onclick='listclick("+list.hangoutNum+")' >";						
-         str += "<img src=\"<c:url value='http://img.insight.co.kr/static/2017/06/23/700/u0bn4swj5g5dp29xzp74.jpg'/>\" >";
-         str += "<h4>"+list.hangoutName+"</h4>";
-         str += "</div></div>";
+         str += "<div class='mt-4 col-sm-4'>";
+         str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
+         str += "<h5 class='card-header'>" + list.hangoutName + "</h5>";
+         str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
+         str += "<div class='card-body cb'>";
+         str += "<div class='card-text'>" + list.hangoutContent + "</div>";
+         str += "</div>";
+         str += "</div>";
+         str += "</div>";
          }
       $("#list_body").html(str);
       }
@@ -73,7 +101,6 @@
     </script>
 
 <!-- Javascript --> 
-<script src="/resources/assets/js/retina-1.1.0.min.js"></script>
 <script src="/resources/js/jquery-1.12.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/jquery.backstretch.min.js"></script>
