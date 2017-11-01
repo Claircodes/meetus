@@ -27,7 +27,6 @@ public class AuthException extends AbstractHandlerExceptionResolver {
 			view.setAttributesMap(asd);
 			return new ModelAndView(view);
 		} catch (Exception e) {
-			logger.error("send back error status and message : " + ex.getMessage(), e);
 		}
 		return null;
 	}
