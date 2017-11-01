@@ -27,7 +27,7 @@ public class HoController {
 		return "main";
 	}
 	
-	@RequestMapping(value = "/hangout/insert", method = RequestMethod.POST)
+	@RequestMapping(value = "/ho/insert", method = RequestMethod.POST)
 	public @ResponseBody ModelMap insertListInfo(@RequestBody ListInfo li, ModelMap hm) {
 		int result = ls.insertListInfo(li);
 		if (result == 1) {
@@ -40,34 +40,34 @@ public class HoController {
 		return hm;
 	}
 
-	@RequestMapping(value = "/hangout/create", method = RequestMethod.GET)
+	@RequestMapping(value = "/ho/create", method = RequestMethod.GET)
 	public String createsite(UserInfo ui) {
 		return "hangout/create";
 	}
 
-	@RequestMapping(value = "/hangout/list", method = RequestMethod.POST)
+	@RequestMapping(value = "/ho/list", method = RequestMethod.POST)
 	public @ResponseBody ModelMap selectList(@RequestBody ListInfo li, ModelMap hm) {
 		List<ListInfo> list = ls.selectListInfo(li);
 		hm.put("list", list);
 		return hm;
 	}
 
-	@RequestMapping(value = "/hangout/golist", method = RequestMethod.GET)
+	@RequestMapping(value = "/ho/golist", method = RequestMethod.GET)
 	public String listsite() {
 		return "hangout/list";
 	}
 	
-	@RequestMapping(value = "/hangout/mylist", method = RequestMethod.GET)
+	@RequestMapping(value = "/ho/mylist", method = RequestMethod.GET)
 	public String myListSite(UserInfo ui) {
 		return "hangout/myholist";
 	}
 	
-	@RequestMapping(value = "/hangout/partimylist", method = RequestMethod.GET)
+	@RequestMapping(value = "/ho/partimylist", method = RequestMethod.GET)
 	public String myParticipateSite(UserInfo ui) {
 		return "hangout/myparlist";
 	}
  
-	   @RequestMapping(value = "/hangout", method = RequestMethod.GET)
+	   @RequestMapping(value = "/ho", method = RequestMethod.GET)
 	   public String listsiteinfo(ListInfo li,ModelMap model) {
 		  HashMap<String, Object> hm = ls.selectListContent(li);
 	      model.addAttribute("ListInfo", hm );
