@@ -15,10 +15,10 @@
     	<typeAlias alias="category" type="com.meet.together.holist.dto.CategoryInfo"/>
 	</typeAliases>
 	<mappers>
-		<mapper resource="com/meet/together/houser/sql/user_sql.xml" />
-		<mapper resource="com/meet/together/holist/sql/list_sql.xml" />
-		<mapper resource="com/meet/together/holist/sql/place_sql.xml" />
-		<mapper resource="com/meet/together/holist/sql/category_sql.xml" />
+		<mapper resource="sql/user_sql.xml" />
+		<mapper resource="holist/sql/list_sql.xml" />
+		<mapper resource="holist/sql/place_sql.xml" />
+		<mapper resource="holist/sql/category_sql.xml" />
 	</mappers>
 </configuration>
 
