@@ -16,9 +16,9 @@
 	</typeAliases>
 	<mappers>
 		<mapper resource="sql/user_sql.xml" />
-		<mapper resource="holist/sql/list_sql.xml" />
-		<mapper resource="holist/sql/place_sql.xml" />
-		<mapper resource="holist/sql/category_sql.xml" />
+		<mapper resource="sql/list_sql.xml" />
+		<mapper resource="sql/place_sql.xml" />
+		<mapper resource="sql/category_sql.xml" />
 	</mappers>
 </configuration>
 
