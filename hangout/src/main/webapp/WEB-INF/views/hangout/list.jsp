@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,17 +15,46 @@
    href="<c:url value="https://fonts.googleapis.com/css?family=Oxygen"/>" />
 <!DOCTYPE html>
 <html lang="en">
-<br><br><br><br>
+<br><br><br>
 <%
-String hangoutParam = "";
-String hangoutValue = "";
-if (request.getParameter("hop")!=null){
-   hangoutParam = request.getParameter("hop");
+String hangoutCategory = "";
+if (request.getParameter("hangoutCategory")!=null){
+	hangoutCategory = request.getParameter("hangoutCategory");
 }
-if (request.getParameter("hov")!=null){
-   hangoutValue = request.getParameter("hov");
-}
+
+
 %>
+
+<table class="table">
+
+<input type="text" id="hangoutCategory" value="<%=hangoutCategory%>" hidden=hidden" >
+    <tbody>
+      <tr>
+        <td><input type="button" class="btn btn-info" value="ART" style="width:100%;height:100%"></td>
+        <td><input type="button" class="btn btn-info" value="BEAUTY"style="width:100%;height:100%"></td>
+        <td><input type="button" class="btn btn-info" value="BOOK" style="width:100%;height:100%"></td>
+        <td><input type="button" class="btn btn-info" value="BUSINESS" style="width:100%;height:100%"></td>
+      </tr>
+      <tr>
+        <td><input  type="button" class="btn btn-info" value="DANCE" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" value="EDUCATION" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" value="FOOD" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" value="GAME" style="width:100%;height:100%"></td>
+      </tr>
+      <tr>
+        <td><input  type="button" class="btn btn-info" value="LANGUAGE" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" value="MOVIE" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" value="MUSIC" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" value="PET" style="width:100%;height:100%"></td>
+      </tr>
+      <tr>
+        <td><input  type="button" class="btn btn-info" value="PHOTO" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" value="RELIGION" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" value="SPORT" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" value="TECHNICAL" style="width:100%;height:100%"></td>
+      </tr>
+    </tbody>
+  </table>
  <!-- 검색 bar -->
  <section>
 <div class="container">
@@ -42,7 +70,7 @@ if (request.getParameter("hov")!=null){
                         placeholder="서울특별시" id="geocomplete">
                   </div>
                   <div class="col-sm-4">
-                     <input type="text" class="form-control btn" placeholder="TITLE" value="<%=hangoutValue%>" id="<%=hangoutParam%>">
+                     <input type="text" class="form-control btn" placeholder="TITLE"  id="hangoutName">
                   </div>
                   <div class="col-sm-4">
                      <a href="#" class="btn btn-dark" id=searchLists>SEARCH HANGOUT</a>
@@ -72,13 +100,13 @@ if (request.getParameter("hov")!=null){
       </div>
       
     <div class="clearfix"> </div>
-<input type="hidden" id="hangoutCategory" value="${param.category}" />
+
    
    
    <!-- SQL을 통한 모임자동생성_ 기본 9개-->
    <script>
       $(document).ready(function() {
-         var paramIds = "hangoutCategory";
+         var paramIds = "hangoutName,hangoutCategory";
          var au = new AjaxUtil("hangout/list", paramIds);  
          au.setCallbackSuccess(callbackSql);
          au.send();
@@ -86,14 +114,38 @@ if (request.getParameter("hov")!=null){
       function listclick(url) {
          pageMove("hangout?hangoutNum=" + url);
       }
-   
+      
+      $("input.btn.btn-info").click(function(){
+    	  var nowcategory = $(this).val();
+          pageMove("hangout/golist?hangoutCategory="+nowcategory);
+      });
+/**
+      $("input.btn.btn-info").click(function(){ //class btn btn-into 눌렀을 시 이벤트 (카테고리 버튼들 클래스)
+      var nowcategory = $(this).val();
+      var nowcategoryid = $(this).attr("id");
+    	  $("#hangoutCategory").val(nowcategory);
+    	  
+    	  if ($(this).attr("class")=="btn btn-info active"){
+    	  $("#nowcategoryid").attr("class","btn btn-info"); // class 변경 (non active)
+      }else {
+    	  $("#nowcategoryid").attr("class","btn btn-info active");// class 변경 (active)
+      }
+      })
+**/
+      
       function callbackSql(result) {
+    	 var max;
          var hangoutList = result.list;
+         if (hangoutList.length<9){
+        	 max =hangoutList.length;
+         }else{
+        	 max=9;
+         }
          var str = "";
-         for (var i = 0, max = 9; i < max; i++) {
+         for (var i = 0; i < max; i++) {
             var list = hangoutList[i];
             str += "<div class='mt-4 col-sm-4'>";
-            str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
+            str += "<div class='mt-4 card rm' onclick='listclick("+list.hangoutNum+")'>";
             str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i class='fa fa-heart-o'></i></a></h5> ";
             str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
             str += "<div class='card-body cb'>";
@@ -118,7 +170,7 @@ if (request.getParameter("hov")!=null){
       });
    </script>
    <!-- SQL 생성 종료 -->
-   
+   <!-- button category -->
    
    
    <!--  LOAD MORE (페이지네이션)-->

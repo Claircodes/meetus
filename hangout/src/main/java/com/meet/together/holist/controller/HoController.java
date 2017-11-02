@@ -20,7 +20,7 @@ import com.meet.together.houser.dto.UserInfo;
 public class HoController {
 	@Autowired
 	HoService ls;
-
+ 
 	//메인화면
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String mainsite() {
@@ -59,12 +59,6 @@ public class HoController {
 		return hm;
 	}
 	
-	@RequestMapping(value = "/hangout/takeuser/check", method = RequestMethod.POST)
-	public @ResponseBody ModelMap selectTakeUserList(@RequestBody TakeUserInfo tu, ModelMap hm) {
-		List<TakeUserInfo> list = ls.selectTakeUserList(tu);
-		hm.put("list", list);
-		return hm;
-	}
 
 	@RequestMapping(value = "/hangout/golist", method = RequestMethod.GET)
 	public String listsite() {
@@ -93,6 +87,7 @@ public class HoController {
 			int result = ls.TakeUserCount(tu);
 			if (result == 1) {
 				hm.put("msg", "참가신청이 완료되었습니다.");
+				hm.put("url", "hangout");
 			} else {
 				hm.put("msg", "참가신청 실패, 정보를 확인하세요");
 				hm.put("url", "hangout");
