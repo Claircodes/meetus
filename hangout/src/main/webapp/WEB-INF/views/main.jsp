@@ -9,8 +9,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="<c:url value='/resources/font-awesome/css/font-awesome.min.css"'/>" rel="stylesheet"/>
-<script src="<c:url value='/resources/js/jquery-1.12.1.min.js' />"></script>
-<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+
 <script src="<c:url value='/resources/js/jquery.backstretch.min.js' />"></script>
 <!--  <script src="<c:url value='/resources/js/scripts.js' />"></script>
         -->
@@ -20,57 +24,105 @@
     <!-- Custom Fonts -->
 <link href="<c:url value='/resources/font-awesome/css/font-awesome.min.css"'/>" type="text/css" rel="stylesheet"/>
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS/JS -->
 <link href="<c:url value='/resources/css/stylish-portfolio.css"'/>" rel="stylesheet"/>
 <script src="<c:url value='/resources/js/stylish-portfolio.js' />"></script>
 <link href="<c:url value='/resources/css/new-style.css"'/>" rel="stylesheet"/>
-	
-	<!--  구글맵 -->
-
-
+   <!--  구글맵 -->
   </head>
 
-
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+     max-height: 700px !important;
+  }
+  </style>
+</head>
 
 
   <body>
 <!-- Header -->
-    <header class="header" id="top">
-      <div class="text-vertical-center">
-        <div class="btn btn-dark btn-lg js-scroll-trigger">
-        <h1>Hey, Let's Hangout!</h1>
-        <h3>10월의 우수 모임, Pet is my family.</h3>
-        <p> 사람뿐만 아니라 애완견들도 커뮤니티가 필요해요. Hangout을 통해서 말이죠! - Kimberly Noma</p>
-        </div>
-        <br>
-      </div>
-    </header>
 
 
-  <!-- Page Content -->
+   <div id="demo" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+         <li data-target="#demo" data-slide-to="0" class="active"></li>
+         <li data-target="#demo" data-slide-to="1"></li>
+         <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <img src="resources/images/main-dog2.jpg" alt="Los Angeles">
+            <div class="carousel-caption">
+               <div class="btn-dark ">
+                  <h1>Hey, Let's Hangout!</h1>
+                  <h3>10월의 우수 모임, Pet is my family.</h3>
+                  <p>사람뿐만 아니라 애완견들도 커뮤니티가 필요해요. Hangout을 통해서 말이죠! - Kimberly
+                     Noma</p>
+               </div>
+            </div>
+
+         </div>
+         <div class="carousel-item">
+            <img src="resources/images/main-s2.jpg" alt="Chicago">
+            <div class="carousel-caption">
+               <div class="btn-dark ">
+                  <h1>Hey, Let's Hangout!</h1>
+                  <h3>청소년 인기순위 1위 모임, SKYBOARD.</h3>
+                  <p>학교에서 사귈 수 없었던 친구들과 새로운 경험은 잊지 못해요. - Michael Hilton</p>
+               </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+               <img src="resources/images/main-s3.jpg" alt="New York">
+               <div class="carousel-caption">
+                  <div class="btn-dark ">
+                     <h1>Hey, Let's Hangout!</h1>
+                     <h3>10월의 우수 모임, Pet is my family.</h3>
+                     <p>사람뿐만 아니라 애완견들도 커뮤니티가 필요해요. Hangout을 통해서 말이죠! - Kimberly
+                        Noma</p>
+                  </div>
+               </div>
+            </div>
+         
+         <!-- Left and right controls -->
+         <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+         </a> <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+         </a>
+   </div>
+</div>
+
+   <!-- Page Content -->
     <section class="py-5">
     <div class="container">
                 <!-- Example row of columns -->
                 <div class="row">
-					<div class="col-sm-4">
-						<h3>32,500<br> HangOut 모임 갯수</h3>
-						<p>전국의 수많은 모임들이 당신을 기다리고 있습니다.</p>
-						</a>
-					</div>
-					
-					<div class="col-sm-4">
-						<h3>70<br>참가국 갯수</h3>
-						<p>아시아, 유럽, 북미, 남미 등 다양한 국가에서 참가하고 있습니다.</p>
-						</a>
-					
-					</div>
-					
-					<div class="col-sm-4">
-						<h3>24/7<br> No Break</h3>
-						<p>시간 제한없이 원하는 시간에 모임의 시간을 설정할 수 있습니다.</p>
-						</a>
-					</div>
-
+               <div class="col-sm-4">
+                  <h3>32,500<br> HangOut 모임 갯수<a href='#'><i class="fa fa-heart"></i></a></h3>
+                  <p>전국의 수많은 모임들이 당신을 기다리고 있습니다.</p>
+               </div>
+               
+               <div class="col-sm-4">
+                  <h3>70<br>참가국 갯수</h3>
+                  <p>아시아, 유럽, 북미, 남미 등 다양한 국가에서 참가하고 있습니다.</p>
+               </div>
+               
+               <div class="col-sm-4">
+                  <h3>24/7<br> No Break</h3>
+                  <p>시간 제한없이 원하는 시간에 모임의 시간을 설정할 수 있습니다.</p>
+               </div>
                 </div>
             </div> <!-- /container --> 
     </section>
@@ -84,11 +136,11 @@
          </div>
          <div class="col-sm-2"></div>
           <div class="col-sm-5 text-right">
-          	 	 <input type="text-center" class="form-control btn"   
+                  <input type="text-center" class="form-control btn"   
                   placeholder="검색지역을 입력해주세요." id="geocomplete">           </div>
                
          <div class="col-sm-4">      
-             <a href="${rootPath}/hangout/golist" class="btn btn-dark" id=searchplace>SEARCH HANGOUT</a></div>
+             <a href="${rootPath}/hangout/golist" class="btn btn-dark" id=searchplace>SEARCH HANGOUT <i class="fa fa-search" aria-hidden="true"></i></a></div>
         <!-- /.row -->
       </div>
       <!-- /.container -->
@@ -414,34 +466,34 @@ function attracta_window_height() {
   })();
 </script>
 
-		<!-- 구글맵 도시검색 -->
+      <!-- 구글맵 도시검색 -->
 
-	<script>
-	
-	   $(document).ready(function() {
+   <script>
+   
+      $(document).ready(function() {
 
-				$("#geocomplete").geocomplete().bind("geocode:result",
-						function(event, result) {
-							$.log("Result: " + result.vicinity);
-						}).bind("geocode:error", function(event, status) {
-					$.log("ERROR: " + status);
-				}).bind("geocode:multiple", function(event, results) {
-					$.log("Multiple: " + results.length + " results found");
-				});
+            $("#geocomplete").geocomplete().bind("geocode:result",
+                  function(event, result) {
+                     $.log("Result: " + result.vicinity);
+                  }).bind("geocode:error", function(event, status) {
+               $.log("ERROR: " + status);
+            }).bind("geocode:multiple", function(event, results) {
+               $.log("Multiple: " + results.length + " results found");
+            });
 
-				$("#find").click(function() {
-					$("#geocomplete").trigger("geocode");
-				});
+            $("#find").click(function() {
+               $("#geocomplete").trigger("geocode");
+            });
 
-				$("#examples a").click(function() {
-					$("#geocomplete").val($(this).text()).trigger("geocode");
-					return false;
-				});
-	    });
-	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places"></script>
-	<script src="<c:url value='/resources/js/jquery.geocomplete.js' />"></script>
-	<script src="<c:url value='/resources/js/logger.js' />"></script>
+            $("#examples a").click(function() {
+               $("#geocomplete").val($(this).text()).trigger("geocode");
+               return false;
+            });
+       });
+   </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places"></script>
+   <script src="<c:url value='/resources/js/jquery.geocomplete.js' />"></script>
+   <script src="<c:url value='/resources/js/logger.js' />"></script>
 </body>
 
 </html>
