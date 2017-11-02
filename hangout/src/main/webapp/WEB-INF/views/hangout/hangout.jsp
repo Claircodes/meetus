@@ -129,7 +129,7 @@ if (request.getParameter("hangoutNum")!=null){
 				<h5 class="card-header">현재 참가자 수</h5>
 				<div class="card-body">
 					<div class="input-group">
-						<a id="participatenum"></a>
+						<input type="text" id="participatenum" style="border:none"><button class="btn btn-secondary" type="button" id="check" onclick="check()">명단</button>
 						<span class="input-group-btn"> </span>
 					</div>
 				</div>
@@ -195,7 +195,17 @@ $(document).ready(function() {
 	}else{
 		$("#hangout_btn").html('<center><button class="btn btn-secondary" type="button" id="participate" onclick="participate()">참가하기</button></center>');
 	}
+	
+	 var paramIds = "hangoutNum";
+     var au = new AjaxUtil("hangout/takeuser/count", paramIds);  
+     au.setCallbackSuccess(callbackSql);
+     au.send();
 });
+
+function callbackSql(result){
+	var user_cnt=result.list;
+	$("#participatenum").val(user_cnt.count + "명");
+}
 
 function participate(){
 	if(<%=login%>==true){

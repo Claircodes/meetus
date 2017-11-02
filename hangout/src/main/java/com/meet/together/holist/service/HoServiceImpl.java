@@ -51,4 +51,9 @@ public class HoServiceImpl implements HoService {
 		return listDao.TakeUserCount(tu);
 	}
 
+	@Override
+	public TakeUserInfo countTakeUser(TakeUserInfo tu) {
+		return listDao.countTakeUser(tu);
+	}
+
 }

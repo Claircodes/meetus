@@ -47,4 +47,9 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	public int TakeUserCount(TakeUserInfo tu) {
 		return this.getSqlSession().insert("takeuser.INSERT_TAKEUSER", tu);
 	}
+
+	@Override
+	public TakeUserInfo countTakeUser(TakeUserInfo tu) {
+		return this.getSqlSession().selectOne("takeuser.COUNT_TAKEUSER",tu);
+	}
 }

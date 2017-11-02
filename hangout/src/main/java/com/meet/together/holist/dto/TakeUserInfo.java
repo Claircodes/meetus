@@ -8,7 +8,14 @@ public class TakeUserInfo
 	private int hangoutNum;
 	private int userNum;
 	private int tuNum;
+	private int count;
 	
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
 	public int getHangoutNum() {
 		return hangoutNum;
 	}
@@ -29,7 +36,8 @@ public class TakeUserInfo
 	}
 	@Override
 	public String toString() {
-		return "TakeUserInfo [hangoutNum=" + hangoutNum + ", userNum=" + userNum + ", tuNum=" + tuNum + "]";
+		return "TakeUserInfo [hangoutNum=" + hangoutNum + ", userNum=" + userNum + ", tuNum=" + tuNum + ", count="
+				+ count + "]";
 	}
 
 	

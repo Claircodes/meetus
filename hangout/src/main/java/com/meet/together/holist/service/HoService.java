@@ -14,6 +14,7 @@ public interface HoService {
 	int insertListInfo(ListInfo li);
 	int insertPlace(Place pi);
 	int TakeUserCount(TakeUserInfo tu);
+	TakeUserInfo countTakeUser(TakeUserInfo tu);
 	HashMap<String,Object> selectListContent(ListInfo li);
 	List<CategoryInfo> selectCategoryInfo();
 	List<ListInfo> selectCategory(ListInfo li);

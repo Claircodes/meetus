@@ -51,6 +51,13 @@ public class HoController {
 		hm.put("list", list);
 		return hm;
 	}
+	
+	@RequestMapping(value = "/hangout/takeuser/count", method = RequestMethod.POST)
+	public @ResponseBody ModelMap countTakeUser(@RequestBody TakeUserInfo tu, ModelMap hm) {
+		TakeUserInfo list = ls.countTakeUser(tu);
+		hm.put("list", list);
+		return hm;
+	}
 
 	@RequestMapping(value = "/hangout/golist", method = RequestMethod.GET)
 	public String listsite() {
@@ -86,5 +93,4 @@ public class HoController {
 			}
 			return hm;
 		}
-
 }

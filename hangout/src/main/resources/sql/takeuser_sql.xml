@@ -14,7 +14,7 @@
 	</insert>
 	
 	<select id="COUNT_TAKEUSER" parameterType="takeuser" resultType="takeuser">
-		select count(*) from hangout_takeuser
+		select count(*) as count from hangout_takeuser
 		where hangoutnum=#{hangoutNum}
 	</select>
 </mapper>

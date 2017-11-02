@@ -14,6 +14,8 @@ public interface HoListDao {
 	int insertPlace(Place pi);
 	
 	int TakeUserCount(TakeUserInfo tu);
+	
+	TakeUserInfo countTakeUser(TakeUserInfo tu);
 
 	List<ListInfo> selectListInfo(ListInfo li);
 
