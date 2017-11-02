@@ -11,6 +11,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<style>
+#mainNav {
+    background: rgba(0, 0, 0, 0.5); 
+    color:white;
+ 
+    }
+  #mainNav .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+</style>
+
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/bootstrap.css"/>" />
 <link rel="stylesheet"
@@ -40,8 +56,50 @@
 	}
 %>
 
-
 <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a href="${rootPath}/" align="left"> <img width="50%"
+		src="<c:url value="/resources/images/logo.png"/>" /></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <%
+					if ((UserInfo) session.getAttribute("user") == null) {
+				%>
+				<li class="nav-item"><a class="nav-link"
+					href="${rootPath}/hangout/create">모임 개설하기</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${rootPath}/hangout/golist">모임 리스트</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${rootPath}/user/signup">회원가입</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${rootPath}/user/login">로그인</a></li>
+				<%
+					} else {
+						login = true;
+				%>
+				<li class="nav-item"><a class="nav-link"
+					href="${rootPath}/hangout/create">모임 개설하기</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${rootPath}/hangout/golist">모임 리스트</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${rootPath}/user/profile">마이 페이지</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${rootPath}/user/logout">로그아웃</a></li>
+				<li class="nav-item"><a class="nav-link js-scroll-trigger"><%=user.getUserId()%></a></li>
+				<%
+					}
+				%>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+<%-- <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 <div class="container">
 	<a href="${rootPath}/" align="left"> <img width="50%"
@@ -86,7 +144,7 @@
 
 		</div>
 </div>
-</nav>
+</nav> --%>
 
 
 <script>
