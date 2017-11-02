@@ -18,6 +18,8 @@ public interface HoListDao {
 
 	List<ListInfo> selectListInfo(ListInfo li);
 	
+	List<TakeUserInfo> selectTakeUserList(TakeUserInfo tu);
+	
 	List<UserInfo> selectHangoutUserList(TakeUserInfo tu);
 	
 	HashMap<String, Object> selectListContent(ListInfo li);

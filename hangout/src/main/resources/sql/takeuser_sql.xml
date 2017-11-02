@@ -19,4 +19,9 @@
 		and ui.usernum=th.usernum
 		and hi.hangoutnum=#{hangoutNum};
 	</select>
+	
+		<select id="SELECT_TAKEUSER" parameterType="takeuser" resultType="takeuser">
+		select usernum from hangout_takeuser
+		where usernum=#{userNum};
+	</select>
 </mapper>

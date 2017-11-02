@@ -17,7 +17,7 @@ public interface HoService {
 	int TakeUserCount(TakeUserInfo tu);
 	HashMap<String,Object> selectListContent(ListInfo li);
 	List<CategoryInfo> selectCategoryInfo();
+	List<TakeUserInfo> selectTakeUserList(TakeUserInfo tu);
 	List<ListInfo> selectCategory(ListInfo li);
 	List<UserInfo> selectHangoutUserList(TakeUserInfo tu);
 }
- 

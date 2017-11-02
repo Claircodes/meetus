@@ -53,4 +53,9 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	public List<UserInfo> selectHangoutUserList(TakeUserInfo tu){
 		return this.getSqlSession().selectList("takeuser.SELECT_HANGOUT_USER", tu);
 	}
+
+	@Override
+	public List<TakeUserInfo> selectTakeUserList(TakeUserInfo tu) {
+		return this.getSqlSession().selectList("takeuser.SELECT_TAKEUSER",tu);
+	}
 }
