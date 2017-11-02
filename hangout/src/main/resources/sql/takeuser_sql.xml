@@ -12,9 +12,11 @@
 			#{userNum}
 		)
 	</insert>
-	
-	<select id="COUNT_TAKEUSER" parameterType="takeuser" resultType="takeuser">
-		select count(*) as count from hangout_takeuser
-		where hangoutnum=#{hangoutNum}
+
+	<select id="SELECT_HANGOUT_USER" parameterType="takeuser" resultType="user">
+		select ui.* from hangout_info hi, hangout_takeuser th, user_info ui
+		where hi.hangoutnum = th.hangoutnum
+		and ui.usernum=th.usernum
+		and hi.hangoutnum=#{hangoutNum};
 	</select>
 </mapper>

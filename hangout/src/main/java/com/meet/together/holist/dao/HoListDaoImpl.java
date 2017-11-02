@@ -10,6 +10,7 @@ import com.meet.together.holist.dto.CategoryInfo;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
+import com.meet.together.houser.dto.UserInfo;
 
 @Repository
 public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
@@ -47,9 +48,9 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	public int TakeUserCount(TakeUserInfo tu) {
 		return this.getSqlSession().insert("takeuser.INSERT_TAKEUSER", tu);
 	}
-
+	
 	@Override
-	public TakeUserInfo countTakeUser(TakeUserInfo tu) {
-		return this.getSqlSession().selectOne("takeuser.COUNT_TAKEUSER",tu);
+	public List<UserInfo> selectHangoutUserList(TakeUserInfo tu){
+		return this.getSqlSession().selectList("takeuser.SELECT_HANGOUT_USER", tu);
 	}
 }

@@ -11,6 +11,7 @@ import com.meet.together.holist.dto.CategoryInfo;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
+import com.meet.together.houser.dto.UserInfo;
 
 @Service
 public class HoServiceImpl implements HoService {
@@ -52,8 +53,7 @@ public class HoServiceImpl implements HoService {
 	}
 
 	@Override
-	public TakeUserInfo countTakeUser(TakeUserInfo tu) {
-		return listDao.countTakeUser(tu);
+	public List<UserInfo> selectHangoutUserList(TakeUserInfo tu){
+		return listDao.selectHangoutUserList(tu);
 	}
-
 }

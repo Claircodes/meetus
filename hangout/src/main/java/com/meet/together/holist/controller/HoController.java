@@ -52,12 +52,13 @@ public class HoController {
 		return hm;
 	}
 	
-	@RequestMapping(value = "/hangout/takeuser/count", method = RequestMethod.POST)
-	public @ResponseBody ModelMap countTakeUser(@RequestBody TakeUserInfo tu, ModelMap hm) {
-		TakeUserInfo list = ls.countTakeUser(tu);
+	@RequestMapping(value = "/hangout/takeuser/list", method = RequestMethod.POST)
+	public @ResponseBody ModelMap selectHangoutUserList(@RequestBody TakeUserInfo tu, ModelMap hm) {
+		List<UserInfo> list = ls.selectHangoutUserList(tu);
 		hm.put("list", list);
 		return hm;
 	}
+	
 
 	@RequestMapping(value = "/hangout/golist", method = RequestMethod.GET)
 	public String listsite() {

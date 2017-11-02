@@ -124,50 +124,54 @@ if (request.getParameter("hangoutNum")!=null){
 				</div>
 -->
 
-			<!-- Search Widget -->
+			<!-- 참가자 명단 -->
 			<div class="card my-4">
-				<h5 class="card-header">현재 참가자 수</h5>
-				<div class="card-body">
-					<div class="input-group">
-						<input type="text" id="participatenum" style="border:none"><button class="btn btn-secondary" type="button" id="check" onclick="check()">명단</button>
-						<span class="input-group-btn"> </span>
+				<div id="accordion" role="tablist" aria-multiselectable="true">
+					<div class="card">
+						<div class="card-header" role="tab" id="headingTwo">
+							<h5 class="mb-0">
+								<a class="collapsed" data-toggle="collapse" id="hangoutListCnt"
+									data-parent="#accordion" href="#collapseTwo"
+									aria-expanded="false" aria-controls="collapseTwo"></a>
+							</h5>
+						</div>
+						<div id="collapseTwo" class="collapse" role="tabpanel"
+							aria-labelledby="headingTwo">
+							<div class="card-block"  id="hangoutList">
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<!-- Categories Widget -->
-			<div class="card my-4">
-				<h5 class="card-header">카테고리</h5>
-				<div class="card-body">
-					<div class="row">
-						<div class="col-lg-6">
-							<ul class="list-unstyled mb-0">
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">HTML</a></li>
-								<li><a href="#">Freebies</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-6">
-							<ul class="list-unstyled mb-0">
-								<li><a href="#">JavaScript</a></li>
-								<li><a href="#">CSS</a></li>
-								<li><a href="#">Tutorials</a></li>
-							</ul>
+
+
+
+				<!-- Categories Widget -->
+				<div class="card my-4">
+					<h5 class="card-header">카테고리</h5>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-lg-6">
+								<ul class="list-unstyled mb-0">
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">HTML</a></li>
+									<li><a href="#">Freebies</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-6">
+								<ul class="list-unstyled mb-0">
+									<li><a href="#">JavaScript</a></li>
+									<li><a href="#">CSS</a></li>
+									<li><a href="#">Tutorials</a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 </div>
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-	<div class="container">
-		<p class="m-0 text-center text-white">Designe:© Phantuan -
-			Framework: bootstrap 4</p>
-	</div>
-	<!-- /.container -->
-</footer>
+
 
 <input type="hidden" id="hangoutNum" value="${param.hangoutNum}"/>
 <input type="hidden" id="userNum" value="<%=user.getUserNum()%>"/>
@@ -197,14 +201,19 @@ $(document).ready(function() {
 	}
 	
 	 var paramIds = "hangoutNum";
-     var au = new AjaxUtil("hangout/takeuser/count", paramIds);  
+     var au = new AjaxUtil("hangout/takeuser/list", paramIds);  
      au.setCallbackSuccess(callbackSql);
      au.send();
 });
 
 function callbackSql(result){
-	var user_cnt=result.list;
-	$("#participatenum").val(user_cnt.count + "명");
+	var userList=result.list;
+	$("#hangoutListCnt").text("현재 참가중인 인원: " + userList.length+"명(click)");
+	var userListHtml = "";
+	for(var i=0,max=userList.length;i<max;i++){
+		userListHtml+="<p>" + userList[i].userName + "</p>";
+	}
+	$("#hangoutList").html(userListHtml);
 }
 
 function participate(){

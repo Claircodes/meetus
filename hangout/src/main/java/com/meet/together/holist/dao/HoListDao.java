@@ -7,6 +7,7 @@ import com.meet.together.holist.dto.CategoryInfo;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
+import com.meet.together.houser.dto.UserInfo;
  
 public interface HoListDao {
 	int insertListInfo(ListInfo li);
@@ -14,11 +15,11 @@ public interface HoListDao {
 	int insertPlace(Place pi);
 	
 	int TakeUserCount(TakeUserInfo tu);
-	
-	TakeUserInfo countTakeUser(TakeUserInfo tu);
 
 	List<ListInfo> selectListInfo(ListInfo li);
-
+	
+	List<UserInfo> selectHangoutUserList(TakeUserInfo tu);
+	
 	HashMap<String, Object> selectListContent(ListInfo li);
 
 	List<CategoryInfo> selectCategoryInfo();
