@@ -10,6 +10,7 @@ import com.meet.together.holist.dao.HoListDao;
 import com.meet.together.holist.dto.CategoryInfo;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
+import com.meet.together.holist.dto.TakeUserInfo;
 
 @Service
 public class HoServiceImpl implements HoService {
@@ -43,6 +44,11 @@ public class HoServiceImpl implements HoService {
 	@Override
 	public List<ListInfo> selectCategory(ListInfo li) {
 		return listDao.selectCategory(li);
+	}
+
+	@Override
+	public int TakeUserCount(TakeUserInfo tu) {
+		return listDao.TakeUserCount(tu);
 	}
 
 }

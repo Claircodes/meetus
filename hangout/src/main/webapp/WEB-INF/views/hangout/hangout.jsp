@@ -46,8 +46,9 @@ if (request.getParameter("hangoutNum")!=null){
 			</div>
 
 
-<center><button class="btn btn-secondary" type="button" id="participate" ></button></center>
+<div id="hangout_btn">
 
+</div>
 
 		</div>
 
@@ -128,7 +129,7 @@ if (request.getParameter("hangoutNum")!=null){
 				<h5 class="card-header">현재 참가자 수</h5>
 				<div class="card-body">
 					<div class="input-group">
-						<input type="text" class="form-control" id="participatenum">
+						<a id="participatenum"></a>
 						<span class="input-group-btn"> </span>
 					</div>
 				</div>
@@ -168,8 +169,11 @@ if (request.getParameter("hangoutNum")!=null){
 	<!-- /.container -->
 </footer>
 
+<input type="hidden" id="hangoutNum" value="${param.hangoutNum}"/>
+<input type="hidden" id="userNum" value="<%=user.getUserNum()%>"/>
+
 <!-- Bootstrap core JavaScript -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	crossorigin="anonymous"></script>
 <script
@@ -187,15 +191,21 @@ $(".btn btn-secondary").click(function(){
 });
 $(document).ready(function() {
 	if (hoUserNum==$("#hcreator").text()){
-		$("#participate").html('수정');
+		$("#hangout_btn").html('<center><button class="btn btn-secondary" type="button" id="update">수정하기</button></center>');
 	}else{
-		$("#participate").html('참가하기');
+		$("#hangout_btn").html('<center><button class="btn btn-secondary" type="button" id="participate" onclick="participate()">참가하기</button></center>');
 	}
 });
 
-
-
-
+function participate(){
+	if(<%=login%>==true){
+    var paramIds="hangoutNum,userNum";
+    var au = new AjaxUtil("hangout/takeuser/insert",paramIds);
+    au.send(); 
+	}else{
+		alert("로그인을 해주세요.");
+	}
+}
 
 </script>
 </body>

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.meet.together.holist.dto.ListInfo;
-import com.meet.together.holist.dto.Place;
+import com.meet.together.holist.dto.TakeUserInfo;
 import com.meet.together.holist.service.HoService;
 import com.meet.together.houser.dto.UserInfo;
 
@@ -73,5 +73,18 @@ public class HoController {
 	      model.addAttribute("ListInfo", hm );
 	      return "hangout/hangout";
 	   }
+	   
+		@RequestMapping(value = "/hangout/takeuser/insert", method = RequestMethod.POST)
+		public @ResponseBody ModelMap TakeUserCount(@RequestBody TakeUserInfo tu, ModelMap hm) {
+			int result = ls.TakeUserCount(tu);
+			if (result == 1) {
+				hm.put("msg", "참가신청이 완료되었습니다.");
+				hm.put("url", "hangout");
+			} else {
+				hm.put("msg", "참가신청 실패, 정보를 확인하세요");
+				hm.put("url", "hangout");
+			}
+			return hm;
+		}
 
 }

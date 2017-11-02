@@ -6,11 +6,14 @@ import java.util.List;
 import com.meet.together.holist.dto.CategoryInfo;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
+import com.meet.together.holist.dto.TakeUserInfo;
  
 public interface HoListDao {
 	int insertListInfo(ListInfo li);
 
 	int insertPlace(Place pi);
+	
+	int TakeUserCount(TakeUserInfo tu);
 
 	List<ListInfo> selectListInfo(ListInfo li);
 

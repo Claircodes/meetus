@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="takeuser">
+
+	<insert id="INSERT_TAKEUSER" parameterType="takeuser">
+		insert into hangout_takeuser(
+			hangoutnum,
+			usernum)
+		values(
+			#{hangoutNum},
+			#{userNum}
+		)
+	</insert>
+	
+	<select id="COUNT_TAKEUSER" parameterType="takeuser" resultType="takeuser">
+		select count(*) from hangout_takeuser
+		where hangoutnum=#{hangoutNum}
+	</select>
+</mapper>

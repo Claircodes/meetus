@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.meet.together.holist.dto.CategoryInfo;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
+import com.meet.together.holist.dto.TakeUserInfo;
 
 @Repository
 public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
@@ -40,5 +41,10 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	@Override
 	public List<ListInfo> selectCategory(ListInfo li) {
 		return this.getSqlSession().selectList("listInfo.SELECT_CATEGORY_LIST", li);
+	}
+
+	@Override
+	public int TakeUserCount(TakeUserInfo tu) {
+		return this.getSqlSession().insert("takeuser.INSERT_TAKEUSER", tu);
 	}
 }
