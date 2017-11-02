@@ -28,7 +28,7 @@
 <link href="<c:url value='/resources/css/stylish-portfolio.css"'/>" rel="stylesheet"/>
 <script src="<c:url value='/resources/js/stylish-portfolio.js' />"></script>
 <link href="<c:url value='/resources/css/new-style.css"'/>" rel="stylesheet"/>
-   <!--  구글맵 -->
+ 
   </head>
 
   <style>
@@ -62,13 +62,12 @@
       <!-- The slideshow -->
       <div class="carousel-inner">
          <div class="carousel-item active">
-            <img src="resources/images/main-dog2.jpg" alt="Los Angeles">
+            <img src="resources/images/main-s3.jpg" alt="Los Angeles">
             <div class="carousel-caption">
                <div class="btn-dark ">
                   <h1>Hey, Let's Hangout!</h1>
-                  <h3>10월의 우수 모임, Pet is my family.</h3>
-                  <p>사람뿐만 아니라 애완견들도 커뮤니티가 필요해요. Hangout을 통해서 말이죠! - Kimberly
-                     Noma</p>
+                  <h3>가장많은 참가자 모임, Ascis Cool Run</h3>
+                  <p>매 시즌마다 남산에서 달릴때마다 서울에 더 가까워 지는걸 느껴요 - Hsiu-Kun Chen</p>
                </div>
             </div>
 
@@ -84,7 +83,7 @@
             </div>
             </div>
             <div class="carousel-item">
-               <img src="resources/images/main-s3.jpg" alt="New York">
+               <img src="resources/images/main-dog2.jpg" alt="New York">
                <div class="carousel-caption">
                   <div class="btn-dark ">
                      <h1>Hey, Let's Hangout!</h1>
