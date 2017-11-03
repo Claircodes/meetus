@@ -372,7 +372,6 @@
               <li></li>
               <li><a href="${rootPath}/hangout/create"> 모임 만들기</a></li>
               <li><a href="${rootPath}/hangout/golist"> 모임 리스트</a></li>
-              <li><a href="${rootPath}/user/profile"> 회원 정보</a></li>
               <li><a href="#"> Contact us</a></li>
             </ul>
         </div>
@@ -403,7 +402,7 @@
     <div class="container-fluid">
       <div class="row px-3">
         <div class="col-lg-6 col-md-4">
-          <p>www.hangout.com은 상업성이 아니라 팀 프로젝트 제출을 위하여 만들어진 무수익성 페이지입니다.</p>
+          <p>www.hangout.kr은 상업성이 아니라 팀 프로젝트 제출을 위하여 만들어진 무수익성 페이지입니다.</p>
         </div>
        
       </div>

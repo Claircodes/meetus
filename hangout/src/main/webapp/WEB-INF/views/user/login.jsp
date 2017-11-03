@@ -118,6 +118,7 @@
 		})
 		function callbackMain(results)
 		{
+			alert(results.msg);
 			location.href = "/" + results.url;
 		}
 	</script>
