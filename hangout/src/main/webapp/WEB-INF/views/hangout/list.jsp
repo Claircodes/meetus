@@ -21,7 +21,11 @@ String hangoutCategory = "";
 if (request.getParameter("hangoutCategory")!=null){
 	hangoutCategory = request.getParameter("hangoutCategory");
 }
-
+String hangoutArea = "";
+if (request.getParameter("hangoutArea")!=null){
+	hangoutArea = request.getParameter("hangoutArea");
+	
+}
 
 %>
 
@@ -67,7 +71,7 @@ if (request.getParameter("hangoutCategory")!=null){
       <div class="col-sm-2"></div>
                   <div class="col-sm-2">
                      <input type="text" class="form-control btn btn-primary"
-                        placeholder="서울특별시" value="<%=request.getParameter("hangoutArea")%>" id="hangoutArea">
+                        value="서울특별시" id="hangoutArea">
                   </div>
                   <div class="col-sm-4">
                      <input type="text" class="form-control btn" placeholder="TITLE" id="hangoutName">
@@ -106,6 +110,7 @@ if (request.getParameter("hangoutCategory")!=null){
    <!-- SQL을 통한 모임자동생성_ 기본 9개-->
    <script>
       $(document).ready(function() {
+
          var paramIds = "hangoutName,hangoutCategory,hangoutArea";
          var au = new AjaxUtil("hangout/list", paramIds);  
          au.setCallbackSuccess(callbackSql);
