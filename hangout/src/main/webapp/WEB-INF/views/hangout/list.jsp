@@ -65,12 +65,12 @@ if (request.getParameter("hangoutCategory")!=null){
                <p></div>
             </div>
       <div class="col-sm-2"></div>
-                  <div class="col-sm-2 text-right">
+                  <div class="col-sm-2">
                      <input type="text" class="form-control btn btn-primary"
-                        placeholder="서울특별시" id="geocomplete">
+                        placeholder="서울특별시" value="<%=request.getParameter("hangoutArea")%>" id="hangoutArea">
                   </div>
                   <div class="col-sm-4">
-                     <input type="text" class="form-control btn" placeholder="TITLE"  id="hangoutName">
+                     <input type="text" class="form-control btn" placeholder="TITLE" id="hangoutName">
                   </div>
                   <div class="col-sm-4">
                      <a href="#" class="btn btn-dark" id=searchLists>SEARCH HANGOUT</a>
@@ -106,7 +106,7 @@ if (request.getParameter("hangoutCategory")!=null){
    <!-- SQL을 통한 모임자동생성_ 기본 9개-->
    <script>
       $(document).ready(function() {
-         var paramIds = "hangoutName,hangoutCategory";
+         var paramIds = "hangoutName,hangoutCategory,hangoutArea";
          var au = new AjaxUtil("hangout/list", paramIds);  
          au.setCallbackSuccess(callbackSql);
          au.send();
@@ -163,7 +163,7 @@ if (request.getParameter("hangoutCategory")!=null){
             return
    
          }
-         var paramIds = "hangoutName,hangoutCategory";
+         var paramIds = "hangoutName,hangoutCategory,hangoutArea";
          var au = new AjaxUtil("hangout/list", paramIds);
          au.setCallbackSuccess(callbackSql);
          au.send();
@@ -178,7 +178,7 @@ if (request.getParameter("hangoutCategory")!=null){
    var set =9;
    $('.loadmore').click(function(e) {
       e.preventDefault();
-      var paramIds = "hangoutCategory";
+      var paramIds = "hangoutName,hangoutCategory";
       var au = new AjaxUtil("hangout/list", paramIds);  
       au.setCallbackSuccess(callbackSql2);
       au.send();

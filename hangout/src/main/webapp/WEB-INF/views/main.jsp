@@ -135,11 +135,11 @@
          </div>
          <div class="col-sm-2"></div>
           <div class="col-sm-5 text-right">
-                  <input type="text-center" class="form-control btn"   
-                  placeholder="검색지역을 입력해주세요." id="geocomplete">           </div>
+                  <input type="text-center" class="form-control btn" placeholder="검색지역을 입력해주세요." id="geocomplete">
+          </div>
                
          <div class="col-sm-4">      
-             <a href="${rootPath}/hangout/golist" class="btn btn-dark" id=searchplace>SEARCH HANGOUT <i class="fa fa-search" aria-hidden="true"></i></a></div>
+             <a class="btn btn-dark" id=searchplace>SEARCH HANGOUT <i class="fa fa-search" aria-hidden="true"></i></a></div>
         <!-- /.row -->
       </div>
       <!-- /.container -->
@@ -468,26 +468,22 @@ function attracta_window_height() {
 
    <script>
    
-      $(document).ready(function() {
-
-            $("#geocomplete").geocomplete().bind("geocode:result",
-                  function(event, result) {
-                     $.log("Result: " + result.vicinity);
-                  }).bind("geocode:error", function(event, status) {
-               $.log("ERROR: " + status);
-            }).bind("geocode:multiple", function(event, results) {
-               $.log("Multiple: " + results.length + " results found");
-            });
-
-            $("#find").click(function() {
-               $("#geocomplete").trigger("geocode");
-            });
-
-            $("#examples a").click(function() {
-               $("#geocomplete").val($(this).text()).trigger("geocode");
-               return false;
-            });
+   $(document).ready(function() {
+       $("#geocomplete").geocomplete().bind("geocode:result",
+             function(event, result) {
+             }).bind("geocode:error", function(event, status) {
+       }).bind("geocode:multiple", function(event, results) {
        });
+           $("#searchplace").click(function() {
+          $("#geocomplete").trigger("geocode");
+       });
+
+           $("#searchplace").click(function(){
+        	  var words = $("#geocomplete").val().replace("대한민국 ", "");
+        	 	  pageMove("hangout/golist?hangoutArea="+words);
+        	   })
+  });
+
    </script>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places"></script>
    <script src="<c:url value='/resources/js/jquery.geocomplete.js' />"></script>

@@ -49,6 +49,9 @@
 		<if test="hangoutCreator != '' and hangoutCreator != null">
 		and hangoutcreator like #{hangoutCreator}
 		</if>
+		<if test="hangoutArea != '' and hangoutArea != null">
+		and hangoutarea like #{hangoutArea}
+		</if>
 	</select>
 	
 	<select id="SELECT_LIST_ONE" parameterType="listInfo" resultType="java.util.HashMap">
