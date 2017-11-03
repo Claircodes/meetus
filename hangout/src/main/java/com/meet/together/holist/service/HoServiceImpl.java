@@ -37,6 +37,7 @@ public class HoServiceImpl implements HoService {
 	public HashMap<String,Object> selectListContent(ListInfo li) {
 		return listDao.selectListContent(li);
 	}
+
 	@Override
 	public List<CategoryInfo> selectCategoryInfo() {
 		return listDao.selectCategoryInfo();
@@ -58,7 +59,7 @@ public class HoServiceImpl implements HoService {
 	}
 
 	@Override
-	public List<TakeUserInfo> selectTakeUserList(TakeUserInfo tu) {
+	public TakeUserInfo selectTakeUserList(TakeUserInfo tu) {
 		return listDao.selectTakeUserList(tu);
 	}
 }

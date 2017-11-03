@@ -52,6 +52,13 @@ public class HoController {
 		return hm;
 	}
 	
+	@RequestMapping(value = "/hangout/takeuser/check", method = RequestMethod.POST)
+	public @ResponseBody ModelMap selectTakeUserList(@RequestBody TakeUserInfo tu, ModelMap hm) {
+		TakeUserInfo list = ls.selectTakeUserList(tu);
+		hm.put("list", list);
+		return hm;
+	}
+	
 	@RequestMapping(value = "/hangout/takeuser/list", method = RequestMethod.POST)
 	public @ResponseBody ModelMap selectHangoutUserList(@RequestBody TakeUserInfo tu, ModelMap hm) {
 		List<UserInfo> list = ls.selectHangoutUserList(tu);

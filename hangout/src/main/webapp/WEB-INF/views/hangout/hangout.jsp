@@ -190,7 +190,6 @@ if (request.getParameter("hangoutNum")!=null){
 	crossorigin="anonymous"></script>
 <script type="text/javascript">
 var hoUserNum = <%=user.getUserNum()%>;
-var overlapNumCheck=false;
 
 $(".btn btn-secondary").click(function(){
 	pageMove("hangout?hangoutNum=");
@@ -213,24 +212,19 @@ function callbackSql(result){
 	$("#hangoutListCnt").text("현재 참가중인 인원: " + userList.length+"명(click)");
 	var userListHtml = "";
 	for(var i=0,max=userList.length;i<max;i++){
-		userListHtml+="<p><a href='${rootPath}/user/profile?userNum=" + userList[i].userNum + "&userId=" + userList[i].userId + "'>" + userList[i].userName + "</a></p>";
+		userListHtml+="<p>" + userList[i].userName + "</p>";
 		}
 	$("#hangoutList").html(userListHtml);
 }
 
+
+
 function participate(){
 	if(<%=login%>==true){
-	    var au = new AjaxUtil("hangout/takeuser/check","userNum");
+		var paramIds="hangoutNum,userNum";
+	    var au = new AjaxUtil("hangout/takeuser/check",paramIds);
 	    au.setCallbackSuccess(overlapNumCheck);
 	    au.send(); 
-	    
-	if(overlapNumCheck==true){
-    var paramIds="hangoutNum,userNum";
-    var au = new AjaxUtil("hangout/takeuser/insert",paramIds);
-    au.send(); 
-	}else{
-		alert("이미 참가신청을 하였습니다.");
-	}
 }else{
 	alert("로그인을 해주세요.");
 	}
@@ -238,13 +232,19 @@ function participate(){
 
 function overlapNumCheck(result){
 	var numList=result.list;
-	
-	for(var i=0;i<numList.length;i++){
-		if(numList.userNum==hoUserNum){
-			return;
-		}
+	if(numList==null){
+		var paramIds="hangoutNum,userNum";
+	    var au = new AjaxUtil("hangout/takeuser/insert",paramIds);
+	    au.send(); 
 	}
-	overlapNumCheck=true;
+	
+		if(numList.userNum==hoUserNum){
+			alert("이미 참가신청을 하였습니다.");
+			return;
+	}
+		var paramIds="hangoutNum,userNum";
+	    var au = new AjaxUtil("hangout/takeuser/insert",paramIds);
+	    au.send(); 
 }
 </script>
 </body>

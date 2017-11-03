@@ -22,6 +22,7 @@
 	
 		<select id="SELECT_TAKEUSER" parameterType="takeuser" resultType="takeuser">
 		select usernum from hangout_takeuser
-		where usernum=#{userNum};
+		where usernum=#{userNum}
+		and hangoutnum=#{hangoutNum}
 	</select>
 </mapper>

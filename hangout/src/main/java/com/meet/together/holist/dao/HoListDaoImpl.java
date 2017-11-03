@@ -33,6 +33,7 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	public HashMap<String,Object> selectListContent(ListInfo li) {
 		return this.getSqlSession().selectOne("listInfo.SELECT_LIST_ONE", li);
 	}
+	
 
 	@Override
 	public List<CategoryInfo> selectCategoryInfo() {
@@ -55,7 +56,7 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	}
 
 	@Override
-	public List<TakeUserInfo> selectTakeUserList(TakeUserInfo tu) {
-		return this.getSqlSession().selectList("takeuser.SELECT_TAKEUSER",tu);
+	public TakeUserInfo selectTakeUserList(TakeUserInfo tu) {
+		return this.getSqlSession().selectOne("takeuser.SELECT_TAKEUSER",tu);
 	}
 }

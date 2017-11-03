@@ -28,8 +28,8 @@
 </div>
 
 
-<input type="hidden" id="userId" value="${param.userId}"/>
-<input type="hidden" id="userNum" value="${param.userNum}"/>
+<input type="hidden" id="userId" value="<%=user.getUserId()%>"/>
+<input type="hidden" id="userNum" value="<%=user.getUserNum()%>"/>
 <script>
 	$(document).ready(function() {
 		var paramIds = "userNum,userId";
