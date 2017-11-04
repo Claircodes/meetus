@@ -110,7 +110,10 @@ if (request.getParameter("hangoutArea")!=null){
    <!-- SQL을 통한 모임자동생성_ 기본 9개-->
    <script>
       $(document).ready(function() {
-
+         var area = "<%=hangoutArea%>";
+         if (area!=null){
+        	 $("#hangoutArea").val(area);
+         }
          var paramIds = "hangoutName,hangoutCategory,hangoutArea";
          var au = new AjaxUtil("hangout/list", paramIds);  
          au.setCallbackSuccess(callbackSql);

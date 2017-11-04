@@ -10,8 +10,8 @@ public class ListInfo
 	private String hangoutName;
 	private String hangoutContent;
 	private String hangoutArea;
-	private String hangoutOpenDate;
-	private String hangoutCloseDate;
+	private String hangoutOpendate;
+	private String hangoutClosedate;
 	private String hangoutDate;
 	private String hangoutCategory;
 	private String hangoutTag;
@@ -46,18 +46,7 @@ public class ListInfo
 	public void setHangoutArea(String hangoutArea) {
 		this.hangoutArea = hangoutArea;
 	}
-	public String getHangoutOpenDate() {
-		return hangoutOpenDate;
-	}
-	public void setHangoutOpenDate(String hangoutOpenDate) {
-		this.hangoutOpenDate = hangoutOpenDate;
-	}
-	public String getHangoutCloseDate() {
-		return hangoutCloseDate;
-	}
-	public void setHangoutCloseDate(String hangoutCloseDate) {
-		this.hangoutCloseDate = hangoutCloseDate;
-	}
+
 	public String getHangoutDate() {
 		return hangoutDate;
 	}
@@ -76,13 +65,24 @@ public class ListInfo
 	public void setHangoutTag(String hangoutTag) {
 		this.hangoutTag = hangoutTag;
 	}
+	public String getHangoutOpendate() {
+		return hangoutOpendate;
+	}
+	public void setHangoutOpendate(String hangoutOpendate) {
+		this.hangoutOpendate = hangoutOpendate;
+	}
+	public String getHangoutClosedate() {
+		return hangoutClosedate;
+	}
+	public void setHangoutClosedate(String hangoutClosedate) {
+		this.hangoutClosedate = hangoutClosedate;
+	}
 	@Override
 	public String toString() {
 		return "ListInfo [hangoutNum=" + hangoutNum + ", hangoutCreator=" + hangoutCreator + ", hangoutName="
 				+ hangoutName + ", hangoutContent=" + hangoutContent + ", hangoutArea=" + hangoutArea
-				+ ", hangoutOpenDate=" + hangoutOpenDate + ", hangoutCloseDate=" + hangoutCloseDate + ", hangoutDate="
-				+ hangoutDate + ", hangoutCategory=" + hangoutCategory + ", hangoutTag=" + hangoutTag
-				+ "]";
+				+ ", hangoutOpendate=" + hangoutOpendate + ", hangoutClosedate=" + hangoutClosedate + ", hangoutDate="
+				+ hangoutDate + ", hangoutCategory=" + hangoutCategory + ", hangoutTag=" + hangoutTag + "]";
 	}
 
 	
