@@ -40,7 +40,7 @@ if (request.getParameter("hangoutNum")!=null){
 
 				</div>
 				<div class="card-footer text-muted">
-					모임 기간 : ${ListInfo.hangoutOpenDate}- ${ListInfo.hangoutCloseDate}<br>
+					모임 기간 : ${ListInfo.hangoutOpendate}- ${ListInfo.hangoutClosedate}<br>
 					모임 날짜 : ${ListInfo.hangoutDate}
 				</div>
 			</div>

@@ -34,28 +34,28 @@ if (request.getParameter("hangoutArea")!=null){
 <input type="text" id="hangoutCategory" value="<%=hangoutCategory%>" hidden=hidden" >
     <tbody>
       <tr>
-        <td><input type="button" class="btn btn-info" value="ART" style="width:100%;height:100%"></td>
-        <td><input type="button" class="btn btn-info" value="BEAUTY"style="width:100%;height:100%"></td>
-        <td><input type="button" class="btn btn-info" value="BOOK" style="width:100%;height:100%"></td>
-        <td><input type="button" class="btn btn-info" value="BUSINESS" style="width:100%;height:100%"></td>
+        <td><input type="button" class="btn btn-info" id="ART" value="ART" style="width:100%;height:100%"></td>
+        <td><input type="button" class="btn btn-info" id="BEAUTY" value="BEAUTY" style="width:100%;height:100%"></td>
+        <td><input type="button" class="btn btn-info" id="BOOK" value="BOOK" style="width:100%;height:100%"></td>
+        <td><input type="button" class="btn btn-info" id="BUSINESS" value="BUSINESS" style="width:100%;height:100%"></td>
       </tr>
       <tr>
-        <td><input  type="button" class="btn btn-info" value="DANCE" style="width:100%;height:100%"></td>
-        <td><input  type="button" class="btn btn-info" value="EDUCATION" style="width:100%;height:100%"></td>
-        <td><input  type="button" class="btn btn-info" value="FOOD" style="width:100%;height:100%"></td>
-        <td><input  type="button" class="btn btn-info" value="GAME" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="DANCE" value="DANCE" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="EDUCATION" value="EDUCATION" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="FOOD" value="FOOD" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="GAME" value="GAME" style="width:100%;height:100%"></td>
       </tr>
       <tr>
-        <td><input  type="button" class="btn btn-info" value="LANGUAGE" style="width:100%;height:100%"></td>
-        <td><input  type="button" class="btn btn-info" value="MOVIE" style="width:100%;height:100%"></td>
-        <td><input  type="button" class="btn btn-info" value="MUSIC" style="width:100%;height:100%"></td>
-        <td><input  type="button" class="btn btn-info" value="PET" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="LANGUAGE" value="LANGUAGE" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="MOVIE" value="MOVIE" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="MUSIC" value="MUSIC" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="PET" value="PET" style="width:100%;height:100%"></td>
       </tr>
       <tr>
-        <td><input  type="button" class="btn btn-info" value="PHOTO" style="width:100%;height:100%"></td>
-        <td><input  type="button" class="btn btn-info" value="RELIGION" style="width:100%;height:100%"></td>
-        <td><input  type="button" class="btn btn-info" value="SPORT" style="width:100%;height:100%"></td>
-        <td><input  type="button" class="btn btn-info" value="TECHNICAL" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="PHOTO" value="PHOTO" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="RELIGION" value="RELIGION" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="SPORT" value="SPORT" style="width:100%;height:100%"></td>
+        <td><input  type="button" class="btn btn-info" id="TECHNICAL" value="TECHNICAL" style="width:100%;height:100%"></td>
       </tr>
     </tbody>
   </table>
@@ -111,8 +111,13 @@ if (request.getParameter("hangoutArea")!=null){
    <script>
       $(document).ready(function() {
          var area = "<%=hangoutArea%>";
-         if (area!=null){
+         if (area!=null | area!=""){
         	 $("#hangoutArea").val(area);
+         }
+         var category = "<%=hangoutCategory%>";
+         if(category!=null | category!=""){
+        	 $("#hangoutCategory").val(category);  
+        	 $('#'+category).attr("class","btn btn-info active");
          }
          var paramIds = "hangoutName,hangoutCategory,hangoutArea";
          var au = new AjaxUtil("hangout/list", paramIds);  
