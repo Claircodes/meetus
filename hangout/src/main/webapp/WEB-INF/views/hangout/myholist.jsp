@@ -16,7 +16,7 @@
 			<div class="col-sm-12 text-center">
 				<div class="text-vertical-center">
 					<h1>
-						내가 만든 모임 리스트 <a href="<c:url value='/hangout/partimylist'/>"
+						내가 만든 모임 리스트 <a href="<c:url value='/hangout/partimylist?create=${param.creator}'/>"
 							class="btn btn-dark" id="participateLists">참가 중인 모임</a>
 					</h1>
 					<p>

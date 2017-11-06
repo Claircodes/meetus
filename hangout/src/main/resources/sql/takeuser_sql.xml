@@ -25,4 +25,14 @@
 		where usernum=#{userNum}
 		and hangoutnum=#{hangoutNum}
 	</select>
+	
+	<select id="SELECT_PARTICIPATE_USER" parameterType="takeuser" resultType="listInfo">
+			select hi.* from hangout_info hi, hangout_takeuser th, user_info ui
+		where hi.hangoutnum = th.hangoutnum
+		and ui.usernum=th.usernum
+		and ui.usernum=#{userNum}
+		<if test="hangoutName != '' and hangoutName != null">
+		and hi. hangoutname like concat('%',#{hangoutName},'%')
+		</if>
+		</select>
 </mapper>

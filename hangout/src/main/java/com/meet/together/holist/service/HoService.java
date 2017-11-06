@@ -20,4 +20,5 @@ public interface HoService {
 	TakeUserInfo selectTakeUserList(TakeUserInfo tu);
 	List<ListInfo> selectCategory(ListInfo li);
 	List<UserInfo> selectHangoutUserList(TakeUserInfo tu);
+	List<ListInfo> selectParticipateUserList(TakeUserInfo tu);
 }

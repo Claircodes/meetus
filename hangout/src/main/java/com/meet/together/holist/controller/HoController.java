@@ -65,7 +65,6 @@ public class HoController {
 		hm.put("list", list);
 		return hm;
 	}
-	
 
 	@RequestMapping(value = "/hangout/golist", method = RequestMethod.GET)
 	public String listsite() {
@@ -99,6 +98,13 @@ public class HoController {
 				hm.put("msg", "참가신청 실패, 정보를 확인하세요");
 				hm.put("url", "hangout");
 			}
+			return hm;
+		}
+		
+		@RequestMapping(value = "/hangout/takeuser/participate", method = RequestMethod.POST)
+		public @ResponseBody ModelMap selectParticipateUserList(@RequestBody TakeUserInfo tu, ModelMap hm) {
+			List<ListInfo> list = ls.selectParticipateUserList(tu);
+			hm.put("list", list);
 			return hm;
 		}
 }

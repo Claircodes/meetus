@@ -62,4 +62,9 @@ public class HoServiceImpl implements HoService {
 	public TakeUserInfo selectTakeUserList(TakeUserInfo tu) {
 		return listDao.selectTakeUserList(tu);
 	}
+
+	@Override
+	public List<ListInfo> selectParticipateUserList(TakeUserInfo tu) {
+		return listDao.selectParticipateUserList(tu);
+	}
 }

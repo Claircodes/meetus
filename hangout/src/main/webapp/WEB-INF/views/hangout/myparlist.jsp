@@ -17,7 +17,7 @@
 				<div class="text-vertical-center">
 					<h1>
 						내가 참가중인 모임 리스트 
-						<a href="<c:url value='/hangout/myholist'/>" class="btn btn-dark" id="participateLists">내가 만든 모임</a>
+						<a href="#" class="btn btn-dark" id="participateLists" onclick="gomylist()">내가 만든 모임</a>
 					</h1>
 					<p>
 				</div>
@@ -59,23 +59,20 @@
 
 
 
-<input type="hidden" id="hangoutCreator" value="${param.creator}"/>
+<input type="hidden" id="userNum" value="<%=user.getUserNum()%>"/>
 <script> 
     $(document).ready(function(){
-       var paramIds="hangoutName,hangoutCreator";
-       var au = new AjaxUtil("hangout/list",paramIds);
-       au.setCallbackSuccess(callbackSql);
+       var paramIds="hangoutName,userNum";
+       var au = new AjaxUtil("hangout/takeuser/participate",paramIds);
+       au.setCallbackSuccess(participateSql);
        au.send(); 
     });
-    function listclick(url){
-    	pageMove("hangout?hangoutNum="+url);
-        }   
     
-   function callbackSql(result){
-      var hangoutList=result.list;
+   function participateSql(result){
+      var participateList=result.list;
       var str = "";
-      for (var i = 0, max = hangoutList.length; i < max; i++) {
-         var list = hangoutList[i]; 
+      for (var i = 0, max = participateList.length; i < max; i++) {
+         var list = participateList[i]; 
          str += "<div class='mt-4 col-sm-4'>";
          str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
          str += "<h5 class='card-header'>" + list.hangoutName + "</h5>";
@@ -88,17 +85,22 @@
          }
       $("#list_body").html(str);
       }
+   
     $("#searchLists").click(function(){
        var hangoutName= $("#hangoutName").val().trim();
       if(hangoutName==""){
          alert("모임이름을 입력해주세요");
          return
       }
-      var paramIds="hangoutName,hangoutCreator";
-       var au = new AjaxUtil("hangout/list",paramIds);
-       au.setCallbackSuccess(callbackSql);
+      var paramIds="hangoutName,userNum";
+       var au = new AjaxUtil("hangout/takeuser/participate",paramIds);
+       au.setCallbackSuccess(participateSql);
         au.send();
     });
+    
+    function listclick(url){
+    	pageMove("hangout?hangoutNum="+url);
+        }   
     
     function gomylist(){
     	var usernum="<%=user.getUserNum()%>";
