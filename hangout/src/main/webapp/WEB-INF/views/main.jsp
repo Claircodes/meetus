@@ -153,14 +153,16 @@
       </div>
     </aside>
 
+
+
     <!-- Portfolio -->
     <section id="portfolio" class="portfolio">
       <div class="container">
         <div class="row justify-content-center align-self-center">
-          <div class="col-lg-10 mx-auto">
-            <h2>카테고리별 모임 찾기</h2>
-            <hr class="small">
-                       <div class="row">
+          <h2>카테고리별 모임 찾기</h2>
+          <div class="col-sm-10 mx-auto">
+            
+              <div class="row justify-content-center align-self-center">
               <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=ART"><center>
@@ -171,7 +173,7 @@
                   </h4>
                 </div>
               </div>
-             <div class="col-sm-2">
+             <div class="col-sm-2 ">
                 <div class="portfolio-item">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=BEAUTY"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/beauty.png'/>"/>
@@ -201,6 +203,8 @@
                   </h4>
                 </div>
               </div>
+              </div>
+              <div class="row justify-content-center align-self-center">
               <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=DANCE"><center>
@@ -211,6 +215,7 @@
                   </h4>
                 </div>
               </div>
+              
               <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=EDUCATION"><center>
@@ -241,6 +246,8 @@
                   </h4>
                 </div>
               </div>
+              </div>
+              <div class="row justify-content-center align-self-center">
                 <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=LANGUAGE"> <center>
@@ -282,6 +289,8 @@
                   </h4>
                 </div>
               </div>
+              </div>
+              <div class="row justify-content-center align-self-center">
               <div class="col-sm-2">
                 <div class="portfolio-item">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=PHOTO"> <center>
@@ -322,9 +331,6 @@
                   </h4>
                 </div>
               </div>
-              
-              
-              
             </div>
 
             <!-- /.row (nested) -->
