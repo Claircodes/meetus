@@ -12,6 +12,13 @@ public class UserInfo {
 	private String userPhone;
 	private String userGender;
 	private String userCountry;
+	public String getUserImage() {
+		return userImage;
+	}
+	public void setUserImage(String userImage) {
+		this.userImage = userImage;
+	}
+	private String userImage;
 	public int getUserNum() {
 		return userNum;
 	}
@@ -64,7 +71,8 @@ public class UserInfo {
 	public String toString() {
 		return "UserInfo [userNum=" + userNum + ", userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName
 				+ ", userEmail=" + userEmail + ", userPhone=" + userPhone + ", userGender=" + userGender
-				+ ", userCountry=" + userCountry + "]";
+				+ ", userCountry=" + userCountry + ", userImage=" + userImage + "]";
 	}
+
 
 }

@@ -4,14 +4,14 @@
 <mapper namespace="user">
 	<insert id="USER_SIGNUP" parameterType="user">
 		insert into user_info
-			(userId, userPwd, userName, userEmail, userPhone, userGender, userCountry)
+			(userId, userPwd, userName, userEmail, userPhone, userGender, userCountry, userImage)
 		values
-			(#{userId}, #{userPwd}, #{userName}, #{userEmail}, #{userPhone}, #{userGender}, #{userCountry})
+			(#{userId}, #{userPwd}, #{userName}, #{userEmail}, #{userPhone}, #{userGender}, #{userCountry}, #{userImage} )
 	</insert>
  
 	<select id="USER_LOGIN" parameterType="user" resultType="user">
 		select
-			usernum, userid, userpwd, username, useremail, userphone, usergender, usercountry
+			usernum, userid, userpwd, username, useremail, userphone, usergender, usercountry, userimage
 		from user_info
 		where 1=1
 		<if test="userId != null and userId !=''">
@@ -38,7 +38,7 @@
 
 	<select id="GET_USER_PROFILE" parameterType="user" resultType="user">
 			select 
-			usernum, userid, userpwd, username, useremail, userphone, usergender, usercountry
+			usernum, userid, userpwd, username, useremail, userphone, usergender, usercountry, userimage
 			from user_info
 			where 1=1
 				<if test="userNum != 0">
@@ -53,6 +53,7 @@
 			usercountry=#{userCountry},
 			useremail=#{userEmail},
 			userphone=#{userPhone}
+			userimage=#{userImage}
 		where userid=#{userId}
 	</update>
 	

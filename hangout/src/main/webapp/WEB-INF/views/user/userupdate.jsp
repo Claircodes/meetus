@@ -92,7 +92,11 @@ function callbackSql(result){
     str+="<td>Phone Number</td>";
      str+="<td><input id='userPhone' type='text' value='" + profileList.userPhone +"' style='border:none;'>";
     str+="</td>";
-
+    str+="</tr>";
+    str+="<td>Upload Picture</td>";
+    str+="<td><form method='post' enctype='multipart/form-data' action='imgup.jsp' ><input type='file' name='userPicture' class='btn-link-2'></form></td>";
+    str+="<td><input id='userPicture' type='submit' value='upload'>";
+   str+="</td>";
     str+="</tr>";
 
      str+="</tbody></div>";
