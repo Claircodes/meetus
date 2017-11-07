@@ -473,10 +473,12 @@ function attracta_window_height() {
       <!-- 구글맵 도시검색 -->
 
    <script>
+   var words=" ";
    
    $(document).ready(function() {
        $("#geocomplete").geocomplete().bind("geocode:result",
              function(event, result) {
+    	  words= result.vicinity;
              }).bind("geocode:error", function(event, status) {
        }).bind("geocode:multiple", function(event, results) {
        });
@@ -485,7 +487,7 @@ function attracta_window_height() {
        });
 
            $("#searchplace").click(function(){
-        	  var words = $("#geocomplete").val().replace("대한민국 ", "");
+        	 // var words = $("#geocomplete").val().replace("대한민국 ", "");
         	 	  pageMove("hangout/golist?hangoutArea="+words);
         	   })
   });

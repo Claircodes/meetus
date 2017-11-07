@@ -41,7 +41,7 @@ if (request.getParameter("hangoutArea")!=null){
       <div class="col-sm-2"></div>
                   <div class="col-sm-2">
                      <input type="text" class="form-control btn btn-primary"
-                        value="서울특별시" id="hangoutArea" placeholder="서울특별시">
+                           id="hangoutArea" placeholder="지역검색">
                   </div>
                   <div class="col-sm-4">
                      <input type="text" class="form-control btn" placeholder="TITLE" id="hangoutName">
@@ -109,6 +109,7 @@ if (request.getParameter("hangoutArea")!=null){
    <script>
       $(document).ready(function() {
          var area = "<%=hangoutArea%>";
+  
          if (area!=null | area!=""){
         	 $("#hangoutArea").val(area);
          }
@@ -117,6 +118,18 @@ if (request.getParameter("hangoutArea")!=null){
         	 $("#hangoutCategory").val(category);  
         	 $('#'+category).attr("class","btn btn-info active");
          }
+         
+         $("#hangoutArea").geocomplete().bind("geocode:result",
+                 function(event, result) {
+        	$("#hangoutArea").val(result.vicinity);
+        	var area_search=result.vicinity;
+                 }).bind("geocode:error", function(event, status) {
+           }).bind("geocode:multiple", function(event, results) {
+           });
+         $("#searchLists").click(function() {
+             $("#hangoutArea").trigger("geocode");
+          });
+         
          var paramIds = "hangoutName,hangoutCategory,hangoutArea";
          var au = new AjaxUtil("hangout/list", paramIds);  
          au.setCallbackSuccess(callbackSql);
@@ -169,11 +182,11 @@ if (request.getParameter("hangoutArea")!=null){
       }
       $("#searchLists").click(function() {
          var hangoutName = $("#hangoutName").val().trim();
-         if (hangoutName == "") {
-            alert("모임이름을 입력해주세요");
-            return
+       //  if (hangoutName == "") {
+         //   alert("모임이름을 입력해주세요");
+         //   return
    
-         }
+        // }
          var paramIds = "hangoutName,hangoutCategory,hangoutArea";
          var au = new AjaxUtil("hangout/list", paramIds);
          au.setCallbackSuccess(callbackSql);
@@ -220,4 +233,9 @@ if (request.getParameter("hangoutArea")!=null){
    <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
    <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
    <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
+   
+ 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places"></script>
+	<script src="<c:url value='/resources/js/jquery.geocomplete.js' />"></script>
+	<script src="<c:url value='/resources/js/logger.js' />"></script>
 </html>
