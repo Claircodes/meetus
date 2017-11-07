@@ -1,29 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
-		<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
+      <link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
         <link rel="stylesheet" href="<c:url value='/resources/css/style-hangout.css'/>">
     <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
+
       #map {
         height: 100%;
       }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+
       .controls {
         background-color: #fff;
         border-radius: 2px;
         border: 1px solid transparent;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         box-sizing: border-box;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
+
         height: 29px;
         margin-left: 17px;
         margin-top: 10px;
@@ -36,9 +28,7 @@
       .controls:focus {
         border-color: #4d90fe;
       }
-      .title {
-        font-weight: bold;
-      }
+
       #infowindow-content {
         display: none;
       }
@@ -47,9 +37,7 @@
       }
 
     </style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 </head>
 <div id="fb-root"></div>
@@ -66,26 +54,29 @@ if (request.getParameter("hangoutNum")!=null){
 <div class="container">
 <div class="form-bottom">
    <div class="row">
-
-
-			<!-- title box -->
-			<div class="col-md-8">
-				<div class="form-top">
-					<h1>
-						<div id="hangout_btn"></div>
-					</h1>
-					HANGOUT 제목: <input type="text" placeholder="Enter text ..."
-						style="width: 310px; height: 50px">
-					<button class="btn btn-secondary pull-right" type="button"
-						id="participate" onclick="participate()">수정완료</button>
-					</p>
-					HANGOUT 기간: <input type="text-center" placeholder="how long?">
-					HANGOUT 날짜: <input type="text-center" placeholder="when is it?">
-					</p>
-				</div>
-				<br>
-
-	<div style="width:90%; height:50%">
+         <!-- title box -->
+         <div class="col-md-8">
+            <div class="form-top">
+               <h1>
+                  <div id="hangout_btn"></div>
+               </h1>
+               HANGOUT 제목: <input type="text" placeholder="Enter text ..."
+                  style="width: 310px; height: 50px">
+               <button class="btn btn-secondary pull-right" type="button"
+                  id="participate" onclick="participate()">수정완료</button>
+               </p>
+               HANGOUT 기간: <input type="text-center" placeholder="how long?">
+               HANGOUT 날짜: <input type="text-center" placeholder="when is it?">
+               </p>
+            </div>
+            <br>
+            
+            
+            
+         <div class="form-top">
+               Address 검색
+            </div>
+   <div style="height:50%">
     <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
     <div id="map" ></div>
 
@@ -94,125 +85,137 @@ if (request.getParameter("hangoutNum")!=null){
       Place ID <span id="place-id"></span><br>
       <span id="place-address"></span>
     </div>
-    선택한 주소 :<input type="text" id="placeName" name="placeName"><input type="text"id="placeId" name="placeId"/><input type="text" id="placeAddress" name="placeAddress"/>
-        <input type="button" id="btn" value="버튼"name="btn">
-    </div>
+ 
+          
+         <div class="form-top">
+                  선택한 주소 : <div id="placeAddress" name="placeAddress"></div>
+            
+        <input type="button" id="btnAddress" value="버튼"name="btn">
+
+            </div>
+      
 <br>
-				<!-- Blog Post -->
-				<div class="form-top">
-					<br>
-					<div id="hcreator" style="display: none;">${ListInfo.hangoutCreator}</div>
-					<div class="container">
-						<div class="hero-unit" style="margin-top: 40px">
-							<h2 style="font-size: 58px">Editor Form</h2>
-							<hr />
-							<textarea class="textarea" placeholder="Enter text ..."
-								style="width: 610px; height: 200px"></textarea>
-						</div>
-						<div class="row">
-							<div class="span6">
-								<pre class="prettyprint linenums">$('.textarea').wysihtml5();</pre>
-								</p>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="card-body">
-						<form method='post' enctype='multipart/form-data'
-							action='imgup.jsp'>
-							<input type='file' name='userPicture' class='btn-link-2'>
-						</form>
-						<input id='userPicture' class='btn-link-2' type='submit'
-							value='upload' class='btn-link-2'>
-
-						<p class="card-text">${ListInfo}<br>
-							${ListInfo.hangoutCategory}
-						</p>
-					</div>
-				</div>
-			</div>
 
 
 
 
 
-			<div class="col-md-4 ">
-				<!-- Category box -->
-				<div class="form-top">
-					<h5 class="card-header">Category</h5>
-					<div class="desc">
-						<a href="#"><h6>${ListInfo.hangoutTag}</h6></a>
-						
-					</div>
 
-				</div>
-				</br>
+            <!-- Blog Post -->
+            <div class="form-top">
+               <br>
+               <div id="hcreator" style="display: none;">${ListInfo.hangoutCreator}</div>
+               <div class="container">
+                  <div class="hero-unit" style="margin-top: 40px">
+                     <h2 style="font-size: 58px">Editor Form</h2>
+                     <hr />
+                     <textarea class="textarea" placeholder="Enter text ..."
+                        style="width: 610px; height: 200px"></textarea>
+                  </div>
+                  <div class="row">
+                     <div class="span6">
+                        <pre class="prettyprint linenums">$('.textarea').wysihtml5();</pre>
+                        </p>
+                     </div>
+                  </div>
+               </div>
 
-				<!-- Operator box -->
-				<div class="form-top">
-					<h5 class="card-header">Operator</h5>
 
-					<div class="cardheader"></div>
-					<div class="avatar">
-						<img alt=""
-							src="http://cfile233.uf.daum.net/image/193BA6384DE105340A2D8E"
-							width="100%" height="80%">
-					</div>
-					<div class="info">
-						<div class="title">
-							<br /> <a target="_blank" href="http://scripteden.com/"><h3
-									align="center">${ListInfo.userName}</h3></a>
-						</div>
-						<div class="desc">
-							<h6>핸드폰번호:${ListInfo.userPhone}</h6>
-						</div>
-						<div class="desc">
-							<h6>국적:${ListInfo.userCountry}</h6>
-						</div>
-						<div class="desc">
-							<h6>이메일:${ListInfo.userEmail}</h6>
-						</div>
+               <div class="card-body">
+                  <form method='post' enctype='multipart/form-data'
+                     action='imgup.jsp'>
+                     <input type='file' name='userPicture' class='btn-link-2'>
+                  </form>
+                  <input id='userPicture' class='btn-link-2' type='submit'
+                     value='upload' class='btn-link-2'>
 
-					</div>
-				</div>
-				<br>
+                  <p class="card-text">${ListInfo}<br>
+                     ${ListInfo.hangoutCategory}
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
 
 
 
-			<!-- 참가자 box -->
-				<div class="form-top">
-					<h5 class="card-header">Participant</h5>
-					<div class="col-lg-6">
-						<div class="card-block" id="hangoutList"></div>
-					</div>
-				</div>
-				<br>
 
-				<!-- Topic & tag box -->
-				<div class="form-top">
-					<h5 class="card-header">Topic & Tag</h5>
-					<div class="card-body">
-						<div class="row">
-							<div class="col-lg-6">
-								<ul class="list-unstyled mb-0">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">HTML</a></li>
-									<li><a href="#">Freebies</a></li>
-								</ul>
-							</div>
-							<div class="col-lg-6">
-								<ul class="list-unstyled mb-0">
-									<li><a href="#">JavaScript</a></li>
-									<li><a href="#">CSS</a></li>
-									<li><a href="#">Tutorials</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+         <div class="col-md-4 ">
+            <!-- Category box -->
+            <div class="form-top">
+               <h5 class="card-header">Category</h5>
+               <div class="desc">
+                  <a href="#"><h6>${ListInfo.hangoutTag}</h6></a>
+                  
+               </div>
+
+            </div>
+            </br>
+
+            <!-- Operator box -->
+            <div class="form-top">
+               <h5 class="card-header">Operator</h5>
+
+               <div class="cardheader"></div>
+               <div class="avatar">
+                  <img alt=""
+                     src="http://cfile233.uf.daum.net/image/193BA6384DE105340A2D8E"
+                     width="100%" height="80%">
+               </div>
+               <div class="info">
+                  <div class="title">
+                     <br /> <a target="_blank" href="http://scripteden.com/"><h3
+                           align="center">${ListInfo.userName}</h3></a>
+                  </div>
+                  <div class="desc">
+                     <h6>핸드폰번호:${ListInfo.userPhone}</h6>
+                  </div>
+                  <div class="desc">
+                     <h6>국적:${ListInfo.userCountry}</h6>
+                  </div>
+                  <div class="desc">
+                     <h6>이메일:${ListInfo.userEmail}</h6>
+                  </div>
+
+               </div>
+            </div>
+            <br>
+
+
+
+         <!-- 참가자 box -->
+            <div class="form-top">
+               <h5 class="card-header">Participant</h5>
+               <div class="col-lg-6">
+                  <div class="card-block" id="hangoutList"></div>
+               </div>
+            </div>
+            <br>
+
+            <!-- Topic & tag box -->
+            <div class="form-top">
+               <h5 class="card-header">Topic & Tag</h5>
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col-lg-6">
+                        <ul class="list-unstyled mb-0">
+                           <li><a href="#">Web Design</a></li>
+                           <li><a href="#">HTML</a></li>
+                           <li><a href="#">Freebies</a></li>
+                        </ul>
+                     </div>
+                     <div class="col-lg-6">
+                        <ul class="list-unstyled mb-0">
+                           <li><a href="#">JavaScript</a></li>
+                           <li><a href="#">CSS</a></li>
+                           <li><a href="#">Tutorials</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
 </div>
 
 <input type="hidden" id="hangoutNum" value="${param.hangoutNum}"/>
@@ -344,22 +347,28 @@ function goupdate(){
           marker.setVisible(true);
 
           document.getElementById('place-name').textContent = place.name;
-          document.getElementById('place-id').textContent = place.place_id;
+//          document.getElementById('place-id').textContent = place.place_id;
           document.getElementById('place-address').textContent = place.formatted_address;
           $("#placeName").val(place.name);
-          $("#placeId").val(place.place_id);
-          $("#placeAddress").val(place.formatted_address);
+//          $("#placeId").val(place.place_id);
+          $("#placeAddress").html(place.formatted_address);
           infowindow.setContent(document.getElementById('infowindow-content'));
           infowindow.open(map, marker);
         });
       
-      $("#btn").click(function(){
+      $("#btnAddress").click(function(){
          if (confirm("이 주소가 맞습니까?") == true){    //확인
-                var paramIds = "placeName,placeId,placeAddress";
-                var au = new AjaxUtil("place",paramIds); 
-                au.send();
+        	 var au = new AjaxUtil("place");
+        	 var param = {};
+             param["placeAddress"]=$("#placeAddress").text();
+             au.param = JSON.stringify(param);
+             au.setCallbackSuccess(sucessAddress);
+             au.send();
           }
       });
+      function sucessAddress(result) {
+		alert(result.placeAddress);
+	}
        }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places&callback=initMap"

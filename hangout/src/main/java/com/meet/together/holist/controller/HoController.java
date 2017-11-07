@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.meet.together.holist.dto.ListInfo;
+import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
 import com.meet.together.holist.service.HoService;
 import com.meet.together.houser.dto.UserInfo;
@@ -44,7 +45,7 @@ public class HoController {
 	public String createsite(UserInfo ui) {
 		return "hangout/create";
 	}
-	
+
 	@RequestMapping(value = "/hangout/update", method = RequestMethod.GET)
 	public String updatesite(UserInfo ui) {
 		return "hangout/update";
@@ -56,7 +57,14 @@ public class HoController {
 		hm.put("list", list);
 		return hm;
 	}
-	
+	@RequestMapping(value = "/place", method = RequestMethod.POST)
+	public @ResponseBody Place place(@RequestBody Place pi) {
+		int result = ls.insertPlace(pi);
+		if(result==1){
+			return pi;
+		}
+		return null;
+	}
 	@RequestMapping(value = "/hangout/takeuser/check", method = RequestMethod.POST)
 	public @ResponseBody ModelMap selectTakeUserList(@RequestBody TakeUserInfo tu, ModelMap hm) {
 		TakeUserInfo list = ls.selectTakeUserList(tu);
@@ -76,6 +84,14 @@ public class HoController {
 		return "hangout/list";
 	}
 	
+	@RequestMapping(value = "/hangout/drop", method = RequestMethod.GET)
+	public String dropzonetest() {
+		return "test/dropzonetest";
+	}
+	@RequestMapping(value = "/hangout/airmode", method = RequestMethod.GET)
+	public String airmodetest() {
+		return "test/airmode";
+	}
 	@RequestMapping(value = "/hangout/mylist", method = RequestMethod.GET)
 	public String myListSite(UserInfo ui) {
 		return "hangout/myholist";
