@@ -3,8 +3,54 @@
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 		<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
         <link rel="stylesheet" href="<c:url value='/resources/css/style-hangout.css'/>">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .controls {
+        background-color: #fff;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        height: 29px;
+        margin-left: 17px;
+        margin-top: 10px;
+        outline: none;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
 
-<link href="/resources/css/hangout.css" rel="stylesheet">
+      .controls:focus {
+        border-color: #4d90fe;
+      }
+      .title {
+        font-weight: bold;
+      }
+      #infowindow-content {
+        display: none;
+      }
+      #map #infowindow-content {
+        display: inline;
+      }
+
+    </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <div id="fb-root"></div>
 <%
@@ -39,15 +85,18 @@ if (request.getParameter("hangoutNum")!=null){
 				</div>
 				<br>
 
-					<div class="form-top">
-					<h1>
-						<div id="hangout_btn"></div>
-					</h1>
-					google map search
-					<div class="col-sm-5 text-right">
-                  <input type="text-center" class="form-control btn" placeholder="주소를 입력해주세요." id="geocomplete" style="width: 610px; height: 50px">
-          </div>
-				</div>
+	<div style="width:90%; height:50%">
+    <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+    <div id="map" ></div>
+
+    <div id="infowindow-content">
+      <span id="place-name" ></span><br>
+      Place ID <span id="place-id"></span><br>
+      <span id="place-address"></span>
+    </div>
+    선택한 주소 :<input type="text" id="placeName" name="placeName"><input type="text"id="placeId" name="placeId"/><input type="text" id="placeAddress" name="placeAddress"/>
+        <input type="button" id="btn" value="버튼"name="btn">
+    </div>
 <br>
 				<!-- Blog Post -->
 				<div class="form-top">
@@ -236,12 +285,83 @@ function goupdate(){
 
 </script>
 
-	<!-- Javascript -->
         <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
         <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
         <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
         <script src="<c:url value='/resources/js/scripts-hangout.js' />"></script>
         <script src="<c:url value='/resources/js/editorform.js' />"></script>
-        
+       
+    <script>
+      // This sample uses the Place Autocomplete widget to allow the user to search
+      // for and select a place. The sample then displays an info window containing
+      // the place ID and other information about the place that the user has
+      // selected.
 
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+       function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -33.8688, lng: 151.2195},
+          zoom: 13
+        });
+
+        var input = document.getElementById('pac-input');
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        var infowindow = new google.maps.InfoWindow();
+        var marker = new google.maps.Marker({
+          map: map
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+
+        autocomplete.addListener('place_changed', function() {
+          infowindow.close();
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            return;
+          }
+
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);
+          }
+
+          // Set the position of the marker using the place ID and location.
+          marker.setPlace({
+            placeId: place.place_id,
+            location: place.geometry.location
+          });
+          marker.setVisible(true);
+
+          document.getElementById('place-name').textContent = place.name;
+          document.getElementById('place-id').textContent = place.place_id;
+          document.getElementById('place-address').textContent = place.formatted_address;
+          $("#placeName").val(place.name);
+          $("#placeId").val(place.place_id);
+          $("#placeAddress").val(place.formatted_address);
+          infowindow.setContent(document.getElementById('infowindow-content'));
+          infowindow.open(map, marker);
+        });
+      
+      $("#btn").click(function(){
+         if (confirm("이 주소가 맞습니까?") == true){    //확인
+                var paramIds = "placeName,placeId,placeAddress";
+                var au = new AjaxUtil("place",paramIds); 
+                au.send();
+          }
+      });
+       }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places&callback=initMap"
+        async defer></script>
 </html>
