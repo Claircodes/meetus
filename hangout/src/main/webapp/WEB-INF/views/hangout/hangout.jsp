@@ -3,10 +3,28 @@
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 		<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
         <link rel="stylesheet" href="<c:url value='/resources/css/style-hangout.css'/>">
+                <link rel="stylesheet" href="<c:url value='/resources/css/googlemap.css'/>">
+
+<style>
+body, html {
+    height: 100%;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("/resources/images/flower2.jpg");
+
+    /* Full height */
+    height: 30%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
 
 
-
-<link href="/resources/css/hangout.css" rel="stylesheet">
 </head>
 <div id="fb-root"></div>
 <%
@@ -16,54 +34,69 @@ if (request.getParameter("hangoutNum")!=null){
    hangoutNum = request.getParameter("hangoutNum");
 }
 %>
-
+<!--  상단 이미지 -->
+<div class="bg"></div>
 
 <!-- Page Content -->
 <div class="container">
-<div class="form-bottom">
    <div class="row">
-
-
       <!-- title box -->
-      <div class="col-md-8">
-		<div class="form-top">
-			<h1>
-			<div id="hangout_btn"></div></h1>
-               HANGOUT 기간 : ${ListInfo.hangoutOpendate}- ${ListInfo.hangoutClosedate}<p>
-               HANGOUT 날짜 : ${ListInfo.hangoutDate}</p>
+		<div class="col-md-9">
+			<div class="form-top">
+				<h1>
+					<div id="hangout_btn"></div>
+				</h1>
+				HANGOUT 기간 : ${ListInfo.hangoutOpendate}-
+				${ListInfo.hangoutClosedate}
+				<p>HANGOUT 날짜 : ${ListInfo.hangoutDate}</p>
+			</div>
+			<br>
+
+			<!-- Blog Post -->
+			<div class="form-top">
+				<br>
+				<div id="hcreator" style="display: none;">${ListInfo.hangoutCreator}</div>
+				<img class="card-img-top" src="/resources/images/asia.jpg"
+					alt="image">
+				<div class="card-body">
+					<p class="card-text">${ListInfo}<br>
+						${ListInfo.hangoutCategory}
+					</p>
+				</div>
+			</div>
+			<br>
+			<div class="form-top">Address. 장소 안내</div>
+			<div style="height: 50%">
+				<input id="pac-input" class="controls" type="text"
+					placeholder="Enter a location">
+				<div id="map"></div>
+
+				<div id="infowindow-content">
+					<span id="place-name"></span><br> Place ID <span
+						id="place-id"></span><br> <span id="place-address"></span>
+				</div>
+			</div>
+			<br>
+			<div class="form-top">Q&A. 묻고 답하기</div>
 		</div>
 		<br>
-		
-         <!-- Blog Post -->
-         <div class="form-top">
-         <br>
-         <div id="hcreator" style="display:none;">${ListInfo.hangoutCreator}</div>
-            <img class="card-img-top"
-               src="https://pbs.twimg.com/media/Cq5tz18VUAAFT5q.jpg" alt="image">
-            <div class="card-body">
-               <p class="card-text">${ListInfo}<br>
-                  ${ListInfo.hangoutCategory}
-               </p>
-            </div>
-         </div>
-      </div>
 
 
 
-			<div class="col-md-4 ">
+		<div class="col-md-3 ">
 				<!-- Category box -->
 				<div class="form-top">
-					<h5 class="card-header">Category</h5>
-					<div class="desc">
-						<a href="#"><h6>${ListInfo.hangoutTag}</h6></a>
-					</div>
+					<h5 class="cards-header">Category</h5>
+					
+						<h6>${ListInfo.hangoutTag}</h6>
+				
 
 				</div>
 				</br>
 
 				<!-- Operator box -->
 				<div class="form-top">
-					<h5 class="card-header">Operator</h5>
+					<h5 class="cards-header">Operator</h5>
 
 					<div class="cardheader"></div>
 					<div class="avatar">
@@ -73,8 +106,7 @@ if (request.getParameter("hangoutNum")!=null){
 					</div>
 					<div class="info">
 						<div class="title">
-							<br /> <a target="_blank" href="http://scripteden.com/"><h3
-									align="center">${ListInfo.userName}</h3></a>
+							<h2>${ListInfo.userName}</h2>
 						</div>
 						<div class="desc">
 							<h6>핸드폰번호:${ListInfo.userPhone}</h6>
@@ -116,7 +148,7 @@ if (request.getParameter("hangoutNum")!=null){
 
 			<!-- 참가자 box -->
 				<div class="form-top">
-					<h5 class="card-header">Participant</h5>
+					<h5 class="cards-header">Participant</h5>
 					<div class="col-lg-6">
 						<div class="card-block" id="hangoutList"></div>
 					</div>
@@ -125,7 +157,7 @@ if (request.getParameter("hangoutNum")!=null){
 
 				<!-- Topic & tag box -->
 				<div class="form-top">
-					<h5 class="card-header">Topic & Tag</h5>
+					<h5 class="cards-header">Topic & Tag</h5>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-lg-6">
@@ -146,7 +178,7 @@ if (request.getParameter("hangoutNum")!=null){
 					</div>
 				</div>
 			</div>
-		</div>
+
 </div>
 
 <input type="hidden" id="hangoutNum" value="${param.hangoutNum}"/>
@@ -223,6 +255,78 @@ function goupdate(){
         <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
         <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
         <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
-        <script src="<c:url value='/resources/js/scripts-hangout.js' />"></script>
+	    <script src="<c:url value='/resources/js/scripts-hangout.js'/>"></script>
+	    
+	    
+	     <script>
+    
+       function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -33.8688, lng: 151.2195},
+          zoom: 13
+        });
 
+        var input = document.getElementById('pac-input');
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        var infowindow = new google.maps.InfoWindow();
+        var marker = new google.maps.Marker({
+          map: map
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+
+        autocomplete.addListener('place_changed', function() {
+          infowindow.close();
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            return;
+          }
+
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);
+          }
+
+          // Set the position of the marker using the place ID and location.
+          marker.setPlace({
+            placeId: place.place_id,
+            location: place.geometry.location
+          });
+          marker.setVisible(true);
+
+          document.getElementById('place-name').textContent = place.name;
+//          document.getElementById('place-id').textContent = place.place_id;
+          document.getElementById('place-address').textContent = place.formatted_address;
+          $("#placeName").val(place.name);
+//          $("#placeId").val(place.place_id);
+          $("#placeAddress").html(place.formatted_address);
+          infowindow.setContent(document.getElementById('infowindow-content'));
+          infowindow.open(map, marker);
+        });
+      
+      $("#btnAddress").click(function(){
+         if (confirm("이 주소가 맞습니까?") == true){    //확인
+        	 var au = new AjaxUtil("place");
+        	 var param = {};
+             param["placeAddress"]=$("#placeAddress").text();
+             au.param = JSON.stringify(param);
+             au.setCallbackSuccess(sucessAddress);
+             au.send();
+          }
+      });
+      function sucessAddress(result) {
+		alert(result.placeAddress);
+	}
+       }
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places&callback=initMap"
+        async defer></script>
 </html>

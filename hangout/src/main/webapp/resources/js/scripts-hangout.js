@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
     /*
         Fullscreen background
    */
-    $.backstretch("../../resources/images/nightline.jpg");
+    $.backstretch("../../resources/images/flower1.jpg");
      
     /*
         Form validation
