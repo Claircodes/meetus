@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
       <link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
         <link rel="stylesheet" href="<c:url value='/resources/css/style-hangout.css'/>">
+        
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
+
     <style>
 
       #map {
@@ -100,10 +105,11 @@ if (request.getParameter("hangoutNum")!=null){
 
 
 
-
+               <textarea name="content" id="summernote" value=""></textarea>
             <!-- Blog Post -->
             <div class="form-top">
                <br>
+
                <div id="hcreator" style="display: none;">${ListInfo.hangoutCreator}</div>
                <div class="container">
                   <div class="hero-unit" style="margin-top: 40px">
@@ -226,21 +232,18 @@ if (request.getParameter("hangoutNum")!=null){
 <script type="text/javascript">
 var hoUserNum = <%=user.getUserNum()%>;
 
+$(function() {
+    $('#summernote').summernote({
+        placeholder: 'Hello bootstrap 4',
+        tabsize: 2,
+        height: 100
+      });
+});
+
 $(".btn btn-secondary").click(function(){
    pageMove("hangout?hangoutNum=");
 });
-$(document).ready(function() {
-/*    if (hoUserNum==$("#hcreator").text()){
-      $("#hangout_btn").html('${ListInfo.hangoutName}' +'<button class="btn btn-secondary  pull-right" type="button" id="update" onclick="goupdate()">수정하기</button>');
-   }else{
-      $("#hangout_btn").html('${ListInfo.hangoutName}' +'<button class="btn btn-secondary pull-right" type="button" id="participate" onclick="participate()">참가하기</button>');
-   }
- */   
-    var paramIds = "hangoutNum";
-     var au = new AjaxUtil("hangout/takeuser/list", paramIds);  
-     au.setCallbackSuccess(callbackSql);
-     au.send();
-});
+
 
 function callbackSql(result){
    var userList=result.list;
@@ -292,7 +295,6 @@ function goupdate(){
         <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
         <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
         <script src="<c:url value='/resources/js/scripts-hangout.js' />"></script>
-        <script src="<c:url value='/resources/js/editorform.js' />"></script>
        
     <script>
       // This sample uses the Place Autocomplete widget to allow the user to search
@@ -349,28 +351,31 @@ function goupdate(){
           document.getElementById('place-name').textContent = place.name;
 //          document.getElementById('place-id').textContent = place.place_id;
           document.getElementById('place-address').textContent = place.formatted_address;
-          $("#placeName").val(place.name);
+//          $("#placeName").val(place.name);
 //          $("#placeId").val(place.place_id);
           $("#placeAddress").html(place.formatted_address);
           infowindow.setContent(document.getElementById('infowindow-content'));
           infowindow.open(map, marker);
         });
       
-      $("#btnAddress").click(function(){
+      $("#btn").click(function(){
          if (confirm("이 주소가 맞습니까?") == true){    //확인
-        	 var au = new AjaxUtil("place");
-        	 var param = {};
-             param["placeAddress"]=$("#placeAddress").text();
-             au.param = JSON.stringify(param);
-             au.setCallbackSuccess(sucessAddress);
-             au.send();
+                var paramIds = "placeName,placeId,placeAddress";
+                var au = new AjaxUtil("place",paramIds); 
+                au.send();
           }
       });
-      function sucessAddress(result) {
-		alert(result.placeAddress);
-	}
        }
+       
+       
+       
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places&callback=initMap"
         async defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.js"></script>
 </html>
