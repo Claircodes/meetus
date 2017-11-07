@@ -24,7 +24,6 @@ if (request.getParameter("hangoutCategory")!=null){
 String hangoutArea = "";
 if (request.getParameter("hangoutArea")!=null){
 	hangoutArea = request.getParameter("hangoutArea");
-	
 }
 
 %>
@@ -108,11 +107,13 @@ if (request.getParameter("hangoutArea")!=null){
    <!-- SQL을 통한 모임자동생성_ 기본 9개-->
    <script>
    var area_search="";
+   var area_check=false;
       $(document).ready(function() {
          var area = "<%=hangoutArea%>";
-         
+        
          if (area!=null | area!=""){
         	 $("#hangoutArea").val(area);
+        	 area_check=true;
          }
          
          var category = "<%=hangoutCategory%>";
@@ -183,17 +184,23 @@ if (request.getParameter("hangoutArea")!=null){
          $("#list_body").html(str);
       }
       $("#searchLists").click(function() {
-         var hangoutName = $("#hangoutName").val().trim();
-       //  if (hangoutName == "") {
-         //   alert("모임이름을 입력해주세요");
-         //   return
-   
-        // }
-         var paramIds = "hangoutName,hangoutCategory,hangoutArea";
-         var au = new AjaxUtil("hangout/list", paramIds);
-         au.setCallbackSuccess(callbackSql);
-         au.send();
-         pageMove("hangout/golist?hangoutArea="+area_search);
+    	  name = $("#hangoutName").val().trim();
+       if (name == "" && (area_search==null || area_search=="")) {
+         alert("지역과 모임이름을 입력해주세요");
+         return
+       }else if(name == "" && (area_search!=null || area_search!="")){
+           pageMove("hangout/golist?hangoutArea="+area_search);
+       }else if(name != "" && (area_search==null || area_search=="")){
+           var paramIds = "hangoutName,hangoutCategory,hangoutArea";
+           var au = new AjaxUtil("hangout/list", paramIds);
+           au.setCallbackSuccess(callbackSql);
+           au.send();
+       }else{
+           var paramIds = "hangoutName,hangoutCategory,hangoutArea";
+           var au = new AjaxUtil("hangout/list", paramIds);
+           au.setCallbackSuccess(callbackSql);
+           au.send();
+       }
       });
    </script>
    <!-- SQL 생성 종료 -->
