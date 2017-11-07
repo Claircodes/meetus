@@ -120,8 +120,8 @@ if (request.getParameter("hangoutNum")!=null){
                   </div>
                   <div class="row">
                      <div class="span6">
-                        <pre class="prettyprint linenums">$('.textarea').wysihtml5();</pre>
-                        </p>
+       <!--                 <pre class="prettyprint linenums">$('.textarea').wysihtml5();</pre>
+             -->          
                      </div>
                   </div>
                </div>
