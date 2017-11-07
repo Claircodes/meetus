@@ -22,29 +22,69 @@ if (request.getParameter("hangoutNum")!=null){
    <div class="row">
 
 
-      <!-- title box -->
-      <div class="col-md-8">
-		<div class="form-top">
-			<h1>
-			<div id="hangout_btn"></div></h1>
-               HANGOUT 기간 : ${ListInfo.hangoutOpendate}- ${ListInfo.hangoutClosedate}<p>
-               HANGOUT 날짜 : ${ListInfo.hangoutDate}</p>
-		</div>
-		<br>
-		
-         <!-- Blog Post -->
-         <div class="form-top">
-         <br>
-         <div id="hcreator" style="display:none;">${ListInfo.hangoutCreator}</div>
-            <div class="card-body">
-               <form method='post' enctype='multipart/form-data' action='imgup.jsp' ><input type='file' name='userPicture' class='btn-link-2'></form><input id='userPicture' class='btn-link-2' type='submit' value='upload' class='btn-link-2'>
-            
-               <p class="card-text">${ListInfo}<br>
-                  ${ListInfo.hangoutCategory}
-               </p>
-            </div>
-         </div>
-      </div>
+			<!-- title box -->
+			<div class="col-md-8">
+				<div class="form-top">
+					<h1>
+						<div id="hangout_btn"></div>
+					</h1>
+					HANGOUT 제목: <input type="text" placeholder="Enter text ..."
+						style="width: 310px; height: 50px">
+					<button class="btn btn-secondary pull-right" type="button"
+						id="participate" onclick="participate()">수정완료</button>
+					</p>
+					HANGOUT 기간: <input type="text-center" placeholder="how long?">
+					HANGOUT 날짜: <input type="text-center" placeholder="when is it?">
+					</p>
+				</div>
+				<br>
+
+					<div class="form-top">
+					<h1>
+						<div id="hangout_btn"></div>
+					</h1>
+					google map search
+					<div class="col-sm-5 text-right">
+                  <input type="text-center" class="form-control btn" placeholder="주소를 입력해주세요." id="geocomplete" style="width: 610px; height: 50px">
+          </div>
+				</div>
+<br>
+				<!-- Blog Post -->
+				<div class="form-top">
+					<br>
+					<div id="hcreator" style="display: none;">${ListInfo.hangoutCreator}</div>
+					<div class="container">
+						<div class="hero-unit" style="margin-top: 40px">
+							<h2 style="font-size: 58px">Editor Form</h2>
+							<hr />
+							<textarea class="textarea" placeholder="Enter text ..."
+								style="width: 610px; height: 200px"></textarea>
+						</div>
+						<div class="row">
+							<div class="span6">
+								<pre class="prettyprint linenums">$('.textarea').wysihtml5();</pre>
+								</p>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="card-body">
+						<form method='post' enctype='multipart/form-data'
+							action='imgup.jsp'>
+							<input type='file' name='userPicture' class='btn-link-2'>
+						</form>
+						<input id='userPicture' class='btn-link-2' type='submit'
+							value='upload' class='btn-link-2'>
+
+						<p class="card-text">${ListInfo}<br>
+							${ListInfo.hangoutCategory}
+						</p>
+					</div>
+				</div>
+			</div>
+
+
 
 
 
@@ -138,12 +178,12 @@ $(".btn btn-secondary").click(function(){
    pageMove("hangout?hangoutNum=");
 });
 $(document).ready(function() {
-   if (hoUserNum==$("#hcreator").text()){
+/*    if (hoUserNum==$("#hcreator").text()){
       $("#hangout_btn").html('${ListInfo.hangoutName}' +'<button class="btn btn-secondary  pull-right" type="button" id="update" onclick="goupdate()">수정하기</button>');
    }else{
       $("#hangout_btn").html('${ListInfo.hangoutName}' +'<button class="btn btn-secondary pull-right" type="button" id="participate" onclick="participate()">참가하기</button>');
    }
-   
+ */   
     var paramIds = "hangoutNum";
      var au = new AjaxUtil("hangout/takeuser/list", paramIds);  
      au.setCallbackSuccess(callbackSql);
@@ -201,5 +241,7 @@ function goupdate(){
         <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
         <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
         <script src="<c:url value='/resources/js/scripts-hangout.js' />"></script>
+        <script src="<c:url value='/resources/js/editorform.js' />"></script>
+        
 
 </html>
