@@ -107,12 +107,14 @@ if (request.getParameter("hangoutArea")!=null){
    
    <!-- SQL을 통한 모임자동생성_ 기본 9개-->
    <script>
+   var area_search="";
       $(document).ready(function() {
          var area = "<%=hangoutArea%>";
-  
+         
          if (area!=null | area!=""){
         	 $("#hangoutArea").val(area);
          }
+         
          var category = "<%=hangoutCategory%>";
          if(category!=null | category!=""){
         	 $("#hangoutCategory").val(category);  
@@ -122,7 +124,7 @@ if (request.getParameter("hangoutArea")!=null){
          $("#hangoutArea").geocomplete().bind("geocode:result",
                  function(event, result) {
         	$("#hangoutArea").val(result.vicinity);
-        	var area_search=result.vicinity;
+        	area_search=result.vicinity;
                  }).bind("geocode:error", function(event, status) {
            }).bind("geocode:multiple", function(event, results) {
            });
@@ -191,6 +193,7 @@ if (request.getParameter("hangoutArea")!=null){
          var au = new AjaxUtil("hangout/list", paramIds);
          au.setCallbackSuccess(callbackSql);
          au.send();
+         pageMove("hangout/golist?hangoutArea="+area_search);
       });
    </script>
    <!-- SQL 생성 종료 -->
