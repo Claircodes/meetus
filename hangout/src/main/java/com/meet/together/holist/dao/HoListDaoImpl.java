@@ -1,12 +1,18 @@
 package com.meet.together.holist.dao;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.meet.together.holist.dto.CategoryInfo;
+import com.meet.together.holist.dto.ImageFile;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
@@ -63,5 +69,32 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	@Override
 	public List<ListInfo> selectParticipateUserList(TakeUserInfo tu){
 		return this.getSqlSession().selectList("takeuser.SELECT_PARTICIPATE_USER", tu);
+	}
+
+	@Override
+	public ImageFile insertImageFile(MultipartFile multipartFile) {
+		String genId = UUID.randomUUID().toString();
+		ImageFile imageFile = null;
+		try {
+			imageFile = new ImageFile(UUID.randomUUID().toString(), 
+					multipartFile.getContentType(),
+					(int)multipartFile.getSize(),
+					saveToFile(multipartFile, genId));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return imageFile;
+	}
+	private String saveToFile(MultipartFile src, String id) throws IOException {
+		String fileName = src.getOriginalFilename();
+		byte[] bytes = src.getBytes();
+		String savePath = ImageFile.IMAGE_DIR + fileName;
+		/* 파일 쓰기 */
+		BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(savePath));
+		bos.write(bytes);
+		bos.flush();
+		bos.close();
+		
+		return fileName;
 	}
 }

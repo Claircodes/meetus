@@ -1,13 +1,18 @@
 package com.meet.together.holist.service;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.meet.together.holist.dao.HoListDao;
 import com.meet.together.holist.dto.CategoryInfo;
+import com.meet.together.holist.dto.ImageFile;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
@@ -67,4 +72,37 @@ public class HoServiceImpl implements HoService {
 	public List<ListInfo> selectParticipateUserList(TakeUserInfo tu) {
 		return listDao.selectParticipateUserList(tu);
 	}
+	
+	public ImageFile imageSave(MultipartFile multipartFile) {
+		return listDao.insertImageFile(multipartFile);
+	}
+	
+	/**
+	 * Multipart File의 내용을 파일로 저장, 저장 후 저장된 파일 이름을 반환
+	 */
+	private String saveToFile(MultipartFile src, String id) throws IOException {
+		String fileName = src.getOriginalFilename();
+		byte[] bytes = src.getBytes();
+		String saveFileName = id + "." + getExtension(fileName);
+		String savePath = ImageFile.IMAGE_DIR + saveFileName;
+//		String savePath = ImageFile.IMAGE_DIR + fileName;
+		/* 파일 쓰기 */
+		BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(savePath));
+		bos.write(bytes);
+		bos.flush();
+		bos.close();
+		
+		return saveFileName;
+	}
+
+	private String getExtension(String fileName) {
+		int dotPosition = fileName.lastIndexOf('.');
+		
+		if (-1 != dotPosition && fileName.length() - 1 > dotPosition) {
+			return fileName.substring(dotPosition + 1);
+		} else {
+			return "";
+		}
+	}
+
 }

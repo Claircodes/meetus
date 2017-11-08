@@ -4,13 +4,17 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.meet.together.holist.dto.ImageFile;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
@@ -27,7 +31,28 @@ public class HoController {
 	public String mainsite() {
 		return "main";
 	}
-	
+	//이미지 
+	@RequestMapping(value="/image1", method=RequestMethod.POST)
+	public String hangoutImage(@RequestParam MultipartFile imageFile, ModelMap modelMap) {
+		ImageFile fileInfo = ls.imageSave(imageFile);
+		
+		modelMap.put("imageFile", fileInfo);
+		
+		return "uploadComplete";
+	}
+
+	@RequestMapping(value="/image", method=RequestMethod.POST)
+    public @ResponseBody ModelMap handleFileUpload(@RequestParam("file") MultipartFile file,ModelMap modelMap) {
+        try {
+    		ImageFile fileInfo = ls.imageSave(file);
+    		modelMap.put("fileName", fileInfo.getFileName());
+        } catch (Exception e) {
+            e.printStackTrace();
+            modelMap.put("error",e);
+            //return ResponseEntity.badRequest().build();
+        }
+		return modelMap;
+    }
 	@RequestMapping(value = "/hangout/insert", method = RequestMethod.POST)
 	public @ResponseBody ModelMap insertListInfo(@RequestBody ListInfo li, ModelMap hm) {
 		int result = ls.insertListInfo(li);
