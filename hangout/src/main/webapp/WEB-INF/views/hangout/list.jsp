@@ -168,14 +168,14 @@ if (request.getParameter("hangoutArea")!=null){
          }else{
         	 max=9;
          }
-         var str = "";
+         var str = " ";
          for (var i = 0; i < max; i++) {
             var list = hangoutList[i];
             str += "<div class='mt-4 col-sm-4'>";
-            str += "<div class='mt-4 card rm' onclick='listclick("+list.hangoutNum+")'>";
+            str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
             str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i class='fa fa-heart-o'></i></a></h5> ";
-            str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
-            str += "<div class='card-body cb'>";
+            str += "<img class='card-img-top' src='/resources/images/flower1.jpg'>";
+            str += "<div class='card-body'>";
             str += "<div class='card-text'>" + list.hangoutContent + "</div>";
             str += "</div>";
             str += "</div>";
@@ -223,11 +223,11 @@ if (request.getParameter("hangoutArea")!=null){
       var str = "";
       for (max = (set+9); set < max; set++) {
          var list = hangoutList[set];
-         str += "<div class='mt-4 col-sm-4 morebox'>";
+         str += "<div class='mt-4 col-sm-4'>";
          str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
-         str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i class='fa fa-heart-o'></i></a></h5> ";
-         str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
-         str += "<div class='card-body cb'>";
+         str += "<h5 class='card-header'>" + list.hangoutName + "</h5><a href='#' class='pull-right'><i class='fa fa-heart-o'></i></a> ";
+         str += "<img class='card-img-top' src='/resources/images/flower1.jpg'>";
+         str += "<div class='card-body'>";
          str += "<div class='card-text'>" + list.hangoutContent + "</div>";
          str += "</div>";
          str += "</div>";
@@ -241,7 +241,8 @@ if (request.getParameter("hangoutArea")!=null){
 
    <script src="<c:url value='/resources/js/scripts_list.js' />"></script>
    <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
-   <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
    <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
    
  

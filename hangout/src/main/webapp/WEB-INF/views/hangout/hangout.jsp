@@ -6,6 +6,9 @@
                 <link rel="stylesheet" href="<c:url value='/resources/css/googlemap.css'/>">
 
 <style>
+
+
+
 body, html {
     height: 100%;
 }
@@ -67,8 +70,7 @@ if (request.getParameter("hangoutNum")!=null){
 			<br>
 			<div class="form-top">Address. 장소 안내</div>
 			<div style="height: 50%">
-				<input id="pac-input" class="controls" type="text"
-					placeholder="Enter a location">
+				
 				<div id="map"></div>
 
 				<div id="infowindow-content">
@@ -261,70 +263,53 @@ function goupdate(){
 	     <script>
     
        function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -33.8688, lng: 151.2195},
-          zoom: 13
+       // mapLocation 지도에서 center에 표시할 위치
+   	   var mapLocation = new google.maps.LatLng('37.496276', '127.028847');   
+   	   // markLocation 지도에 마커를 표시할 위치
+       var markLocation = new google.maps.LatLng('37.496276', '127.028847');   
+    	
+   	   //지도에 뿌리기
+   	   var map = new google.maps.Map(document.getElementById('map'), {
+   		center: mapLocation,
+   		   zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
         var input = document.getElementById('pac-input');
 
-        var autocomplete = new google.maps.places.Autocomplete(input);
-        autocomplete.bindTo('bounds', map);
-
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-        var infowindow = new google.maps.InfoWindow();
-        var marker = new google.maps.Marker({
-          map: map
+        var size_x = 60; // 마커로 사용할 이미지의 가로 크기
+        var size_y = 60; // 마커로 사용할 이미지의 세로 크기
+         
+        // 마커로 사용할 이미지 주소
+        var image = new google.maps.MarkerImage( 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                            new google.maps.Size(size_x, size_y),
+                            '',
+                            '',
+                            new google.maps.Size(size_x, size_y));
+         
+        var marker;
+        marker = new google.maps.Marker({
+               position: markLocation, // 마커가 위치할 위도와 경도(변수)
+               map: map,
+               icon: image, // 마커로 사용할 이미지(변수)
         });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
+         
+        var content = "<h3>"+"HANGOUT LOCATION"+"</h3>"; // 말풍선 안에 들어갈 내용
+         
+        // 마커를 클릭했을 때의 이벤트. 말풍선 뿅~
+        var infowindow = new google.maps.InfoWindow({ content: content});
+ 
+        google.maps.event.addListener(marker, "click", function() {
+            infowindow.open(map,marker);
         });
+         
+ 
 
-        autocomplete.addListener('place_changed', function() {
-          infowindow.close();
-          var place = autocomplete.getPlace();
-          if (!place.geometry) {
-            return;
-          }
 
-          if (place.geometry.viewport) {
-            map.fitBounds(place.geometry.viewport);
-          } else {
-            map.setCenter(place.geometry.location);
-            map.setZoom(17);
-          }
-
-          // Set the position of the marker using the place ID and location.
-          marker.setPlace({
-            placeId: place.place_id,
-            location: place.geometry.location
-          });
-          marker.setVisible(true);
-
-          document.getElementById('place-name').textContent = place.name;
-//          document.getElementById('place-id').textContent = place.place_id;
-          document.getElementById('place-address').textContent = place.formatted_address;
-          $("#placeName").val(place.name);
-//          $("#placeId").val(place.place_id);
-          $("#placeAddress").html(place.formatted_address);
-          infowindow.setContent(document.getElementById('infowindow-content'));
-          infowindow.open(map, marker);
-        });
       
-      $("#btnAddress").click(function(){
-         if (confirm("이 주소가 맞습니까?") == true){    //확인
-        	 var au = new AjaxUtil("place");
-        	 var param = {};
-             param["placeAddress"]=$("#placeAddress").text();
-             au.param = JSON.stringify(param);
-             au.setCallbackSuccess(sucessAddress);
-             au.send();
-          }
-      });
-      function sucessAddress(result) {
-		alert(result.placeAddress);
-	}
+
        }
     </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places&callback=initMap"
