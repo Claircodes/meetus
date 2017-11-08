@@ -15,7 +15,7 @@ body, html {
 
 .bg {
     /* The image used */
-    background-image: url("${rootPath}/resources/images/flower2.jpg");
+    background-image: url("{}/resources/images/flower2.jpg");
 
     /* Full height */
     height: 30%; 
@@ -227,16 +227,11 @@ function callbackSql(result){
 
 
 function update(){
-      var paramIds="hangoutNum,hangoutName";
+      var paramIds="hangoutNum,hangoutName,hangoutContent";
        var au = new AjaxUtil("hangout/update",paramIds);
        au.send(); 
 }
 
-
-</script>
-
-       
-    <script>
     function initMap() {
         // mapLocation 지도에서 center에 표시할 위치
     	   var mapLocation = new google.maps.LatLng('37.496276', '127.028847');   
