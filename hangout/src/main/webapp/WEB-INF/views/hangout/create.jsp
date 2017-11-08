@@ -23,11 +23,6 @@
 <link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css'/>" >
 <link rel="stylesheet" href="<c:url value='/resources/css/style-create.css'/>" >
 
-<!-- Javascript -->
-<script src="<c:url value='/resources/js/scripts-create.js'/>"></script>
-<script src="<c:url value='/resources/js/create-jquery.backstretch.min.js'/>"></script>
-
-
 <!-- 달력관련 script -->
 <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/tags/bootstrap-tags.css'/>" >
@@ -407,5 +402,6 @@
 	    });
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places"></script>
+	<script src="<c:url value='/resources/js/scripts-create.js'/>"></script>
 	<script src="<c:url value='/resources/js/jquery.geocomplete.js' />"></script>
 	<script src="<c:url value='/resources/js/logger.js' />"></script>

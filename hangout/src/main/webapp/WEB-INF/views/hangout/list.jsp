@@ -9,10 +9,7 @@
 
 <!--  CSS -->
 <link href="<c:url value='/resources/css/list.css"'/>"   rel="stylesheet" />
-<link rel="stylesheet"
-   href="<c:url value="https://fonts.googleapis.com/css?family=Passion+One"/>" />
-<link rel="stylesheet"
-   href="<c:url value="https://fonts.googleapis.com/css?family=Oxygen"/>" />
+
 <!DOCTYPE html>
 <html lang="en">
 <br><br><br>
@@ -240,12 +237,6 @@ if (request.getParameter("hangoutArea")!=null){
 
 
    <script src="<c:url value='/resources/js/scripts_list.js' />"></script>
-   <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-   <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
-   
- 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places"></script>
 	<script src="<c:url value='/resources/js/jquery.geocomplete.js' />"></script>
 	<script src="<c:url value='/resources/js/logger.js' />"></script>

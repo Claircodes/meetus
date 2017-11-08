@@ -15,7 +15,7 @@ body, html {
 
 .bg {
     /* The image used */
-    background-image: url("/resources/images/flower2.jpg");
+    background-image: url("../../resources/images/flower2.jpg");
 
     /* Full height */
     height: 30%; 

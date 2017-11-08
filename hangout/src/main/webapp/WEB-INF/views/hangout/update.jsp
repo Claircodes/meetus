@@ -15,7 +15,7 @@ body, html {
 
 .bg {
     /* The image used */
-    background-image: url("/resources/images/flower2.jpg");
+    background-image: url("../../resources/images/flower2.jpg");
 
     /* Full height */
     height: 30%; 
@@ -49,10 +49,10 @@ if (request.getParameter("hangoutNum")!=null){
                <h1>
                   <div id="hangout_btn"></div>
                </h1>
-               HANGOUT 제목: <input type="text" placeholder="Enter text ..."
-                  style="width: 310px; height: 50px">
+               HANGOUT 제목: <input type="text" id="hangoutName" placeholder="Enter text ..."
+                  style="width: 310px; height: 50px ">
                <button class="btn btn-secondary pull-right" type="button"
-                  id="participate" onclick="participate()">수정완료</button>
+                  id="update" onclick="update()">수정완료</button>
                </p>
                HANGOUT 기간: <input type="text-center" placeholder="how long?">
                HANGOUT 날짜: <input type="text-center" placeholder="when is it?">
@@ -65,7 +65,7 @@ if (request.getParameter("hangoutNum")!=null){
 				<br>
 				<div id="hcreator" style="display: none;">${ListInfo.hangoutCreator}</div>
 				<div class="card-body">
-				 <textarea name="content" id="summernote" value=""></textarea>
+				 <textarea name="content" id="summernote" value="" ></textarea>
 				</div>
 			</div>
 			<br>
@@ -198,37 +198,12 @@ function callbackSql(result){
 
 
 
-function participate(){
-   if(<%=login%>==true){
-      var paramIds="hangoutNum,userNum";
-       var au = new AjaxUtil("hangout/takeuser/check",paramIds);
-       au.setCallbackSuccess(overlapNumCheck);
-       au.send(); 
-}else{
-   alert("로그인을 해주세요.");
-   }
-}
-
-function overlapNumCheck(result){
-   var numList=result.list;
-   if(numList==null){
-      var paramIds="hangoutNum,userNum";
-       var au = new AjaxUtil("hangout/takeuser/insert",paramIds);
-       au.send(); 
-   }
-   
-      if(numList.userNum==hoUserNum){
-         alert("이미 참가신청을 하였습니다.");
-         return;
-   }
-      var paramIds="hangoutNum,userNum";
-       var au = new AjaxUtil("hangout/takeuser/insert",paramIds);
+function update(){
+      var paramIds="hangoutNum,hangoutName";
+       var au = new AjaxUtil("hangout/update",paramIds);
        au.send(); 
 }
 
-function goupdate(){
-   location.href=${rootPath}"/hangout/update";
-}
 
 </script>
 
@@ -252,6 +227,7 @@ function goupdate(){
         });
         marker.addListener('click', function() {
           infowindow.open(map, marker);
+          
         });
         autocomplete.addListener('place_changed', function() {
           infowindow.close();
@@ -290,11 +266,8 @@ function goupdate(){
        }
        
     </script>
-        <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
-        <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
+
 	    <script src="<c:url value='/resources/js/scripts-hangout.js'/>"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places&callback=initMap"
         async defer></script>
 

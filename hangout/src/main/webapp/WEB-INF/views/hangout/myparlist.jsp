@@ -110,8 +110,5 @@
     </script>
 
 <!-- Javascript --> 
-<script src="/resources/js/jquery-1.12.1.min.js"></script>
-<script src="/resources/js/bootstrap.min.js"></script>
-<script src="/resources/js/jquery.backstretch.min.js"></script>
 <script src="/resources/js/scripts_list.js"></script>
 </html>

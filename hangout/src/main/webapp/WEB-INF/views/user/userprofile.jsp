@@ -95,7 +95,5 @@
 </script>
 
 	<!-- Javascript -->
-        <script src="<c:url value='/resources/js/jquery-1.12.1.min.js'/>"></script>
-        <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
-        <script src="<c:url value='/resources/js/jquery.backstretch.min.js'/>"></script>
+
         <script src="<c:url value='/resources/js/scripts-userprofile.js' />"></script>
