@@ -9,7 +9,10 @@
 
 <!--  CSS -->
 <link href="<c:url value='/resources/css/list.css"'/>"   rel="stylesheet" />
-
+<link rel="stylesheet"
+   href="<c:url value="https://fonts.googleapis.com/css?family=Passion+One"/>" />
+<link rel="stylesheet"
+   href="<c:url value="https://fonts.googleapis.com/css?family=Oxygen"/>" />
 <!DOCTYPE html>
 <html lang="en">
 <br><br><br>
@@ -21,6 +24,10 @@ if (request.getParameter("hangoutCategory")!=null){
 String hangoutArea = "";
 if (request.getParameter("hangoutArea")!=null){
 	hangoutArea = request.getParameter("hangoutArea");
+}
+String hangoutName = "";
+if (request.getParameter("hangoutName")!=null){
+	hangoutName = request.getParameter("hangoutName");
 }
 
 %>
@@ -105,16 +112,24 @@ if (request.getParameter("hangoutArea")!=null){
    <script>
    var area_search="";
    var area_check=false;
+
       $(document).ready(function() {
-         var area = "<%=hangoutArea%>";
-        
-         if (area!=null | area!=""){
-        	 $("#hangoutArea").val(area);
-        	 area_check=true;
-         }
-         
+    	var area="<%=hangoutArea%>";
+    	 var name="<%=hangoutName%>"; 
+    	  
+    	  if (area!=null || area!="") {
+    		  	 $("#hangoutArea").val(area);
+    		  	 if(hangoutArea==""){
+    		  	 area_check=true;
+    		  	 }
+    	  }
+    	  
+	       if (name!=null || name!="" ){
+		      	 $("#hangoutName").val(name);
+		       }
+    	  
          var category = "<%=hangoutCategory%>";
-         if(category!=null | category!=""){
+         if(category!=null || category!=""){
         	 $("#hangoutCategory").val(category);  
         	 $('#'+category).attr("class","btn btn-info active");
          }
@@ -165,14 +180,14 @@ if (request.getParameter("hangoutArea")!=null){
          }else{
         	 max=9;
          }
-         var str = " ";
+         var str = "";
          for (var i = 0; i < max; i++) {
             var list = hangoutList[i];
             str += "<div class='mt-4 col-sm-4'>";
-            str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
+            str += "<div class='mt-4 card rm' onclick='listclick("+list.hangoutNum+")'>";
             str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i class='fa fa-heart-o'></i></a></h5> ";
-            str += "<img class='card-img-top' src='/resources/images/flower1.jpg'>";
-            str += "<div class='card-body'>";
+            str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
+            str += "<div class='card-body cb'>";
             str += "<div class='card-text'>" + list.hangoutContent + "</div>";
             str += "</div>";
             str += "</div>";
@@ -181,23 +196,32 @@ if (request.getParameter("hangoutArea")!=null){
          $("#list_body").html(str);
       }
       $("#searchLists").click(function() {
-    	  name = $("#hangoutName").val().trim();
-       if (name == "" && (area_search==null || area_search=="")) {
-         alert("지역과 모임이름을 입력해주세요");
-         return
-       }else if(name == "" && (area_search!=null || area_search!="")){
+    	 name = $("#hangoutName").val().trim();
+    	  if(area_check==true){   //카테고리 선택을 통해 들어왔을때,
+    		  if(name!=""){
+    			  pageMove("hangout/golist?hangoutName=" + name + "&hangoutArea=" + area);
+    			  if(area_search==null || area_search==""){
+    				  pageMove("hangout/golist?hangoutName=" + name);
+    			  }
+    		  }else if(name=="" && (area_search!=null || area_search!="")){
+    			  pageMove("hangout/golist?hangoutArea=" + area_search);
+    		  }
+    	  }else{         //모임 리스트를 통해 들어왔을때,
+    		  
+    	  if(name == "" && (area_search!=null || area_search!="")){
            pageMove("hangout/golist?hangoutArea="+area_search);
        }else if(name != "" && (area_search==null || area_search=="")){
-           var paramIds = "hangoutName,hangoutCategory,hangoutArea";
-           var au = new AjaxUtil("hangout/list", paramIds);
-           au.setCallbackSuccess(callbackSql);
-           au.send();
-       }else{
-           var paramIds = "hangoutName,hangoutCategory,hangoutArea";
-           var au = new AjaxUtil("hangout/list", paramIds);
-           au.setCallbackSuccess(callbackSql);
-           au.send();
+
+           pageMove("hangout/golist?hangoutName=" + name);
+       }else if(name != "" && (area_search!=null || area_search!="")){
+
+    	   pageMove("hangout/golist?hangoutArea=" + area_search + "&hangoutName=" + name);
+    	   //var paramIds = "hangoutName,hangoutCategory,hangoutArea";
+          // var au = new AjaxUtil("hangout/list", paramIds);
+           //au.setCallbackSuccess(callbackSql);
+           //au.send();
        }
+    	  }
       });
    </script>
    <!-- SQL 생성 종료 -->
@@ -220,11 +244,11 @@ if (request.getParameter("hangoutArea")!=null){
       var str = "";
       for (max = (set+9); set < max; set++) {
          var list = hangoutList[set];
-         str += "<div class='mt-4 col-sm-4'>";
+         str += "<div class='mt-4 col-sm-4 morebox'>";
          str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
-         str += "<h5 class='card-header'>" + list.hangoutName + "</h5><a href='#' class='pull-right'><i class='fa fa-heart-o'></i></a> ";
-         str += "<img class='card-img-top' src='/resources/images/flower1.jpg'>";
-         str += "<div class='card-body'>";
+         str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i class='fa fa-heart-o'></i></a></h5> ";
+         str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
+         str += "<div class='card-body cb'>";
          str += "<div class='card-text'>" + list.hangoutContent + "</div>";
          str += "</div>";
          str += "</div>";
