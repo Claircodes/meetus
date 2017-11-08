@@ -3,7 +3,7 @@
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 		<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
         <link rel="stylesheet" href="<c:url value='/resources/css/style-hangout.css'/>">
-                <link rel="stylesheet" href="<c:url value='/resources/css/googlemap.css'/>">
+        <link rel="stylesheet" href="<c:url value='/resources/css/googlemap.css'/>">
 
 <style>
 
@@ -271,7 +271,7 @@ function goupdate(){
    	   //지도에 뿌리기
    	   var map = new google.maps.Map(document.getElementById('map'), {
    		center: mapLocation,
-   		   zoom: 16,
+   		   zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
