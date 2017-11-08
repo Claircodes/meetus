@@ -485,7 +485,7 @@ function attracta_window_height() {
 
            $("#searchplace").click(function(){
           	 // var words = $("#geocomplete").val().replace("대한민국 ", "");
-          	 	  pageMove("hangout/golist?hangoutArea="+words + "&hangoutName=" + "");
+          	 	  pageMove("hangout/golist?hangoutArea="+words);
           	   })
   });
 
