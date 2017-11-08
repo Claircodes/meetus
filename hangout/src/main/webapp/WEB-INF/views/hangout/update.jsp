@@ -15,7 +15,7 @@ body, html {
 
 .bg {
     /* The image used */
-    background-image: url("../../resources/images/flower2.jpg");
+    background-image: url("${rootPath}/resources/images/flower2.jpg");
 
     /* Full height */
     height: 30%; 
@@ -173,13 +173,41 @@ if (request.getParameter("hangoutNum")!=null){
 <script type="text/javascript">
 var hoUserNum = <%=user.getUserNum()%>;
 
-$(function() {
-    $('#summernote').summernote({
-        placeholder: '당신의 HANGOUT에 대하여 소개하세요! ',
-        tabsize: 1,
-        height: 300
-      });
-});
+$(document).ready(function() {
+    $('#hangoutContent').summernote({
+      height: 300,
+      minHeight: null,
+      maxHeight: null,
+      focus: true,
+      callbacks: {
+        onImageUpload: function(files, editor, welEditable) {
+          for (var i = files.length - 1; i >= 0; i--) {
+            sendFile(files[i], this);
+          }
+        }
+      }
+    });
+  });
+  
+function sendFile(file, el) {
+  var form_data = new FormData();
+  form_data.append('file', file);
+  $.ajax({
+    data: form_data,
+    type: "POST",
+    url: '/image',
+    cache: false,
+    contentType: false,
+    enctype: 'multipart/form-data',
+    processData: false,
+    success: function(xhr) {
+      alert(xhr.fileName);
+      var url = "${rootPath}/resources/client_img/" + xhr.fileName
+      $(el).summernote('editor.insertImage', url);
+      $('#hangoutContent').append('<li><img src="'+url+'" width="480" height="auto"/></li>');
+    }
+  });
+}
 
 $(".btn btn-secondary").click(function(){
    pageMove("hangout?hangoutNum=");
