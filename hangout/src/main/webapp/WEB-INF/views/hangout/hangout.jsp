@@ -62,7 +62,7 @@ if (request.getParameter("hangoutNum")!=null){
 				<img class="card-img-top" src="/resources/images/asia.jpg"
 					alt="image">
 				<div class="card-body">
-					<p class="card-text">${ListInfo}<br>
+					<p class="card-text">${ListInfo.hangoutContent}<br>
 						${ListInfo.hangoutCategory}
 					</p>
 				</div>

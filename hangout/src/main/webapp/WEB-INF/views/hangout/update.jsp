@@ -63,7 +63,7 @@ if (request.getParameter("hangoutNum")!=null){
 				<br>
 				<div id="hcreator" style="display: none;">${HangoutInfo.userNum}</div>
 				<div class="card-body">
-				 <textarea name="content" id="hangoutContent" >${HangoutInfo.hangoutContent}</textarea>
+				 <textarea name=content id="hangoutContent" >${HangoutInfo.hangoutContent}</textarea>
 				</div>
 			</div>
 			<br>
@@ -172,42 +172,42 @@ if (request.getParameter("hangoutNum")!=null){
 var hoUserNum = <%=user.getUserNum()%>;
 
 $(document).ready(function() {
-
-    $('#hangoutContent').summernote({
-      height: 300,
-      minHeight: null,
-      maxHeight: null,
-      focus: true,
-      callbacks: {
-        onImageUpload: function(files, editor, welEditable) {
-          for (var i = files.length - 1; i >= 0; i--) {
-            sendFile(files[i], this);
-          }
-        }
-      }
-    });
-
-  });
+$('#hangoutContent').summernote({
+	height: 300,
+	minHeight: null,
+	maxHeight: null,
+	focus: true,
+	callbacks: {
+		onImageUpload: function(files, editor, welEditable) {
+			for (var i = files.length - 1; i >= 0; i--) {
+				sendFile(files[i], this);
+				}
+			}
+			}
+			});
+		});
 
 function sendFile(file, el) {
-  var form_data = new FormData();
-  form_data.append('file', file);
-  $.ajax({
-    data: form_data,
-    type: "POST",
-    url: '/image',
-    cache: false,
-    contentType: false,
-    enctype: 'multipart/form-data',
-    processData: false,
-    success: function(xhr) {
-      alert(xhr.fileName);
-      var url = "${rootPath}/resources/client_img/" + xhr.fileName
-      $(el).summernote('editor.insertImage', url);
-      $('#hangoutContent').append('<li><img src="'+url+'" width="480" height="auto"/></li>');
-    }
-  });
-}
+	var form_data = new FormData();
+	form_data.append('file', file);
+	$.ajax({
+		data: form_data,
+		type: "POST",
+		url: '/image',
+		cache: false,
+		contentType: false,
+		enctype: 'multipart/form-data',
+		processData: false,
+		success: function(xhr) {
+
+			alert(xhr.fileName);
+			var url = "${rootPath}/resources/client_img/" + xhr.fileName
+			$(el).summernote('editor.insertImage', url);
+			
+			$('#hangoutContent').append('<li><img src="'+url+'" width="480" height="auto"/></li>');
+	   }
+	 });
+	}
 
 $(".btn btn-secondary").click(function(){
    pageMove("hangout?hangoutNum=");
@@ -224,13 +224,16 @@ function callbackSql(result){
    $("#hangoutList").html(userListHtml);
 }
 
-
-
 function update(){
-      var paramIds="hangoutNum,hangoutName,hangoutContent,hangoutOpendate,hangoutClosedate";
-       var au = new AjaxUtil("hangout/updateContent",paramIds);
-       au.send(); 
+	var paramIds="hangoutNum,hangoutName,hangoutContent,hangoutOpendate,hangoutClosedate";
+	var au = new AjaxUtil("hangout/updateContent",paramIds);
+	au.setCallbackSuccess(callbackUpdate);
+	au.send(); 
 }
+function callbackUpdate(result){
+	alert(result.msg);
+	pageMove(result.url);
+	}
 
     function initMap() {
         // mapLocation 지도에서 center에 표시할 위치

@@ -73,7 +73,7 @@ public class HoController {
 		int result = ls.updateContent(li);
 		if (result == 1) {
 			hm.put("msg", "모임생성이 완료되었습니다.");
-			hm.put("url", "hangout");
+			hm.put("url", "hangout?hangoutNum="+li.getHangoutNum());
 		} else {
 			hm.put("msg", "모임생성 실패, 정보를 확인하세요");
 			hm.put("url", "hangout/update");
@@ -154,7 +154,10 @@ public class HoController {
 	public String mylikeSite(UserInfo ui) {
 		return "hangout/mylikelist";
 	}
- 
+	@RequestMapping(value = "/test/fire", method = RequestMethod.GET)
+	public String firebasetest(UserInfo ui) {
+		return "test/firebase";
+	} 
 	   @RequestMapping(value = "/hangout", method = RequestMethod.GET)
 	   public String listsiteinfo(ListInfo li,ModelMap model) {
 		  HangoutInfo hi = ls.selectListContent(li);
