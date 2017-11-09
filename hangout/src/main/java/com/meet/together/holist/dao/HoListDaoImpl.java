@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.meet.together.holist.dto.CategoryInfo;
 import com.meet.together.holist.dto.HangoutInfo;
 import com.meet.together.holist.dto.ImageFile;
+import com.meet.together.holist.dto.LikeInfo;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
@@ -106,5 +107,15 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	@Override
 	public HangoutInfo selectUpdate(ListInfo li) {
 		return this.getSqlSession().selectOne("listInfo.SELECT_LIST_ONE",li);
+	}
+
+	@Override
+	public List<ListInfo> selectLikeList(LikeInfo ki) {
+		return this.getSqlSession().selectList("like.SELECT_LIKE",ki);
+	}
+
+	@Override
+	public int likeCount(LikeInfo ki) {
+		return this.getSqlSession().insert("like.INSERT_LIKE",ki);
 	}
 }

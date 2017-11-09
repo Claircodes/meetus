@@ -105,8 +105,8 @@ if (request.getParameter("hangoutName")!=null){
       </div>
       
     <div class="clearfix"> </div>
-
-   
+<input type="hidden" id="userNum" value="<%=user.getUserNum()%>"/>
+   <input type="hidden" id="hangoutNum"/>
    
    <!-- SQL을 통한 모임자동생성_ 기본 9개-->
    <script>
@@ -151,6 +151,7 @@ if (request.getParameter("hangoutName")!=null){
          var au = new AjaxUtil("hangout/list", paramIds);  
          au.setCallbackSuccess(callbackSql);
          au.send();
+         
       });
       function listclick(url) {
          pageMove("hangout?hangoutNum=" + url);
@@ -187,16 +188,17 @@ if (request.getParameter("hangoutName")!=null){
             var list = hangoutList[i];
             str += "<div class='mt-4 col-sm-4'>";
             str += "<div class='mt-4 card rm' onclick='listclick("+list.hangoutNum+")'>";
-            str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i class='fa fa-heart-o'></i></a></h5> ";
-            str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
+           str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i id='like' class='fa fa-heart-o' onclick='like("   + list.hangoutNum + ")'></i></a></h5> ";	
+           str += "<img class='card-img-top' src='/resources/images/flower1.jpg'>";
             str += "<div class='card-body cb'>";
-            str += "<div class='card-text'>" + list.hangoutContent + "</div>";
+            //str += "<div class='card-text'>" + list.hangoutContent + "</div>";
             str += "</div>";
             str += "</div>";
             str += "</div>";
          }
          $("#list_body").html(str);
-      }
+}
+
       $("#searchLists").click(function() {
     	 name = $("#hangoutName").val().trim();
     	  if(area_check==true){   //메인에서 지역 검색을 통해 들어왔을때,
@@ -258,16 +260,23 @@ if (request.getParameter("hangoutName")!=null){
          var list = hangoutList[set];
          str += "<div class='mt-4 col-sm-4 morebox'>";
          str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
-         str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i class='fa fa-heart-o'></i></a></h5> ";
-         str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
+        str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i id='like' class='fa fa-heart-o' onclick='like("   + list.hangoutNum + ")'></i></a></h5> ";	
+         str += "<img class='card-img-top' src='/resources/images/flower1.jpg'>";
          str += "<div class='card-body cb'>";
-         str += "<div class='card-text'>" + list.hangoutContent + "</div>";
+        // str += "<div class='card-text'>" + list.hangoutContent + "</div>";
          str += "</div>";
          str += "</div>";
          str += "</div>";
       }
       $("#list_body").append(str);
-   }
+  }
+   
+   function like(numhang){
+ 	   $("#hangoutNum").val(numhang);
+ 	   var paramIds = "hangoutNum,userNum";
+        var au = new AjaxUtil("hangout/like/insert", paramIds);
+         au.send();
+    }
    </script>
 
 

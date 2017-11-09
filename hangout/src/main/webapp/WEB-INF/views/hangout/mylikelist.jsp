@@ -17,7 +17,7 @@
 			<div class="col-sm-12 text-center">
 				<div class="text-vertical-center">
 					<h1>
-						내가 만든 리스트
+						내가 찜한 리스트
 					</h1>
 					<p>
 				</div>
@@ -75,7 +75,7 @@
                 </div>
 		</div>
       	<div class="col-sm-3">
-		<a href=""  onclick="gomylist()">
+		<a href=""  id="created" onclick="gomylist()">
 				<div class="card text-white bg-primary">
                     <div class="card-block">
                         <h3 class="card-title text-center"> CREATED.<p>HANGOUT.</h3>
@@ -112,36 +112,38 @@
 <!-- 모임 리스트 종료 -->
 
 
-<input type="hidden" id="hangoutCreator" value="${param.creator}"/>
 <input type="hidden" id="userNum" value="<%=user.getUserNum()%>"/>
+<input type="hidden" id="hangoutCreator" value="${param.creator}"/>
 <script> 
     $(document).ready(function(){
-      var createdNum;
-       var paramIds="hangoutName,hangoutCreator";
-       var au = new AjaxUtil("hangout/list",paramIds);
-       au.setCallbackSuccess(callbackSql);
+      var likedNum;
+       var paramIds="hangoutName,userNum";
+       var au = new AjaxUtil("hangout/like/list",paramIds);
+       au.setCallbackSuccess(likeListSql);
        au.send();
+       
+       var createdNum;
+       var paramCreated="hangoutName,hangoutCreator";
+       var auCreated = new AjaxUtil("hangout/list",paramCreated);
+       auCreated.setCallbackSuccess(callbackSql);
+       auCreated.send();
        
        var comingNum;
        var paramIds="hangoutName,userNum";
        var au = new AjaxUtil("hangout/takeuser/participate",paramIds);
        au.setCallbackSuccess(participateSql);
-       au.send();
-       
-       var paramCreated="hangoutName,userNum";
-       var auCreated = new AjaxUtil("hangout/like/list",paramCreated);
-       auCreated.setCallbackSuccess(likeListSql);
-       auCreated.send();
+       au.send(); 
     });
+    
     function listclick(url){
     	pageMove("hangout?hangoutNum="+url);
         }   
     
-   function callbackSql(result){
-      var hangoutList=result.list;
+   function likeListSql(result){
+      var liketList=result.list;
       var str = "";
-      for (var i = 0, max = hangoutList.length; i < max; i++) {
-         var list = hangoutList[i]; 
+      for (var i = 0, max = liketList.length; i < max; i++) {
+         var list = liketList[i]; 
          str += "<div class='mt-4 col-sm-4'>";
          str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
          str += "<h5 class='card-header'>" + list.hangoutName + "</h5>";
@@ -152,21 +154,21 @@
          str += "</div>";
          str += "</div>";
          }
-      createdNum = hangoutList.length;
+      likedNum = liketList.length;
       $("#list_body").html(str);
-      $("#createdNum").html(createdNum);
+      $("#likedNum").html(likedNum);
       }
+   
+   function callbackSql(result){
+	     var hangoutList=result.list;
+	    createdNum =  hangoutList.length;
+	      $("#createdNum").html(createdNum);
+	      }
    
    function participateSql(result){
 	     var comingList=result.list;
 	     comingNum =  comingList.length;
 	      $("#comingNum").html(comingNum);
-	      }
-   
-   function likeListSql(result){
-	     var likeList=result.list;
-	    likedNum =  likeList.length;
-	      $("#likedNum").html(likedNum);
 	      }
    
     $("#searchLists").click(function(){
@@ -180,6 +182,11 @@
        au.setCallbackSuccess(callbackSql);
         au.send();
     });
+    
+    function gomylist(){
+    	var usernum="<%=user.getUserNum()%>";
+    	$("#created").attr("href", "${rootPath}/hangout/mylist?creator=" + usernum);
+    }
     </script>
 
 

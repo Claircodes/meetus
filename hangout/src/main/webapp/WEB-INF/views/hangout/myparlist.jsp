@@ -43,7 +43,7 @@
   <div class="row justify-content-center align-self-center">
 		<div class="col-sm-3">
 	
-		<a href="<c:url value='/hangout/partimylist?create=${param.creator}'/>"
+		<a href="<c:url value='/hangout/partimylist?creator=${param.creator}'/>"
 							class="" id="participateLists">
 				<div class="card text-white bg-primary">
                     <div class="card-block">
@@ -59,6 +59,8 @@
                 </div></a>
 		</div>
 		<div class="col-sm-3">
+		<a href="<c:url value='/hangout/mylikelist?creator=${param.creator}'/>"
+							class="" id="likeList">
 				<div class="card text-white bg-primary">
                     <div class="card-block">
                         <h3 class="card-title text-center"> LIKED.<p>HANGOUT.</h3>
@@ -67,7 +69,6 @@
                     <div class="card-footer">
                          <span class="float-right">
                        <h5>
-                       NO DATA
                        <div id="likedNum"></div></h5>
                        </span>
                     </div>
@@ -122,8 +123,6 @@
        var comingNum;
        var paramIds="hangoutName,userNum";
        var au = new AjaxUtil("hangout/takeuser/participate",paramIds);
-       var paramCreated = "hangoutName,hangoutCreator";
-       var auCreated = new AjaxUtil("hangout/list",paramIds);
        au.setCallbackSuccess(participateSql);
        au.send(); 
        
@@ -131,7 +130,12 @@
        var paramCreated="hangoutName,hangoutCreator";
        var auCreated = new AjaxUtil("hangout/list",paramCreated);
        auCreated.setCallbackSuccess(callbackSql);
-       auCreated.send(); 
+       auCreated.send();
+       
+       var paramCreated="hangoutName,userNum";
+       var auCreated = new AjaxUtil("hangout/like/list",paramCreated);
+       auCreated.setCallbackSuccess(likeListSql);
+       auCreated.send();
     });
     
    function participateSql(result){
@@ -156,11 +160,14 @@
    
    function callbackSql(result){
  	     var hangoutList=result.list;
-	    for (var j = 0, max = hangoutList.length; j < max; j++) {
-	         var list2 = hangoutList[j]; 
-	          }
 	    createdNum =  hangoutList.length;
 	      $("#createdNum").html(createdNum);
+	      }
+   
+   function likeListSql(result){
+	     var likeList=result.list;
+	    likedNum =  likeList.length;
+	      $("#likedNum").html(likedNum);
 	      }
    
    

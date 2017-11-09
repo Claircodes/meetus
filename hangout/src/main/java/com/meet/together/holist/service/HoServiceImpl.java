@@ -10,6 +10,7 @@ import com.meet.together.holist.dao.HoListDao;
 import com.meet.together.holist.dto.CategoryInfo;
 import com.meet.together.holist.dto.HangoutInfo;
 import com.meet.together.holist.dto.ImageFile;
+import com.meet.together.holist.dto.LikeInfo;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
@@ -79,6 +80,14 @@ public class HoServiceImpl implements HoService {
 	@Override
 	public HangoutInfo selectUpdate(ListInfo li) {
 		return listDao.selectUpdate(li);
+	}
+	@Override
+	public List<ListInfo> selectLikeList(LikeInfo ki) {
+		return listDao.selectLikeList(ki);
+	}
+	@Override
+	public int likeCount(LikeInfo ki) {
+		return listDao.likeCount(ki);
 	}
 	
 	/**

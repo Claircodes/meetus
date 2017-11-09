@@ -15,6 +15,7 @@
     	<typeAlias alias="place" type="com.meet.together.holist.dto.Place"/>
     	<typeAlias alias="category" type="com.meet.together.holist.dto.CategoryInfo"/>
     	<typeAlias alias="takeuser" type="com.meet.together.holist.dto.TakeUserInfo"/>
+    	<typeAlias alias="like" type="com.meet.together.holist.dto.LikeInfo"/>
     	
     	
 	</typeAliases>
@@ -24,6 +25,7 @@
 		<mapper resource="sql/place_sql.xml" />
 		<mapper resource="sql/category_sql.xml" />
 		<mapper resource="sql/takeuser_sql.xml" />
+		<mapper resource="sql/like_sql.xml" />
 	</mappers>
 </configuration>
 

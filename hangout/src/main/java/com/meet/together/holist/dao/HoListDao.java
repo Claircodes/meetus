@@ -1,6 +1,5 @@
 package com.meet.together.holist.dao;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -8,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.meet.together.holist.dto.CategoryInfo;
 import com.meet.together.holist.dto.HangoutInfo;
 import com.meet.together.holist.dto.ImageFile;
+import com.meet.together.holist.dto.LikeInfo;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
@@ -39,4 +39,8 @@ public interface HoListDao {
 	int updateContent(ListInfo li);
 
 	HangoutInfo selectUpdate(ListInfo li);
+	
+	List<ListInfo> selectLikeList(LikeInfo ki);
+	
+	int likeCount(LikeInfo ki);
 }

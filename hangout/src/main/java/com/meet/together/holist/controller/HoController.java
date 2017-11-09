@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.meet.together.holist.dto.HangoutInfo;
 import com.meet.together.holist.dto.ImageFile;
+import com.meet.together.holist.dto.LikeInfo;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
 import com.meet.together.holist.dto.TakeUserInfo;
@@ -148,6 +149,11 @@ public class HoController {
 	public String myParticipateSite(UserInfo ui) {
 		return "hangout/myparlist";
 	}
+	
+	@RequestMapping(value = "/hangout/mylikelist", method = RequestMethod.GET)
+	public String mylikeSite(UserInfo ui) {
+		return "hangout/mylikelist";
+	}
  
 	   @RequestMapping(value = "/hangout", method = RequestMethod.GET)
 	   public String listsiteinfo(ListInfo li,ModelMap model) {
@@ -169,9 +175,29 @@ public class HoController {
 			return hm;
 		}
 		
+		@RequestMapping(value = "/hangout/like/insert", method = RequestMethod.POST)
+		public @ResponseBody ModelMap likeCount(@RequestBody LikeInfo ki, ModelMap hm) {
+			int result = ls.likeCount(ki);
+			if (result == 1) {
+				hm.put("msg", "찜하기 완료!");
+				hm.put("url", "hangout/golist");
+			} else {
+				hm.put("msg", "찜하기 실패, 정보를 확인하세요");
+				hm.put("url", "hangout/golist");
+			}
+			return hm;
+		}
+		
 		@RequestMapping(value = "/hangout/takeuser/participate", method = RequestMethod.POST)
 		public @ResponseBody ModelMap selectParticipateUserList(@RequestBody TakeUserInfo tu, ModelMap hm) {
 			List<ListInfo> list = ls.selectParticipateUserList(tu);
+			hm.put("list", list);
+			return hm;
+		}
+		
+		@RequestMapping(value = "/hangout/like/list", method = RequestMethod.POST)
+		public @ResponseBody ModelMap selectLikeList(@RequestBody LikeInfo ki, ModelMap hm) {
+			List<ListInfo> list = ls.selectLikeList(ki);
 			hm.put("list", list);
 			return hm;
 		}
