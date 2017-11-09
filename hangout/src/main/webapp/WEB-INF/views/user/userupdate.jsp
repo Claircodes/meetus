@@ -167,7 +167,7 @@ function delete_user(){
 	}else{
 		return;
 	}
-}
+} 
 </script>
 
 	<!-- Javascript -->
