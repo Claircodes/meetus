@@ -14,9 +14,9 @@ body, html {
 }
 
 .bg {
-    /* The image used */
-    background-image: url("../../resources/images/flower2.jpg");
-
+    /* The image used 
+    background-image: url("${rootPath}/resources/images/flower2.jpg");
+*/
     /* Full height */
     height: 30%; 
 
@@ -58,7 +58,7 @@ if (request.getParameter("hangoutNum")!=null){
 			<!-- Blog Post -->
 			<div class="form-top">
 				<br>
-				<div id="hcreator" style="display: none;">${ListInfo.hangoutCreator}</div>
+				<div id="hcreator" style="display: none;">${ListInfo.userNum}</div>
 				<img class="card-img-top" src="/resources/images/asia.jpg"
 					alt="image">
 				<div class="card-body">
@@ -183,11 +183,12 @@ if (request.getParameter("hangoutNum")!=null){
 
 </div>
 
-<input type="hidden" id="hangoutNum" value="${param.hangoutNum}"/>
 <input type="hidden" id="userNum" value="<%=user.getUserNum()%>"/>
 </body>
 
-
+<form action="/hangout/update" method="post" >
+<input type="hidden" id="hangoutNum" value="${param.hangoutNum}"/>
+</form>
 <script type="text/javascript">
 var hoUserNum = <%=user.getUserNum()%>;
 
@@ -196,7 +197,7 @@ $(".btn btn-secondary").click(function(){
 });
 $(document).ready(function() {
    if (hoUserNum==$("#hcreator").text()){
-      $("#hangout_btn").html('${ListInfo.hangoutName}' +'<button class="btn btn-secondary  pull-right" type="button" id="update" onclick="goupdate()">수정하기</button>');
+      $("#hangout_btn").html('${ListInfo.hangoutName}' +'<form action="/hangout/update" name="hangoutinfo" method="post" > <input type="hidden" name="hangoutNum" value="${param.hangoutNum}"/><input class="btn btn-secondary  pull-right" type="submit" id="update" value="수정하기"> </form> ');
    }else{
       $("#hangout_btn").html('${ListInfo.hangoutName}' +'<button class="btn btn-secondary pull-right" type="button" id="participate" onclick="participate()">참가하기</button>');
    }
