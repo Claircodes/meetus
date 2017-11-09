@@ -112,6 +112,7 @@ if (request.getParameter("hangoutName")!=null){
    <script>
    var area_search="";
    var area_check=false;
+   var cate_check=false;
 
       $(document).ready(function() {
     	var area="<%=hangoutArea%>";
@@ -132,6 +133,7 @@ if (request.getParameter("hangoutName")!=null){
          if(category!=null || category!=""){
         	 $("#hangoutCategory").val(category);  
         	 $('#'+category).attr("class","btn btn-info active");
+        	 cate_check=true;
          }
          
          $("#hangoutArea").geocomplete().bind("geocode:result",
@@ -197,7 +199,7 @@ if (request.getParameter("hangoutName")!=null){
       }
       $("#searchLists").click(function() {
     	 name = $("#hangoutName").val().trim();
-    	  if(area_check==true){   //카테고리 선택을 통해 들어왔을때,
+    	  if(area_check==true){   //메인에서 지역 검색을 통해 들어왔을때,
     		  if(name!=""){
     			  pageMove("hangout/golist?hangoutName=" + name + "&hangoutArea=" + area);
     			  if(area_search==null || area_search==""){
@@ -222,6 +224,16 @@ if (request.getParameter("hangoutName")!=null){
            //au.send();
        }
     	  }
+    	  
+    	  
+    	 if(cate_check==true){
+    		 var cate_name=$("#hangoutCategory").val();
+    		 if(name!=""){
+    		 pageMove("hangout/golist?hangoutCategory=" + cate_name + "&hangoutName=" + name);
+    	 }else{
+    		 pageMove("hangout/golist?hangoutCategory=" + cate_name);
+    	 }
+    	 }
       });
    </script>
    <!-- SQL 생성 종료 -->
