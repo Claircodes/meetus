@@ -15,12 +15,18 @@
 					<br>
 				</div>
 				<div class="col-sm-5 ebook">
-					<img src="/resources/images/web-test.jpg" alt="사진사진">
+						<!-- DB 이미지 불러오기 
+						<div id="callUserImg"></div>
+						-->
+						<img src="/resources/images/web-test.jpg" >
 				</div>
 
+				<!-- DB 유저정보 SQL  -->
 				<div class="form-top">
-					<div id="profile">
-					</div>
+					<div id="profile"> </div>
+				
+		<a href='<c:url value='/user/update'/>' class="btn-link-1 pull-right">수정하기</a>
+						<a href='${rootPath}/hangout/mylist?creator="+ profileList.userNum + "' class="btn-link-2 pull-right">나의 모임</a> 
 				</div>
 			</div>
 		</div>
@@ -47,9 +53,6 @@
 		str += "<div class='panel-body'>";
 		str += "<div class='row'>";
 		str += "<div class='col-sm-1 ' align='center'>";
-		/* str+="<img alt='User Pic'";
-	str+="src='http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png'";
-	str+="class='img-circle img-responsive'>"; */
 		str += "</div>";
 		str += "<div class=' col-sm-4 '>";
 		str += "<table class='table table-user-information'>";
@@ -86,14 +89,9 @@
 
 		str += "</tbody></div>";
 		str += "</table></div></div>";
-		str+= "<a href='${rootPath}/' class='btn-link-0'>메인 가기</a> ";
-		str += "<a href='${rootPath}/hangout/mylist?creator="
-				+ profileList.userNum + "' class='btn-link-2'>나의 모임</a> ";
-		str += "<a href='<c:url value='/user/update'/>' class='btn-link-1'>수정하기</a>  ";
 		$("#profile").html(str);
 	}
 </script>
 
 	<!-- Javascript -->
-
-        <script src="<c:url value='/resources/js/scripts-userprofile.js' />"></script>
+ <script src="<c:url value='/resources/js/scripts-userprofile.js' />"></script>
