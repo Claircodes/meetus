@@ -58,7 +58,7 @@
                        </span>
                     </div>
                 </div></a>
-		</div>
+		</div> 
 		<div class="col-sm-3">
 
 				<div class="card text-white bg-primary">
