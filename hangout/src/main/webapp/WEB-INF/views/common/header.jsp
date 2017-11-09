@@ -84,7 +84,7 @@
 				<li class="nav-item"><a class="nav-link"
 					href="${rootPath}/user/profile">My Page</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="${rootPath}/hangout/mylist?creator=" + profileList.userNum>My HANGOUT</a></li>
+					href="${rootPath}/hangout/partimylist?create=${param.creator}">My HANGOUT</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${rootPath}/user/logout">로그아웃</a></li>
 				<li class="nav-item"><a class="nav-link js-scroll-trigger"><%=user.getUserId()%></a></li>
