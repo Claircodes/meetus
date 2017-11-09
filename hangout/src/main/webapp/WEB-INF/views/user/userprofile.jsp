@@ -26,7 +26,7 @@
 					<div id="profile"> </div>
 				
 		<a href='<c:url value='/user/update'/>' class="btn-link-1 pull-right">수정하기</a>
-						<a href='${rootPath}/hangout/mylist?creator="+ profileList.userNum + "' class="btn-link-2 pull-right">나의 모임</a> 
+		<a href='${rootPath}/hangout/mylist?creator="+ profileList.userNum + "' class="btn-link-2 pull-right">나의 모임</a> 
 				</div>
 			</div>
 		</div>
@@ -48,7 +48,6 @@
 		var str = "";
 		str += "<div class='panel panel-info'>";
 		str += "<div class='panel-heading'><div class='col-sm-12 text'>";
-		str += "</div>";
 		str += "<br></br>";
 		str += "<div class='panel-body'>";
 		str += "<div class='row'>";
@@ -83,6 +82,7 @@
 		str += "<td><a href='mailto:" + profileList.userEmail + "'>"
 				+ profileList.userEmail + "</a></td>";
 		str += "</tr>";
+		 str+="<tr>";
 		str += "<td>Phone Number</td>";
 		str += "<td>" + profileList.userPhone + "</td>";
 		str += "</tr>";

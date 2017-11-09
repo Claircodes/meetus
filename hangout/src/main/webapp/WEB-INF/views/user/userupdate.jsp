@@ -15,11 +15,17 @@
 				</div>
 				<div class="col-sm-5 ebook">
 					<img src="/resources/images/web-test.jpg" alt="사진사진">
+					    <form method='post' enctype='multipart/form-data' action='imgup.jsp' >
+					    <input type='file' name='userPicture' class='btn-link-2'></form>
+   							<input id='userPicture' type='submit' value='upload' class='btn-link-2'>
 				</div>
 
 				<div class="form-top">
-					<div id="body">
-					</div>
+					<div id="body"></div>
+					    <a onclick='delete_user()'class='btn-dark' type='button' id='delete' style='cursor:pointer;'>탈퇴하기</a>
+					    <a onclick='update()' class='btn-link-1 pull-right' type='button' id='update' style='cursor:pointer;'>수정완료</a> 
+						<a href='${rootPath}/user/profile' class='btn-link-2 pull-right'>수정 취소</a>
+				
 				</div>
 			</div>
 		</div>
@@ -38,18 +44,19 @@ $(document).ready(function(){
 function callbackSql(result){
     var profileList=result.list;
     var str = "";
-    str+="<div class='panel panel-info'>";
-    str+="<div class='panel-heading'><div class='col-sm-12 text'>";
-    str+="</div>";
-    str+="<br></br>";
-    str+="<div class='panel-body'>";
-    str+="<div class='row'>";
-    str+="<div class='col-sm-4'>";
-     str+="<table class='table table-user-information'>";
-    str+="<tbody>";
+	str += "<div class='panel panel-info'>";
+	str += "<div class='panel-heading'><div class='col-sm-12 text'>";
+	str += "<br></br>";
+	str += "<div class='panel-body'>";
+	str += "<div class='row'>";
+	str += "<div class='col-sm-1' align='center'>";
+	str += "</div>";
+	str += "<div class='col-sm-3'>";
+	str += "<table class='table table-user-information'>";
+	str += "<tbody>";
      str+="<tr>";
     str+="<td>ID</td>";
-    str+="<td><input  id='userId' type='text' class='btn-link-2' value='" + profileList.userId + "' style='border:none;' readonly></td>";
+    str += "<td>" + profileList.userId + "</td>";
     str+="</tr>";
      str+="<tr>";
     str+="<td>Name</td>";
@@ -61,49 +68,28 @@ function callbackSql(result){
     str+="</tr>";
     str+="<tr>";
    str+="<td>Password Check</td>";
-   str+="<td>";
-     str+="<input id='userPwd2' type='password' value='" + profileList.userPwd + "' style='border:none;'><a onclick='overlapBtn()' type='text' id='overlapBtn' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer;' style='cursor:pointer color:white;'>변경하기</a></td>";
+   str+="<td><input id='userPwd2' type='password' value='" + profileList.userPwd + "' style='border:none;'>";
+   str+="<a onclick='overlapBtn()' class='pull-right' type='text' id='overlapBtn'>변경하기</a></td>";
     str+="</tr>";
     str+="<tr>";
     str+="<td>Gender</td>";
-     str+="<td><input id='userGender' type='text' value='" + profileList.userGender + "' style='border:none;' readonly></td>";
+    str += "<td>" + profileList.userGender + "</td>";
     str+="</tr>";
     str+="<tr>";
     str+="<td>Country</td>";
-    str+="<td><select class='selectpicker' data-style='btn-danger' id='userCountry'>";
-    str+="<optgroup label='기존국가'>";
-    str+="<option>" + profileList.userCountry + "</option>";
-   str+="<optgroup label='Asia'>";
-     str+="<option>Korea</option>";
-    str+="<option>Japan</option>";
-      str+="<option>China</option>";
-   str+="</optgroup>";
-     str+="<optgroup label='Europe'>";
-     str+="<option>England</option>";
-     str+="<option>Germany</option>";
-    str+="<option>France</option>";
-     str+="</optgroup>";
-    str+="</select></td>";
+    str += "<td>" + profileList.userCountry + "</td>";
     str+="</tr>";
      str+="<tr>";
     str+="<td>Email</td>";
     str+="<td><input id='userEmail' type='text' value='" + profileList.userEmail + "' style='border:none;'></td>";
     str+="</tr>";
+    str+="<tr>";
     str+="<td>Phone Number</td>";
      str+="<td><input id='userPhone' type='text' value='" + profileList.userPhone +"' style='border:none;'>";
     str+="</td>";
     str+="</tr>";
-    str+="<td>Upload Picture</td>";
-    str+="<td><form method='post' enctype='multipart/form-data' action='imgup.jsp' ><input type='file' name='userPicture' class='btn-link-2'></form></td>";
-    str+="<td><input id='userPicture' type='submit' value='upload'>";
-   str+="</td>";
-    str+="</tr>";
-
      str+="</tbody></div>";
     str+="</table></div></div>";
-	   str+="<a href='${rootPath}/user/profile' class='btn-link-2'>수정 취소</a> ";
-    str+="<a onclick='update()' class='btn-link-1' type='button' id='update' style='cursor:pointer;'>수정완료</a>   ";
-     str+="<a onclick='delete_user()'class='btn-dark' type='button' id='delete' style='cursor:pointer;'>탈퇴하기</a>";
     str+="</div>";
     str+="</div>";
     str+="</div>";
