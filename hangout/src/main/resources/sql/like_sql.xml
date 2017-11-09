@@ -11,13 +11,16 @@
 			#{hangoutNum},
 			#{userNum}
 		)
-	</insert>
+	</insert> 
 
 	<select id="SELECT_LIKE" parameterType="like" resultType="listInfo">
 		select hi.* from hangout_info hi, hangout_like hl, user_info ui
 		where hi.hangoutnum = hl.hangoutnum
 		and ui.usernum=hl.usernum
 		and ui.usernum=#{userNum}
+		<if test="hangoutName != '' and hangoutName != null">
+		and hi. hangoutname like concat('%',#{hangoutName},'%')
+		</if>
 	</select>
 	
 		<select id="SELECT_TAKEUSER" parameterType="takeuser" resultType="takeuser">

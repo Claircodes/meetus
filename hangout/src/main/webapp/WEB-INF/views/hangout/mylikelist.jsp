@@ -177,9 +177,9 @@
          alert("모임이름을 입력해주세요");
          return
       }
-      var paramIds="hangoutName,hangoutCreator";
-       var au = new AjaxUtil("hangout/list",paramIds);
-       au.setCallbackSuccess(callbackSql);
+      var paramIds="hangoutName,userNum";
+      var au = new AjaxUtil("hangout/like/list",paramIds);
+       au.setCallbackSuccess(likeListSql);
         au.send();
     });
     
