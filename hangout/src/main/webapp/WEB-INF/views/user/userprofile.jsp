@@ -91,7 +91,7 @@
 		str += "</table></div></div>";
 		$("#profile").html(str);
 	}
-</script>  
+</script>
 
 	<!-- Javascript -->
  <script src="<c:url value='/resources/js/scripts-userprofile.js' />"></script>

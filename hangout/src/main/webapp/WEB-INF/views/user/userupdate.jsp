@@ -14,7 +14,7 @@
 					<br>
 				</div>
 				<div class="col-sm-5 ebook">
-					<img src="/resources/images/web-test.jpg" alt="사진사진">
+					<img src="/resources/images/web-test.jpg" alt="사진">
 					    <form method='post' enctype='multipart/form-data' action='imgup.jsp' >
 					    <input type='file' name='userPicture' class='btn-link-2'></form>
    							<input id='userPicture' type='submit' value='upload' class='btn-link-2'>
@@ -167,7 +167,7 @@ function delete_user(){
 	}else{
 		return;
 	}
-} 
+}
 </script>
 
 	<!-- Javascript -->
