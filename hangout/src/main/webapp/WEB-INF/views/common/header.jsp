@@ -82,7 +82,9 @@
 				<li class="nav-item"><a class="nav-link"
 					href="${rootPath}/hangout/golist">모임 리스트</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="${rootPath}/user/profile">마이 페이지</a></li>
+					href="${rootPath}/user/profile">My Page</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${rootPath}/hangout/mylist?creator=" + profileList.userNum>My HANGOUT</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${rootPath}/user/logout">로그아웃</a></li>
 				<li class="nav-item"><a class="nav-link js-scroll-trigger"><%=user.getUserId()%></a></li>
