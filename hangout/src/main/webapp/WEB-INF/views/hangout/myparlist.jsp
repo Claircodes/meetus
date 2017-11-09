@@ -7,24 +7,24 @@
 <link href="<c:url value='/resources/css/bootstrap.css"'/>"	rel="stylesheet" />
 <link href="<c:url value="/resources/css/bootstrap.min.css"/>"	rel="stylesheet">
 <link href="<c:url value='/resources/css/list.css"'/>"   rel="stylesheet" />
-<br><br><br><br>
 
- <!-- 검색 bar -->
+
+  <!-- 검색 bar -->
 <section>
+	<div class="form-top">
 	<div class="container">
 		<div class="row justify-content-center align-self-center">
 			<div class="col-sm-12 text-center">
 				<div class="text-vertical-center">
 					<h1>
-						내가 참가중인 모임 리스트 
-						<a href="#" class="btn btn-dark" id="participateLists" onclick="gomylist()">내가 만든 모임</a>
+						내가 참가중인 리스트
 					</h1>
 					<p>
 				</div>
 			</div>
 			<div class="col-sm-2"></div>
 			<div class="col-sm-2 text-right">
-				<input type="text" class="form-control btn btn-primary"
+				<input type="text" class="form-control btn btn-warning"
 					placeholder="서울특별시" id="geocomplete">
 			</div>
 			<div class="col-sm-4">
@@ -38,7 +38,53 @@
 				<br>
 			</div>
 		</div>
+
+
+  <div class="row justify-content-center align-self-center">
+		<div class="col-sm-3">
+	
+		<a href="<c:url value='/hangout/partimylist?create=${param.creator}'/>"
+							class="" id="participateLists">
+				<div class="card text-white bg-primary">
+                    <div class="card-block">
+                        <h3 class="card-title text-center">COMING.<p>HANGOUT.</h3>
+                        
+                    </div>
+                    <div class="card-footer">
+                       <span class="float-right">24개</span>
+                    </div>
+                </div></a>
+		</div>
+		<div class="col-sm-3">
+				<div class="card text-white bg-primary">
+                    <div class="card-block">
+                        <h3 class="card-title text-center"> LIKED.<p>HANGOUT.</h3>
+                        
+                    </div>
+                    <div class="card-footer">
+                        <span class="float-right">6개</span>
+                    </div>
+                </div></a>
+		</div>
+      	<div class="col-sm-3">
+      		<a href=""  id="created" onclick="gomylist()">
+				<div class="card text-white bg-primary">
+                    <div class="card-block">
+                        <h3 class="card-title text-center"> CREATED.<p>HANGOUT.</h3>
+                        
+                    </div>
+                    <div class="card-footer">
+                        <span class="float-right">2개</span>
+                    </div>
+                </div>
+                
+                </a>
+		</div>
+ 
 	</div>
+	
+	</div>
+</div>
 </section>
 
 
@@ -78,7 +124,7 @@
          str += "<h5 class='card-header'>" + list.hangoutName + "</h5>";
          str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
          str += "<div class='card-body cb'>";
-         str += "<div class='card-text'>" + list.hangoutContent + "</div>";
+//         str += "<div class='card-text'>" + list.hangoutContent + "</div>";
          str += "</div>";
          str += "</div>";
          str += "</div>";
@@ -104,7 +150,7 @@
     
     function gomylist(){
     	var usernum="<%=user.getUserNum()%>";
-    	$("#participateLists").attr("href", "${rootPath}/hangout/mylist?creator=" + usernum);
+    	$("#created").attr("href", "${rootPath}/hangout/mylist?creator=" + usernum);
     }
 
     </script>

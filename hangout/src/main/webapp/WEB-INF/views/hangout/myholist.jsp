@@ -9,16 +9,15 @@
 <link href="<c:url value='/resources/css/list.css"'/>"   rel="stylesheet" />
 
 
- <!-- 검색 bar -->
+   <!-- 검색 bar -->
 <section>
 	<div class="form-top">
-<!-- <div class="wrapper bgded " style="background-image:url('/resources/images/bg.jpg');"> -->
 	<div class="container">
 		<div class="row justify-content-center align-self-center">
 			<div class="col-sm-12 text-center">
 				<div class="text-vertical-center">
 					<h1>
-						내가 만든 모임 리스트
+						내가 만든 리스트
 					</h1>
 					<p>
 				</div>
@@ -57,9 +56,7 @@
                 </div></a>
 		</div>
 		<div class="col-sm-3">
-	
-		<a href="<c:url value='/hangout/partimylist?create=${param.creator}'/>"
-							class="" id="participateLists">
+
 				<div class="card text-white bg-primary">
                     <div class="card-block">
                         <h3 class="card-title text-center"> LIKED.<p>HANGOUT.</h3>
@@ -68,10 +65,10 @@
                     <div class="card-footer">
                         <span class="float-right">6개</span>
                     </div>
-                </div></a>
+                </div>
 		</div>
       	<div class="col-sm-3">
-		<a href="" id="participateLists" onclick="gomylist()">
+		<a href=""  onclick="gomylist()">
 				<div class="card text-white bg-primary">
                     <div class="card-block">
                         <h3 class="card-title text-center"> CREATED.<p>HANGOUT.</h3>
@@ -98,7 +95,8 @@
    <!-- SQL 실행 -> 부트스트랩 입력-->
       <div id="list_body"    class="row"></div>
    <!-- SQL 종료-->
-       </div></div>
+       </div>
+       </div>
     <hr>
 
 <!-- 모임 리스트 종료 -->
@@ -127,7 +125,7 @@
          str += "<h5 class='card-header'>" + list.hangoutName + "</h5>";
          str += "<img class='card-img-top' src='../resources/images/flower1.jpg'>";
          str += "<div class='card-body cb'>";
-         str += "<div class='card-text'>" + list.hangoutContent + "</div>";
+/*          str += "<div class='card-text'>" + list.hangoutContent + "</div>"; */
          str += "</div>";
          str += "</div>";
          str += "</div>";
