@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ImageFile {
 	
-	public static final String IMAGE_DIR = "\\git\\meetus\\hangout\\src\\main\\webapp\\resources\\client_img";
+	public static final String IMAGE_DIR = "http://hangout.kr/resources/client_img/";
 //	public static final String IMAGE_DIR = "C:\\Users\\imagine\\git\\meetus\\hangout\\src\\main\\webapp\\resources\\client_img\\";
 ///git/meetus/hangout/src/main/webapp/resources/client_img/
 
