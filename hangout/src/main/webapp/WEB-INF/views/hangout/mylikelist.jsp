@@ -97,7 +97,7 @@
 </div>
 </section>
 
-
+ 
 
 <!-- 모임 리스트 시작-->
    <div class="container">
