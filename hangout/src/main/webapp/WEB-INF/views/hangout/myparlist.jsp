@@ -50,8 +50,11 @@
                         <h3 class="card-title text-center">COMING.<p>HANGOUT.</h3>
                         
                     </div>
-                    <div class="card-footer">
-                       <span class="float-right">24개</span>
+                     <div class="card-footer">
+                       <span class="float-right">
+                       <h5>
+                       <div id="comingNum"></div></h5>
+                       </span>
                     </div>
                 </div></a>
 		</div>
@@ -62,7 +65,11 @@
                         
                     </div>
                     <div class="card-footer">
-                        <span class="float-right">6개</span>
+                         <span class="float-right">
+                       <h5>
+                       NO DATA
+                       <div id="likedNum"></div></h5>
+                       </span>
                     </div>
                 </div></a>
 		</div>
@@ -74,7 +81,10 @@
                         
                     </div>
                     <div class="card-footer">
-                        <span class="float-right">2개</span>
+                        <span class="float-right">
+                        <h5>
+                        <div id="createdNum"></div></h5>
+                        </span>
                     </div>
                 </div>
                 
@@ -106,12 +116,22 @@
 
 
 <input type="hidden" id="userNum" value="<%=user.getUserNum()%>"/>
+<input type="hidden" id="hangoutCreator" value="${param.creator}"/>
 <script> 
     $(document).ready(function(){
+       var comingNum;
        var paramIds="hangoutName,userNum";
        var au = new AjaxUtil("hangout/takeuser/participate",paramIds);
+       var paramCreated = "hangoutName,hangoutCreator";
+       var auCreated = new AjaxUtil("hangout/list",paramIds);
        au.setCallbackSuccess(participateSql);
        au.send(); 
+       
+       var createdNum;
+       var paramCreated="hangoutName,hangoutCreator";
+       var auCreated = new AjaxUtil("hangout/list",paramCreated);
+       auCreated.setCallbackSuccess(callbackSql);
+       auCreated.send(); 
     });
     
    function participateSql(result){
@@ -122,15 +142,28 @@
          str += "<div class='mt-4 col-sm-4'>";
          str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
          str += "<h5 class='card-header'>" + list.hangoutName + "</h5>";
-         str += "<img class='card-img-top' src='https://upload.wikimedia.org/wikipedia/ko/8/88/%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8A%A4%ED%80%98%EC%96%B4%ED%8C%AC%EC%B8%A0_%EB%93%B1%EC%9E%A5%EC%9D%B8%EB%AC%BC.png' alt='photo'>";
-         str += "<div class='card-body cb'>";
-//         str += "<div class='card-text'>" + list.hangoutContent + "</div>";
+         str += "<img class='card-img-top' src='../resources/images/flower1.jpg'>";
+         /*         str += "<div class='card-body cb'>";
+         str += "<div class='card-text'>" + list.hangoutContent + "</div>"; */
          str += "</div>";
          str += "</div>";
          str += "</div>";
          }
+      comingNum = participateList.length;
       $("#list_body").html(str);
+      $("#comingNum").html(comingNum);
       }
+   
+   function callbackSql(result){
+ 	     var hangoutList=result.list;
+	    for (var j = 0, max = hangoutList.length; j < max; j++) {
+	         var list2 = hangoutList[j]; 
+	          }
+	    createdNum =  hangoutList.length;
+	      $("#createdNum").html(createdNum);
+	      }
+   
+   
    
     $("#searchLists").click(function(){
        var hangoutName= $("#hangoutName").val().trim();

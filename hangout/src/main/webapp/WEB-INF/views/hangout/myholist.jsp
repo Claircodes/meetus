@@ -51,7 +51,11 @@
                         
                     </div>
                     <div class="card-footer">
-                       <span class="float-right">24개</span>
+                       <span class="float-right">
+                       <h5>
+                       NO DATA
+                       <div id="comingNum"></div></h5>
+                       </span>
                     </div>
                 </div></a>
 		</div>
@@ -63,7 +67,11 @@
                         
                     </div>
                     <div class="card-footer">
-                        <span class="float-right">6개</span>
+                         <span class="float-right">
+                       <h5>
+                       NO DATA
+                       <div id="likedNum"></div></h5>
+                       </span>
                     </div>
                 </div>
 		</div>
@@ -75,7 +83,10 @@
                         
                     </div>
                     <div class="card-footer">
-                        <span class="float-right">2개</span>
+                        <span class="float-right">
+                        <h5>
+                        <div id="createdNum"></div></h5>
+                        </span>
                     </div>
                 </div></a>
 		</div>
@@ -102,10 +113,10 @@
 <!-- 모임 리스트 종료 -->
 
 
-
 <input type="hidden" id="hangoutCreator" value="${param.creator}"/>
 <script> 
     $(document).ready(function(){
+      var createdNum;
        var paramIds="hangoutName,hangoutCreator";
        var au = new AjaxUtil("hangout/list",paramIds);
        au.setCallbackSuccess(callbackSql);
@@ -124,13 +135,15 @@
          str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
          str += "<h5 class='card-header'>" + list.hangoutName + "</h5>";
          str += "<img class='card-img-top' src='../resources/images/flower1.jpg'>";
-         str += "<div class='card-body cb'>";
-/*          str += "<div class='card-text'>" + list.hangoutContent + "</div>"; */
+         /*         str += "<div class='card-body cb'>";
+         str += "<div class='card-text'>" + list.hangoutContent + "</div>"; */
          str += "</div>";
          str += "</div>";
          str += "</div>";
          }
+      createdNum = hangoutList.length;
       $("#list_body").html(str);
+      $("#createdNum").html(createdNum);
       }
     $("#searchLists").click(function(){
        var hangoutName= $("#hangoutName").val().trim();
@@ -143,8 +156,8 @@
        au.setCallbackSuccess(callbackSql);
         au.send();
     });
-
     </script>
+
 
 <!-- Javascript --> 
 <script src="/resources/js/scripts_list.js"></script>
