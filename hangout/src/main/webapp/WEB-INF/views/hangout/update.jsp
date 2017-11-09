@@ -14,9 +14,9 @@ body, html {
 }
 
 .bg {
-    /* The image used */
+    /* The image used
     background-image: url("{}/resources/images/flower2.jpg");
-
+ */
     /* Full height */
     height: 30%; 
 
@@ -49,13 +49,11 @@ if (request.getParameter("hangoutNum")!=null){
                <h1>
                   <div id="hangout_btn"></div>
                </h1>
-               HANGOUT 제목: <input type="text" id="hangoutName" placeholder="Enter text ..."
-                  style="width: 310px; height: 50px ">
-               <button class="btn btn-secondary pull-right" type="button"
-                  id="update" onclick="update()">수정완료</button>
+               HANGOUT 제목: <input type="text" id="hangoutName" value="${HangoutInfo.hangoutName}" placeholder="Enter text ..."  style="width: 310px; height: 50px ">
+               <button class="btn btn-secondary pull-right" type="button" id="update" onclick="update()">수정완료</button>
                </p>
-               HANGOUT 기간: <input type="text-center" placeholder="how long?">
-               HANGOUT 날짜: <input type="text-center" placeholder="when is it?">
+               HANGOUT 기간: <input type="text-center" id="hangoutOpendate" value="${HangoutInfo.hangoutOpendate}" placeholder="how long?">- <input type="text-center" id="hangoutClosedate" value="${HangoutInfo.hangoutClosedate}" placeholder="how long?">
+               HANGOUT 날짜: <input type="text-center" id="hangoutDate" value="${HangoutInfo.hangoutDate}" placeholder="when is it?">
                </p>
             </div>
             <br>
@@ -63,9 +61,9 @@ if (request.getParameter("hangoutNum")!=null){
             <!-- Blog Post -->
 			<div class="form-top">
 				<br>
-				<div id="hcreator" style="display: none;">${ListInfo.hangoutCreator}</div>
+				<div id="hcreator" style="display: none;">${HangoutInfo.userNum}</div>
 				<div class="card-body">
-				 <textarea name="content" id="summernote" value="" ></textarea>
+				 <textarea name="content" id="hangoutContent" >${HangoutInfo.hangoutContent}</textarea>
 				</div>
 			</div>
 			<br>
@@ -77,7 +75,7 @@ if (request.getParameter("hangoutNum")!=null){
                Address 검색
             </div>
    <div style="height:50%">
-    <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+    <input id="hangoutArea" class="controls" type="text" placeholder="Enter a location">
     <div id="map" ></div>
 
     <div id="infowindow-content">
@@ -102,7 +100,7 @@ if (request.getParameter("hangoutNum")!=null){
             <div class="form-top">
                <h5 class="cards-header">Category</h5>
                <div class="desc">
-                  <a href="#"><h6>${ListInfo.hangoutTag}</h6></a>
+                  <a href="#"><h6>${HangoutInfo.hangoutTag}</h6></a>
                   
                </div>
 
@@ -122,16 +120,16 @@ if (request.getParameter("hangoutNum")!=null){
                <div class="info">
                   <div class="title">
                      <br /> <a target="_blank" href="http://scripteden.com/"><h3
-                           align="center">${ListInfo.userName}</h3></a>
+                           align="center">${HangoutInfo.userName}</h3></a>
                   </div>
                   <div class="desc">
-                     <h6>핸드폰번호:${ListInfo.userPhone}</h6>
+                     <h6>핸드폰번호:${HangoutInfo.userPhone}</h6>
                   </div>
                   <div class="desc">
-                     <h6>국적:${ListInfo.userCountry}</h6>
+                     <h6>국적:${HangoutInfo.userCountry}</h6>
                   </div>
                   <div class="desc">
-                     <h6>이메일:${ListInfo.userEmail}</h6>
+                     <h6>이메일:${HangoutInfo.userEmail}</h6>
                   </div>
 
                </div>
@@ -174,6 +172,7 @@ if (request.getParameter("hangoutNum")!=null){
 var hoUserNum = <%=user.getUserNum()%>;
 
 $(document).ready(function() {
+
     $('#hangoutContent').summernote({
       height: 300,
       minHeight: null,
@@ -187,8 +186,9 @@ $(document).ready(function() {
         }
       }
     });
+
   });
-  
+
 function sendFile(file, el) {
   var form_data = new FormData();
   form_data.append('file', file);
@@ -227,8 +227,8 @@ function callbackSql(result){
 
 
 function update(){
-      var paramIds="hangoutNum,hangoutName,hangoutContent";
-       var au = new AjaxUtil("hangout/update",paramIds);
+      var paramIds="hangoutNum,hangoutName,hangoutContent,hangoutOpendate,hangoutClosedate";
+       var au = new AjaxUtil("hangout/updateContent",paramIds);
        au.send(); 
 }
 
@@ -240,7 +240,7 @@ function update(){
     		zoom: 15,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
-        var input = document.getElementById('pac-input');
+        var input = document.getElementById('hangoutArea');
         var autocomplete = new google.maps.places.Autocomplete(input);
         autocomplete.bindTo('bounds', map);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);

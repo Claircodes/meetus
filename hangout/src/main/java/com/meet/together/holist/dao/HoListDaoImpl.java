@@ -3,7 +3,6 @@ package com.meet.together.holist.dao;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.meet.together.holist.dto.CategoryInfo;
+import com.meet.together.holist.dto.HangoutInfo;
 import com.meet.together.holist.dto.ImageFile;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
@@ -36,7 +36,7 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	}
 
 	@Override
-	public HashMap<String,Object> selectListContent(ListInfo li) {
+	public HangoutInfo selectListContent(ListInfo li) {
 		return this.getSqlSession().selectOne("listInfo.SELECT_LIST_ONE", li);
 	}
 	
@@ -96,5 +96,15 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 		bos.close();
 		
 		return fileName;
+	}
+
+	@Override
+	public int updateContent(ListInfo li) {
+		return this.getSqlSession().update("listInfo.UPDATE_LIST", li);
+	}
+
+	@Override
+	public HangoutInfo selectUpdate(ListInfo li) {
+		return this.getSqlSession().selectOne("listInfo.SELECT_LIST_ONE",li);
 	}
 }

@@ -1,12 +1,11 @@
 package com.meet.together.holist.controller;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.meet.together.holist.dto.HangoutInfo;
 import com.meet.together.holist.dto.ImageFile;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
@@ -65,15 +65,37 @@ public class HoController {
 		}
 		return hm;
 	}
-
+	
+//모임 업데이트시 
+	@RequestMapping(value = "/hangout/updateContent", method = RequestMethod.POST)
+	public @ResponseBody ModelMap updateContent(@RequestBody ListInfo li, ModelMap hm)	{
+		int result = ls.updateContent(li);
+		if (result == 1) {
+			hm.put("msg", "모임생성이 완료되었습니다.");
+			hm.put("url", "hangout");
+		} else {
+			hm.put("msg", "모임생성 실패, 정보를 확인하세요");
+			hm.put("url", "hangout/update");
+		}
+		return hm;
+	}
+//	@RequestMapping(value = "/hangout/updateSetting", method = RequestMethod.POST)
+//	public @ResponseBody ModelMap updateSetting(@RequestBody ListInfo li, ModelMap hm)	{
+//		 ListInfo ho = ls.selectUpdate(li);
+//		 hm.put("hoUpdateSet", ho);
+//		return hm;
+//	}	
+	
 	@RequestMapping(value = "/hangout/create", method = RequestMethod.GET)
 	public String createsite(UserInfo ui) {
 		return "hangout/create";
 	}
 
-	@RequestMapping(value = "/hangout/update", method = RequestMethod.GET)
-	public String updatesite(UserInfo ui) {
-		return "hangout/update";
+	@RequestMapping(value = "/hangout/update", method = RequestMethod.POST)
+	public ModelMap updatesite(@ModelAttribute("hangoutinfo") ListInfo li,ModelMap hm) {
+		 HangoutInfo ho = ls.selectUpdate(li);
+		 hm.put("HangoutInfo", ho);
+		return hm;
 	}
 
 	@RequestMapping(value = "/hangout/list", method = RequestMethod.POST)
@@ -129,8 +151,8 @@ public class HoController {
  
 	   @RequestMapping(value = "/hangout", method = RequestMethod.GET)
 	   public String listsiteinfo(ListInfo li,ModelMap model) {
-		  HashMap<String, Object> hm = ls.selectListContent(li);
-	      model.addAttribute("ListInfo", hm );
+		  HangoutInfo hi = ls.selectListContent(li);
+	      model.addAttribute("ListInfo", hi );
 	      return "hangout/hangout";
 	   }
 	   

@@ -25,6 +25,16 @@
 			#{hangoutTag}
 		)
 	</insert>
+	
+	<update id="UPDATE_LIST" parameterType="listInfo">
+		update hangout_info set 
+			hangoutname=#{hangoutName},
+			hangoutcontent=#{hangoutContent}, 
+			hangoutopendate=#{hangoutOpendate},
+			hangoutclosedate=#{hangoutClosedate},
+			hangoutdate=DATE_FORMAT(NOW(), '%Y%m%d')
+		where hangoutnum=#{hangoutNum};
+	</update>
 
 	<select id="SELECT_LIST" parameterType="listInfo" resultType="listInfo">
 		select
@@ -54,29 +64,29 @@
 		</if>
 	</select>
 	
-	<select id="SELECT_LIST_ONE" parameterType="listInfo" resultType="java.util.HashMap">
+	<select id="SELECT_LIST_ONE" parameterType="listInfo" resultType="HangoutInfo">
 	SELECT
-		h.hangoutNum,
-		h.hangoutCreator,
-		h.hangoutName,
-		h.hangoutContent,
-		h.hangoutArea,
-		h.hangoutOpendate,
-		h.hangoutClosedate,
-		h.hangoutDate,
-		h.hangoutCategory,
-		h.hangoutTag,
-		u.userId, 
-		u.userName, 
-		u.userEmail, 
-		u.userPhone, 
-		u.userGender,
-		u.userCountry
+		h.hangoutnum,
+		h.hangoutname,
+		h.hangoutcontent,
+		h.hangoutarea,
+		h.hangoutopendate,
+		h.hangoutclosedate,
+		h.hangoutdate,
+		h.hangoutcategory,
+		h.hangouttag,
+		u.usernum,
+		u.userid, 
+		u.username, 
+		u.useremail, 
+		u.userphone, 
+		u.usergender,
+		u.usercountry
 	FROM hangout_info AS h, user_info AS u
 	WHERE 1=1
 	AND h.hangoutcreator = u.usernum 
 		<if test="hangoutNum!=null">
-	AND h.hangoutNum = #{hangoutNum}
+	AND h.hangoutnum = #{hangoutNum}
 		</if>
 	</select>
 

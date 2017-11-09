@@ -1,9 +1,5 @@
 package com.meet.together.holist.service;
 
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.meet.together.holist.dao.HoListDao;
 import com.meet.together.holist.dto.CategoryInfo;
+import com.meet.together.holist.dto.HangoutInfo;
 import com.meet.together.holist.dto.ImageFile;
 import com.meet.together.holist.dto.ListInfo;
 import com.meet.together.holist.dto.Place;
@@ -27,7 +24,10 @@ public class HoServiceImpl implements HoService {
 	public int insertListInfo(ListInfo li) {
 		return listDao.insertListInfo(li);
 	}
- 
+	@Override
+	public int updateContent(ListInfo li) {
+		return listDao.updateContent(li);
+	}
 	@Override
 	public int insertPlace(Place pi) {
 		return listDao.insertPlace(pi);
@@ -39,7 +39,7 @@ public class HoServiceImpl implements HoService {
 	}
 
 	@Override
-	public HashMap<String,Object> selectListContent(ListInfo li) {
+	public HangoutInfo selectListContent(ListInfo li) {
 		return listDao.selectListContent(li);
 	}
 
@@ -75,6 +75,10 @@ public class HoServiceImpl implements HoService {
 	
 	public ImageFile imageSave(MultipartFile multipartFile) {
 		return listDao.insertImageFile(multipartFile);
+	}
+	@Override
+	public HangoutInfo selectUpdate(ListInfo li) {
+		return listDao.selectUpdate(li);
 	}
 	
 	/**
