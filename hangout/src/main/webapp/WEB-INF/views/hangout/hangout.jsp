@@ -5,27 +5,7 @@
         <link rel="stylesheet" href="<c:url value='/resources/css/style-hangout.css'/>">
         <link rel="stylesheet" href="<c:url value='/resources/css/googlemap.css'/>">
 
-<style>
 
-
-
-body, html {
-    height: 100%;
-}
-
-.bg {
-    /* The image used 
-    background-image: url("${rootPath}/resources/images/flower2.jpg");
-*/
-    /* Full height */
-    height: 30%; 
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-</style>
 
 
 </head>
@@ -38,8 +18,8 @@ if (request.getParameter("hangoutNum")!=null){
 }
 %>
 <!--  상단 이미지 -->
-<div class="bg"></div>
 
+<div class="bg"></div>
 <!-- Page Content -->
 <div class="container">
    <div class="row">
@@ -217,7 +197,9 @@ function callbackSql(result){
 	var userListHtml = "";
 	var checkValue = false;
 	for(var i=0,max=userList.length;i<max;i++){
-		userListHtml+="<p>" + userList[i].userName + "</p>";
+		userListHtml+="<button type='button' class='btn btn-default' data-container='body' data-toggle='popover' data-placement='top' data-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'>";
+		userListHtml+=userList[i].userName;
+		userListHtml+="</button>";
 		if(userList[i].userNum == <%=user.getUserNum()%>)
 		{
 			checkValue = true;
@@ -240,8 +222,6 @@ function callbackSql(result){
 	}
 	$("#hangoutList").html(userListHtml);
 }
-
-
 
 function participate(){
    if(<%=login%>==true){
@@ -368,4 +348,5 @@ function goupdate(){
     </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places&callback=initMap"
         async defer></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>        
 </html>

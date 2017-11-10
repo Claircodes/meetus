@@ -170,7 +170,7 @@ public class HoController {
 			int result = ls.TakeUserCount(tu);
 			if (result == 1) {
 				hm.put("msg", "참가신청이 완료되었습니다.");
-				hm.put("url", "hangout");
+				hm.put("url", "hangout?hangoutNum="+tu.getHangoutNum());
 			} else {
 				hm.put("msg", "참가신청 실패, 정보를 확인하세요");
 				hm.put("url", "hangout");
