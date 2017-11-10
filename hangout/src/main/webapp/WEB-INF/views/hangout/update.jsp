@@ -8,25 +8,6 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
 
-   <style>
-body, html {
-    height: 100%;
-}
-
-.bg {
-    /* The image used
-    background-image: url("{}/resources/images/flower2.jpg");
- */
-    /* Full height */
-    height: 30%; 
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-</style>
-
 
 </head>
 <div id="fb-root"></div>
@@ -49,7 +30,7 @@ if (request.getParameter("hangoutNum")!=null){
                <h1>
                   <div id="hangout_btn"></div>
                </h1>
-               HANGOUT 제목: <input type="text" id="hangoutName" value="${HangoutInfo.hangoutName}" placeholder="Enter text ..."  style="width: 310px; height: 50px ">
+               HANGOUT 제목: <input type="text" id="hangoutName" value="${HangoutInfo.hangoutName}"  style="width: 310px; height: 50px ">
                <button class="btn btn-secondary pull-right" type="button" id="update" onclick="update()">수정완료</button>
                </p>
                HANGOUT 기간: <input type="text-center" id="hangoutOpendate" value="${HangoutInfo.hangoutOpendate}" placeholder="how long?">- <input type="text-center" id="hangoutClosedate" value="${HangoutInfo.hangoutClosedate}" placeholder="how long?">
@@ -86,9 +67,11 @@ if (request.getParameter("hangoutNum")!=null){
  
           
          <div class="form-top">
-                  선택한 주소 : <div id="placeAddress" name="placeAddress"></div>
-        <input type="button" id="btnAddress" class="btn btn-primary pull-right" value="장소 저장하기"name="btn">
+                Address1.<div id="hangoutaddress1" name="hangoutaddress1"></div>
+        		Address2.<input class="text" id="hangoutaddress2" placeholder="더 상세한 주소가 필요하시면 입력해주세요."  style="width: 610px;"/>
+            <input type="hidden"  id="lat"><input type="hidden"  id="lng"><input type="hidden"  id="hangoutaddress1">
             </div>
+            	
          </div>
       </div>
 
@@ -114,7 +97,7 @@ if (request.getParameter("hangoutNum")!=null){
                <div class="cardheader"></div>
                <div class="avatar">
                   <img alt=""
-                     src="http://cfile233.uf.daum.net/image/193BA6384DE105340A2D8E"
+                     src="http://cfile233.uf.daum.net/image/193BA6384DE105340A2D8E" 
                      width="100%" height="80%">
                </div>
                <div class="info">
@@ -225,7 +208,7 @@ function callbackSql(result){
 }
 
 function update(){
-	var paramIds="hangoutNum,hangoutName,hangoutContent,hangoutOpendate,hangoutClosedate";
+	var paramIds="hangoutNum,hangoutName,hangoutContent,hangoutOpendate,hangoutClosedate, hangoutAddress1, hangoutAddress2, hangoutLat, hangoutLng";
 	var au = new AjaxUtil("hangout/updateContent",paramIds);
 	au.setCallbackSuccess(callbackUpdate);
 	au.send(); 
@@ -235,6 +218,10 @@ function callbackUpdate(result){
 	pageMove(result.url);
 	}
 
+</script>
+<script type = “text/javascript” src = “http://maps.googleapis.com/maps/api/js?sensor=true”></script>
+
+<script>
     function initMap() {
         // mapLocation 지도에서 center에 표시할 위치
     	   var mapLocation = new google.maps.LatLng('37.496276', '127.028847');   
@@ -256,7 +243,8 @@ function callbackUpdate(result){
           
         });
         autocomplete.addListener('place_changed', function() {
-          infowindow.close();
+        	/* 
+          infowindow.close(); */
           var place = autocomplete.getPlace();
           if (!place.geometry) {
             return;
@@ -273,22 +261,16 @@ function callbackUpdate(result){
             location: place.geometry.location
           });
           marker.setVisible(true);
+   	    document.getElementById("lat").value=place.geometry.location.lat();
+	    document.getElementById("lng").value=place.geometry.location.lng(); 
           document.getElementById('place-name').textContent = place.name;
           document.getElementById('place-address').textContent = place.formatted_address;
           $("#placeName").val(place.name);
-		$("#placeAddress").html(place.formatted_address);
+		$("#hangoutaddress1").html(place.formatted_address);
           infowindow.setContent(document.getElementById('infowindow-content'));
           infowindow.open(map, marker);
-          
-        });
-      
-      $("#btn").click(function(){
-         if (confirm("이 주소가 맞습니까?") == true){    //확인
-                var paramIds = "placeName,placeId,placeAddress";
-                var au = new AjaxUtil("place",paramIds); 
-                au.send();
-          }
-      });
+          });
+
        }
        
     </script>
