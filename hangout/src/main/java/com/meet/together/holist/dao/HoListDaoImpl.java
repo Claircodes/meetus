@@ -118,4 +118,14 @@ public class HoListDaoImpl extends SqlSessionDaoSupport implements HoListDao {
 	public int likeCount(LikeInfo ki) {
 		return this.getSqlSession().insert("like.INSERT_LIKE",ki);
 	}
+
+	@Override
+	public int deleteHangout(HangoutInfo hi) {
+		return this.getSqlSession().delete("listInfo.DELETE_LIST", hi);
+	}
+
+	@Override
+	public int deleteTakeUser(TakeUserInfo tui) {
+		return this.getSqlSession().delete("takeuser.DELETE_TAKEUSER", tui);
+	}
 }

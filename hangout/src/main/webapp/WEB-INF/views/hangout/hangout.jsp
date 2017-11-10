@@ -48,6 +48,7 @@ if (request.getParameter("hangoutNum")!=null){
 			<div class="form-top">
 				<h1>
 					<div id="hangout_btn"></div>
+					<div id="participation"></div>
 				</h1>
 				HANGOUT 기간 : ${ListInfo.hangoutOpendate}-
 				${ListInfo.hangoutClosedate}
@@ -197,9 +198,7 @@ $(".btn btn-secondary").click(function(){
 });
 $(document).ready(function() {
    if (hoUserNum==$("#hcreator").text()){
-      $("#hangout_btn").html('${ListInfo.hangoutName}' +'<form action="/hangout/update" name="hangoutinfo" method="post" > <input type="hidden" name="hangoutNum" value="${param.hangoutNum}"/><input class="btn btn-secondary  pull-right" type="submit" id="update" value="수정하기"> </form> ');
-   }else{
-      $("#hangout_btn").html('${ListInfo.hangoutName}' +'<button class="btn btn-secondary pull-right" type="button" id="participate" onclick="participate()">참가하기</button>');
+      $("#hangout_btn").html('${ListInfo.hangoutName}' +'<form action="/hangout/update" name="hangoutinfo" method="post" > <input type="hidden" name="hangoutNum" value="${param.hangoutNum}"/><input class="btn btn-secondary  pull-right" type="submit" id="update" value="수정하기"><input class="btn btn-secondary  pull-right" type="button" id="delete" onclick="hangoutDelete()" value="DELETE"/>  </form> ');
    }
    
     var paramIds = "hangoutNum";
@@ -209,13 +208,33 @@ $(document).ready(function() {
 });
 
 function callbackSql(result){
-   var userList=result.list;
-   $("#hangoutListCnt").text("현재 참가중인 인원: " + userList.length+"명(click)");
-   var userListHtml = "";
-   for(var i=0,max=userList.length;i<max;i++){
-      userListHtml+="<p>" + userList[i].userName + "</p>";
-      }
-   $("#hangoutList").html(userListHtml);
+	var userList=result.list;
+	$("#hangoutListCnt").text("현재 참가중인 인원: " + userList.length+"명(click)");
+	var userListHtml = "";
+	var checkValue = false;
+	for(var i=0,max=userList.length;i<max;i++){
+		userListHtml+="<p>" + userList[i].userName + "</p>";
+		if(userList[i].userNum == <%=user.getUserNum()%>)
+		{
+			checkValue = true;
+		}
+	}
+	if (hoUserNum==$("#hcreator").text())
+	{
+		$("#hangout_btn").html('${ListInfo.hangoutName}' +'<form action="/hangout/update" name="hangoutinfo" method="post" > <input type="hidden" name="hangoutNum" value="${param.hangoutNum}"/><input class="btn btn-secondary  pull-right" type="submit" id="update" value="수정하기"><input class="btn btn-secondary  pull-right" type="button" id="delete" onclick="hangoutDelete()" value="DELETE"/>  </form> ');
+	}
+	else
+	{
+		if(checkValue == true)
+		{
+			$("#participation").html('<button class="btn btn-secondary pull-right" type="button" id="participate" onclick="cancellation()">참가취소</button>');
+		}
+		else
+		{
+			$("#participation").html('<button class="btn btn-secondary pull-right" type="button" id="participate" onclick="participate()">참가하기</button>');
+		}
+	}
+	$("#hangoutList").html(userListHtml);
 }
 
 
@@ -229,6 +248,36 @@ function participate(){
 }else{
    alert("로그인을 해주세요.");
    }
+}
+
+function hangoutDelete()
+{
+	var selectDelete = confirm("정말 삭제하시겠습니까?");
+	if(selectDelete == true)
+	{
+		var paramId = "hangoutNum";
+		var au = new AjaxUtil("hangout/delete", paramId);
+		au.send();
+	}
+	else
+	{
+		alert("용성이 12월 26일 군대 입대");
+	}
+}
+
+function cancellation()
+{
+	var selectDelete = confirm("참가신청을 취소하시겠 습니까?");
+	if(selectDelete == true)
+	{
+		var paramId = "userNum,hangoutNum";
+		var au = new AjaxUtil("hangout/takeuser/cancellation", paramId);
+		au.send();
+	}
+	else
+	{
+		alert("용성이 12월 26일 군대 입대");
+	}
 }
 
 function overlapNumCheck(result){

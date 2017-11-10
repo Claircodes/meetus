@@ -108,4 +108,9 @@
 		and hangoutcategory = #{hangoutCategory}
 		</if>
 	</select>
+	
+	<delete id="DELETE_LIST" parameterType="listInfo">
+		delete from hangout_info
+		where hangoutnum = #{hangoutNum}
+	</delete>
 </mapper>

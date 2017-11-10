@@ -204,4 +204,35 @@ public class HoController {
 			hm.put("list", list);
 			return hm;
 		}
+		
+		@RequestMapping(value = "/hangout/delete", method = RequestMethod.POST)
+		public @ResponseBody ModelMap deleteHangout(@RequestBody HangoutInfo hi, ModelMap hm)
+		{
+			int result = ls.deleteHangout(hi);
+			if(result == 1)
+			{
+				hm.put("msg", "게시글 삭제가 완료되었습니다.");
+				hm.put("url", "hangout/mylist");
+			}
+			else
+			{
+				hm.put("msg", "게시글 삭제에 실패했습니다 다시 시도해주세요");
+			}
+			return hm;
+		}
+		
+		@RequestMapping(value = "/hangout/takeuser/cancellation", method = RequestMethod.POST)
+		public @ResponseBody ModelMap cancellation(@RequestBody TakeUserInfo tui, ModelMap hm) {
+			int result = ls.deleteTakeUser(tui);
+			if(result == 1)
+			{
+				hm.put("msg", "참가를 취소하셨습니다.");
+				hm.put("url", "hangout/mylist");
+			}
+			else
+			{
+				hm.put("msg", "에러");
+			}
+			return hm;
+		}
 }

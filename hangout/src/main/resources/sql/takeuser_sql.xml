@@ -35,4 +35,10 @@
 		and hi. hangoutname like concat('%',#{hangoutName},'%')
 		</if>
 		</select>
+		
+	<delete id="DELETE_TAKEUSER" parameterType="takeuser">
+		delete from hangout_takeuser
+		where hangoutnum = #{hangoutNum}
+		and usernum = #{userNum}
+	</delete>
 </mapper>

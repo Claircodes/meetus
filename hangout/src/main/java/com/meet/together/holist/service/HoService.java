@@ -31,4 +31,6 @@ public interface HoService {
 	HangoutInfo selectUpdate(ListInfo li);
 	List<ListInfo> selectLikeList(LikeInfo ki);
 	int likeCount(LikeInfo ki);
+	int deleteHangout(HangoutInfo hi);
+	int deleteTakeUser(TakeUserInfo tui);
 }

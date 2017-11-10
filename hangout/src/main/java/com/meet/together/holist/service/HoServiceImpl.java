@@ -89,6 +89,15 @@ public class HoServiceImpl implements HoService {
 	public int likeCount(LikeInfo ki) {
 		return listDao.likeCount(ki);
 	}
+	@Override
+	public int deleteHangout(HangoutInfo hi) {
+		return listDao.deleteHangout(hi);
+	}
+	@Override
+	public int deleteTakeUser(TakeUserInfo tui) {
+		
+		return listDao.deleteTakeUser(tui);
+	}
 	
 	/**
 	 * Multipart File의 내용을 파일로 저장, 저장 후 저장된 파일 이름을 반환
