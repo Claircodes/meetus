@@ -1,16 +1,20 @@
 package com.meet.together.holist.dto;
 
 public class HangoutInfo {
-	
+
 	private int hangoutNum;
 	private String hangoutName;
 	private String hangoutContent;
 	private String hangoutArea;
+	private String hangoutAddress;
+	private String hangoutLat;
+	private String hangoutLng;
 	private String hangoutOpendate;
 	private String hangoutClosedate;
 	private String hangoutDate;
 	private String hangoutCategory;
 	private String hangoutTag;
+
 	private String userNum;
 	private String userId;
 	private String userPwd;
@@ -50,6 +54,30 @@ public class HangoutInfo {
 
 	public void setHangoutArea(String hangoutArea) {
 		this.hangoutArea = hangoutArea;
+	}
+
+	public String getHangoutAddress() {
+		return hangoutAddress;
+	}
+
+	public void setHangoutAddress(String hangoutAddress) {
+		this.hangoutAddress = hangoutAddress;
+	}
+
+	public String getHangoutLat() {
+		return hangoutLat;
+	}
+
+	public void setHangoutLat(String hangoutLat) {
+		this.hangoutLat = hangoutLat;
+	}
+
+	public String getHangoutLng() {
+		return hangoutLng;
+	}
+
+	public void setHangoutLng(String hangoutLng) {
+		this.hangoutLng = hangoutLng;
 	}
 
 	public String getHangoutOpendate() {
@@ -159,7 +187,8 @@ public class HangoutInfo {
 	@Override
 	public String toString() {
 		return "HangoutInfo [hangoutNum=" + hangoutNum + ", hangoutName=" + hangoutName + ", hangoutContent="
-				+ hangoutContent + ", hangoutArea=" + hangoutArea + ", hangoutOpendate=" + hangoutOpendate
+				+ hangoutContent + ", hangoutArea=" + hangoutArea + ", hangoutAddress=" + hangoutAddress
+				+ ", hangoutLat=" + hangoutLat + ", hangoutLng=" + hangoutLng + ", hangoutOpendate=" + hangoutOpendate
 				+ ", hangoutClosedate=" + hangoutClosedate + ", hangoutDate=" + hangoutDate + ", hangoutCategory="
 				+ hangoutCategory + ", hangoutTag=" + hangoutTag + ", userNum=" + userNum + ", userId=" + userId
 				+ ", userPwd=" + userPwd + ", userName=" + userName + ", userEmail=" + userEmail + ", userPhone="
