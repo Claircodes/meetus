@@ -6,7 +6,8 @@ public class HangoutInfo {
 	private String hangoutName;
 	private String hangoutContent;
 	private String hangoutArea;
-	private String hangoutAddress;
+	private String hangoutAddress1;
+	private String hangoutAddress2;
 	private String hangoutLat;
 	private String hangoutLng;
 	private String hangoutOpendate;
@@ -56,12 +57,20 @@ public class HangoutInfo {
 		this.hangoutArea = hangoutArea;
 	}
 
-	public String getHangoutAddress() {
-		return hangoutAddress;
+	public String getHangoutAddress1() {
+		return hangoutAddress1;
 	}
 
-	public void setHangoutAddress(String hangoutAddress) {
-		this.hangoutAddress = hangoutAddress;
+	public void setHangoutAddress1(String hangoutAddress1) {
+		this.hangoutAddress1 = hangoutAddress1;
+	}
+
+	public String getHangoutAddress2() {
+		return hangoutAddress2;
+	}
+
+	public void setHangoutAddress2(String hangoutAddress2) {
+		this.hangoutAddress2 = hangoutAddress2;
 	}
 
 	public String getHangoutLat() {
@@ -187,12 +196,13 @@ public class HangoutInfo {
 	@Override
 	public String toString() {
 		return "HangoutInfo [hangoutNum=" + hangoutNum + ", hangoutName=" + hangoutName + ", hangoutContent="
-				+ hangoutContent + ", hangoutArea=" + hangoutArea + ", hangoutAddress=" + hangoutAddress
-				+ ", hangoutLat=" + hangoutLat + ", hangoutLng=" + hangoutLng + ", hangoutOpendate=" + hangoutOpendate
-				+ ", hangoutClosedate=" + hangoutClosedate + ", hangoutDate=" + hangoutDate + ", hangoutCategory="
-				+ hangoutCategory + ", hangoutTag=" + hangoutTag + ", userNum=" + userNum + ", userId=" + userId
-				+ ", userPwd=" + userPwd + ", userName=" + userName + ", userEmail=" + userEmail + ", userPhone="
-				+ userPhone + ", userGender=" + userGender + ", userCountry=" + userCountry + "]";
+				+ hangoutContent + ", hangoutArea=" + hangoutArea + ", hangoutAddress1=" + hangoutAddress1
+				+ ", hangoutAddress2=" + hangoutAddress2 + ", hangoutLat=" + hangoutLat + ", hangoutLng=" + hangoutLng
+				+ ", hangoutOpendate=" + hangoutOpendate + ", hangoutClosedate=" + hangoutClosedate + ", hangoutDate="
+				+ hangoutDate + ", hangoutCategory=" + hangoutCategory + ", hangoutTag=" + hangoutTag + ", userNum="
+				+ userNum + ", userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName + ", userEmail="
+				+ userEmail + ", userPhone=" + userPhone + ", userGender=" + userGender + ", userCountry=" + userCountry
+				+ "]";
 	}
 
 }
