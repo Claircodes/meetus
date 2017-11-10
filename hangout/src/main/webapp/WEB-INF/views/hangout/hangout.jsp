@@ -17,25 +17,21 @@ if (request.getParameter("hangoutNum")!=null){
    hangoutNum = request.getParameter("hangoutNum");
 }
 %>
-<!--  상단 이미지 -->
 
-<div class="bg"></div>
 <!-- Page Content -->
 <div class="container">
    <div class="row">
-      <!-- title box -->
+        <!-- title box -->
 		<div class="col-md-9">
 			<div class="form-top">
 				<h1>
 					<div id="hangout_btn"></div>
 					<div id="participation"></div>
 				</h1>
-				HANGOUT 기간 : ${ListInfo.hangoutOpendate}-
-				${ListInfo.hangoutClosedate}
-				<p>HANGOUT 날짜 : ${ListInfo.hangoutDate}</p>
+				<h2>HANGOUT on ${ListInfo.hangoutDate}</h2>
+				오픈일 : ${ListInfo.hangoutOpendate} <br>신청마감 : ${ListInfo.hangoutClosedate}</p>
 			</div>
-			<br>
-
+			<br> 
 			<!-- Blog Post -->
 			<div class="form-top">
 				<br>
