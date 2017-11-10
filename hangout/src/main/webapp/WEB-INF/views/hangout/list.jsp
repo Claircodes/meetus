@@ -25,10 +25,6 @@ String hangoutArea = "";
 if (request.getParameter("hangoutArea")!=null){
 	hangoutArea = request.getParameter("hangoutArea");
 }
-String hangoutName = "";
-if (request.getParameter("hangoutName")!=null){
-	hangoutName = request.getParameter("hangoutName");
-}
 
 %>
 
@@ -110,24 +106,13 @@ if (request.getParameter("hangoutName")!=null){
    
    <!-- SQL을 통한 모임자동생성_ 기본 9개-->
    <script>
-   var area_search="";
-   var area_check=false;
-   var cate_check=false;
 
       $(document).ready(function() {
-    	var area="<%=hangoutArea%>";
-    	 var name="<%=hangoutName%>"; 
+    var	area="<%=hangoutArea%>";
     	  
     	  if (area!=null || area!="") {
     		  	 $("#hangoutArea").val(area);
-    		  	 if(hangoutArea==""){
-    		  	 area_check=true;
-    		  	 }
     	  }
-    	  
-	       if (name!=null || name!="" ){
-		      	 $("#hangoutName").val(name);
-		       }
     	  
          var category = "<%=hangoutCategory%>";
          if(category!=null || category!=""){
@@ -135,18 +120,27 @@ if (request.getParameter("hangoutName")!=null){
         	 $('#'+category).attr("class","btn btn-info active");
         	 cate_check=true;
          }
-         
+
          $("#hangoutArea").geocomplete().bind("geocode:result",
                  function(event, result) {
-        	$("#hangoutArea").val(result.vicinity);
-        	area_search=result.vicinity;
+        	 var area_search=result.vicinity;
+        	 if(area_search!=null || area_search!=""){
+        		 area=area_search;
+        		 $("#hangoutArea").val(area);
+        	 }
                  }).bind("geocode:error", function(event, status) {
            }).bind("geocode:multiple", function(event, results) {
            });
          $("#searchLists").click(function() {
              $("#hangoutArea").trigger("geocode");
+        	 var name=$("#hangoutName").val().trim();
+             var paramIds = "hangoutName,hangoutCategory,hangoutArea";
+             var au = new AjaxUtil("hangout/list", paramIds);
+             au.setCallbackSuccess(callbackSql);
+             au.send();
+             $("#hangoutName").val("");
           });
-         
+
          var paramIds = "hangoutName,hangoutCategory,hangoutArea";
          var au = new AjaxUtil("hangout/list", paramIds);  
          au.setCallbackSuccess(callbackSql);
@@ -199,44 +193,14 @@ if (request.getParameter("hangoutName")!=null){
          $("#list_body").html(str);
 }
 
-      $("#searchLists").click(function() {
-    	 name = $("#hangoutName").val().trim();
-    	  if(area_check==true){   //메인에서 지역 검색을 통해 들어왔을때,
-    		  if(name!=""){
-    			  pageMove("hangout/golist?hangoutName=" + name + "&hangoutArea=" + area);
-    			  if(area_search==null || area_search==""){
-    				  pageMove("hangout/golist?hangoutName=" + name);
-    			  }
-    		  }else if(name=="" && (area_search!=null || area_search!="")){
-    			  pageMove("hangout/golist?hangoutArea=" + area_search);
-    		  }
-    	  }else{         //모임 리스트를 통해 들어왔을때,
-    		  
-    	  if(name == "" && (area_search!=null || area_search!="")){
-           pageMove("hangout/golist?hangoutArea="+area_search);
-       }else if(name != "" && (area_search==null || area_search=="")){
-
-           pageMove("hangout/golist?hangoutName=" + name);
-       }else if(name != "" && (area_search!=null || area_search!="")){
-
-    	   pageMove("hangout/golist?hangoutArea=" + area_search + "&hangoutName=" + name);
-    	   //var paramIds = "hangoutName,hangoutCategory,hangoutArea";
-          // var au = new AjaxUtil("hangout/list", paramIds);
-           //au.setCallbackSuccess(callbackSql);
-           //au.send();
-       }
-    	  }
-    	  
-    	  
-    	 if(cate_check==true){
-    		 var cate_name=$("#hangoutCategory").val();
-    		 if(name!=""){
-    		 pageMove("hangout/golist?hangoutCategory=" + cate_name + "&hangoutName=" + name);
-    	 }else{
-    		 pageMove("hangout/golist?hangoutCategory=" + cate_name);
-    	 }
-    	 }
-      });
+     // $("#searchLists").click(function() {
+    //	 var name=$("#hangoutName").val().trim();
+     //    var paramIds = "hangoutName,hangoutCategory,hangoutArea";
+    //     var au = new AjaxUtil("hangout/list", paramIds);
+    //     au.setCallbackSuccess(callbackSql);
+    //     au.send();
+    	 
+  //    });
    </script>
    <!-- SQL 생성 종료 -->
    <!-- button category -->
