@@ -72,9 +72,7 @@
                         <div class="col-sm-6 col-sm-offset-3 social-login">
                         	<h3> login with +</h3>
                         		<div class="social-login-buttons">
-	                        	<a class="btn btn-link-2" href="#">
-	                        		<i class="fa fa-facebook"></i> Facebook
-	                        	</a>
+	                        	<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
 	                        	<a class="btn btn-link-2" href="#">
 	                        		<i class="fa fa-google-plus"></i> Google
 	                        	</a>
@@ -91,7 +89,7 @@
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '{718650078344310}',
+      appId      : '{1878934302134845}',
       cookie     : true,
       xfbml      : true,
       version    : '{v2.10}'
@@ -102,13 +100,13 @@
   };
 
   (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.11&appId=1878934302134845';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+  </script>
 	<script>
 		$("#btn").click(function() {
 			var paramIds = "userId,userPwd";
