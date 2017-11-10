@@ -72,10 +72,10 @@ public class HoController {
 	public @ResponseBody ModelMap updateContent(@RequestBody ListInfo li, ModelMap hm)	{
 		int result = ls.updateContent(li);
 		if (result == 1) {
-			hm.put("msg", "모임생성이 완료되었습니다.");
+			hm.put("msg", "모임수정 완료되었습니다.");
 			hm.put("url", "hangout?hangoutNum="+li.getHangoutNum());
 		} else {
-			hm.put("msg", "모임생성 실패, 정보를 확인하세요");
+			hm.put("msg", "모임수정 실패, 정보를 확인하세요");
 			hm.put("url", "hangout/update");
 		}
 		return hm;

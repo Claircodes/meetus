@@ -15,7 +15,35 @@ public class ListInfo
 	private String hangoutDate;
 	private String hangoutCategory;
 	private String hangoutTag;
+	private String hangoutAddress1;
+	private String hangoutLat;
+	private String hangoutLng;
+	private String hangoutAddress2;
 
+	public String getHangoutAddress1() {
+		return hangoutAddress1;
+	}
+	public void setHangoutAddress1(String hangoutAddress1) {
+		this.hangoutAddress1 = hangoutAddress1;
+	}
+	public String getHangoutLat() {
+		return hangoutLat;
+	}
+	public void setHangoutLat(String hangoutLat) {
+		this.hangoutLat = hangoutLat;
+	}
+	public String getHangoutLng() {
+		return hangoutLng;
+	}
+	public void setHangoutLng(String hangoutLng) {
+		this.hangoutLng = hangoutLng;
+	}
+	public String getHangoutAddress2() {
+		return hangoutAddress2;
+	}
+	public void setHangoutAddress2(String hangoutAddress2) {
+		this.hangoutAddress2 = hangoutAddress2;
+	}
 	public int getHangoutNum() {
 		return hangoutNum;
 	}
@@ -82,7 +110,9 @@ public class ListInfo
 		return "ListInfo [hangoutNum=" + hangoutNum + ", hangoutCreator=" + hangoutCreator + ", hangoutName="
 				+ hangoutName + ", hangoutContent=" + hangoutContent + ", hangoutArea=" + hangoutArea
 				+ ", hangoutOpendate=" + hangoutOpendate + ", hangoutClosedate=" + hangoutClosedate + ", hangoutDate="
-				+ hangoutDate + ", hangoutCategory=" + hangoutCategory + ", hangoutTag=" + hangoutTag + "]";
+				+ hangoutDate + ", hangoutCategory=" + hangoutCategory + ", hangoutTag=" + hangoutTag
+				+ ", hangoutAddress1=" + hangoutAddress1 + ", hangoutLat=" + hangoutLat + ", hangoutLng=" + hangoutLng
+				+ ", hangoutAddress2=" + hangoutAddress2 + "]";
 	}
 
 	

@@ -56,7 +56,7 @@ if (request.getParameter("hangoutNum")!=null){
                Address 검색
             </div>
    <div style="height:50%">
-    <input id="hangoutArea" class="controls" type="text" placeholder="Enter a location">
+    <input id="hangoutAddress1" class="controls" type="text" placeholder="Enter a location">
     <div id="map" ></div>
 
     <div id="infowindow-content">
@@ -67,9 +67,9 @@ if (request.getParameter("hangoutNum")!=null){
  
           
          <div class="form-top">
-                Address1.<div id="hangoutaddress1" name="hangoutaddress1"></div>
-        		Address2.<input class="text" id="hangoutaddress2" placeholder="더 상세한 주소가 필요하시면 입력해주세요."  style="width: 610px;"/>
-            <input type="hidden"  id="lat"><input type="hidden"  id="lng"><input type="hidden"  id="hangoutaddress1">
+                Address1.<div id="test1" name="test1"></div>
+        		Address2.<input class="text" id="hangoutAddress2" placeholder="더 상세한 주소가 필요하시면 입력해주세요."  style="width: 610px;"/>
+            <input type="hidden"  id="hangoutLat"><input type="hidden"  id="hangoutLng">
             </div>
             	
          </div>
@@ -208,7 +208,7 @@ function callbackSql(result){
 }
 
 function update(){
-	var paramIds="hangoutNum,hangoutName,hangoutContent,hangoutOpendate,hangoutClosedate, hangoutAddress1, hangoutAddress2, hangoutLat, hangoutLng";
+	var paramIds="hangoutNum,hangoutName,hangoutContent,hangoutOpendate,hangoutClosedate,hangoutAddress1,hangoutAddress2,hangoutLat,hangoutLng";
 	var au = new AjaxUtil("hangout/updateContent",paramIds);
 	au.setCallbackSuccess(callbackUpdate);
 	au.send(); 
@@ -230,7 +230,7 @@ function callbackUpdate(result){
     		zoom: 15,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
-        var input = document.getElementById('hangoutArea');
+        var input = document.getElementById('hangoutAddress1');
         var autocomplete = new google.maps.places.Autocomplete(input);
         autocomplete.bindTo('bounds', map);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -261,8 +261,8 @@ function callbackUpdate(result){
             location: place.geometry.location
           });
           marker.setVisible(true);
-   	    document.getElementById("lat").value=place.geometry.location.lat();
-	    document.getElementById("lng").value=place.geometry.location.lng(); 
+   	    document.getElementById("hangoutLat").value=place.geometry.location.lat();
+	    document.getElementById("hangoutLng").value=place.geometry.location.lng(); 
           document.getElementById('place-name').textContent = place.name;
           document.getElementById('place-address').textContent = place.formatted_address;
           $("#placeName").val(place.name);

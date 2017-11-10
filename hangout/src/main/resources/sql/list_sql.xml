@@ -12,7 +12,11 @@
 			hangoutclosedate,
 			hangoutdate,
 			hangoutcategory,
-			hangouttag)
+			hangouttag,
+			hangoutaddress1,
+			hangoutlat,
+			hangoutlng,
+			hangoutaddress2)
 		values(
 			#{hangoutCreator},
 			#{hangoutName},
@@ -32,7 +36,11 @@
 			hangoutcontent=#{hangoutContent}, 
 			hangoutopendate=#{hangoutOpendate},
 			hangoutclosedate=#{hangoutClosedate},
-			hangoutdate=DATE_FORMAT(NOW(), '%Y%m%d')
+			hangoutdate=DATE_FORMAT(NOW(), '%Y%m%d'),
+			hangoutAddress1=#{hangoutAddress1},
+			hangoutlat=#{hangoutLat},
+			hangoutlng=#{hangoutLng},
+			hangoutAddress2=#{hangoutAddress2}
 		where hangoutnum=#{hangoutNum};
 	</update>
 
