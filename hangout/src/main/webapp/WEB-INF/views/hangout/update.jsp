@@ -7,7 +7,12 @@
         <link rel="stylesheet" href="<c:url value='/resources/css/googlemap.css'/>">        
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
-
+<!-- 달력관련 script -->
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
+<link rel="stylesheet" type="text/css" href="<c:url value='/resources/tags/bootstrap-tags.css'/>" >
+<script type="text/javascript"	src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js'"></script>
+<script src="<c:url value='/resources/tags/bootstrap-tags.min.js' />"></script>
+<script src="<c:url value='/resources/tags/bootstrap-tags.js' />"></script>
 
 </head>
 <div id="fb-root"></div>
@@ -19,26 +24,24 @@ if (request.getParameter("hangoutNum")!=null){
 }
 %>
 
-<!--  상단 이미지 -->
-<div class="bg"></div>
 <!-- Page Content -->
 <div class="container">
    <div class="row">
-         <!-- title box -->
+       <!-- title box -->
          <div class="col-md-9">
             <div class="form-top">
                <h1>
                   <div id="hangout_btn"></div>
                </h1>
                HANGOUT 제목: <input type="text" id="hangoutName" value="${HangoutInfo.hangoutName}"  style="width: 310px; height: 50px ">
-               <button class="btn btn-secondary pull-right" type="button" id="update" onclick="update()">수정완료</button>
+               <button class="btn btn-secondary pull-right" type="button" id="update" onclick="update()">수정완료</button> 
                </p>
-               HANGOUT 기간: <input type="text-center" id="hangoutOpendate" value="${HangoutInfo.hangoutOpendate}" placeholder="how long?">- <input type="text-center" id="hangoutClosedate" value="${HangoutInfo.hangoutClosedate}" placeholder="how long?">
-               HANGOUT 날짜: <input type="text-center" id="hangoutDate" value="${HangoutInfo.hangoutDate}" placeholder="when is it?">
-               </p>
+               HANGOUT 오픈일: ${HangoutInfo.hangoutOpendate}</p>
+               HANGOUT 모임날짜:  <input class="datepicker valid" data-val="true" data-val-date="El campo Vencimiento debe ser una fecha." id="hangoutDate" name="hangoutDate" readonly="readonly" type="text" value="${HangoutInfo.hangoutDate}" >
+               HANGOUT 신청마감: <input class="datepicker valid" data-val="true" data-val-date="El campo Vencimiento debe ser una fecha." id="hangoutClosedate" name="hangoutClosedate" readonly="readonly" type="text" value="${HangoutInfo.hangoutClosedate}" >
+
             </div>
             <br>
-            
             <!-- Blog Post -->
 			<div class="form-top">
 				<br>
@@ -155,6 +158,10 @@ if (request.getParameter("hangoutNum")!=null){
 var hoUserNum = <%=user.getUserNum()%>;
 
 $(document).ready(function() {
+	  $('.datepicker').datepicker({
+          format: "dd/mm/yyyy",
+          autoclose: true
+      });
 $('#hangoutContent').summernote({
 	height: 300,
 	minHeight: null,
@@ -208,7 +215,7 @@ function callbackSql(result){
 }
 
 function update(){
-	var paramIds="hangoutNum,hangoutName,hangoutContent,hangoutOpendate,hangoutClosedate,hangoutAddress1,hangoutAddress2,hangoutLat,hangoutLng";
+	var paramIds="hangoutNum,hangoutName,hangoutContent,hangoutClosedate,hangoutAddress1,hangoutAddress2,hangoutLat,hangoutLng";
 	var au = new AjaxUtil("hangout/updateContent",paramIds);
 	au.setCallbackSuccess(callbackUpdate);
 	au.send(); 
@@ -266,7 +273,7 @@ function callbackUpdate(result){
           document.getElementById('place-name').textContent = place.name;
           document.getElementById('place-address').textContent = place.formatted_address;
           $("#placeName").val(place.name);
-		$("#hangoutaddress1").html(place.formatted_address);
+		$("#test1").html(place.formatted_address);
           infowindow.setContent(document.getElementById('infowindow-content'));
           infowindow.open(map, marker);
           });
