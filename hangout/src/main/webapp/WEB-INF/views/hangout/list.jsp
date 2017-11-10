@@ -53,32 +53,30 @@ if (request.getParameter("hangoutArea")!=null){
   </div>
   
 <input type="text" id="hangoutCategory" value="<%=hangoutCategory%>" hidden=hidden" >
-	
-	   <div class="row justify-content-center align-self-center">
-     <div class="col-sm-2"><input type="button" class="btn btn-info" id="ART" value="ART" style="width:100%;height:100%"></div>
-        <div class="col-sm-2"><input type="button" class="btn btn-info" id="BEAUTY" value="BEAUTY" style="width:100%;height:100%"></div>
-        <div class="col-sm-2"> <input type="button" class="btn btn-info" id="BOOK" value="BOOK" style="width:100%;height:100%"></div>
-         <div class="col-sm-2"><input type="button" class="btn btn-info" id="BUSINESS" value="BUSINESS" style="width:100%;height:100%"></div>
-	</div></p>
-   <div class="row justify-content-center align-self-center">
-       <div class="col-sm-2"><input  type="button" class="btn btn-info" id="DANCE" value="DANCE" style="width:100%;height:100%"></div>
-        <div class="col-sm-2"><input  type="button" class="btn btn-info" id="EDUCATION" value="EDUCATION" style="width:100%;height:100%"></div>
-         <div class="col-sm-2"><input  type="button" class="btn btn-info" id="FOOD" value="FOOD" style="width:100%;height:100%"></div>
-         <div class="col-sm-2"><input  type="button" class="btn btn-info" id="GAME" value="GAME" style="width:100%;height:100%"></div>
-   	</div></p>
-       <div class="row justify-content-center align-self-center">
-    <div class="col col-lg-2"> <input  type="button" class="btn btn-info" id="LANGUAGE" value="LANGUAGE" style="width:100%;height:100%"></div>
-       <div class="col col-lg-2">  <input  type="button" class="btn btn-info" id="MOVIE" value="MOVIE" style="width:100%;height:100%"></div>
-         <div class="col col-lg-2"><input  type="button" class="btn btn-info" id="MUSIC" value="MUSIC" style="width:100%;height:100%"></div>
-         <div class="col col-lg-2"><input  type="button" class="btn btn-info" id="PET" value="PET" style="width:100%;height:100%"></div>
-     	</div></p>
-        <div class="row justify-content-center align-self-center">
-         <div class="col col-lg-2"><input  type="button" class="btn btn-info" id="PHOTO" value="PHOTO" style="width:100%;height:100%"></div>
-         <div class="col col-lg-2"><input  type="button" class="btn btn-info" id="RELIGION" value="RELIGION" style="width:100%;height:100%"></div>
-         <div class="col col-lg-2"><input  type="button" class="btn btn-info" id="SPORT" value="SPORT" style="width:100%;height:100%"></div>
-         <div class="col col-lg-2"><input  type="button" class="btn btn-info" id="TECHNICAL" value="TECHNICAL" style="width:100%;height:100%"></div>
-
-   </div>
+<div class="row justify-content-center align-self-center">
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="ART" value="ART" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="BEAUTY" value="BEAUTY" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="BOOK" value="BOOK" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="BUSINESS" value="BUSINESS" style="width:100%;height:100%"></div>
+</div>
+<div class="row justify-content-center align-self-center">
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="DANCE" value="DANCE" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="EDUCATION" value="EDUCATION" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="FOOD" value="FOOD" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="GAME" value="GAME" style="width:100%;height:100%"></div>
+</div>
+<div class="row justify-content-center align-self-center">
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="LANGUAGE" value="LANGUAGE" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="MOVIE" value="MOVIE" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="MUSIC" value="MUSIC" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="PET" value="PET" style="width:100%;height:100%"></div>
+</div>
+<div class="row justify-content-center align-self-center">
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="PHOTO" value="PHOTO" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="RELIGION" value="RELIGION" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="SPORT" value="SPORT" style="width:100%;height:100%"></div>
+	<div class="col-sm-2"><input type="button" class="btn btn-info" id="TECHNICAL" value="TECHNICAL" style="width:100%;height:100%"></div>
+</div>
 </section>
       <!-- 모임 리스트 -->
    <div class="container">
