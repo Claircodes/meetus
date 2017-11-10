@@ -69,7 +69,11 @@ if (request.getParameter("hangoutNum")!=null){
 				</div>
 			</div>
 			<br>
-			<div class="form-top">Address. 장소 안내</div>
+			<div class="form-top">Address. 장소 안내<br>
+				주소: ${ListInfo.hangoutAddress1}<br>
+				상세주소: ${ListInfo.hangoutAddress2}<br>			
+			</div>
+
 			<div style="height: 50%">
 				
 				<div id="map"></div>
@@ -314,9 +318,9 @@ function goupdate(){
     
        function initMap() {
        // mapLocation 지도에서 center에 표시할 위치
-   	   var mapLocation = new google.maps.LatLng('37.496276', '127.028847');   
+   	   var mapLocation = new google.maps.LatLng('${ListInfo.hangoutLat}', '${ListInfo.hangoutLng}');   
    	   // markLocation 지도에 마커를 표시할 위치
-       var markLocation = new google.maps.LatLng('37.496276', '127.028847');   
+       var markLocation = new google.maps.LatLng('${ListInfo.hangoutLat}', '${ListInfo.hangoutLng}');   
     	
    	   //지도에 뿌리기
    	   var map = new google.maps.Map(document.getElementById('map'), {

@@ -18,7 +18,6 @@ public class HangoutInfo {
 
 	private String userNum;
 	private String userId;
-	private String userPwd;
 	private String userName;
 	private String userEmail;
 	private String userPhone;
@@ -145,14 +144,6 @@ public class HangoutInfo {
 		this.userId = userId;
 	}
 
-	public String getUserPwd() {
-		return userPwd;
-	}
-
-	public void setUserPwd(String userPwd) {
-		this.userPwd = userPwd;
-	}
-
 	public String getUserName() {
 		return userName;
 	}
@@ -200,9 +191,8 @@ public class HangoutInfo {
 				+ ", hangoutAddress2=" + hangoutAddress2 + ", hangoutLat=" + hangoutLat + ", hangoutLng=" + hangoutLng
 				+ ", hangoutOpendate=" + hangoutOpendate + ", hangoutClosedate=" + hangoutClosedate + ", hangoutDate="
 				+ hangoutDate + ", hangoutCategory=" + hangoutCategory + ", hangoutTag=" + hangoutTag + ", userNum="
-				+ userNum + ", userId=" + userId + ", userPwd=" + userPwd + ", userName=" + userName + ", userEmail="
-				+ userEmail + ", userPhone=" + userPhone + ", userGender=" + userGender + ", userCountry=" + userCountry
-				+ "]";
+				+ userNum + ", userId=" + userId + ", userName=" + userName + ", userEmail=" + userEmail
+				+ ", userPhone=" + userPhone + ", userGender=" + userGender + ", userCountry=" + userCountry + "]";
 	}
 
 }
