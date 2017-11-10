@@ -105,9 +105,8 @@
     <div class="container">
                 <!-- Example row of columns -->
                 <div class="row">
-               <div class="col-sm-4">
-                  <h3>32,500<br> HangOut 모임 갯수<a href='#'><i class="fa fa-heart"></i></a></h3>
-                  <p>전국의 수많은 모임들이 당신을 기다리고 있습니다.</p>
+               <div class="col-sm-4" id="listNum">
+                  
                </div>
                
                <div class="col-sm-4">
@@ -422,7 +421,7 @@
 <script src="<c:url value='/resources/js/stylish-portfolio.js' />"></script>
 
   </body>
-
+<input type="hidden" id="hangoutName" value=""/>
 </html>
 
 
@@ -487,7 +486,24 @@ function attracta_window_height() {
           	 // var words = $("#geocomplete").val().replace("대한민국 ", "");
           	 	  pageMove("hangout/golist?hangoutArea="+words);
           	   })
+       
+          	   
+       var listNum;
+       var paramIds="hangoutName";
+       var au = new AjaxUtil("hangout/list",paramIds);
+       au.setCallbackSuccess(callbackSql);
+       au.send();
+          	 
   });
+   
+   function callbackSql(result){
+	     var hangList=result.list;
+	     listNum =  hangList.length;
+	     var str="";
+	     str+="<h3>" + listNum + "<br> HangOut 모임 갯수<a href='#'><i class='fa fa-heart'></i></a></h3>";
+	     str+="<p>전국의 수많은 모임들이 당신을 기다리고 있습니다.</p>";
+	      $("#listNum").html(str);
+	      }
 
    </script>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnNHGDeUJba3qaZeX2cGp4M1WTf1QGLGI&libraries=places"></script>
