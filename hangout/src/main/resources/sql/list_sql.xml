@@ -12,11 +12,7 @@
 			hangoutclosedate,
 			hangoutdate,
 			hangoutcategory,
-			hangouttag,
-			hangoutaddress1,
-			hangoutlat,
-			hangoutlng,
-			hangoutaddress2)
+			hangouttag)
 		values(
 			#{hangoutCreator},
 			#{hangoutName},
