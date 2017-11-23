@@ -80,6 +80,7 @@
 	                        	<!--  구글로그인 버튼 
 	                        	<div id="my-signin2"></div>
 	                        	-->
+	                        	
                         	</div>
                         </div>
                     </div>
