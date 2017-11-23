@@ -209,6 +209,8 @@ if (request.getParameter("hangoutArea")!=null){
    
    <!--  LOAD MORE (페이지네이션)-->
    <script>
+   var overlapCheck=false;
+   
    var set =9;
    $('.loadmore').click(function(e) {
       e.preventDefault();
@@ -237,11 +239,34 @@ if (request.getParameter("hangoutArea")!=null){
   }
 
    function like(numhang){
-	   $("#hangoutNum").val(numhang);
+ 	   $("#hangoutNum").val(numhang);
+	   var paramIds = "userNum";
+	   var au = new AjaxUtil("hangout/like/list", paramIds);
+	   au.setCallbackSuccess(overlapLikeSql);
+        au.send();
+    }
+   
+   function overlapLikeSql(result){
+	   var hangNum=$("#hangoutNum").val();
+	   var hangLike=result.list;
+	   for(var i = 0; i < hangLike.length; i++){
+	   var hangLikeNum=hangLike[i];
+	   if(hangNum==hangLikeNum.hangoutNum){
+		   alert("이미 찜한 리스트입니다.");
+		   overlapCheck=true;
+		   location.href=${rootPath}"/hangout/golist";
+		   return;
+	   }
+	   }
+	   if(overlapCheck!=true){
+	  $("#hangoutNum").val(hangNum);
 	   var paramIds = "hangoutNum,userNum";
 	   var au = new AjaxUtil("hangout/like/insert", paramIds);
-         au.send();
-    }
+        au.send();
+	   }
+   }
+   
+   
    </script>
 
 
