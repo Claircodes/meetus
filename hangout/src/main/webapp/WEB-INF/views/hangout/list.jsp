@@ -185,7 +185,7 @@ if (request.getParameter("hangoutArea")!=null){
             str += "<div class='mt-4 card rm' onclick='listclick("+list.hangoutNum+")'>";
            str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i id='like' class='fa fa-heart-o' onclick='like("   + list.hangoutNum + ")'></i></a></h5> ";	
            str += "<img class='card-img-top' src='/resources/images/flower1.jpg'>";
-            str += "<div class='card-body cb'>";
+            //str += "<div class='card-body cb'>";
             //str += "<div class='card-text'>" + list.hangoutContent + "</div>";
             str += "</div>";
             str += "</div>";

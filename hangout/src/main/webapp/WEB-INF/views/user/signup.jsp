@@ -177,17 +177,12 @@
                     </div>
                     <div class="row justify-content-center align-self-center">
                         <div class="col-sm-6 col-sm-offset-3 social-login">
-                        	<h3> login with +</h3>
+                        	<h3> Signup with +</h3>
                         	<div class="social-login-buttons">
 	                        	<a class="btn btn-link-2" href="#">
 	                        		<i class="fa fa-facebook"></i> Facebook
 	                        	</a>
-	                        	<a class="btn btn-link-2" href="#">
-	                        		<i class="fa fa-google-plus"></i> Google
-	                        	</a>
-	                        	<a class="btn btn-link-2" href="#">
-	                        		<i class="fa fa-comment"></i> KakaoTalk
-	                        	</a>
+	                    
                         	</div>
                         </div>
                     </div>

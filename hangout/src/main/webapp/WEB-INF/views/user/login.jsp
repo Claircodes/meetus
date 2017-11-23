@@ -12,6 +12,9 @@
 
 		<link rel="stylesheet" href="<c:url value='/resources/css/form-elements.css' />">
         <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
+        
+        <!--  google sign -->
+         <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -73,12 +76,10 @@
                         	<h3> login with +</h3>
                         		<div class="social-login-buttons">
 	                        	<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-	                        	<a class="btn btn-link-2" href="#">
-	                        		<i class="fa fa-google-plus"></i> Google
-	                        	</a>
-	                        	<a class="btn btn-link-2" href="#">
-	                        		<i class="fa fa-comment"></i> KakaoTalk
-	                        	</a>
+	                        
+	                        	<!--  구글로그인 버튼 
+	                        	<div id="my-signin2"></div>
+	                        	-->
                         	</div>
                         </div>
                     </div>
@@ -120,7 +121,30 @@
 			location.href = "/" + results.url;
 		}
 	</script>
+	
+	
+	<!--  구글로그인 코드 -->
+<script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
 
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
         <script src="<c:url value='/resources/js/scripts.js' />"></script>
 
 

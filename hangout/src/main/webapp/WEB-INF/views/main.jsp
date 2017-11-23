@@ -3,8 +3,7 @@
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 <!DOCTYPE html>
 
-<html > 
-
+<html> 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +14,13 @@
 <script src="<c:url value='/resources/js/jquery.backstretch.min.js' />"></script>
 <!--  <script src="<c:url value='/resources/js/scripts.js' />"></script>
         -->
+        
+       
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+        
+        
 
     <title>HANG OUT</title>
 
@@ -45,11 +51,8 @@
 
   <body>
 <!-- Header -->
-
-
    <div id="demo" class="carousel slide" data-ride="carousel">
-
-      <!-- Indicators -->
+	 <!-- Indicators -->
       <ul class="carousel-indicators">
          <li data-target="#demo" data-slide-to="0" class="active"></li>
          <li data-target="#demo" data-slide-to="1"></li>
@@ -99,21 +102,17 @@
          </a>
    </div>
 </div>
-
    <!-- Page Content -->
     <section class="py-5">
     <div class="container">
                 <!-- Example row of columns -->
                 <div class="row">
                <div class="col-sm-4" id="listNum">
-                  
                </div>
-               
                <div class="col-sm-4">
                   <h3>70<br>참가국 갯수</h3>
                   <p>아시아, 유럽, 북미, 남미 등 다양한 국가에서 참가하고 있습니다.</p>
                </div>
-               
                <div class="col-sm-4">
                   <h3>24/7<br> No Break</h3>
                   <p>시간 제한없이 원하는 시간에 모임의 시간을 설정할 수 있습니다.</p>
@@ -131,7 +130,7 @@
          </div>
          <div class="col-sm-2"></div>
           <div class="col-sm-5 text-right">
-                  <input type="text-center" class="form-control btn" placeholder="검색지역을 입력해주세요." id="geocomplete">
+            <input type="text-center" class="form-control btn" placeholder="검색지역을 입력해주세요." id="geocomplete">
           </div>
                
          <div class="col-sm-4">      
@@ -365,15 +364,17 @@
         <div class="col-lg-4 col-md-12">
           <h4 class="heading-footer">ABOUT US</h4>
           <p>HANGOUT 은 모임개설을 위한 페이지 입니다. </p>
-          <p><i class="fa fa-phone"></i> <span>Call Us :</span> +02 752 7942</p>
-          <p><i class="fa fa-envelope"></i> <span>Send Email :</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="660f0800092611030403080a070805034805090b">[email&#160;protected]</a></p>
+          <p><i class="fa fa-phone"></i> <span>Call Us :</span> +02.100.7000</p>
+          <p><i class="fa fa-envelope"></i> <span>Send Email :</span> info@hangout.kr</a></p>
         </div>
         <div class="col-lg-3 col-md-4">
           <h4 class="heading-footer">QUICK LINKS</h4>
             <ul class="footer-ul">
               <li></li>
-              <li><a href="${rootPath}/hangout/create"> 모임 만들기</a></li>
-              <li><a href="${rootPath}/hangout/golist"> 모임 리스트</a></li>
+              <li><a href="${rootPath}/hangout/create"> Create Hangout</a></li>
+              <li><a href="${rootPath}/hangout/golist"> All Hangout List</a></li>
+              <li><a href="${rootPath}/hangout/partimylist"> My Hangout List</a></li>
+              <li><a href="${rootPath}/user/profile"> My Page</a></li>
               <li><a href="#"> Contact us</a></li>
             </ul>
         </div>
