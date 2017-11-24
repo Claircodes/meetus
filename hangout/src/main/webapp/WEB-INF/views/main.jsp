@@ -159,175 +159,145 @@
             
               <div class="row justify-content-center align-self-center">
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=ART"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/art.png'/>"/>
                   </a>
-                   <h4>
                     <strong>ART</strong></center>
-                  </h4>
                 </div>
               </div>
              <div class="col-sm-2 ">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=BEAUTY"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/beauty.png'/>"/>
                   </a>
-                   <h4>
                     <strong>BEAUTY</strong></center>
-                  </h4>
                 </div>
               </div>
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=BOOK"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/book.png'/>"/>
                   </a>
-                   <h4>
                     <strong>BOOK</strong></center>
-                  </h4>
                 </div>
               </div>
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=BUSINESS"><center>
                     <img width="50%"  class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/business.png'/>"/>
                   </a>
-                   <h4>
-                    <strong id="business">BUSINESS</strong></center>
-                  </h4>
+                    <strong id="business">BUSIN.</strong></center>
                 </div>
               </div>
               </div>
+              </br>
               <div class="row justify-content-center align-self-center">
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=DANCE"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/dance.png'/>"/>
                   </a>
-                   <h4>
                     <strong>DANCE</strong></center>
-                  </h4>
                 </div>
               </div>
               
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=EDUCATION"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/education.png'/>"/>
                   </a>
-                   <h4>
-                    <strong>EDUCATION</strong></center>
-                  </h4>
+                    <strong>EDU</strong></center>
                 </div>
               </div>
                 <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=FOOD"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/food.png'/>"/>
                   </a>
-                   <h4>
                     <strong>FOOD</strong></center>
-                  </h4>
                 </div>
               </div>
                 <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=GAME"><center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/game.png'/>"/>
                   </a>
-                   <h4>
                     <strong>GAME</strong></center>
-                  </h4>
                 </div>
               </div>
               </div>
+              </br>
               <div class="row justify-content-center align-self-center">
                 <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=LANGUAGE"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/language.png'/>"/>
                   </a>
-                   <h4>
-                   <strong>LANGUAGE</strong></center>
-                  </h4>
+                   <strong>LANGU.</strong></center>
                 </div>
               </div>
-              
                <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=MOVIE"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/movie.png'/>"/>
                   </a>
-                   <h4>
                    <strong>MOVIE</strong></center>
-                  </h4>
                 </div>
               </div>
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=MUSIC"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/music.png'/>"/>
                   </a>
-                   <h4>
                    <strong>MUSIC</strong></center>
-                  </h4>
                 </div>
               </div>
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=PET"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/pet.png'/>"/>
                   </a>
-                   <h4>
                    <strong>PET</strong></center>
-                  </h4>
                 </div>
               </div>
               </div>
+              </br>
               <div class="row justify-content-center align-self-center">
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=PHOTO"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/photo.png'/>"/>
                   </a>
-                   <h4>
                    <strong>PHOTO</strong></center>
-                  </h4>
                 </div>
               </div>
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=RELIGION"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/religion.png'/>"/>
                   </a>
-                   <h4>
-                   <strong>RELIGION</strong></center>
-                  </h4>
+                   <strong>RELIG.</strong></center>
                 </div>
               </div>
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=SPORT"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/sport.png'/>"/>
                   </a>
-                   <h4>
                    <strong>SPORT</strong></center>
-                  </h4>
                 </div>
               </div>
               <div class="col-sm-2">
-                <div class="portfolio-item">
+                <div class="card-img-top img-responsive">
                   <a href="${rootPath}/hangout/golist?hangoutCategory=TECHNICAL"> <center>
                     <img width="50%" class="img-portfolio img-fluid" src="<c:url value='/resources/images/category/technical.png'/>"/>
                   </a>
-                   <h4>
-                   <strong>TECHNICAL</strong></center>
-                  </h4>
+                   <strong>TECH</strong></center>
                 </div>
               </div>
             </div>
-
+			<br>
             <!-- /.row (nested) -->
             <center><a href="${rootPath}/hangout/golist?hop=hangoutName" class="btn btn-dark">View More HANGOUT</a></center>
           </div>
