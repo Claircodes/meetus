@@ -7,265 +7,72 @@
 
 
 <style>
-/**
- * Oscuro: #283035
- * Azul: #03658c
- * Detalle: #c7cacb
- * Fondo: #dee1e3
- ----------------------------------*/
- * {
- 	margin: 0;
- 	padding: 0;
- 	-webkit-box-sizing: border-box;
- 	-moz-box-sizing: border-box;
- 	box-sizing: border-box;
- }
 
-
-
-ul {
-	list-style-type: none;
+.detailBox {
+    width:320px;
+    border:1px solid #bbb;
+    margin:50px;
+}
+.titleBox {
+    background-color:#fdfdfd;
+    padding:10px;
+}
+.titleBox label{
+  color:#444;
+  margin:0;
+  display:inline-block;
 }
 
-
-
-/** ====================
- * Lista de Comentarios
- =======================*/
-.comments-container {
-	margin: 60px auto 15px;
-	width: 768px;
+.commentBox {
+    padding:10px;
+    border-top:1px dotted #bbb;
 }
-
-.comments-container h1 {
-	font-size: 36px;
-	color: #283035;
-	font-weight: 400;
+.commentBox .form-group:first-child, .actionBox .form-group:first-child {
+    width:80%;
 }
-
-.comments-container h1 a {
-	font-size: 18px;
-	font-weight: 700;
+.commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
+    width:18%;
 }
-
-.comments-list {
-	margin-top: 30px;
-	position: relative;
+.actionBox .form-group * {
+    width:100%;
 }
-
-/**
- * Lineas / Detalles
- -----------------------*/
-.comments-list:before {
-	content: '';
-	width: 2px;
-	height: 100%;
-	background: #c7cacb;
-	position: absolute;
-	left: 32px;
-	top: 0;
+.taskDescription {
+    margin-top:10px 0;
 }
-
-.comments-list:after {
-	content: '';
-	position: absolute;
-	background: #c7cacb;
-	bottom: 0;
-	left: 27px;
-	width: 7px;
-	height: 7px;
-	border: 3px solid #dee1e3;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
+.commentList {
+    padding:0;
+    list-style:none;
+    max-height:200px;
+    overflow:auto;
 }
-
-.reply-list:before, .reply-list:after {display: none;}
-.reply-list li:before {
-	content: '';
-	width: 60px;
-	height: 2px;
-	background: #c7cacb;
-	position: absolute;
-	top: 25px;
-	left: -55px;
+.commentList li {
+    margin:0;
+    margin-top:10px;
 }
-
-
-.comments-list li {
-	margin-bottom: 15px;
-	display: block;
-	position: relative;
+.commentList li > div {
+    display:table-cell;
 }
-
-.comments-list li:after {
-	content: '';
-	display: block;
-	clear: both;
-	height: 0;
-	width: 0;
+.commenterImage {
+    width:30px;
+    margin-right:5px;
+    height:100%;
+    float:left;
 }
-
-.reply-list {
-	padding-left: 88px;
-	clear: both;
-	margin-top: 15px;
+.commenterImage img {
+    width:100%;
+    border-radius:50%;
 }
-/**
- * Avatar
- ---------------------------*/
-.comments-list .comment-avatar {
-	width: 65px;
-	height: 65px;
-	position: relative;
-	z-index: 99;
-	float: left;
-	border: 3px solid #FFF;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-	overflow: hidden;
+.commentText p {
+    margin:0;
 }
-
-.comments-list .comment-avatar img {
-	width: 100%;
-	height: 100%;
+.sub-text {
+    color:#aaa;
+    font-family:verdana;
+    font-size:11px;
 }
-
-.reply-list .comment-avatar {
-	width: 50px;
-	height: 50px;
-}
-
-.comment-main-level:after {
-	content: '';
-	width: 0;
-	height: 0;
-	display: block;
-	clear: both;
-}
-/**
- * Caja del Comentario
- ---------------------------*/
-.comments-list .comment-box {
-	width: 680px;
-	float: right;
-	position: relative;
-	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-	-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-}
-
-.comments-list .comment-box:before, .comments-list .comment-box:after {
-	content: '';
-	height: 0;
-	width: 0;
-	position: absolute;
-	display: block;
-	border-width: 10px 12px 10px 0;
-	border-style: solid;
-	border-color: transparent #FCFCFC;
-	top: 8px;
-	left: -11px;
-}
-
-.comments-list .comment-box:before {
-	border-width: 11px 13px 11px 0;
-	border-color: transparent rgba(0,0,0,0.05);
-	left: -12px;
-}
-
-.reply-list .comment-box {
-	width: 610px;
-}
-.comment-box .comment-head {
-	background: #FCFCFC;
-	padding: 10px 12px;
-	border-bottom: 1px solid #E5E5E5;
-	overflow: hidden;
-	-webkit-border-radius: 4px 4px 0 0;
-	-moz-border-radius: 4px 4px 0 0;
-	border-radius: 4px 4px 0 0;
-}
-
-.comment-box .comment-head i {
-	float: right;
-	margin-left: 14px;
-	position: relative;
-	top: 2px;
-	color: #A6A6A6;
-	cursor: pointer;
-	-webkit-transition: color 0.3s ease;
-	-o-transition: color 0.3s ease;
-	transition: color 0.3s ease;
-}
-
-.comment-box .comment-head i:hover {
-	color: #03658c;
-}
-
-.comment-box .comment-name {
-	color: #283035;
-	font-size: 14px;
-	font-weight: 700;
-	float: left;
-	margin-right: 10px;
-}
-
-.comment-box .comment-name a {
-	color: #283035;
-}
-
-.comment-box .comment-head span {
-	float: left;
-	color: #999;
-	font-size: 13px;
-	position: relative;
-	top: 1px;
-}
-
-.comment-box .comment-content {
-	background: #FFF;
-	padding: 12px;
-	font-size: 15px;
-	color: #595959;
-	-webkit-border-radius: 0 0 4px 4px;
-	-moz-border-radius: 0 0 4px 4px;
-	border-radius: 0 0 4px 4px;
-}
-
-.comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {color: #03658c;}
-.comment-box .comment-name.by-author:after {
-	content: 'autor';
-	background: #03658c;
-	color: #FFF;
-	font-size: 12px;
-	padding: 3px 5px;
-	font-weight: 700;
-	margin-left: 10px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
-/** =====================
- * Responsive
- ========================*/
-@media only screen and (max-width: 766px) {
-	.comments-container {
-		width: 480px;
-	}
-
-	.comments-list .comment-box {
-		width: 390px;
-	}
-
-	.reply-list .comment-box {
-		width: 320px;
-	}
+.actionBox {
+    border-top:1px dotted #bbb;
+    padding:10px;
 }
 </style>
 
@@ -289,10 +96,15 @@ if (request.getParameter("hangoutNum")!=null){
 					<div id="hangout_btn"></div>
 					<div id="participation"></div>
 				</h1>
-				<h2>HANGOUT on ${ListInfo.hangoutDate}</h2>
-				오픈일 : ${ListInfo.hangoutOpendate} <br>신청마감 : ${ListInfo.hangoutClosedate}</p>
+				<h3><strong>HANGOUT on ${ListInfo.hangoutDate}</strong></h3>
+			<div class="actionBox">	
+				오픈일 : ${ListInfo.hangoutOpendate} <br>신청마감 :
+				${ListInfo.hangoutClosedate}
+				</p>
 			</div>
-			<br> 
+			</div>
+			<br>
+			
 			<!-- Blog Post -->
 			<div class="form-top">
 				<br>
@@ -304,95 +116,68 @@ if (request.getParameter("hangoutNum")!=null){
 						${ListInfo.hangoutCategory}
 					</p>
 				</div>
-			</div>
+				</div>
+		
 			<br>
-			<div class="form-top">Address. 장소 안내<br>
-				주소: ${ListInfo.hangoutAddress1}<br>
-				상세주소: ${ListInfo.hangoutAddress2}<br>			
+			
+			
+			<div class="form-top">
+				Address. 장소 안내
+				<div class="actionBox">
+				 주소: ${ListInfo.hangoutAddress1}<br>
+				상세주소: ${ListInfo.hangoutAddress2}<br>
 			</div>
 
 			<div style="height: 450px">
 				<div id="map"></div>
 				<div id="infowindow-content">
-					<span id="place-name"></span><br> Place ID <span
-						id="place-id"></span><br> <span id="place-address"></span>
+					<span id="place-name"></span><br> Place ID <span id="place-id"></span><br>
+					<span id="place-address"></span>
 				</div>
 			</div>
+			</div>
 			<br>
-			<div class="form-top">Q&A. 묻고 답하기</div>
+
 			<div class="form-top">
-					<div class="comments-container">
-		<ul id="comments-list" class="comments-list">
-			<li>
-				<div class="comment-main-level">
-					<!-- Avatar -->
-					<div class="comment-avatar"><img src="/resources/images/web-test.jpg" alt=""></div>
-					<!-- Contenedor del Comentario -->
-					<div class="comment-box">
-						<div class="comment-head">
-							<h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-							<span>hace 20 minutos</span>
-						</div>
-						<div class="comment-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-						</div>
-					</div>
-				</div>
-				<!-- Respuestas de los comentarios -->
-				<ul class="comments-list reply-list">
-					<li>
-						<!-- Avatar -->
-						<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-						<!-- Contenedor del Comentario -->
-						<div class="comment-box">
-							<div class="comment-head">
-								<h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-								<span>hace 10 minutos</span>
+				Q&A. 묻고 답하기
+				<div class="actionBox">
+					<ul class="commentList">
+						<li>
+							<div class="commenterImage">
+								<img src="/resources/images/web-test.jpg" />
+							</div> <strong>고혜련</strong> <span class="date sub-text">
+								2017.11.04</span>
+							<div class="commentText">
+								<p class="">아~ 지훈짱 얼른 마법의신부 보라능~!!.</p>
 							</div>
-							<div class="comment-content">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-							</div>
-						</div>
-					</li>
+						</li>
+						<li>
+							<div class="commenterImage">
+								<img
+									src="http://cfile233.uf.daum.net/image/193BA6384DE105340A2D8E" />
+							</div> <strong>장지훈</strong> <span class="date sub-text">
+								2017.11.04</span>
+							<div class="commentText">
+								<p class="">안봐. 무슨 마법이야 마법은</p>
 
-					<li>
-						<!-- Avatar -->
-						<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-						<!-- Contenedor del Comentario -->
-						<div class="comment-box">
-							<div class="comment-head">
-								<h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-								<span>hace 10 minutos</span>
 							</div>
-							<div class="comment-content">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-							</div>
-						</div>
-					</li>
-				</ul>
-			</li>
+						</li>
+					</ul>
 
-			<li>
-				<div class="comment-main-level">
-					<!-- Avatar -->
-					<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-					<!-- Contenedor del Comentario -->
-					<div class="comment-box">
-						<div class="comment-head">
-							<h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-							<span>hace 10 minutos</span>
+
+					<form class="form-inline" role="form">
+						<div class="form-group">
+							<input class="form-control" type="text"
+								placeholder="Your comments" />
 						</div>
-						<div class="comment-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+						<div class="form-group">
+							<button class="btn btn-default">입력</button>
 						</div>
-					</div>
+					</form>
 				</div>
-			</li>
-		</ul>
-	</div>
-	</div>
-	
-	
+
+
+			</div>
 		</div>
 		<br>
 
@@ -401,18 +186,17 @@ if (request.getParameter("hangoutNum")!=null){
 		<div class="col-md-3 ">
 				<!-- Category box -->
 				<div class="form-top">
-					<h5 class="cards-header">Category</h5>
+					<h5 class="cards-header"></p>Category</h5>
+					<div class="actionBox">	
 						<h6>${ListInfo.hangoutTag}</h6>
-				
-
+					</div>
 				</div>
 				</br>
 
 				<!-- Operator box -->
 				<div class="form-top">
-					<h5 class="cards-header">Operator</h5>
-
-					<div class="cardheader"></div>
+					<h5 class="cards-header"></p>Operator</h5>
+					<div class="actionBox">	
 					<div class="avatar">
 						<img alt=""
 							src="http://cfile233.uf.daum.net/image/193BA6384DE105340A2D8E"
@@ -423,70 +207,52 @@ if (request.getParameter("hangoutNum")!=null){
 							<h2>${ListInfo.userName}</h2>
 						</div>
 						<div class="desc">
-							<h6>핸드폰번호:${ListInfo.userPhone}</h6>
+							CALL: ${ListInfo.userPhone}
 						</div>
 						<div class="desc">
-							<h6>국적:${ListInfo.userCountry}</h6>
+							NATION: ${ListInfo.userCountry}
 						</div>
 						<div class="desc">
-							<h6>이메일:${ListInfo.userEmail}</h6>
+							CONTACT: ${ListInfo.userEmail}
 						</div>
-
+						</div>
 					</div>
 				</div>
 				<br>
 
-				<!--         
-          <div class="card my-4">
-              <h5 class="card-header">
-                  FaceBook 가져오기
-              </h5>
-               <div class="fb-page" data-href="https://www.facebook.com/Devwonwon-1439494016140368/" data-tabs="timeline" data-width="900" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Devwonwon-1439494016140368/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Devwonwon-1439494016140368/">Devwonwon</a></blockquote></div>
-          </div>
--->
-				<!-- Search Widget 
-            <div class="card my-4">
-               <h5 class="card-header">검색하기</h5>
-               <div class="card-body">
-                  <div class="input-group">
-                     <input type="text" class="form-control"
-                        placeholder="검색하실 내용을 입력하세요."> <span
-                        class="input-group-btn">
-                        <button class="btn btn-secondary" type="button" id="searchContent">Search!</button>
-                     </span>
-                  </div>
-               </div>
-            </div>
--->
 
 
 			<!-- 참가자 box -->
 				<div class="form-top">
-					<h5 class="cards-header">Participant</h5>
+					<h5 class="cards-header"></p>Participant</h5>
+					<div class="actionBox">	
 					<div class="col-lg-6">
 						<div class="card-block" id="hangoutList"></div>
+					</div>
 					</div>
 				</div>
 				<br>
 
 				<!-- Topic & tag box -->
 				<div class="form-top">
-					<h5 class="cards-header">Topic & Tag</h5>
+					<h5 class="cards-header"></p>Topic & Tag</h5>
+					<div class="actionBox">	
 					<div class="card-body">
 						<div class="row">
 							<div class="col-lg-6">
 								<ul class="list-unstyled mb-0">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">HTML</a></li>
-									<li><a href="#">Freebies</a></li>
+									<li>Web Design</li>
+									<li>HTML</li>
+									<li>Freebies</li>
 								</ul>
 							</div>
 							<div class="col-lg-6">
 								<ul class="list-unstyled mb-0">
-									<li><a href="#">JavaScript</a></li>
-									<li><a href="#">CSS</a></li>
-									<li><a href="#">Tutorials</a></li>
+									<li>JavaScript</li>
+									<li>CSS</li>
+									<li>Tutorials</li>
 								</ul>
+							</div>
 							</div>
 						</div>
 					</div>

@@ -109,13 +109,13 @@ if (request.getParameter("hangoutNum")!=null){
                            align="center">${HangoutInfo.userName}</h3></a>
                   </div>
                   <div class="desc">
-                     <h6>핸드폰번호:${HangoutInfo.userPhone}</h6>
+                     CALL: ${HangoutInfo.userPhone}
                   </div>
                   <div class="desc">
-                     <h6>국적:${HangoutInfo.userCountry}</h6>
+                     NATION: ${HangoutInfo.userCountry}
                   </div>
                   <div class="desc">
-                     <h6>이메일:${HangoutInfo.userEmail}</h6>
+                     CONTACT: ${HangoutInfo.userEmail}
                   </div>
 
                </div>
@@ -130,16 +130,16 @@ if (request.getParameter("hangoutNum")!=null){
                   <div class="row">
                      <div class="col-lg-6">
                         <ul class="list-unstyled mb-0">
-                           <li><a href="#">Web Design</a></li>
-                           <li><a href="#">HTML</a></li>
-                           <li><a href="#">Freebies</a></li>
+                           <li>Web Design</li>
+                           <li>HTML</li>
+                           <li>Freebies</li>
                         </ul>
                      </div>
                      <div class="col-lg-6">
                         <ul class="list-unstyled mb-0">
-                           <li><a href="#">JavaScript</a></li>
-                           <li><a href="#">CSS</a></li>
-                           <li><a href="#">Tutorials</a></li>
+                           <li>JavaScript</li>
+                           <li>CSS</li>
+                           <li>Tutorials</li>
                         </ul>
                      </div>
                   </div>
