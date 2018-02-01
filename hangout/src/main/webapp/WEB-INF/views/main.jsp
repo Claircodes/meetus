@@ -191,7 +191,6 @@
                 </div>
               </div>
               </div>
-              </br>
               <div class="row justify-content-center align-self-center">
               <div class="col-sm-2">
                 <div class="card-img-top img-responsive">
@@ -227,7 +226,6 @@
                 </div>
               </div>
               </div>
-              </br>
               <div class="row justify-content-center align-self-center">
                 <div class="col-sm-2">
                 <div class="card-img-top img-responsive">
@@ -262,7 +260,6 @@
                 </div>
               </div>
               </div>
-              </br>
               <div class="row justify-content-center align-self-center">
               <div class="col-sm-2">
                 <div class="card-img-top img-responsive">

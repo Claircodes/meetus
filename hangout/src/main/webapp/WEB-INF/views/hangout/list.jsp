@@ -182,9 +182,10 @@ if (request.getParameter("hangoutArea")!=null){
          for (var i = 0; i < max; i++) {
             var list = hangoutList[i];
             str += "<div class='mt-4 col-sm-4'>";
-            str += "<div class='mt-4 card rm' onclick='listclick("+list.hangoutNum+")'>";
-           str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i id='like' class='fa fa-heart-o' onclick='like("   + list.hangoutNum + ")'></i></a></h5> ";	
-           str += "<img class='card-img-top' src='/resources/images/flower1.jpg'>";
+            str += "<div class='mt-4 card rm' >";
+            str += "<div class='card-header'><h5 onclick='listclick("+list.hangoutNum+")'>" + list.hangoutName+ "</h5><a href='#' class='pull-right'>";
+            str += "<i id='like" + list.hangoutNum + "' class='fa fa-heart-o' onclick='like(" + list.hangoutNum + ")'></i></a></div></div>";	
+            str += "<img class='card-img-top' src='/resources/images/flower1.jpg' onclick='listclick("+list.hangoutNum+")'>";
             //str += "<div class='card-body cb'>";
             //str += "<div class='card-text'>" + list.hangoutContent + "</div>";
             str += "</div>";
@@ -227,9 +228,10 @@ if (request.getParameter("hangoutArea")!=null){
          var list = hangoutList[set];
          str += "<div class='mt-4 col-sm-4 morebox'>";
          str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
-        str += "<h5 class='card-header'>" + list.hangoutName + "<a href='#' class='pull-right'><i id='like' class='fa fa-heart-o' onclick='like("   + list.hangoutNum + ")'></i></a></h5> ";	
-         str += "<img class='card-img-top' src='/resources/images/flower1.jpg'>";
-         str += "<div class='card-body cb'>";
+         str += "<h5 class='card-header' onclick='listclick("+list.hangoutNum+")'>" + list.hangoutName+ "</h5><a href='#' class='pull-right'>";
+         str += "<i id='like" + list.hangoutNum + "' class='fa fa-heart-o' onclick='like(" + list.hangoutNum + ")'></i></a> ";	
+         str += "<img class='card-img-top' src='/resources/images/flower1.jpg' onclick='listclick("+list.hangoutNum+")'>";
+        // str += "<div class='card-body cb'>";
         // str += "<div class='card-text'>" + list.hangoutContent + "</div>";
          str += "</div>";
          str += "</div>";
@@ -239,6 +241,7 @@ if (request.getParameter("hangoutArea")!=null){
   }
 
    function like(numhang){
+	   $("#like"+numhang).attr('class','fa fa-heart');
  	   $("#hangoutNum").val(numhang);
 	   var paramIds = "userNum";
 	   var au = new AjaxUtil("hangout/like/list", paramIds);

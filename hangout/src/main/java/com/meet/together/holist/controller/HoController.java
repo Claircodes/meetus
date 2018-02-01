@@ -183,10 +183,10 @@ public class HoController {
 			int result = ls.likeCount(ki);
 			if (result == 1) {
 				hm.put("msg", "찜하기 완료!");
-				hm.put("url", "hangout/golist");
+				//hm.put("url", "hangout/golist");
 			} else {
 				hm.put("msg", "찜하기 실패, 정보를 확인하세요");
-				hm.put("url", "hangout/golist");
+				//hm.put("url", "hangout/golist");
 			}
 			return hm;
 		}
