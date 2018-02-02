@@ -37,8 +37,8 @@ if (request.getParameter("hangoutArea")!=null){
                <h1>HANGOUT 모임 리스트</h1>
                <p></div>
             </div>
-      <div class="col-sm-2"></div>
-                  <div class="col-sm-2">
+      <div class="col-sm-2" style="margin:0 0 5px;"></div>
+                  <div class="col-sm-2" style="margin:0 0 5px;">
                      <input type="text" class="form-control btn btn-primary"
                            id="hangoutArea" placeholder="지역검색">
                   </div>
@@ -52,33 +52,27 @@ if (request.getParameter("hangoutArea")!=null){
      
   </div>
   
-<input type="text" id="hangoutCategory" value="<%=hangoutCategory%>" hidden=hidden" >
-<div class="row justify-content-center align-self-center">
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="ART" value="ART" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="BEAUTY" value="BEAUTY" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="BOOK" value="BOOK" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="BUSINESS" value="BUSINESS" style="width:100%;height:100%"></div>
-</div>
-<br>
-<div class="row justify-content-center align-self-center">
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="DANCE" value="DANCE" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="EDUCATION" value="EDUCATION" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="FOOD" value="FOOD" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="GAME" value="GAME" style="width:100%;height:100%"></div>
-</div>
-<br>
-<div class="row justify-content-center align-self-center">
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="LANGUAGE" value="LANGUAGE" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="MOVIE" value="MOVIE" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="MUSIC" value="MUSIC" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="PET" value="PET" style="width:100%;height:100%"></div>
-</div>
-<br>
-<div class="row justify-content-center align-self-center">
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="PHOTO" value="PHOTO" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="RELIGION" value="RELIGION" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="SPORT" value="SPORT" style="width:100%;height:100%"></div>
-	<div class="col-sm-2"><input type="button" class="btn btn-info" id="TECHNICAL" value="TECHNICAL" style="width:100%;height:100%"></div>
+<input type="text" id="hangoutCategory" value="<%=hangoutCategory%>" hidden=hidden >
+<div class="row justify-content-left align-self-center">
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="ART" value="ART" style="width:100%;height:100%;"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="BEAUTY" value="BEAUTY" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="BOOK" value="BOOK" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="BUSINESS" value="BUSINESS" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="DANCE" value="DANCE" style="width:100%;height:100%"></div>
+	
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="EDUCATION" value="EDUCATION" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="FOOD" value="FOOD" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="GAME" value="GAME" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="LANGUAGE" value="LANGUAGE" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="MOVIE" value="MOVIE" style="width:100%;height:100%"></div>
+
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="MUSIC" value="MUSIC" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="PET" value="PET" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="PHOTO" value="PHOTO" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="RELIGION" value="RELIGION" style="width:100%;height:100%"></div>
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="SPORT" value="SPORT" style="width:100%;height:100%"></div>
+
+	<div class="col-sm-2" style="margin:0 0 5px;"><input type="button" class="btn btn-info" id="TECHNICAL" value="TECHNICAL" style="width:100%;height:100%"></div>
 </div>
 </section>
       <!-- 모임 리스트 -->
@@ -226,13 +220,13 @@ if (request.getParameter("hangoutArea")!=null){
       var str = "";
       for (max = (set+9); set < max; set++) {
          var list = hangoutList[set];
-         str += "<div class='mt-4 col-sm-4 morebox'>";
-         str += "<div class='mt-4 card rm' onclick='listclick("   + list.hangoutNum + ")'>";
-         str += "<h5 class='card-header' onclick='listclick("+list.hangoutNum+")'>" + list.hangoutName+ "</h5><a href='#' class='pull-right'>";
-         str += "<i id='like" + list.hangoutNum + "' class='fa fa-heart-o' onclick='like(" + list.hangoutNum + ")'></i></a> ";	
+         str += "<div class='mt-4 col-sm-4'>";
+         str += "<div class='mt-4 card rm' >";
+         str += "<div class='card-header'><h5 onclick='listclick("+list.hangoutNum+")'>" + list.hangoutName+ "</h5><a href='#' class='pull-right'>";
+         str += "<i id='like" + list.hangoutNum + "' class='fa fa-heart-o' onclick='like(" + list.hangoutNum + ")'></i></a></div></div>";	
          str += "<img class='card-img-top' src='/resources/images/flower1.jpg' onclick='listclick("+list.hangoutNum+")'>";
-        // str += "<div class='card-body cb'>";
-        // str += "<div class='card-text'>" + list.hangoutContent + "</div>";
+         //str += "<div class='card-body cb'>";
+         //str += "<div class='card-text'>" + list.hangoutContent + "</div>";
          str += "</div>";
          str += "</div>";
          str += "</div>";
@@ -241,7 +235,11 @@ if (request.getParameter("hangoutArea")!=null){
   }
 
    function like(numhang){
-	   $("#like"+numhang).attr('class','fa fa-heart');
+	   if ($("#like"+numhang).attr('class')=='fa fa-heart-o'){
+		   $("#like"+numhang).attr('class','fa fa-heart');
+	   }else {
+		   $("#like"+numhang).attr('class','fa fa-heart-o');	   
+	   }
  	   $("#hangoutNum").val(numhang);
 	   var paramIds = "userNum";
 	   var au = new AjaxUtil("hangout/like/list", paramIds);
